@@ -7,7 +7,6 @@
 //
 
 #import "FileListener.h"
-#import "Notifier.h"
 
 @interface FileListener ()
 {
@@ -29,6 +28,12 @@
  * @brief 处理监听的取消
  */
 - (void)handleCancel;
+
+/*!
+ * @brief 操作
+ * param operation 操作block块
+ */
+- (void)operate:(void (^)(void))operation;
 
 @end
 
@@ -82,20 +87,20 @@
                 
                 int event = (int)dispatch_source_get_data(_listenSource);
                 
-                [Notifier notify:^{
+                [self performSelector:@selector(operate:) onThread:self.notifyThread withObject:^{
                     
                     [self handleEvent:event];
                     
-                } onThread:self.notifyThread];
+                } waitUntilDone:NO];
             });
             
             dispatch_source_set_cancel_handler(_listenSource, ^{
                 
-                [Notifier notify:^{
+                [self performSelector:@selector(operate:) onThread:self.notifyThread withObject:^{
                     
                     [self handleCancel];
                     
-                } onThread:self.notifyThread];
+                } waitUntilDone:NO];
                 
                 close(fileDescription);
             });
@@ -162,6 +167,14 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(fileListenerDidCancel:)])
     {
         [self.delegate fileListenerDidCancel:self];
+    }
+}
+
+- (void)operate:(void (^)(void))operation
+{
+    if (operation)
+    {
+        operation();
     }
 }
 

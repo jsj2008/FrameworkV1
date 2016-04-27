@@ -7,9 +7,7 @@
 //
 
 #import "IPRouteTraceCenter.h"
-#import "APPConfiguration.h"
 #import "IPRouteTracer.h"
-#import "LightLoadingPermanentQueue.h"
 
 /*!
  * @brief 路由追踪任务的并发量
@@ -57,7 +55,7 @@ static NSString * const IPRouteTracingContextKey_Host = @"host";
         
         _dispatcher = [[SPTaskDispatcher alloc] init];
         
-        _dispatcher.asyncTaskCapacity = MIN(IPRouteTracingConcurrentTaskCount, APP_FreeTaskPoolCapacity / 3) ;
+        _dispatcher.asyncTaskCapacity = IPRouteTracingConcurrentTaskCount;
     }
     
     return self;
@@ -143,7 +141,7 @@ static NSString * const IPRouteTracingContextKey_Host = @"host";
         
         task.delegate = self;
         
-        task.notifyThread = [[LightLoadingPermanentQueue sharedInstance] runningThread];
+        task.notifyThread = self.notifyThread;
         
         [_dispatcher asyncAddTask:task inMode:SPTaskAsyncRunMode_ExclusiveThread];
     });
