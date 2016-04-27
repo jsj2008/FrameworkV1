@@ -20,6 +20,10 @@
 		D4D5CAE21CD0B2E800CD1860 /* XMLSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CADA1CD0B2E800CD1860 /* XMLSprite.m */; };
 		D4D5CAE31CD0B2E800CD1860 /* XMLSpriteSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CADC1CD0B2E800CD1860 /* XMLSpriteSerialize.m */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
+		D4D5CB011CD0BB7800CD1860 /* NotificationBlockLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAF81CD0BB7800CD1860 /* NotificationBlockLoader.m */; };
+		D4D5CB021CD0BB7800CD1860 /* NotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAFA1CD0BB7800CD1860 /* NotificationObserver.m */; };
+		D4D5CB031CD0BB7800CD1860 /* NotificationObservingSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAFC1CD0BB7800CD1860 /* NotificationObservingSet.m */; };
+		D4D5CB051CD0BB7800CD1860 /* NSObject+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CB001CD0BB7800CD1860 /* NSObject+Delegate.m */; };
 		D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA2E1CC8A52B00A7987E /* main.m */; };
 		D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA311CC8A52B00A7987E /* AppDelegate.m */; };
 		D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA341CC8A52B00A7987E /* ViewController.m */; };
@@ -70,6 +74,14 @@
 		D4D5CADB1CD0B2E800CD1860 /* XMLSpriteSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSpriteSerialize.h; sourceTree = "<group>"; };
 		D4D5CADC1CD0B2E800CD1860 /* XMLSpriteSerialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLSpriteSerialize.m; sourceTree = "<group>"; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		D4D5CAF71CD0BB7800CD1860 /* NotificationBlockLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationBlockLoader.h; sourceTree = "<group>"; };
+		D4D5CAF81CD0BB7800CD1860 /* NotificationBlockLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBlockLoader.m; sourceTree = "<group>"; };
+		D4D5CAF91CD0BB7800CD1860 /* NotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationObserver.h; sourceTree = "<group>"; };
+		D4D5CAFA1CD0BB7800CD1860 /* NotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationObserver.m; sourceTree = "<group>"; };
+		D4D5CAFB1CD0BB7800CD1860 /* NotificationObservingSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationObservingSet.h; sourceTree = "<group>"; };
+		D4D5CAFC1CD0BB7800CD1860 /* NotificationObservingSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationObservingSet.m; sourceTree = "<group>"; };
+		D4D5CAFF1CD0BB7800CD1860 /* NSObject+Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Delegate.h"; sourceTree = "<group>"; };
+		D4D5CB001CD0BB7800CD1860 /* NSObject+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Delegate.m"; sourceTree = "<group>"; };
 		D4E3EA2A1CC8A52B00A7987E /* FrameworkV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrameworkV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E3EA2E1CC8A52B00A7987E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4E3EA301CC8A52B00A7987E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -221,6 +233,21 @@
 			path = XMLSprite;
 			sourceTree = "<group>";
 		};
+		D4D5CAF61CD0BB7800CD1860 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CAF71CD0BB7800CD1860 /* NotificationBlockLoader.h */,
+				D4D5CAF81CD0BB7800CD1860 /* NotificationBlockLoader.m */,
+				D4D5CAF91CD0BB7800CD1860 /* NotificationObserver.h */,
+				D4D5CAFA1CD0BB7800CD1860 /* NotificationObserver.m */,
+				D4D5CAFB1CD0BB7800CD1860 /* NotificationObservingSet.h */,
+				D4D5CAFC1CD0BB7800CD1860 /* NotificationObservingSet.m */,
+				D4D5CAFF1CD0BB7800CD1860 /* NSObject+Delegate.h */,
+				D4D5CB001CD0BB7800CD1860 /* NSObject+Delegate.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +304,7 @@
 		D4E3EA451CC8A57A00A7987E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D4D5CAF61CD0BB7800CD1860 /* Notification */,
 				D4D5CAC81CD0B29900CD1860 /* DataSerialization */,
 				D4E3EA481CC8A5B300A7987E /* Encode */,
 			);
@@ -562,8 +590,10 @@
 				D4D5CADD1CD0B2E800CD1860 /* JsonSerialize.m in Sources */,
 				D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */,
 				D4D5CAC21CD0AD7400CD1860 /* GzipCompressor.m in Sources */,
+				D4D5CB031CD0BB7800CD1860 /* NotificationObservingSet.m in Sources */,
 				D4D5CADF1CD0B2E800CD1860 /* XMLUtility.m in Sources */,
 				D4E3EAA71CC8C39200A7987E /* NSURLSessionTask+Delegate.m in Sources */,
+				D4D5CB051CD0BB7800CD1860 /* NSObject+Delegate.m in Sources */,
 				D4E3EAA41CC8C39200A7987E /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D4D5CAE21CD0B2E800CD1860 /* XMLSprite.m in Sources */,
 				D4E3EAA51CC8C39200A7987E /* HTTPUploadConnection.m in Sources */,
@@ -579,9 +609,11 @@
 				D4D5CAC01CD0AD7400CD1860 /* DataCompressor.m in Sources */,
 				D4D5CAE31CD0B2E800CD1860 /* XMLSpriteSerialize.m in Sources */,
 				D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */,
+				D4D5CB021CD0BB7800CD1860 /* NotificationObserver.m in Sources */,
 				D4E3EA9F1CC8C39200A7987E /* HTTPDataConnection.m in Sources */,
 				D4E3EAC51CC8DE8000A7987E /* NSFileHandle+MD5.m in Sources */,
 				D4D5CAC31CD0AD7400CD1860 /* DataDecompressor.m in Sources */,
+				D4D5CB011CD0BB7800CD1860 /* NotificationBlockLoader.m in Sources */,
 				D4D5CAC11CD0AD7400CD1860 /* DeflateCompressor.m in Sources */,
 				D4E3EAC21CC8DD1500A7987E /* NSData+MD5.m in Sources */,
 			);
