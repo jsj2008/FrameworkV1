@@ -27,6 +27,29 @@
 		D4D5CEDF1CD0BC6800CD1860 /* StateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEDE1CD0BC6800CD1860 /* StateMachine.m */; };
 		D4D5CEE51CD0BE0200CD1860 /* NSString+CharacterHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEE21CD0BE0200CD1860 /* NSString+CharacterHandle.m */; };
 		D4D5CEE61CD0BE0200CD1860 /* StringComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEE41CD0BE0200CD1860 /* StringComponent.m */; };
+		D4D5CF211CD0C53700CD1860 /* DBDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEEA1CD0C53700CD1860 /* DBDefine.m */; };
+		D4D5CF221CD0C53700CD1860 /* DBHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEEC1CD0C53700CD1860 /* DBHandle.m */; };
+		D4D5CF231CD0C53700CD1860 /* DBLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEEE1CD0C53700CD1860 /* DBLog.m */; };
+		D4D5CF241CD0C53700CD1860 /* DBMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEF01CD0C53700CD1860 /* DBMachine.m */; };
+		D4D5CF251CD0C53700CD1860 /* DBSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEF21CD0C53700CD1860 /* DBSQL.m */; };
+		D4D5CF261CD0C53700CD1860 /* DBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEF51CD0C53700CD1860 /* DBTable.m */; };
+		D4D5CF271CD0C53700CD1860 /* DBFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEF81CD0C53700CD1860 /* DBFormat.m */; };
+		D4D5CF281CD0C53700CD1860 /* DBSQL_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEFA1CD0C53700CD1860 /* DBSQL_Extension.m */; };
+		D4D5CF291CD0C53700CD1860 /* DataBaseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEFD1CD0C53700CD1860 /* DataBaseTable.m */; };
+		D4D5CF2A1CD0C53700CD1860 /* DataBaseUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEFF1CD0C53700CD1860 /* DataBaseUnit.m */; };
+		D4D5CF2B1CD0C53700CD1860 /* BlockTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF021CD0C53700CD1860 /* BlockTask.m */; };
+		D4D5CF2C1CD0C53700CD1860 /* FoundationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF041CD0C53700CD1860 /* FoundationTask.m */; };
+		D4D5CF2D1CD0C53700CD1860 /* TaskingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF061CD0C53700CD1860 /* TaskingTask.m */; };
+		D4D5CF2E1CD0C53700CD1860 /* SPTaskConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF0A1CD0C53700CD1860 /* SPTaskConfiguration.m */; };
+		D4D5CF2F1CD0C53700CD1860 /* SPTaskBackgroundPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF0D1CD0C53700CD1860 /* SPTaskBackgroundPool.m */; };
+		D4D5CF301CD0C53700CD1860 /* SPTaskDaemonPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF0F1CD0C53700CD1860 /* SPTaskDaemonPool.m */; };
+		D4D5CF311CD0C53700CD1860 /* SPTaskFreePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF111CD0C53700CD1860 /* SPTaskFreePool.m */; };
+		D4D5CF321CD0C53700CD1860 /* SPTaskPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF131CD0C53700CD1860 /* SPTaskPool.m */; };
+		D4D5CF331CD0C53700CD1860 /* SPTaskServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF161CD0C53700CD1860 /* SPTaskServiceProvider.m */; };
+		D4D5CF341CD0C53700CD1860 /* SPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF191CD0C53700CD1860 /* SPTask.m */; };
+		D4D5CF351CD0C53700CD1860 /* SPTaskBlockLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF1B1CD0C53700CD1860 /* SPTaskBlockLoader.m */; };
+		D4D5CF361CD0C53700CD1860 /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF1D1CD0C53700CD1860 /* SPTaskQueue.m */; };
+		D4D5CF371CD0C53700CD1860 /* SPTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CF201CD0C53700CD1860 /* SPTaskDispatcher.m */; };
 		D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA2E1CC8A52B00A7987E /* main.m */; };
 		D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA311CC8A52B00A7987E /* AppDelegate.m */; };
 		D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA341CC8A52B00A7987E /* ViewController.m */; };
@@ -91,6 +114,52 @@
 		D4D5CEE21CD0BE0200CD1860 /* NSString+CharacterHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CharacterHandle.m"; sourceTree = "<group>"; };
 		D4D5CEE31CD0BE0200CD1860 /* StringComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringComponent.h; sourceTree = "<group>"; };
 		D4D5CEE41CD0BE0200CD1860 /* StringComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringComponent.m; sourceTree = "<group>"; };
+		D4D5CEE91CD0C53700CD1860 /* DBDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefine.h; sourceTree = "<group>"; };
+		D4D5CEEA1CD0C53700CD1860 /* DBDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDefine.m; sourceTree = "<group>"; };
+		D4D5CEEB1CD0C53700CD1860 /* DBHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandle.h; sourceTree = "<group>"; };
+		D4D5CEEC1CD0C53700CD1860 /* DBHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandle.m; sourceTree = "<group>"; };
+		D4D5CEED1CD0C53700CD1860 /* DBLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBLog.h; sourceTree = "<group>"; };
+		D4D5CEEE1CD0C53700CD1860 /* DBLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBLog.m; sourceTree = "<group>"; };
+		D4D5CEEF1CD0C53700CD1860 /* DBMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMachine.h; sourceTree = "<group>"; };
+		D4D5CEF01CD0C53700CD1860 /* DBMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMachine.m; sourceTree = "<group>"; };
+		D4D5CEF11CD0C53700CD1860 /* DBSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSQL.h; sourceTree = "<group>"; };
+		D4D5CEF21CD0C53700CD1860 /* DBSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSQL.m; sourceTree = "<group>"; };
+		D4D5CEF41CD0C53700CD1860 /* DBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTable.h; sourceTree = "<group>"; };
+		D4D5CEF51CD0C53700CD1860 /* DBTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTable.m; sourceTree = "<group>"; };
+		D4D5CEF71CD0C53700CD1860 /* DBFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFormat.h; sourceTree = "<group>"; };
+		D4D5CEF81CD0C53700CD1860 /* DBFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFormat.m; sourceTree = "<group>"; };
+		D4D5CEF91CD0C53700CD1860 /* DBSQL_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSQL_Extension.h; sourceTree = "<group>"; };
+		D4D5CEFA1CD0C53700CD1860 /* DBSQL_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSQL_Extension.m; sourceTree = "<group>"; };
+		D4D5CEFC1CD0C53700CD1860 /* DataBaseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseTable.h; sourceTree = "<group>"; };
+		D4D5CEFD1CD0C53700CD1860 /* DataBaseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseTable.m; sourceTree = "<group>"; };
+		D4D5CEFE1CD0C53700CD1860 /* DataBaseUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseUnit.h; sourceTree = "<group>"; };
+		D4D5CEFF1CD0C53700CD1860 /* DataBaseUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUnit.m; sourceTree = "<group>"; };
+		D4D5CF011CD0C53700CD1860 /* BlockTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTask.h; sourceTree = "<group>"; };
+		D4D5CF021CD0C53700CD1860 /* BlockTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTask.m; sourceTree = "<group>"; };
+		D4D5CF031CD0C53700CD1860 /* FoundationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationTask.h; sourceTree = "<group>"; };
+		D4D5CF041CD0C53700CD1860 /* FoundationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationTask.m; sourceTree = "<group>"; };
+		D4D5CF051CD0C53700CD1860 /* TaskingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskingTask.h; sourceTree = "<group>"; };
+		D4D5CF061CD0C53700CD1860 /* TaskingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskingTask.m; sourceTree = "<group>"; };
+		D4D5CF091CD0C53700CD1860 /* SPTaskConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskConfiguration.h; sourceTree = "<group>"; };
+		D4D5CF0A1CD0C53700CD1860 /* SPTaskConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskConfiguration.m; sourceTree = "<group>"; };
+		D4D5CF0C1CD0C53700CD1860 /* SPTaskBackgroundPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBackgroundPool.h; sourceTree = "<group>"; };
+		D4D5CF0D1CD0C53700CD1860 /* SPTaskBackgroundPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBackgroundPool.m; sourceTree = "<group>"; };
+		D4D5CF0E1CD0C53700CD1860 /* SPTaskDaemonPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDaemonPool.h; sourceTree = "<group>"; };
+		D4D5CF0F1CD0C53700CD1860 /* SPTaskDaemonPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDaemonPool.m; sourceTree = "<group>"; };
+		D4D5CF101CD0C53700CD1860 /* SPTaskFreePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskFreePool.h; sourceTree = "<group>"; };
+		D4D5CF111CD0C53700CD1860 /* SPTaskFreePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskFreePool.m; sourceTree = "<group>"; };
+		D4D5CF121CD0C53700CD1860 /* SPTaskPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskPool.h; sourceTree = "<group>"; };
+		D4D5CF131CD0C53700CD1860 /* SPTaskPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskPool.m; sourceTree = "<group>"; };
+		D4D5CF151CD0C53700CD1860 /* SPTaskServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskServiceProvider.h; sourceTree = "<group>"; };
+		D4D5CF161CD0C53700CD1860 /* SPTaskServiceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskServiceProvider.m; sourceTree = "<group>"; };
+		D4D5CF181CD0C53700CD1860 /* SPTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTask.h; sourceTree = "<group>"; };
+		D4D5CF191CD0C53700CD1860 /* SPTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTask.m; sourceTree = "<group>"; };
+		D4D5CF1A1CD0C53700CD1860 /* SPTaskBlockLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBlockLoader.h; sourceTree = "<group>"; };
+		D4D5CF1B1CD0C53700CD1860 /* SPTaskBlockLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBlockLoader.m; sourceTree = "<group>"; };
+		D4D5CF1C1CD0C53700CD1860 /* SPTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskQueue.h; sourceTree = "<group>"; };
+		D4D5CF1D1CD0C53700CD1860 /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
+		D4D5CF1F1CD0C53700CD1860 /* SPTaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDispatcher.h; sourceTree = "<group>"; };
+		D4D5CF201CD0C53700CD1860 /* SPTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDispatcher.m; sourceTree = "<group>"; };
 		D4E3EA2A1CC8A52B00A7987E /* FrameworkV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrameworkV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E3EA2E1CC8A52B00A7987E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4E3EA301CC8A52B00A7987E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -277,6 +346,146 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		D4D5CEE71CD0C53700CD1860 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CEE81CD0C53700CD1860 /* DB */,
+				D4D5CEF61CD0C53700CD1860 /* Extension */,
+				D4D5CEFB1CD0C53700CD1860 /* Sample */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		D4D5CEE81CD0C53700CD1860 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CEE91CD0C53700CD1860 /* DBDefine.h */,
+				D4D5CEEA1CD0C53700CD1860 /* DBDefine.m */,
+				D4D5CEEB1CD0C53700CD1860 /* DBHandle.h */,
+				D4D5CEEC1CD0C53700CD1860 /* DBHandle.m */,
+				D4D5CEED1CD0C53700CD1860 /* DBLog.h */,
+				D4D5CEEE1CD0C53700CD1860 /* DBLog.m */,
+				D4D5CEEF1CD0C53700CD1860 /* DBMachine.h */,
+				D4D5CEF01CD0C53700CD1860 /* DBMachine.m */,
+				D4D5CEF11CD0C53700CD1860 /* DBSQL.h */,
+				D4D5CEF21CD0C53700CD1860 /* DBSQL.m */,
+				D4D5CEF31CD0C53700CD1860 /* Extension */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		D4D5CEF31CD0C53700CD1860 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CEF41CD0C53700CD1860 /* DBTable.h */,
+				D4D5CEF51CD0C53700CD1860 /* DBTable.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4D5CEF61CD0C53700CD1860 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CEF71CD0C53700CD1860 /* DBFormat.h */,
+				D4D5CEF81CD0C53700CD1860 /* DBFormat.m */,
+				D4D5CEF91CD0C53700CD1860 /* DBSQL_Extension.h */,
+				D4D5CEFA1CD0C53700CD1860 /* DBSQL_Extension.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4D5CEFB1CD0C53700CD1860 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CEFC1CD0C53700CD1860 /* DataBaseTable.h */,
+				D4D5CEFD1CD0C53700CD1860 /* DataBaseTable.m */,
+				D4D5CEFE1CD0C53700CD1860 /* DataBaseUnit.h */,
+				D4D5CEFF1CD0C53700CD1860 /* DataBaseUnit.m */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		D4D5CF001CD0C53700CD1860 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF011CD0C53700CD1860 /* BlockTask.h */,
+				D4D5CF021CD0C53700CD1860 /* BlockTask.m */,
+				D4D5CF031CD0C53700CD1860 /* FoundationTask.h */,
+				D4D5CF041CD0C53700CD1860 /* FoundationTask.m */,
+				D4D5CF051CD0C53700CD1860 /* TaskingTask.h */,
+				D4D5CF061CD0C53700CD1860 /* TaskingTask.m */,
+				D4D5CF071CD0C53700CD1860 /* TaskPool */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D4D5CF071CD0C53700CD1860 /* TaskPool */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF081CD0C53700CD1860 /* Configuration */,
+				D4D5CF0B1CD0C53700CD1860 /* Pool */,
+				D4D5CF141CD0C53700CD1860 /* Service */,
+				D4D5CF171CD0C53700CD1860 /* Task */,
+				D4D5CF1E1CD0C53700CD1860 /* TaskDispatch */,
+			);
+			path = TaskPool;
+			sourceTree = "<group>";
+		};
+		D4D5CF081CD0C53700CD1860 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF091CD0C53700CD1860 /* SPTaskConfiguration.h */,
+				D4D5CF0A1CD0C53700CD1860 /* SPTaskConfiguration.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D4D5CF0B1CD0C53700CD1860 /* Pool */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF0C1CD0C53700CD1860 /* SPTaskBackgroundPool.h */,
+				D4D5CF0D1CD0C53700CD1860 /* SPTaskBackgroundPool.m */,
+				D4D5CF0E1CD0C53700CD1860 /* SPTaskDaemonPool.h */,
+				D4D5CF0F1CD0C53700CD1860 /* SPTaskDaemonPool.m */,
+				D4D5CF101CD0C53700CD1860 /* SPTaskFreePool.h */,
+				D4D5CF111CD0C53700CD1860 /* SPTaskFreePool.m */,
+				D4D5CF121CD0C53700CD1860 /* SPTaskPool.h */,
+				D4D5CF131CD0C53700CD1860 /* SPTaskPool.m */,
+			);
+			path = Pool;
+			sourceTree = "<group>";
+		};
+		D4D5CF141CD0C53700CD1860 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF151CD0C53700CD1860 /* SPTaskServiceProvider.h */,
+				D4D5CF161CD0C53700CD1860 /* SPTaskServiceProvider.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D4D5CF171CD0C53700CD1860 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF181CD0C53700CD1860 /* SPTask.h */,
+				D4D5CF191CD0C53700CD1860 /* SPTask.m */,
+				D4D5CF1A1CD0C53700CD1860 /* SPTaskBlockLoader.h */,
+				D4D5CF1B1CD0C53700CD1860 /* SPTaskBlockLoader.m */,
+				D4D5CF1C1CD0C53700CD1860 /* SPTaskQueue.h */,
+				D4D5CF1D1CD0C53700CD1860 /* SPTaskQueue.m */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D4D5CF1E1CD0C53700CD1860 /* TaskDispatch */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5CF1F1CD0C53700CD1860 /* SPTaskDispatcher.h */,
+				D4D5CF201CD0C53700CD1860 /* SPTaskDispatcher.m */,
+			);
+			path = TaskDispatch;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +534,8 @@
 		D4E3EA441CC8A57A00A7987E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				D4D5CEE71CD0C53700CD1860 /* DataBase */,
+				D4D5CF001CD0C53700CD1860 /* Task */,
 				D4E3EA471CC8A58C00A7987E /* HTTP */,
 			);
 			path = Engine;
@@ -612,43 +823,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D5CF251CD0C53700CD1860 /* DBSQL.m in Sources */,
 				D4E3EAA11CC8C39200A7987E /* HTTPDownloadConnection.m in Sources */,
 				D4D5CAC51CD0AD7400CD1860 /* GzipDecompressor.m in Sources */,
+				D4D5CF231CD0C53700CD1860 /* DBLog.m in Sources */,
 				D4E3EAA01CC8C39200A7987E /* HTTPConnectionResumeStorage.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
 				D4D5CAC41CD0AD7400CD1860 /* DeflateDecompressor.m in Sources */,
 				D4E3EA821CC8C34F00A7987E /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
+				D4D5CF291CD0C53700CD1860 /* DataBaseTable.m in Sources */,
 				D4D5CADD1CD0B2E800CD1860 /* JsonSerialize.m in Sources */,
 				D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */,
 				D4D5CAC21CD0AD7400CD1860 /* GzipCompressor.m in Sources */,
 				D4D5CB031CD0BB7800CD1860 /* NotificationObservingSet.m in Sources */,
+				D4D5CF281CD0C53700CD1860 /* DBSQL_Extension.m in Sources */,
+				D4D5CF2E1CD0C53700CD1860 /* SPTaskConfiguration.m in Sources */,
 				D4D5CADF1CD0B2E800CD1860 /* XMLUtility.m in Sources */,
 				D4E3EAA71CC8C39200A7987E /* NSURLSessionTask+Delegate.m in Sources */,
 				D4D5CB051CD0BB7800CD1860 /* NSObject+Delegate.m in Sources */,
 				D4E3EAA41CC8C39200A7987E /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D4D5CAE21CD0B2E800CD1860 /* XMLSprite.m in Sources */,
 				D4D5CEE51CD0BE0200CD1860 /* NSString+CharacterHandle.m in Sources */,
+				D4D5CF331CD0C53700CD1860 /* SPTaskServiceProvider.m in Sources */,
 				D4E3EAA51CC8C39200A7987E /* HTTPUploadConnection.m in Sources */,
 				D4E3EAA31CC8C39200A7987E /* HTTPConnectionInputStream.m in Sources */,
+				D4D5CF2F1CD0C53700CD1860 /* SPTaskBackgroundPool.m in Sources */,
+				D4D5CF2D1CD0C53700CD1860 /* TaskingTask.m in Sources */,
+				D4D5CF241CD0C53700CD1860 /* DBMachine.m in Sources */,
 				D4E3EABF1CC8DCAC00A7987E /* NSData+AES.m in Sources */,
 				D4E3EAAB1CC8C6F600A7987E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D4E3EA801CC8C34F00A7987E /* HTTPMultipartFormEntity.m in Sources */,
 				D4E3EAB31CC8DA6B00A7987E /* NSString+URLEncode.m in Sources */,
 				D4E3EAA21CC8C39200A7987E /* HTTPConnection.m in Sources */,
+				D4D5CF211CD0C53700CD1860 /* DBDefine.m in Sources */,
 				D4D5CADE1CD0B2E800CD1860 /* NSCoder+DataedEncoding.m in Sources */,
 				D4E3EA831CC8C34F00A7987E /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */,
+				D4D5CF361CD0C53700CD1860 /* SPTaskQueue.m in Sources */,
+				D4D5CF371CD0C53700CD1860 /* SPTaskDispatcher.m in Sources */,
+				D4D5CF311CD0C53700CD1860 /* SPTaskFreePool.m in Sources */,
 				D4E3EAA61CC8C39200A7987E /* HTTPSession.m in Sources */,
+				D4D5CF351CD0C53700CD1860 /* SPTaskBlockLoader.m in Sources */,
 				D4D5CAC01CD0AD7400CD1860 /* DataCompressor.m in Sources */,
 				D4D5CAE31CD0B2E800CD1860 /* XMLSpriteSerialize.m in Sources */,
 				D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */,
 				D4D5CB021CD0BB7800CD1860 /* NotificationObserver.m in Sources */,
+				D4D5CF261CD0C53700CD1860 /* DBTable.m in Sources */,
+				D4D5CF221CD0C53700CD1860 /* DBHandle.m in Sources */,
 				D4E3EA9F1CC8C39200A7987E /* HTTPDataConnection.m in Sources */,
 				D4E3EAC51CC8DE8000A7987E /* NSFileHandle+MD5.m in Sources */,
 				D4D5CEE61CD0BE0200CD1860 /* StringComponent.m in Sources */,
 				D4D5CAC31CD0AD7400CD1860 /* DataDecompressor.m in Sources */,
 				D4D5CB011CD0BB7800CD1860 /* NotificationBlockLoader.m in Sources */,
+				D4D5CF321CD0C53700CD1860 /* SPTaskPool.m in Sources */,
 				D4D5CAC11CD0AD7400CD1860 /* DeflateCompressor.m in Sources */,
+				D4D5CF271CD0C53700CD1860 /* DBFormat.m in Sources */,
+				D4D5CF341CD0C53700CD1860 /* SPTask.m in Sources */,
+				D4D5CF2B1CD0C53700CD1860 /* BlockTask.m in Sources */,
+				D4D5CF301CD0C53700CD1860 /* SPTaskDaemonPool.m in Sources */,
 				D4E3EAC21CC8DD1500A7987E /* NSData+MD5.m in Sources */,
+				D4D5CF2C1CD0C53700CD1860 /* FoundationTask.m in Sources */,
+				D4D5CF2A1CD0C53700CD1860 /* DataBaseUnit.m in Sources */,
 				D4D5CEDF1CD0BC6800CD1860 /* StateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
