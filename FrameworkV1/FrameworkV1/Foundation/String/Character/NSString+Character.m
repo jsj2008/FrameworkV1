@@ -1,14 +1,14 @@
 //
-//  NSString+CharacterHandle.m
-//  Application
+//  NSString+Character.m
+//  FrameworkV1
 //
-//  Created by Baymax on 14-2-21.
-//  Copyright (c) 2014年 ww. All rights reserved.
+//  Created by ww on 16/4/28.
+//  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "NSString+CharacterHandle.h"
+#import "NSString+Character.h"
 
-@implementation NSString (CharacterHandle)
+@implementation NSString (Character)
 
 - (NSString *)stringByDeletingBothPrefixAndSuffixMarks:(NSString *)mark
 {
@@ -27,11 +27,6 @@
     }
     
     return string;
-}
-
-- (NSString *)stringByDeletingBothPrefixAndSuffixQuotationMarks
-{
-    return [self stringByDeletingBothPrefixAndSuffixMarks:@"\""];
 }
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D401E9D61CD1BD0300599E0B /* NSString+Character.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9D51CD1BD0300599E0B /* NSString+Character.m */; };
+		D401E9D91CD1BD5D00599E0B /* NSString+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9D81CD1BD5D00599E0B /* NSString+KeyValue.m */; };
+		D401E9DC1CD1BD6900599E0B /* NSDictionary+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9DB1CD1BD6900599E0B /* NSDictionary+KeyValue.m */; };
 		D4D5CAC01CD0AD7400CD1860 /* DataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB41CD0AD7400CD1860 /* DataCompressor.m */; };
 		D4D5CAC11CD0AD7400CD1860 /* DeflateCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB61CD0AD7400CD1860 /* DeflateCompressor.m */; };
 		D4D5CAC21CD0AD7400CD1860 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB81CD0AD7400CD1860 /* GzipCompressor.m */; };
@@ -25,8 +28,6 @@
 		D4D5CB031CD0BB7800CD1860 /* NotificationObservingSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAFC1CD0BB7800CD1860 /* NotificationObservingSet.m */; };
 		D4D5CB051CD0BB7800CD1860 /* NSObject+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CB001CD0BB7800CD1860 /* NSObject+Delegate.m */; };
 		D4D5CEDF1CD0BC6800CD1860 /* StateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEDE1CD0BC6800CD1860 /* StateMachine.m */; };
-		D4D5CEE51CD0BE0200CD1860 /* NSString+CharacterHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEE21CD0BE0200CD1860 /* NSString+CharacterHandle.m */; };
-		D4D5CEE61CD0BE0200CD1860 /* StringComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEE41CD0BE0200CD1860 /* StringComponent.m */; };
 		D4D5CF211CD0C53700CD1860 /* DBDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEEA1CD0C53700CD1860 /* DBDefine.m */; };
 		D4D5CF221CD0C53700CD1860 /* DBHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEEC1CD0C53700CD1860 /* DBHandle.m */; };
 		D4D5CF231CD0C53700CD1860 /* DBLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CEEE1CD0C53700CD1860 /* DBLog.m */; };
@@ -83,6 +84,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D401E9D41CD1BD0300599E0B /* NSString+Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Character.h"; sourceTree = "<group>"; };
+		D401E9D51CD1BD0300599E0B /* NSString+Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Character.m"; sourceTree = "<group>"; };
+		D401E9D71CD1BD5D00599E0B /* NSString+KeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyValue.h"; sourceTree = "<group>"; };
+		D401E9D81CD1BD5D00599E0B /* NSString+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyValue.m"; sourceTree = "<group>"; };
+		D401E9DA1CD1BD6900599E0B /* NSDictionary+KeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+KeyValue.h"; sourceTree = "<group>"; };
+		D401E9DB1CD1BD6900599E0B /* NSDictionary+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KeyValue.m"; sourceTree = "<group>"; };
 		D4D5CAB31CD0AD7400CD1860 /* DataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCompressor.h; sourceTree = "<group>"; };
 		D4D5CAB41CD0AD7400CD1860 /* DataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCompressor.m; sourceTree = "<group>"; };
 		D4D5CAB51CD0AD7400CD1860 /* DeflateCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeflateCompressor.h; sourceTree = "<group>"; };
@@ -117,10 +124,6 @@
 		D4D5CB001CD0BB7800CD1860 /* NSObject+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Delegate.m"; sourceTree = "<group>"; };
 		D4D5CEDD1CD0BC6800CD1860 /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
 		D4D5CEDE1CD0BC6800CD1860 /* StateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateMachine.m; sourceTree = "<group>"; };
-		D4D5CEE11CD0BE0200CD1860 /* NSString+CharacterHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CharacterHandle.h"; sourceTree = "<group>"; };
-		D4D5CEE21CD0BE0200CD1860 /* NSString+CharacterHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CharacterHandle.m"; sourceTree = "<group>"; };
-		D4D5CEE31CD0BE0200CD1860 /* StringComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringComponent.h; sourceTree = "<group>"; };
-		D4D5CEE41CD0BE0200CD1860 /* StringComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringComponent.m; sourceTree = "<group>"; };
 		D4D5CEE91CD0C53700CD1860 /* DBDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefine.h; sourceTree = "<group>"; };
 		D4D5CEEA1CD0C53700CD1860 /* DBDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDefine.m; sourceTree = "<group>"; };
 		D4D5CEEB1CD0C53700CD1860 /* DBHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandle.h; sourceTree = "<group>"; };
@@ -241,6 +244,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D401E9CC1CD1BCD000599E0B /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				D401E9D41CD1BD0300599E0B /* NSString+Character.h */,
+				D401E9D51CD1BD0300599E0B /* NSString+Character.m */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		D401E9CF1CD1BCD000599E0B /* KeyValue */ = {
+			isa = PBXGroup;
+			children = (
+				D401E9D71CD1BD5D00599E0B /* NSString+KeyValue.h */,
+				D401E9D81CD1BD5D00599E0B /* NSString+KeyValue.m */,
+				D401E9DA1CD1BD6900599E0B /* NSDictionary+KeyValue.h */,
+				D401E9DB1CD1BD6900599E0B /* NSDictionary+KeyValue.m */,
+			);
+			path = KeyValue;
+			sourceTree = "<group>";
+		};
 		D4D5CAB11CD0AD6100CD1860 /* Compress */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,10 +383,8 @@
 		D4D5CEE01CD0BE0200CD1860 /* String */ = {
 			isa = PBXGroup;
 			children = (
-				D4D5CEE11CD0BE0200CD1860 /* NSString+CharacterHandle.h */,
-				D4D5CEE21CD0BE0200CD1860 /* NSString+CharacterHandle.m */,
-				D4D5CEE31CD0BE0200CD1860 /* StringComponent.h */,
-				D4D5CEE41CD0BE0200CD1860 /* StringComponent.m */,
+				D401E9CC1CD1BCD000599E0B /* Character */,
+				D401E9CF1CD1BCD000599E0B /* KeyValue */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -904,7 +925,6 @@
 				D4D5CB051CD0BB7800CD1860 /* NSObject+Delegate.m in Sources */,
 				D4E3EAA41CC8C39200A7987E /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D4D5CAE21CD0B2E800CD1860 /* XMLSprite.m in Sources */,
-				D4D5CEE51CD0BE0200CD1860 /* NSString+CharacterHandle.m in Sources */,
 				D4D5CF331CD0C53700CD1860 /* SPTaskServiceProvider.m in Sources */,
 				D4E3EAA51CC8C39200A7987E /* HTTPUploadConnection.m in Sources */,
 				D4E3EAA31CC8C39200A7987E /* HTTPConnectionInputStream.m in Sources */,
@@ -922,6 +942,7 @@
 				D4D5CADE1CD0B2E800CD1860 /* NSCoder+DataedEncoding.m in Sources */,
 				D4E3EA831CC8C34F00A7987E /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */,
 				D4D5CF491CD0C69000CD1860 /* IPRouteTraceHandle.m in Sources */,
+				D401E9DC1CD1BD6900599E0B /* NSDictionary+KeyValue.m in Sources */,
 				D4D5CF361CD0C53700CD1860 /* SPTaskQueue.m in Sources */,
 				D4D5CF371CD0C53700CD1860 /* SPTaskDispatcher.m in Sources */,
 				D4D5CF311CD0C53700CD1860 /* SPTaskFreePool.m in Sources */,
@@ -931,17 +952,18 @@
 				D4D5CAE31CD0B2E800CD1860 /* XMLSpriteSerialize.m in Sources */,
 				D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */,
 				D4D5CB021CD0BB7800CD1860 /* NotificationObserver.m in Sources */,
+				D401E9D91CD1BD5D00599E0B /* NSString+KeyValue.m in Sources */,
 				D4D5CF261CD0C53700CD1860 /* DBTable.m in Sources */,
 				D4D5CF221CD0C53700CD1860 /* DBHandle.m in Sources */,
 				D4E3EA9F1CC8C39200A7987E /* HTTPDataConnection.m in Sources */,
 				D4E3EAC51CC8DE8000A7987E /* NSFileHandle+MD5.m in Sources */,
-				D4D5CEE61CD0BE0200CD1860 /* StringComponent.m in Sources */,
 				D4D5CAC31CD0AD7400CD1860 /* DataDecompressor.m in Sources */,
 				D4D5CF4D1CD0C69000CD1860 /* IPRouteTracer.m in Sources */,
 				D4D5CB011CD0BB7800CD1860 /* NotificationBlockLoader.m in Sources */,
 				D4D5CF321CD0C53700CD1860 /* SPTaskPool.m in Sources */,
 				D4D5CAC11CD0AD7400CD1860 /* DeflateCompressor.m in Sources */,
 				D4D5CF271CD0C53700CD1860 /* DBFormat.m in Sources */,
+				D401E9D61CD1BD0300599E0B /* NSString+Character.m in Sources */,
 				D4D5CF341CD0C53700CD1860 /* SPTask.m in Sources */,
 				D4D5CF2B1CD0C53700CD1860 /* BlockTask.m in Sources */,
 				D4D5CF301CD0C53700CD1860 /* SPTaskDaemonPool.m in Sources */,

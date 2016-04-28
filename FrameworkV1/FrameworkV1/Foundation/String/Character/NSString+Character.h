@@ -1,9 +1,9 @@
 //
-//  NSString+CharacterHandle.h
-//  Application
+//  NSString+Character.h
+//  FrameworkV1
 //
-//  Created by Baymax on 14-2-21.
-//  Copyright (c) 2014年 ww. All rights reserved.
+//  Created by ww on 16/4/28.
+//  Copyright © 2016年 WW. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,14 +11,14 @@
 /*********************************************************
  
     @category
-        NSString (CharacterHandle)
+        NSString (Character)
  
     @abstract
         NSString的字符处理扩展
  
  *********************************************************/
 
-@interface NSString (CharacterHandle)
+@interface NSString (Character)
 
 /*!
  * @brief 删除前后缀字符串后的字符串
@@ -27,12 +27,5 @@
  * @result 处理后的字符串
  */
 - (NSString *)stringByDeletingBothPrefixAndSuffixMarks:(NSString *)mark;
-
-/*!
- * @brief 删除串首和串尾的双引号后的字符串
- * @discussion 必须串首和串尾同时包含双引号时才生效
- * @result 处理后的字符串
- */
-- (NSString *)stringByDeletingBothPrefixAndSuffixQuotationMarks;
 
 @end
