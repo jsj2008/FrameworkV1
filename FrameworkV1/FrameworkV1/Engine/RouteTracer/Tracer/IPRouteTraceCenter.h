@@ -31,11 +31,6 @@
 + (IPRouteTraceCenter *)sharedInstance;
 
 /*!
- * @brief 通知线程
- */
-@property (nonatomic) NSThread *notifyThread;
-
-/*!
  * @brief 启动服务
  */
 - (void)start;

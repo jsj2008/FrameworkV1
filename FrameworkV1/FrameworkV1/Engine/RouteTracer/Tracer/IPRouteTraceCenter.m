@@ -140,9 +140,7 @@ static NSString * const IPRouteTracingContextKey_Host = @"host";
         [task.context addEntriesFromDictionary:context];
         
         task.delegate = self;
-        
-        task.notifyThread = self.notifyThread;
-        
+                
         [_dispatcher asyncAddTask:task inMode:SPTaskAsyncRunMode_ExclusiveThread];
     });
     
