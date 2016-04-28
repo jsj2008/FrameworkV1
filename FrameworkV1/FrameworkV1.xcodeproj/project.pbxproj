@@ -86,6 +86,12 @@
 		D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB361CD2026300599E0B /* EPub2_OPF.m */; };
 		D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB381CD2026300599E0B /* EPub2_Package.m */; };
 		D401EB441CD2026300599E0B /* EPubXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB3B1CD2026300599E0B /* EPubXML.m */; };
+		D401EB521CD2077E00599E0B /* ServiceUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB511CD2077E00599E0B /* ServiceUnit.m */; };
+		D401EB551CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB541CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.m */; };
+		D401EB581CD2080300599E0B /* APPLog+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB571CD2080300599E0B /* APPLog+SharedInstance.m */; };
+		D401EB5E1CD2087400599E0B /* NSDateFormatter+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB5D1CD2087400599E0B /* NSDateFormatter+SharedInstance.m */; };
+		D401EB651CD20EEC00599E0B /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB641CD20EEC00599E0B /* NetworkManager.m */; };
+		D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB671CD214A600599E0B /* NSObject+Notify.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -257,6 +263,18 @@
 		D401EB381CD2026300599E0B /* EPub2_Package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub2_Package.m; sourceTree = "<group>"; };
 		D401EB3A1CD2026300599E0B /* EPubXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubXML.h; sourceTree = "<group>"; };
 		D401EB3B1CD2026300599E0B /* EPubXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubXML.m; sourceTree = "<group>"; };
+		D401EB501CD2077E00599E0B /* ServiceUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceUnit.h; sourceTree = "<group>"; };
+		D401EB511CD2077E00599E0B /* ServiceUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceUnit.m; sourceTree = "<group>"; };
+		D401EB531CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LightLoadingPermanentQueue+SharedInstance.h"; sourceTree = "<group>"; };
+		D401EB541CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LightLoadingPermanentQueue+SharedInstance.m"; sourceTree = "<group>"; };
+		D401EB561CD2080300599E0B /* APPLog+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APPLog+SharedInstance.h"; sourceTree = "<group>"; };
+		D401EB571CD2080300599E0B /* APPLog+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPLog+SharedInstance.m"; sourceTree = "<group>"; };
+		D401EB5C1CD2087400599E0B /* NSDateFormatter+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+SharedInstance.h"; sourceTree = "<group>"; };
+		D401EB5D1CD2087400599E0B /* NSDateFormatter+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SharedInstance.m"; sourceTree = "<group>"; };
+		D401EB631CD20EEC00599E0B /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		D401EB641CD20EEC00599E0B /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		D401EB661CD214A600599E0B /* NSObject+Notify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Notify.h"; sourceTree = "<group>"; };
+		D401EB671CD214A600599E0B /* NSObject+Notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Notify.m"; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -613,6 +631,8 @@
 				D401EA8C1CD2017F00599E0B /* NotificationObservingSet.m */,
 				D401EA8D1CD2017F00599E0B /* NSObject+Delegate.h */,
 				D401EA8E1CD2017F00599E0B /* NSObject+Delegate.m */,
+				D401EB661CD214A600599E0B /* NSObject+Notify.h */,
+				D401EB671CD214A600599E0B /* NSObject+Notify.m */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -902,6 +922,103 @@
 			path = XML;
 			sourceTree = "<group>";
 		};
+		D401EB451CD2058B00599E0B /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB471CD2068E00599E0B /* Service */,
+				D401EB461CD2068E00599E0B /* Logic */,
+				D401EB4D1CD2068E00599E0B /* Storage */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		D401EB461CD2068E00599E0B /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		D401EB471CD2068E00599E0B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB4C1CD2068E00599E0B /* ServiceUnit */,
+				D401EB491CD2068E00599E0B /* LightLoadingPermanentQueue */,
+				D401EB5F1CD20E9100599E0B /* Network */,
+				D401EB4A1CD2068E00599E0B /* Log */,
+				D401EB4F1CD206FE00599E0B /* Date */,
+				D401EB481CD2068E00599E0B /* Image */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D401EB481CD2068E00599E0B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D401EB491CD2068E00599E0B /* LightLoadingPermanentQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB531CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.h */,
+				D401EB541CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.m */,
+			);
+			path = LightLoadingPermanentQueue;
+			sourceTree = "<group>";
+		};
+		D401EB4A1CD2068E00599E0B /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB561CD2080300599E0B /* APPLog+SharedInstance.h */,
+				D401EB571CD2080300599E0B /* APPLog+SharedInstance.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		D401EB4C1CD2068E00599E0B /* ServiceUnit */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB501CD2077E00599E0B /* ServiceUnit.h */,
+				D401EB511CD2077E00599E0B /* ServiceUnit.m */,
+			);
+			path = ServiceUnit;
+			sourceTree = "<group>";
+		};
+		D401EB4D1CD2068E00599E0B /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB4E1CD2068E00599E0B /* Image */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D401EB4E1CD2068E00599E0B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D401EB4F1CD206FE00599E0B /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB5C1CD2087400599E0B /* NSDateFormatter+SharedInstance.h */,
+				D401EB5D1CD2087400599E0B /* NSDateFormatter+SharedInstance.m */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		D401EB5F1CD20E9100599E0B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB631CD20EEC00599E0B /* NetworkManager.h */,
+				D401EB641CD20EEC00599E0B /* NetworkManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -926,6 +1043,7 @@
 			children = (
 				D401E9FB1CD1E64C00599E0B /* Configuration */,
 				D4E3EA451CC8A57A00A7987E /* Foundation */,
+				D401EB451CD2058B00599E0B /* Business */,
 				D4E3EA461CC8A57A00A7987E /* UI */,
 				D4E3EA301CC8A52B00A7987E /* AppDelegate.h */,
 				D4E3EA311CC8A52B00A7987E /* AppDelegate.m */,
@@ -1062,6 +1180,7 @@
 				D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */,
 				D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */,
 				D401EAFA1CD2017F00599E0B /* HTTPUploadConnection.m in Sources */,
+				D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */,
 				D401EB011CD2017F00599E0B /* APPLog.m in Sources */,
 				D401EB051CD2017F00599E0B /* NotificationObservingSet.m in Sources */,
 				D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */,
@@ -1084,6 +1203,7 @@
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
 				D401EB221CD2017F00599E0B /* SPTaskQueue.m in Sources */,
 				D401EB1B1CD2017F00599E0B /* SPTaskBackgroundPool.m in Sources */,
+				D401EB551CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
 				D401EB231CD2017F00599E0B /* SPTaskDispatcher.m in Sources */,
@@ -1093,12 +1213,14 @@
 				D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */,
 				D401EB211CD2017F00599E0B /* SPTaskBlockLoader.m in Sources */,
 				D401EAEB1CD2017F00599E0B /* GzipCompressor.m in Sources */,
+				D401EB521CD2077E00599E0B /* ServiceUnit.m in Sources */,
 				D401EB181CD2017F00599E0B /* FoundationTask.m in Sources */,
 				D401EAE41CD2017F00599E0B /* DBTable.m in Sources */,
 				D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */,
 				D401EAF01CD2017F00599E0B /* NSData+MD5.m in Sources */,
 				D401EB191CD2017F00599E0B /* TaskingTask.m in Sources */,
 				D401EB0D1CD2017F00599E0B /* IPRouteTracer.m in Sources */,
+				D401EB5E1CD2087400599E0B /* NSDateFormatter+SharedInstance.m in Sources */,
 				D401EB141CD2017F00599E0B /* NSString+Character.m in Sources */,
 				D401EB001CD2017F00599E0B /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */,
 				D401EAE11CD2017F00599E0B /* DBLog.m in Sources */,
@@ -1107,6 +1229,7 @@
 				D401EAF31CD2017F00599E0B /* FileListener.m in Sources */,
 				D401EB401CD2026300599E0B /* EPub2_NCX.m in Sources */,
 				D401EAE31CD2017F00599E0B /* DBSQL.m in Sources */,
+				D401EB581CD2080300599E0B /* APPLog+SharedInstance.m in Sources */,
 				D401EAFC1CD2017F00599E0B /* NSURLSessionTask+Delegate.m in Sources */,
 				D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */,
 				D401EB1F1CD2017F00599E0B /* SPTaskServiceProvider.m in Sources */,
@@ -1122,6 +1245,7 @@
 				D401EB101CD2017F00599E0B /* XMLUtility.m in Sources */,
 				D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */,
 				D401EAE61CD2017F00599E0B /* DBSQL_Extension.m in Sources */,
+				D401EB651CD20EEC00599E0B /* NetworkManager.m in Sources */,
 				D401EAF51CD2017F00599E0B /* HTTPConnectionResumeStorage.m in Sources */,
 				D401EAEE1CD2017F00599E0B /* GzipDecompressor.m in Sources */,
 				D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */,

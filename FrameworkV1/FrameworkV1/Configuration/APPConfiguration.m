@@ -19,6 +19,16 @@
     dispatch_once(&onceToken, ^{
         
         instance = [[APPConfiguration alloc] init];
+        
+        instance.daemonPoolCapacity = 5;
+        
+        instance.daemonPoolPersistentQueueCapacity = 2;
+        
+        instance.freePoolCapacity = 20;
+        
+        instance.backgroundPoolCapacity = 10;
+        
+        instance.defaultQueueLoadingLimit = 20;
     });
     
     return instance;
