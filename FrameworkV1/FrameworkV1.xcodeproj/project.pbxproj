@@ -77,6 +77,15 @@
 		D401EB211CD2017F00599E0B /* SPTaskBlockLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAD91CD2017F00599E0B /* SPTaskBlockLoader.m */; };
 		D401EB221CD2017F00599E0B /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EADB1CD2017F00599E0B /* SPTaskQueue.m */; };
 		D401EB231CD2017F00599E0B /* SPTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EADE1CD2017F00599E0B /* SPTaskDispatcher.m */; };
+		D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB281CD2026300599E0B /* EPubBookContainerHandle.m */; };
+		D401EB3D1CD2026300599E0B /* EPubBookInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB2A1CD2026300599E0B /* EPubBookInfomation.m */; };
+		D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB2C1CD2026300599E0B /* EpubBookLoadHandle.m */; };
+		D401EB3F1CD2026300599E0B /* EPub.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB2F1CD2026300599E0B /* EPub.m */; };
+		D401EB401CD2026300599E0B /* EPub2_NCX.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB321CD2026300599E0B /* EPub2_NCX.m */; };
+		D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB341CD2026300599E0B /* EPub2_OCF.m */; };
+		D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB361CD2026300599E0B /* EPub2_OPF.m */; };
+		D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB381CD2026300599E0B /* EPub2_Package.m */; };
+		D401EB441CD2026300599E0B /* EPubXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB3B1CD2026300599E0B /* EPubXML.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -230,6 +239,24 @@
 		D401EADB1CD2017F00599E0B /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
 		D401EADD1CD2017F00599E0B /* SPTaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDispatcher.h; sourceTree = "<group>"; };
 		D401EADE1CD2017F00599E0B /* SPTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDispatcher.m; sourceTree = "<group>"; };
+		D401EB271CD2026300599E0B /* EPubBookContainerHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubBookContainerHandle.h; sourceTree = "<group>"; };
+		D401EB281CD2026300599E0B /* EPubBookContainerHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubBookContainerHandle.m; sourceTree = "<group>"; };
+		D401EB291CD2026300599E0B /* EPubBookInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubBookInfomation.h; sourceTree = "<group>"; };
+		D401EB2A1CD2026300599E0B /* EPubBookInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubBookInfomation.m; sourceTree = "<group>"; };
+		D401EB2B1CD2026300599E0B /* EpubBookLoadHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpubBookLoadHandle.h; sourceTree = "<group>"; };
+		D401EB2C1CD2026300599E0B /* EpubBookLoadHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubBookLoadHandle.m; sourceTree = "<group>"; };
+		D401EB2E1CD2026300599E0B /* EPub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPub.h; sourceTree = "<group>"; };
+		D401EB2F1CD2026300599E0B /* EPub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub.m; sourceTree = "<group>"; };
+		D401EB311CD2026300599E0B /* EPub2_NCX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPub2_NCX.h; sourceTree = "<group>"; };
+		D401EB321CD2026300599E0B /* EPub2_NCX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub2_NCX.m; sourceTree = "<group>"; };
+		D401EB331CD2026300599E0B /* EPub2_OCF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPub2_OCF.h; sourceTree = "<group>"; };
+		D401EB341CD2026300599E0B /* EPub2_OCF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub2_OCF.m; sourceTree = "<group>"; };
+		D401EB351CD2026300599E0B /* EPub2_OPF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPub2_OPF.h; sourceTree = "<group>"; };
+		D401EB361CD2026300599E0B /* EPub2_OPF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub2_OPF.m; sourceTree = "<group>"; };
+		D401EB371CD2026300599E0B /* EPub2_Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPub2_Package.h; sourceTree = "<group>"; };
+		D401EB381CD2026300599E0B /* EPub2_Package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub2_Package.m; sourceTree = "<group>"; };
+		D401EB3A1CD2026300599E0B /* EPubXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubXML.h; sourceTree = "<group>"; };
+		D401EB3B1CD2026300599E0B /* EPubXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubXML.m; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -810,6 +837,71 @@
 			path = TaskDispatch;
 			sourceTree = "<group>";
 		};
+		D401EB241CD2026300599E0B /* EBook */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB251CD2026300599E0B /* EPub */,
+			);
+			path = EBook;
+			sourceTree = "<group>";
+		};
+		D401EB251CD2026300599E0B /* EPub */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB261CD2026300599E0B /* EPubBook */,
+				D401EB2D1CD2026300599E0B /* EPubParse */,
+			);
+			path = EPub;
+			sourceTree = "<group>";
+		};
+		D401EB261CD2026300599E0B /* EPubBook */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB271CD2026300599E0B /* EPubBookContainerHandle.h */,
+				D401EB281CD2026300599E0B /* EPubBookContainerHandle.m */,
+				D401EB291CD2026300599E0B /* EPubBookInfomation.h */,
+				D401EB2A1CD2026300599E0B /* EPubBookInfomation.m */,
+				D401EB2B1CD2026300599E0B /* EpubBookLoadHandle.h */,
+				D401EB2C1CD2026300599E0B /* EpubBookLoadHandle.m */,
+			);
+			path = EPubBook;
+			sourceTree = "<group>";
+		};
+		D401EB2D1CD2026300599E0B /* EPubParse */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB2E1CD2026300599E0B /* EPub.h */,
+				D401EB2F1CD2026300599E0B /* EPub.m */,
+				D401EB301CD2026300599E0B /* EPub2 */,
+				D401EB391CD2026300599E0B /* XML */,
+			);
+			path = EPubParse;
+			sourceTree = "<group>";
+		};
+		D401EB301CD2026300599E0B /* EPub2 */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB311CD2026300599E0B /* EPub2_NCX.h */,
+				D401EB321CD2026300599E0B /* EPub2_NCX.m */,
+				D401EB331CD2026300599E0B /* EPub2_OCF.h */,
+				D401EB341CD2026300599E0B /* EPub2_OCF.m */,
+				D401EB351CD2026300599E0B /* EPub2_OPF.h */,
+				D401EB361CD2026300599E0B /* EPub2_OPF.m */,
+				D401EB371CD2026300599E0B /* EPub2_Package.h */,
+				D401EB381CD2026300599E0B /* EPub2_Package.m */,
+			);
+			path = EPub2;
+			sourceTree = "<group>";
+		};
+		D401EB391CD2026300599E0B /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				D401EB3A1CD2026300599E0B /* EPubXML.h */,
+				D401EB3B1CD2026300599E0B /* EPubXML.m */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -859,6 +951,7 @@
 		D4E3EA451CC8A57A00A7987E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D401EB241CD2026300599E0B /* EBook */,
 				D401EA201CD2017F00599E0B /* DataBase */,
 				D401EA391CD2017F00599E0B /* Encode */,
 				D401EA551CD2017F00599E0B /* FileListen */,
@@ -983,6 +1076,7 @@
 				D401EB111CD2017F00599E0B /* XMLSprite.m in Sources */,
 				D401EAF91CD2017F00599E0B /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */,
+				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D401EB071CD2017F00599E0B /* LightLoadingPermanentQueue.m in Sources */,
 				D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */,
@@ -993,12 +1087,15 @@
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
 				D401EB231CD2017F00599E0B /* SPTaskDispatcher.m in Sources */,
+				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
 				D401EAFF1CD2017F00599E0B /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
 				D401EADF1CD2017F00599E0B /* DBDefine.m in Sources */,
+				D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */,
 				D401EB211CD2017F00599E0B /* SPTaskBlockLoader.m in Sources */,
 				D401EAEB1CD2017F00599E0B /* GzipCompressor.m in Sources */,
 				D401EB181CD2017F00599E0B /* FoundationTask.m in Sources */,
 				D401EAE41CD2017F00599E0B /* DBTable.m in Sources */,
+				D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */,
 				D401EAF01CD2017F00599E0B /* NSData+MD5.m in Sources */,
 				D401EB191CD2017F00599E0B /* TaskingTask.m in Sources */,
 				D401EB0D1CD2017F00599E0B /* IPRouteTracer.m in Sources */,
@@ -1006,11 +1103,14 @@
 				D401EB001CD2017F00599E0B /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */,
 				D401EAE11CD2017F00599E0B /* DBLog.m in Sources */,
 				D401EAE01CD2017F00599E0B /* DBHandle.m in Sources */,
+				D401EB3D1CD2026300599E0B /* EPubBookInfomation.m in Sources */,
 				D401EAF31CD2017F00599E0B /* FileListener.m in Sources */,
+				D401EB401CD2026300599E0B /* EPub2_NCX.m in Sources */,
 				D401EAE31CD2017F00599E0B /* DBSQL.m in Sources */,
 				D401EAFC1CD2017F00599E0B /* NSURLSessionTask+Delegate.m in Sources */,
 				D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */,
 				D401EB1F1CD2017F00599E0B /* SPTaskServiceProvider.m in Sources */,
+				D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
 				D401EB201CD2017F00599E0B /* SPTask.m in Sources */,
@@ -1020,10 +1120,12 @@
 				D401EB171CD2017F00599E0B /* BlockTask.m in Sources */,
 				D401EAF21CD2017F00599E0B /* NSString+URLEncode.m in Sources */,
 				D401EB101CD2017F00599E0B /* XMLUtility.m in Sources */,
+				D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */,
 				D401EAE61CD2017F00599E0B /* DBSQL_Extension.m in Sources */,
 				D401EAF51CD2017F00599E0B /* HTTPConnectionResumeStorage.m in Sources */,
 				D401EAEE1CD2017F00599E0B /* GzipDecompressor.m in Sources */,
 				D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */,
+				D401EB3F1CD2026300599E0B /* EPub.m in Sources */,
 				D401EB1A1CD2017F00599E0B /* SPTaskConfiguration.m in Sources */,
 				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
 			);
