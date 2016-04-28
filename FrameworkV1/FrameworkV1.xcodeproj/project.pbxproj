@@ -17,6 +17,10 @@
 		D401E9F31CD1DE1200599E0B /* XMLSpriteSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9EE1CD1DE1200599E0B /* XMLSpriteSerialize.m */; };
 		D401E9FA1CD1E0FA00599E0B /* FileListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9F91CD1E0FA00599E0B /* FileListener.m */; };
 		D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9FD1CD1E66A00599E0B /* APPConfiguration.m */; };
+		D401EA1C1CD1FF7B00599E0B /* APPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA131CD1FF7B00599E0B /* APPLog.m */; };
+		D401EA1D1CD1FF7B00599E0B /* LogFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA151CD1FF7B00599E0B /* LogFileHandle.m */; };
+		D401EA1E1CD1FF7B00599E0B /* LightLoadingPermanentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA181CD1FF7B00599E0B /* LightLoadingPermanentQueue.m */; };
+		D401EA1F1CD1FF7B00599E0B /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA1B1CD1FF7B00599E0B /* NetworkReachability.m */; };
 		D4D5CAC01CD0AD7400CD1860 /* DataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB41CD0AD7400CD1860 /* DataCompressor.m */; };
 		D4D5CAC11CD0AD7400CD1860 /* DeflateCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB61CD0AD7400CD1860 /* DeflateCompressor.m */; };
 		D4D5CAC21CD0AD7400CD1860 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB81CD0AD7400CD1860 /* GzipCompressor.m */; };
@@ -105,6 +109,14 @@
 		D401E9F91CD1E0FA00599E0B /* FileListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListener.m; sourceTree = "<group>"; };
 		D401E9FC1CD1E66A00599E0B /* APPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPConfiguration.h; sourceTree = "<group>"; };
 		D401E9FD1CD1E66A00599E0B /* APPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPConfiguration.m; sourceTree = "<group>"; };
+		D401EA121CD1FF7B00599E0B /* APPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPLog.h; sourceTree = "<group>"; };
+		D401EA131CD1FF7B00599E0B /* APPLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPLog.m; sourceTree = "<group>"; };
+		D401EA141CD1FF7B00599E0B /* LogFileHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogFileHandle.h; sourceTree = "<group>"; };
+		D401EA151CD1FF7B00599E0B /* LogFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogFileHandle.m; sourceTree = "<group>"; };
+		D401EA171CD1FF7B00599E0B /* LightLoadingPermanentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightLoadingPermanentQueue.h; sourceTree = "<group>"; };
+		D401EA181CD1FF7B00599E0B /* LightLoadingPermanentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightLoadingPermanentQueue.m; sourceTree = "<group>"; };
+		D401EA1A1CD1FF7B00599E0B /* NetworkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReachability.h; sourceTree = "<group>"; };
+		D401EA1B1CD1FF7B00599E0B /* NetworkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachability.m; sourceTree = "<group>"; };
 		D4D5CAB31CD0AD7400CD1860 /* DataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCompressor.h; sourceTree = "<group>"; };
 		D4D5CAB41CD0AD7400CD1860 /* DataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCompressor.m; sourceTree = "<group>"; };
 		D4D5CAB51CD0AD7400CD1860 /* DeflateCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeflateCompressor.h; sourceTree = "<group>"; };
@@ -340,6 +352,35 @@
 				D401E9FD1CD1E66A00599E0B /* APPConfiguration.m */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D401EA111CD1FF7B00599E0B /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				D401EA121CD1FF7B00599E0B /* APPLog.h */,
+				D401EA131CD1FF7B00599E0B /* APPLog.m */,
+				D401EA141CD1FF7B00599E0B /* LogFileHandle.h */,
+				D401EA151CD1FF7B00599E0B /* LogFileHandle.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		D401EA161CD1FF7B00599E0B /* PermanentQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D401EA171CD1FF7B00599E0B /* LightLoadingPermanentQueue.h */,
+				D401EA181CD1FF7B00599E0B /* LightLoadingPermanentQueue.m */,
+			);
+			path = PermanentQueue;
+			sourceTree = "<group>";
+		};
+		D401EA191CD1FF7B00599E0B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				D401EA1A1CD1FF7B00599E0B /* NetworkReachability.h */,
+				D401EA1B1CD1FF7B00599E0B /* NetworkReachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		D4D5CAB11CD0AD6100CD1860 /* Compress */ = {
@@ -626,6 +667,9 @@
 		D4E3EA441CC8A57A00A7987E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				D401EA111CD1FF7B00599E0B /* Log */,
+				D401EA161CD1FF7B00599E0B /* PermanentQueue */,
+				D401EA191CD1FF7B00599E0B /* Reachability */,
 				D4D5CF3B1CD0C69000CD1860 /* RouteTracer */,
 				D4D5CEE71CD0C53700CD1860 /* DataBase */,
 				D4D5CF001CD0C53700CD1860 /* Task */,
@@ -945,6 +989,7 @@
 				D4D5CF4B1CD0C69000CD1860 /* IPRouteTraceCenter.m in Sources */,
 				D4E3EAAB1CC8C6F600A7987E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D4E3EA801CC8C34F00A7987E /* HTTPMultipartFormEntity.m in Sources */,
+				D401EA1E1CD1FF7B00599E0B /* LightLoadingPermanentQueue.m in Sources */,
 				D4D5CF4A1CD0C69000CD1860 /* IPRouteItem.m in Sources */,
 				D4E3EAB31CC8DA6B00A7987E /* NSString+URLEncode.m in Sources */,
 				D401E9F31CD1DE1200599E0B /* XMLSpriteSerialize.m in Sources */,
@@ -981,8 +1026,11 @@
 				D4D5CF341CD0C53700CD1860 /* SPTask.m in Sources */,
 				D4D5CF2B1CD0C53700CD1860 /* BlockTask.m in Sources */,
 				D4D5CF301CD0C53700CD1860 /* SPTaskDaemonPool.m in Sources */,
+				D401EA1F1CD1FF7B00599E0B /* NetworkReachability.m in Sources */,
 				D4E3EAC21CC8DD1500A7987E /* NSData+MD5.m in Sources */,
 				D4D5CF2C1CD0C53700CD1860 /* FoundationTask.m in Sources */,
+				D401EA1D1CD1FF7B00599E0B /* LogFileHandle.m in Sources */,
+				D401EA1C1CD1FF7B00599E0B /* APPLog.m in Sources */,
 				D4D5CF2A1CD0C53700CD1860 /* DataBaseUnit.m in Sources */,
 				D4D5CF4C1CD0C69000CD1860 /* IPRouteTraceObserver.m in Sources */,
 				D4D5CEDF1CD0BC6800CD1860 /* StateMachine.m in Sources */,
