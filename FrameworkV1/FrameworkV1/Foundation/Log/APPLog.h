@@ -49,11 +49,6 @@ typedef enum
 @property (nonatomic, copy) NSString *logFileDirectory;
 
 /*!
- * @brief 单例
- */
-+ (APPLog *)sharedInstance;
-
-/*!
  * @brief 启动日志
  */
 - (void)start;

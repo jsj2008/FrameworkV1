@@ -39,12 +39,6 @@
 @property (nonatomic) NSThread *notifyThread;
 
 /*!
- * @brief 单例
- * @result LightLoadingPermanentQueue全局对象
- */
-+ (LightLoadingPermanentQueue *)sharedInstance;
-
-/*!
  * @brief 起动内建线程和内部管理模块
  */
 - (void)start;

@@ -56,23 +56,6 @@
     [self internalCancel];
 }
 
-+ (LightLoadingPermanentQueue *)sharedInstance
-{
-    static LightLoadingPermanentQueue *instance = nil;
-    
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        
-        if (!instance)
-        {
-            instance = [[LightLoadingPermanentQueue alloc] init];
-        }
-    });
-    
-    return instance;
-}
-
 - (void)start
 {
     if (!self.notifyThread)

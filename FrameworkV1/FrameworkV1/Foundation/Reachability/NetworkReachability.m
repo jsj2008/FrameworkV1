@@ -91,23 +91,6 @@ static void NetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetwo
     return self;
 }
 
-+ (NetworkReachability *)internetReachability
-{
-    static NetworkReachability *instance = nil;
-    
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        
-        if (!instance)
-        {
-            instance = [[NetworkReachability alloc] init];
-        }
-    });
-    
-    return instance;
-}
-
 - (BOOL)startNotifier
 {
     BOOL success = NO;

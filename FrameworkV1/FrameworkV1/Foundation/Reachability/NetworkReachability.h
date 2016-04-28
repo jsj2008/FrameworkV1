@@ -44,7 +44,8 @@ typedef void (^NetworkReachabilityChangedNotificationBlock)(NetworkReachStatus f
         网络连接
  
     @discussion
-        NetworkReachability是对网络连接的封装，负责获取网络状态和状态变化的通知
+        1，NetworkReachability是对网络连接的封装，负责获取网络状态和状态变化的通知
+        2，内部初始化过程中将获取当前连接状态，当网络缓慢时，这可能需要至多30秒时间
  
  *********************************************************/
 
@@ -59,12 +60,6 @@ typedef void (^NetworkReachabilityChangedNotificationBlock)(NetworkReachStatus f
  * @brief 连接变化的通知块
  */
 @property (nonatomic, copy) NetworkReachabilityChangedNotificationBlock notificationBlock;
-
-/*!
- * @brief 单例
- * @discussion 内部初始化过程中将获取当前连接状态，当网络缓慢时，这可能需要至多30秒时间
- */
-+ (NetworkReachability *)internetReachability;
 
 /*!
  * @brief 启动消息通知
