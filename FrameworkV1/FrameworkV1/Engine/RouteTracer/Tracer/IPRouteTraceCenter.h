@@ -27,6 +27,7 @@
 
 /*!
  * @brief 单例
+ * @result IPRouteTraceCenter全局对象
  */
 + (IPRouteTraceCenter *)sharedInstance;
 

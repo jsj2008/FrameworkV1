@@ -16,6 +16,7 @@
 		D401E9F21CD1DE1200599E0B /* XMLSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9EC1CD1DE1200599E0B /* XMLSprite.m */; };
 		D401E9F31CD1DE1200599E0B /* XMLSpriteSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9EE1CD1DE1200599E0B /* XMLSpriteSerialize.m */; };
 		D401E9FA1CD1E0FA00599E0B /* FileListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9F91CD1E0FA00599E0B /* FileListener.m */; };
+		D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D401E9FD1CD1E66A00599E0B /* APPConfiguration.m */; };
 		D4D5CAC01CD0AD7400CD1860 /* DataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB41CD0AD7400CD1860 /* DataCompressor.m */; };
 		D4D5CAC11CD0AD7400CD1860 /* DeflateCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB61CD0AD7400CD1860 /* DeflateCompressor.m */; };
 		D4D5CAC21CD0AD7400CD1860 /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CAB81CD0AD7400CD1860 /* GzipCompressor.m */; };
@@ -102,6 +103,8 @@
 		D401E9EE1CD1DE1200599E0B /* XMLSpriteSerialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLSpriteSerialize.m; sourceTree = "<group>"; };
 		D401E9F81CD1E0FA00599E0B /* FileListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListener.h; sourceTree = "<group>"; };
 		D401E9F91CD1E0FA00599E0B /* FileListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListener.m; sourceTree = "<group>"; };
+		D401E9FC1CD1E66A00599E0B /* APPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPConfiguration.h; sourceTree = "<group>"; };
+		D401E9FD1CD1E66A00599E0B /* APPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPConfiguration.m; sourceTree = "<group>"; };
 		D4D5CAB31CD0AD7400CD1860 /* DataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCompressor.h; sourceTree = "<group>"; };
 		D4D5CAB41CD0AD7400CD1860 /* DataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCompressor.m; sourceTree = "<group>"; };
 		D4D5CAB51CD0AD7400CD1860 /* DeflateCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeflateCompressor.h; sourceTree = "<group>"; };
@@ -328,6 +331,15 @@
 				D401E9F91CD1E0FA00599E0B /* FileListener.m */,
 			);
 			path = FileListen;
+			sourceTree = "<group>";
+		};
+		D401E9FB1CD1E64C00599E0B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D401E9FC1CD1E66A00599E0B /* APPConfiguration.h */,
+				D401E9FD1CD1E66A00599E0B /* APPConfiguration.m */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		D4D5CAB11CD0AD6100CD1860 /* Compress */ = {
@@ -586,6 +598,7 @@
 		D4E3EA2C1CC8A52B00A7987E /* FrameworkV1 */ = {
 			isa = PBXGroup;
 			children = (
+				D401E9FB1CD1E64C00599E0B /* Configuration */,
 				D4E3EA451CC8A57A00A7987E /* Foundation */,
 				D4E3EA441CC8A57A00A7987E /* Engine */,
 				D4E3EA461CC8A57A00A7987E /* UI */,
@@ -952,6 +965,7 @@
 				D4D5CB021CD0BB7800CD1860 /* NotificationObserver.m in Sources */,
 				D401E9D91CD1BD5D00599E0B /* NSString+KeyValue.m in Sources */,
 				D401E9EF1CD1DE1200599E0B /* JsonSerialize.m in Sources */,
+				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
 				D4D5CF261CD0C53700CD1860 /* DBTable.m in Sources */,
 				D4D5CF221CD0C53700CD1860 /* DBHandle.m in Sources */,
 				D4E3EA9F1CC8C39200A7987E /* HTTPDataConnection.m in Sources */,
