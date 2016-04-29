@@ -17,11 +17,11 @@
 {
     if (self = [super init])
     {
-        self.taskDispatcher.daemonPool = [SPTaskDaemonPool SharedInstance];
+        self.taskDispatcher.daemonPool = [SPTaskDaemonPool sharedInstance];
         
-        self.taskDispatcher.freePool = [SPTaskFreePool SharedInstance];
+        self.taskDispatcher.freePool = [SPTaskFreePool sharedInstance];
         
-        self.taskDispatcher.backgroundPool = [SPTaskBackgroundPool SharedInstance];
+        self.taskDispatcher.backgroundPool = [SPTaskBackgroundPool sharedInstance];
     }
     
     return self;

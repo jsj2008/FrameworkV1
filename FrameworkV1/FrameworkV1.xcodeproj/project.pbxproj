@@ -93,6 +93,8 @@
 		D40EEABE1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEABD1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m */; };
 		D40EEAC11CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC01CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m */; };
 		D40EEAC41CD30A7A00E646C9 /* SPTaskBackgroundPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC31CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.m */; };
+		D40EEAC71CD330CB00E646C9 /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC61CD330CB00E646C9 /* ImageStorage.m */; };
+		D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -278,6 +280,10 @@
 		D40EEAC01CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskFreePool+SharedInstance.m"; sourceTree = "<group>"; };
 		D40EEAC21CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTaskBackgroundPool+SharedInstance.h"; sourceTree = "<group>"; };
 		D40EEAC31CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskBackgroundPool+SharedInstance.m"; sourceTree = "<group>"; };
+		D40EEAC51CD330CB00E646C9 /* ImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStorage.h; sourceTree = "<group>"; };
+		D40EEAC61CD330CB00E646C9 /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
+		D40EEACA1CD332EE00E646C9 /* IndexingFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingFileStorage.h; sourceTree = "<group>"; };
+		D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingFileStorage.m; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -920,6 +926,8 @@
 		D401EB4E1CD2068E00599E0B /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D40EEAC51CD330CB00E646C9 /* ImageStorage.h */,
+				D40EEAC61CD330CB00E646C9 /* ImageStorage.m */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1032,6 +1040,23 @@
 			path = Task;
 			sourceTree = "<group>";
 		};
+		D40EEAC81CD332BA00E646C9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEAC91CD332BA00E646C9 /* File */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D40EEAC91CD332BA00E646C9 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEACA1CD332EE00E646C9 /* IndexingFileStorage.h */,
+				D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1107,7 @@
 		D4E3EA451CC8A57A00A7987E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D40EEAC81CD332BA00E646C9 /* Storage */,
 				D40EEA8D1CD2FC0A00E646C9 /* Task */,
 				D401EB241CD2026300599E0B /* EBook */,
 				D401EA201CD2017F00599E0B /* DataBase */,
@@ -1180,6 +1206,7 @@
 				D401EAEA1CD2017F00599E0B /* DeflateCompressor.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
 				D401EB0B1CD2017F00599E0B /* IPRouteTraceCenter.m in Sources */,
+				D40EEAC71CD330CB00E646C9 /* ImageStorage.m in Sources */,
 				D401EB041CD2017F00599E0B /* NotificationObserver.m in Sources */,
 				D401EAE71CD2017F00599E0B /* DataBaseTable.m in Sources */,
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
@@ -1263,6 +1290,7 @@
 				D401EB651CD20EEC00599E0B /* NetworkManager.m in Sources */,
 				D401EAF51CD2017F00599E0B /* HTTPConnectionResumeStorage.m in Sources */,
 				D401EAEE1CD2017F00599E0B /* GzipDecompressor.m in Sources */,
+				D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */,
 				D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */,
 				D401EB3F1CD2026300599E0B /* EPub.m in Sources */,
 				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
