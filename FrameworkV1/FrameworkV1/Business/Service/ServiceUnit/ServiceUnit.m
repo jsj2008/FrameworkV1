@@ -17,12 +17,13 @@
 
 #import "NetworkManager.h"
 
-#import "SPTaskConfiguration.h"
-#import "SPTaskServiceProvider.h"
-
 #import "DBLog.h"
 
 #import "LightLoadingPermanentQueue+SharedInstance.h"
+
+#import "SPTaskDaemonPool+SharedInstance.h"
+#import "SPTaskFreePool+SharedInstance.h"
+#import "SPTaskBackgroundPool+SharedInstance.h"
 
 @implementation ServiceUnit
 
@@ -81,15 +82,23 @@
         [[NetworkManager sharedInstance] start];
         
         // Task配置
-        [SPTaskConfiguration sharedInstance].daemonPoolCapacity = [APPConfiguration sharedInstance].daemonPoolCapacity;
+        [SPTaskDaemonPool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].daemonPoolCapacity;
         
-        [SPTaskConfiguration sharedInstance].freePoolCapacity = [APPConfiguration sharedInstance].freePoolCapacity;
+        [SPTaskDaemonPool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
         
-        [SPTaskConfiguration sharedInstance].backgroundPoolCapacity = [APPConfiguration sharedInstance].backgroundPoolCapacity;
+        [SPTaskFreePool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].freePoolCapacity;
         
-        [SPTaskConfiguration sharedInstance].defaultQueueLoadingLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
+        [SPTaskFreePool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
         
-        [[SPTaskServiceProvider sharedInstance] start];
+        [SPTaskBackgroundPool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].backgroundPoolCapacity;
+        
+        [SPTaskBackgroundPool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
+        
+        [[SPTaskDaemonPool sharedInstance] startWithPersistentQueueCount:[APPConfiguration sharedInstance].daemonPoolPersistentQueueCapacity];
+        
+        [[SPTaskFreePool sharedInstance] start];
+        
+        [[SPTaskBackgroundPool sharedInstance] start];
         
         
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
@@ -116,7 +125,11 @@
 {
     [[LightLoadingPermanentQueue sharedInstance] addBlock:^{
         
-        [[SPTaskServiceProvider sharedInstance] stop];
+        [[SPTaskDaemonPool sharedInstance] stop];
+        
+        [[SPTaskFreePool sharedInstance] stop];
+        
+        [[SPTaskBackgroundPool sharedInstance] stop];
         
         [[NetworkManager sharedInstance] stop];
     }];

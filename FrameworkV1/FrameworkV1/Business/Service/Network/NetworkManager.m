@@ -7,6 +7,7 @@
 //
 
 #import "NetworkManager.h"
+#import "NSObject+Delegate.h"
 
 @interface NetworkManager ()
 

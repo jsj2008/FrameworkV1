@@ -64,19 +64,6 @@
 		D401EB141CD2017F00599E0B /* NSString+Character.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAB81CD2017F00599E0B /* NSString+Character.m */; };
 		D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EABB1CD2017F00599E0B /* NSDictionary+KeyValue.m */; };
 		D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EABD1CD2017F00599E0B /* NSString+KeyValue.m */; };
-		D401EB171CD2017F00599E0B /* BlockTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAC01CD2017F00599E0B /* BlockTask.m */; };
-		D401EB181CD2017F00599E0B /* FoundationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAC21CD2017F00599E0B /* FoundationTask.m */; };
-		D401EB191CD2017F00599E0B /* TaskingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAC41CD2017F00599E0B /* TaskingTask.m */; };
-		D401EB1A1CD2017F00599E0B /* SPTaskConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAC81CD2017F00599E0B /* SPTaskConfiguration.m */; };
-		D401EB1B1CD2017F00599E0B /* SPTaskBackgroundPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EACB1CD2017F00599E0B /* SPTaskBackgroundPool.m */; };
-		D401EB1C1CD2017F00599E0B /* SPTaskDaemonPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EACD1CD2017F00599E0B /* SPTaskDaemonPool.m */; };
-		D401EB1D1CD2017F00599E0B /* SPTaskFreePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EACF1CD2017F00599E0B /* SPTaskFreePool.m */; };
-		D401EB1E1CD2017F00599E0B /* SPTaskPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAD11CD2017F00599E0B /* SPTaskPool.m */; };
-		D401EB1F1CD2017F00599E0B /* SPTaskServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAD41CD2017F00599E0B /* SPTaskServiceProvider.m */; };
-		D401EB201CD2017F00599E0B /* SPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAD71CD2017F00599E0B /* SPTask.m */; };
-		D401EB211CD2017F00599E0B /* SPTaskBlockLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAD91CD2017F00599E0B /* SPTaskBlockLoader.m */; };
-		D401EB221CD2017F00599E0B /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EADB1CD2017F00599E0B /* SPTaskQueue.m */; };
-		D401EB231CD2017F00599E0B /* SPTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EADE1CD2017F00599E0B /* SPTaskDispatcher.m */; };
 		D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB281CD2026300599E0B /* EPubBookContainerHandle.m */; };
 		D401EB3D1CD2026300599E0B /* EPubBookInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB2A1CD2026300599E0B /* EPubBookInfomation.m */; };
 		D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB2C1CD2026300599E0B /* EpubBookLoadHandle.m */; };
@@ -92,6 +79,20 @@
 		D401EB5E1CD2087400599E0B /* NSDateFormatter+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB5D1CD2087400599E0B /* NSDateFormatter+SharedInstance.m */; };
 		D401EB651CD20EEC00599E0B /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB641CD20EEC00599E0B /* NetworkManager.m */; };
 		D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB671CD214A600599E0B /* NSObject+Notify.m */; };
+		D40EEAA81CD2FC0A00E646C9 /* FoundationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA901CD2FC0A00E646C9 /* FoundationTask.m */; };
+		D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA921CD2FC0A00E646C9 /* TaskingTask.m */; };
+		D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA951CD2FC0A00E646C9 /* BlockTask.m */; };
+		D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA971CD2FC0A00E646C9 /* SPTask.m */; };
+		D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA9A1CD2FC0A00E646C9 /* SPTaskDispatcher.m */; };
+		D40EEAAD1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA9E1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m */; };
+		D40EEAAE1CD2FC0A00E646C9 /* SPTaskDaemonPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA01CD2FC0A00E646C9 /* SPTaskDaemonPool.m */; };
+		D40EEAAF1CD2FC0A00E646C9 /* SPTaskFreePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA21CD2FC0A00E646C9 /* SPTaskFreePool.m */; };
+		D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA41CD2FC0A00E646C9 /* SPTaskPool.m */; };
+		D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */; };
+		D40EEABB1CD30A2200E646C9 /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEABA1CD30A2200E646C9 /* OperationTask.m */; };
+		D40EEABE1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEABD1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m */; };
+		D40EEAC11CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC01CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m */; };
+		D40EEAC41CD30A7A00E646C9 /* SPTaskBackgroundPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC31CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -219,32 +220,6 @@
 		D401EABB1CD2017F00599E0B /* NSDictionary+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KeyValue.m"; sourceTree = "<group>"; };
 		D401EABC1CD2017F00599E0B /* NSString+KeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyValue.h"; sourceTree = "<group>"; };
 		D401EABD1CD2017F00599E0B /* NSString+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyValue.m"; sourceTree = "<group>"; };
-		D401EABF1CD2017F00599E0B /* BlockTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTask.h; sourceTree = "<group>"; };
-		D401EAC01CD2017F00599E0B /* BlockTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTask.m; sourceTree = "<group>"; };
-		D401EAC11CD2017F00599E0B /* FoundationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationTask.h; sourceTree = "<group>"; };
-		D401EAC21CD2017F00599E0B /* FoundationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationTask.m; sourceTree = "<group>"; };
-		D401EAC31CD2017F00599E0B /* TaskingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskingTask.h; sourceTree = "<group>"; };
-		D401EAC41CD2017F00599E0B /* TaskingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskingTask.m; sourceTree = "<group>"; };
-		D401EAC71CD2017F00599E0B /* SPTaskConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskConfiguration.h; sourceTree = "<group>"; };
-		D401EAC81CD2017F00599E0B /* SPTaskConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskConfiguration.m; sourceTree = "<group>"; };
-		D401EACA1CD2017F00599E0B /* SPTaskBackgroundPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBackgroundPool.h; sourceTree = "<group>"; };
-		D401EACB1CD2017F00599E0B /* SPTaskBackgroundPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBackgroundPool.m; sourceTree = "<group>"; };
-		D401EACC1CD2017F00599E0B /* SPTaskDaemonPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDaemonPool.h; sourceTree = "<group>"; };
-		D401EACD1CD2017F00599E0B /* SPTaskDaemonPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDaemonPool.m; sourceTree = "<group>"; };
-		D401EACE1CD2017F00599E0B /* SPTaskFreePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskFreePool.h; sourceTree = "<group>"; };
-		D401EACF1CD2017F00599E0B /* SPTaskFreePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskFreePool.m; sourceTree = "<group>"; };
-		D401EAD01CD2017F00599E0B /* SPTaskPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskPool.h; sourceTree = "<group>"; };
-		D401EAD11CD2017F00599E0B /* SPTaskPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskPool.m; sourceTree = "<group>"; };
-		D401EAD31CD2017F00599E0B /* SPTaskServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskServiceProvider.h; sourceTree = "<group>"; };
-		D401EAD41CD2017F00599E0B /* SPTaskServiceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskServiceProvider.m; sourceTree = "<group>"; };
-		D401EAD61CD2017F00599E0B /* SPTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTask.h; sourceTree = "<group>"; };
-		D401EAD71CD2017F00599E0B /* SPTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTask.m; sourceTree = "<group>"; };
-		D401EAD81CD2017F00599E0B /* SPTaskBlockLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBlockLoader.h; sourceTree = "<group>"; };
-		D401EAD91CD2017F00599E0B /* SPTaskBlockLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBlockLoader.m; sourceTree = "<group>"; };
-		D401EADA1CD2017F00599E0B /* SPTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskQueue.h; sourceTree = "<group>"; };
-		D401EADB1CD2017F00599E0B /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
-		D401EADD1CD2017F00599E0B /* SPTaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDispatcher.h; sourceTree = "<group>"; };
-		D401EADE1CD2017F00599E0B /* SPTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDispatcher.m; sourceTree = "<group>"; };
 		D401EB271CD2026300599E0B /* EPubBookContainerHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubBookContainerHandle.h; sourceTree = "<group>"; };
 		D401EB281CD2026300599E0B /* EPubBookContainerHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubBookContainerHandle.m; sourceTree = "<group>"; };
 		D401EB291CD2026300599E0B /* EPubBookInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubBookInfomation.h; sourceTree = "<group>"; };
@@ -275,6 +250,34 @@
 		D401EB641CD20EEC00599E0B /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		D401EB661CD214A600599E0B /* NSObject+Notify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Notify.h"; sourceTree = "<group>"; };
 		D401EB671CD214A600599E0B /* NSObject+Notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Notify.m"; sourceTree = "<group>"; };
+		D40EEA8F1CD2FC0A00E646C9 /* FoundationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationTask.h; sourceTree = "<group>"; };
+		D40EEA901CD2FC0A00E646C9 /* FoundationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationTask.m; sourceTree = "<group>"; };
+		D40EEA911CD2FC0A00E646C9 /* TaskingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskingTask.h; sourceTree = "<group>"; };
+		D40EEA921CD2FC0A00E646C9 /* TaskingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskingTask.m; sourceTree = "<group>"; };
+		D40EEA941CD2FC0A00E646C9 /* BlockTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTask.h; sourceTree = "<group>"; };
+		D40EEA951CD2FC0A00E646C9 /* BlockTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTask.m; sourceTree = "<group>"; };
+		D40EEA961CD2FC0A00E646C9 /* SPTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTask.h; sourceTree = "<group>"; };
+		D40EEA971CD2FC0A00E646C9 /* SPTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTask.m; sourceTree = "<group>"; };
+		D40EEA991CD2FC0A00E646C9 /* SPTaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDispatcher.h; sourceTree = "<group>"; };
+		D40EEA9A1CD2FC0A00E646C9 /* SPTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDispatcher.m; sourceTree = "<group>"; };
+		D40EEA9D1CD2FC0A00E646C9 /* SPTaskBackgroundPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBackgroundPool.h; sourceTree = "<group>"; };
+		D40EEA9E1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBackgroundPool.m; sourceTree = "<group>"; };
+		D40EEA9F1CD2FC0A00E646C9 /* SPTaskDaemonPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDaemonPool.h; sourceTree = "<group>"; };
+		D40EEAA01CD2FC0A00E646C9 /* SPTaskDaemonPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDaemonPool.m; sourceTree = "<group>"; };
+		D40EEAA11CD2FC0A00E646C9 /* SPTaskFreePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskFreePool.h; sourceTree = "<group>"; };
+		D40EEAA21CD2FC0A00E646C9 /* SPTaskFreePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskFreePool.m; sourceTree = "<group>"; };
+		D40EEAA31CD2FC0A00E646C9 /* SPTaskPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskPool.h; sourceTree = "<group>"; };
+		D40EEAA41CD2FC0A00E646C9 /* SPTaskPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskPool.m; sourceTree = "<group>"; };
+		D40EEAA61CD2FC0A00E646C9 /* SPTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskQueue.h; sourceTree = "<group>"; };
+		D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
+		D40EEAB91CD30A2200E646C9 /* OperationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTask.h; sourceTree = "<group>"; };
+		D40EEABA1CD30A2200E646C9 /* OperationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
+		D40EEABC1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTaskDaemonPool+SharedInstance.h"; sourceTree = "<group>"; };
+		D40EEABD1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskDaemonPool+SharedInstance.m"; sourceTree = "<group>"; };
+		D40EEABF1CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTaskFreePool+SharedInstance.h"; sourceTree = "<group>"; };
+		D40EEAC01CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskFreePool+SharedInstance.m"; sourceTree = "<group>"; };
+		D40EEAC21CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTaskBackgroundPool+SharedInstance.h"; sourceTree = "<group>"; };
+		D40EEAC31CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskBackgroundPool+SharedInstance.m"; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -776,87 +779,6 @@
 			path = KeyValue;
 			sourceTree = "<group>";
 		};
-		D401EABE1CD2017F00599E0B /* Task */ = {
-			isa = PBXGroup;
-			children = (
-				D401EABF1CD2017F00599E0B /* BlockTask.h */,
-				D401EAC01CD2017F00599E0B /* BlockTask.m */,
-				D401EAC11CD2017F00599E0B /* FoundationTask.h */,
-				D401EAC21CD2017F00599E0B /* FoundationTask.m */,
-				D401EAC31CD2017F00599E0B /* TaskingTask.h */,
-				D401EAC41CD2017F00599E0B /* TaskingTask.m */,
-				D401EAC51CD2017F00599E0B /* TaskPool */,
-			);
-			path = Task;
-			sourceTree = "<group>";
-		};
-		D401EAC51CD2017F00599E0B /* TaskPool */ = {
-			isa = PBXGroup;
-			children = (
-				D401EAC61CD2017F00599E0B /* Configuration */,
-				D401EAC91CD2017F00599E0B /* Pool */,
-				D401EAD21CD2017F00599E0B /* Service */,
-				D401EAD51CD2017F00599E0B /* Task */,
-				D401EADC1CD2017F00599E0B /* TaskDispatch */,
-			);
-			path = TaskPool;
-			sourceTree = "<group>";
-		};
-		D401EAC61CD2017F00599E0B /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				D401EAC71CD2017F00599E0B /* SPTaskConfiguration.h */,
-				D401EAC81CD2017F00599E0B /* SPTaskConfiguration.m */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		D401EAC91CD2017F00599E0B /* Pool */ = {
-			isa = PBXGroup;
-			children = (
-				D401EACA1CD2017F00599E0B /* SPTaskBackgroundPool.h */,
-				D401EACB1CD2017F00599E0B /* SPTaskBackgroundPool.m */,
-				D401EACC1CD2017F00599E0B /* SPTaskDaemonPool.h */,
-				D401EACD1CD2017F00599E0B /* SPTaskDaemonPool.m */,
-				D401EACE1CD2017F00599E0B /* SPTaskFreePool.h */,
-				D401EACF1CD2017F00599E0B /* SPTaskFreePool.m */,
-				D401EAD01CD2017F00599E0B /* SPTaskPool.h */,
-				D401EAD11CD2017F00599E0B /* SPTaskPool.m */,
-			);
-			path = Pool;
-			sourceTree = "<group>";
-		};
-		D401EAD21CD2017F00599E0B /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				D401EAD31CD2017F00599E0B /* SPTaskServiceProvider.h */,
-				D401EAD41CD2017F00599E0B /* SPTaskServiceProvider.m */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		D401EAD51CD2017F00599E0B /* Task */ = {
-			isa = PBXGroup;
-			children = (
-				D401EAD61CD2017F00599E0B /* SPTask.h */,
-				D401EAD71CD2017F00599E0B /* SPTask.m */,
-				D401EAD81CD2017F00599E0B /* SPTaskBlockLoader.h */,
-				D401EAD91CD2017F00599E0B /* SPTaskBlockLoader.m */,
-				D401EADA1CD2017F00599E0B /* SPTaskQueue.h */,
-				D401EADB1CD2017F00599E0B /* SPTaskQueue.m */,
-			);
-			path = Task;
-			sourceTree = "<group>";
-		};
-		D401EADC1CD2017F00599E0B /* TaskDispatch */ = {
-			isa = PBXGroup;
-			children = (
-				D401EADD1CD2017F00599E0B /* SPTaskDispatcher.h */,
-				D401EADE1CD2017F00599E0B /* SPTaskDispatcher.m */,
-			);
-			path = TaskDispatch;
-			sourceTree = "<group>";
-		};
 		D401EB241CD2026300599E0B /* EBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +865,7 @@
 			isa = PBXGroup;
 			children = (
 				D401EB4C1CD2068E00599E0B /* ServiceUnit */,
+				D40EEAB81CD309CD00E646C9 /* Task */,
 				D401EB491CD2068E00599E0B /* LightLoadingPermanentQueue */,
 				D401EB5F1CD20E9100599E0B /* Network */,
 				D401EB4A1CD2068E00599E0B /* Log */,
@@ -1019,6 +942,96 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		D40EEA8D1CD2FC0A00E646C9 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEA931CD2FC0A00E646C9 /* Task */,
+				D40EEA9B1CD2FC0A00E646C9 /* TaskPool */,
+				D40EEA981CD2FC0A00E646C9 /* TaskDispatch */,
+				D40EEA8E1CD2FC0A00E646C9 /* Extension */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D40EEA8E1CD2FC0A00E646C9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEA8F1CD2FC0A00E646C9 /* FoundationTask.h */,
+				D40EEA901CD2FC0A00E646C9 /* FoundationTask.m */,
+				D40EEA911CD2FC0A00E646C9 /* TaskingTask.h */,
+				D40EEA921CD2FC0A00E646C9 /* TaskingTask.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D40EEA931CD2FC0A00E646C9 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEA941CD2FC0A00E646C9 /* BlockTask.h */,
+				D40EEA951CD2FC0A00E646C9 /* BlockTask.m */,
+				D40EEA961CD2FC0A00E646C9 /* SPTask.h */,
+				D40EEA971CD2FC0A00E646C9 /* SPTask.m */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D40EEA981CD2FC0A00E646C9 /* TaskDispatch */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEA991CD2FC0A00E646C9 /* SPTaskDispatcher.h */,
+				D40EEA9A1CD2FC0A00E646C9 /* SPTaskDispatcher.m */,
+			);
+			path = TaskDispatch;
+			sourceTree = "<group>";
+		};
+		D40EEA9B1CD2FC0A00E646C9 /* TaskPool */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEA9C1CD2FC0A00E646C9 /* Pool */,
+				D40EEAA51CD2FC0A00E646C9 /* TaskQueue */,
+			);
+			path = TaskPool;
+			sourceTree = "<group>";
+		};
+		D40EEA9C1CD2FC0A00E646C9 /* Pool */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEA9D1CD2FC0A00E646C9 /* SPTaskBackgroundPool.h */,
+				D40EEA9E1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m */,
+				D40EEA9F1CD2FC0A00E646C9 /* SPTaskDaemonPool.h */,
+				D40EEAA01CD2FC0A00E646C9 /* SPTaskDaemonPool.m */,
+				D40EEAA11CD2FC0A00E646C9 /* SPTaskFreePool.h */,
+				D40EEAA21CD2FC0A00E646C9 /* SPTaskFreePool.m */,
+				D40EEAA31CD2FC0A00E646C9 /* SPTaskPool.h */,
+				D40EEAA41CD2FC0A00E646C9 /* SPTaskPool.m */,
+			);
+			path = Pool;
+			sourceTree = "<group>";
+		};
+		D40EEAA51CD2FC0A00E646C9 /* TaskQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEAA61CD2FC0A00E646C9 /* SPTaskQueue.h */,
+				D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */,
+			);
+			path = TaskQueue;
+			sourceTree = "<group>";
+		};
+		D40EEAB81CD309CD00E646C9 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEAB91CD30A2200E646C9 /* OperationTask.h */,
+				D40EEABA1CD30A2200E646C9 /* OperationTask.m */,
+				D40EEABC1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.h */,
+				D40EEABD1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m */,
+				D40EEABF1CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.h */,
+				D40EEAC01CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m */,
+				D40EEAC21CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.h */,
+				D40EEAC31CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.m */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -1069,6 +1082,7 @@
 		D4E3EA451CC8A57A00A7987E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D40EEA8D1CD2FC0A00E646C9 /* Task */,
 				D401EB241CD2026300599E0B /* EBook */,
 				D401EA201CD2017F00599E0B /* DataBase */,
 				D401EA391CD2017F00599E0B /* Encode */,
@@ -1082,7 +1096,6 @@
 				D401EAA21CD2017F00599E0B /* Serialization */,
 				D401EAB21CD2017F00599E0B /* StateMachine */,
 				D401EAB51CD2017F00599E0B /* String */,
-				D401EABE1CD2017F00599E0B /* Task */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1165,60 +1178,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				D401EAEA1CD2017F00599E0B /* DeflateCompressor.m in Sources */,
-				D401EB1C1CD2017F00599E0B /* SPTaskDaemonPool.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
 				D401EB0B1CD2017F00599E0B /* IPRouteTraceCenter.m in Sources */,
 				D401EB041CD2017F00599E0B /* NotificationObserver.m in Sources */,
 				D401EAE71CD2017F00599E0B /* DataBaseTable.m in Sources */,
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
-				D401EB1E1CD2017F00599E0B /* SPTaskPool.m in Sources */,
 				D401EB061CD2017F00599E0B /* NSObject+Delegate.m in Sources */,
 				D401EAEC1CD2017F00599E0B /* DataDecompressor.m in Sources */,
 				D401EB121CD2017F00599E0B /* XMLSpriteSerialize.m in Sources */,
+				D40EEAA81CD2FC0A00E646C9 /* FoundationTask.m in Sources */,
+				D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */,
 				D401EAE21CD2017F00599E0B /* DBMachine.m in Sources */,
 				D401EB091CD2017F00599E0B /* IPRouteTraceHandle.m in Sources */,
 				D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */,
 				D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */,
+				D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */,
 				D401EAFA1CD2017F00599E0B /* HTTPUploadConnection.m in Sources */,
 				D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */,
 				D401EB011CD2017F00599E0B /* APPLog.m in Sources */,
+				D40EEAC11CD30A6900E646C9 /* SPTaskFreePool+SharedInstance.m in Sources */,
 				D401EB051CD2017F00599E0B /* NotificationObservingSet.m in Sources */,
 				D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */,
 				D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */,
 				D401EAFD1CD2017F00599E0B /* HTTPMultipartFormEntity.m in Sources */,
 				D401EB0E1CD2017F00599E0B /* JsonSerialize.m in Sources */,
+				D40EEABE1CD30A5600E646C9 /* SPTaskDaemonPool+SharedInstance.m in Sources */,
 				D401EB0C1CD2017F00599E0B /* IPRouteTraceObserver.m in Sources */,
-				D401EB1D1CD2017F00599E0B /* SPTaskFreePool.m in Sources */,
 				D401EB0A1CD2017F00599E0B /* IPRouteItem.m in Sources */,
 				D401EAF61CD2017F00599E0B /* HTTPDownloadConnection.m in Sources */,
 				D401EAED1CD2017F00599E0B /* DeflateDecompressor.m in Sources */,
 				D401EB111CD2017F00599E0B /* XMLSprite.m in Sources */,
+				D40EEAAF1CD2FC0A00E646C9 /* SPTaskFreePool.m in Sources */,
 				D401EAF91CD2017F00599E0B /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */,
 				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
+				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
 				D401EB071CD2017F00599E0B /* LightLoadingPermanentQueue.m in Sources */,
 				D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */,
+				D40EEAAE1CD2FC0A00E646C9 /* SPTaskDaemonPool.m in Sources */,
+				D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */,
 				D401EAFB1CD2017F00599E0B /* HTTPSession.m in Sources */,
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
-				D401EB221CD2017F00599E0B /* SPTaskQueue.m in Sources */,
-				D401EB1B1CD2017F00599E0B /* SPTaskBackgroundPool.m in Sources */,
 				D401EB551CD207AF00599E0B /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
-				D401EB231CD2017F00599E0B /* SPTaskDispatcher.m in Sources */,
 				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
 				D401EAFF1CD2017F00599E0B /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
 				D401EADF1CD2017F00599E0B /* DBDefine.m in Sources */,
 				D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */,
-				D401EB211CD2017F00599E0B /* SPTaskBlockLoader.m in Sources */,
+				D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */,
 				D401EAEB1CD2017F00599E0B /* GzipCompressor.m in Sources */,
+				D40EEAAD1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m in Sources */,
 				D401EB521CD2077E00599E0B /* ServiceUnit.m in Sources */,
-				D401EB181CD2017F00599E0B /* FoundationTask.m in Sources */,
 				D401EAE41CD2017F00599E0B /* DBTable.m in Sources */,
 				D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */,
 				D401EAF01CD2017F00599E0B /* NSData+MD5.m in Sources */,
-				D401EB191CD2017F00599E0B /* TaskingTask.m in Sources */,
 				D401EB0D1CD2017F00599E0B /* IPRouteTracer.m in Sources */,
 				D401EB5E1CD2087400599E0B /* NSDateFormatter+SharedInstance.m in Sources */,
 				D401EB141CD2017F00599E0B /* NSString+Character.m in Sources */,
@@ -1232,16 +1247,16 @@
 				D401EB581CD2080300599E0B /* APPLog+SharedInstance.m in Sources */,
 				D401EAFC1CD2017F00599E0B /* NSURLSessionTask+Delegate.m in Sources */,
 				D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */,
-				D401EB1F1CD2017F00599E0B /* SPTaskServiceProvider.m in Sources */,
 				D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
-				D401EB201CD2017F00599E0B /* SPTask.m in Sources */,
 				D401EAE81CD2017F00599E0B /* DataBaseUnit.m in Sources */,
+				D40EEAC41CD30A7A00E646C9 /* SPTaskBackgroundPool+SharedInstance.m in Sources */,
 				D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */,
+				D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */,
 				D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */,
-				D401EB171CD2017F00599E0B /* BlockTask.m in Sources */,
 				D401EAF21CD2017F00599E0B /* NSString+URLEncode.m in Sources */,
+				D40EEABB1CD30A2200E646C9 /* OperationTask.m in Sources */,
 				D401EB101CD2017F00599E0B /* XMLUtility.m in Sources */,
 				D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */,
 				D401EAE61CD2017F00599E0B /* DBSQL_Extension.m in Sources */,
@@ -1250,7 +1265,6 @@
 				D401EAEE1CD2017F00599E0B /* GzipDecompressor.m in Sources */,
 				D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */,
 				D401EB3F1CD2026300599E0B /* EPub.m in Sources */,
-				D401EB1A1CD2017F00599E0B /* SPTaskConfiguration.m in Sources */,
 				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

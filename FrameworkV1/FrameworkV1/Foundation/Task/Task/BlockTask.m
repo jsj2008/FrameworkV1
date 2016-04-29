@@ -34,8 +34,6 @@
 
 - (void)run
 {
-    self.dispatcher = nil;
-    
     if (self.block)
     {
         self.block();

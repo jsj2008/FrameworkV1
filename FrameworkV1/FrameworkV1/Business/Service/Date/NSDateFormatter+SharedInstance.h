@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+/*********************************************************
+ 
+    @category
+        NSDateFormatter (SharedInstance)
+ 
+    @abstract
+        NSDateFormatter的单例扩展
+ 
+    @discussion
+        1，NSDateFormatter的创建是非常耗时的，应当使用单例减小开销
+ 
+ *********************************************************/
+
 @interface NSDateFormatter (SharedInstance)
 
 @end

@@ -62,25 +62,19 @@ typedef enum
 @property (nonatomic) NSUInteger asyncTaskCapacity;
 
 /*!
- * @brief 配置守护池
- * @discussion 默认使用全局守护池
- * @param pool 守护池
+ * @brief 任务守护池
  */
-- (void)setDaemonTaskPool:(SPTaskDaemonPool *)pool;
+@property (nonatomic) SPTaskDaemonPool *daemonPool;
 
 /*!
- * @brief 配置自由池
- * @discussion 默认使用全局自由池
- * @param pool 自由池
+ * @brief 任务自由池
  */
-- (void)setFreeTaskPool:(SPTaskFreePool *)pool;
+@property (nonatomic) SPTaskFreePool *freePool;
 
 /*!
- * @brief 配置后台池
- * @discussion 默认使用全局后台池
- * @param pool 后台池
+ * @brief 任务后台池
  */
-- (void)setBackgroundTaskPool:(SPTaskBackgroundPool *)pool;
+@property (nonatomic) SPTaskBackgroundPool *backgroundPool;
 
 /*!
  * @brief 所有正在执行的同步任务

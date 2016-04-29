@@ -7,7 +7,6 @@
 //
 
 #import "SPTaskDaemonPool.h"
-#import "SPTaskConfiguration.h"
 
 @interface SPTaskDaemonPool ()
 
@@ -22,33 +21,6 @@
 
 
 @implementation SPTaskDaemonPool
-
-- (id)init
-{
-    if (self = [super init])
-    {
-        self.poolCapacity = [SPTaskConfiguration sharedInstance].daemonPoolCapacity;
-    }
-    
-    return self;
-}
-
-+ (SPTaskDaemonPool *)sharedInstance
-{
-    static SPTaskDaemonPool *instance = nil;
-    
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        
-        if (!instance)
-        {
-            instance = [[SPTaskDaemonPool alloc] init];
-        }
-    });
-    
-    return instance;
-}
 
 - (void)start
 {
@@ -66,6 +38,8 @@
         for (int i = 0; i < queueCount; i ++)
         {
             SPTaskQueue *queue = [[SPTaskQueue alloc] initWithRunMode:SPTaskQueueRunMode_Persistent];
+            
+            queue.loadsLimit = self.taskQueueLoadsLimit;
             
             queue.owner = self;
             
@@ -125,6 +99,8 @@
             {
                 SPTaskQueue *queue = [[SPTaskQueue alloc] init];
                 
+                queue.loadsLimit = self.taskQueueLoadsLimit;
+                
                 queue.owner = self;
                 
                 success = [queue addTasks:tasks];
@@ -159,6 +135,8 @@
         if (!success)
         {
             SPTaskQueue *queue = [[SPTaskQueue alloc] init];
+            
+            queue.loadsLimit = self.taskQueueLoadsLimit;
             
             queue.owner = self;
             

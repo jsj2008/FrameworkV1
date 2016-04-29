@@ -61,7 +61,7 @@ typedef enum
 }
 
 /*!
- * @brief 内部负载量上限，默认为SPTaskQueueDefaultLoadsLimit
+ * @brief 内部负载量上限
  */
 @property (nonatomic) NSUInteger loadsLimit;
 

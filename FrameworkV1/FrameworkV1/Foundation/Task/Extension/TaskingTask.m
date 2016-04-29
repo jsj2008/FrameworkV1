@@ -55,7 +55,7 @@
     
     for (FoundationTask *task in tasks)
     {
-        [self.dispatcher syncAddTask:task];
+        [self.taskDispatcher syncAddTask:task];
     }
 }
 
@@ -63,7 +63,7 @@
 {
     for (FoundationTask *task in tasks)
     {
-        [self.dispatcher removeTask:task];
+        [self.taskDispatcher removeTask:task];
     }
     
     [self notify:^{
@@ -79,7 +79,7 @@
 {
     for (FoundationTask *task in tasks)
     {
-        [self.dispatcher cancelTask:task];
+        [self.taskDispatcher cancelTask:task];
     }
     
     [self notify:^{

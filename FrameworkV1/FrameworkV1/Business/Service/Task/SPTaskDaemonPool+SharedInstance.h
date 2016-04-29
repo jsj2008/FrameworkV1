@@ -1,28 +1,28 @@
 //
-//  APPLog+SharedInstance.h
+//  SPTaskDaemonPool+SharedInstance.h
 //  FrameworkV1
 //
-//  Created by ww on 16/4/28.
+//  Created by ww on 16/4/29.
 //  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "APPLog.h"
+#import "SPTaskDaemonPool.h"
 
 /*********************************************************
  
     @category
-        APPLog (SharedInstance)
+        SPTaskDaemonPool (SharedInstance)
  
     @abstract
-        APPLog的单例扩展
+        SPTaskDaemonPool的单例扩展
  
  *********************************************************/
 
-@interface APPLog (SharedInstance)
+@interface SPTaskDaemonPool (SharedInstance)
 
 /*!
  * @brief 单例
  */
-+ (APPLog *)sharedInstance;
++ (SPTaskDaemonPool *)sharedInstance;
 
 @end

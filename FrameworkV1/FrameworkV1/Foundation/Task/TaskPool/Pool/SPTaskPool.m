@@ -25,7 +25,11 @@
         
         _taskQueues = [[NSMutableArray alloc] initWithCapacity:3];
         
+        _stop = YES;
+        
         self.poolCapacity = 3;
+        
+        self.taskQueueLoadsLimit = 100;
     }
     
     return self;

@@ -38,6 +38,12 @@
 @property (nonatomic) NSUInteger poolCapacity;
 
 /*!
+ * @brief 任务队列负载量上限
+ * @discussion 默认数量为100
+ */
+@property (nonatomic) NSUInteger taskQueueLoadsLimit;
+
+/*!
  * @brief 启动池
  */
 - (void)start;

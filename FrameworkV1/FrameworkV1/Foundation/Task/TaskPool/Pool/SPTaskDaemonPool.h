@@ -25,11 +25,6 @@
 @interface SPTaskDaemonPool : SPTaskPool
 
 /*!
- * @brief 单例
- */
-+ (SPTaskDaemonPool *)sharedInstance;
-
-/*!
  * @brief 创建并启动指定数量的常驻队列
  * @param count 常驻队列的数量
  */

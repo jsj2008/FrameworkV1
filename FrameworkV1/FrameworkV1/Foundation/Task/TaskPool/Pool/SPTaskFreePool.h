@@ -23,11 +23,6 @@
 
 @interface SPTaskFreePool : SPTaskPool
 
-/*!
- * @brief 单例
- */
-+ (SPTaskFreePool *)sharedInstance;
-
 @end
 
 

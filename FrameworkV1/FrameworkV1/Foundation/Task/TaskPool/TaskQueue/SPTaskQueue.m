@@ -7,15 +7,11 @@
 //
 
 #import "SPTaskQueue.h"
-#import "SPTaskConfiguration.h"
 
 @interface SPTaskQueue ()
 {
     // 总负载
     NSUInteger _totalLoads;
-    
-    // 负载限制
-    NSUInteger _totalLoadsLimit;
     
     // 同步队列
     dispatch_queue_t _syncQueue;
@@ -44,8 +40,6 @@
 
 @implementation SPTaskQueue
 
-@synthesize loadsLimit = _totalLoadsLimit;
-
 - (void)dealloc
 {
     dispatch_sync(_syncQueue, ^{});
@@ -62,8 +56,6 @@
         _runningTasks = [[NSMutableArray alloc] init];
         
         _readyTasks = [[NSMutableArray alloc] init];
-        
-        _totalLoadsLimit = [SPTaskConfiguration sharedInstance].defaultQueueLoadingLimit;
         
         _isFinished = NO;
         
@@ -85,8 +77,6 @@
         
         _readyTasks = [[NSMutableArray alloc] init];
         
-        _totalLoadsLimit = [SPTaskConfiguration sharedInstance].defaultQueueLoadingLimit;
-        
         _isFinished = NO;
         
         _isCancelled = NO;
@@ -102,12 +92,11 @@
 
 - (BOOL)isOverLoaded
 {
-    return (_totalLoads > _totalLoadsLimit);
+    return (_totalLoads > self.loadsLimit);
 }
 
 - (void)run
 {
-    
     // 内部取消Task时，不要清空它的协议消息代理，可能存在某些特殊的Task在取消时需要发送消息
     
     self.runningThread = [NSThread currentThread];

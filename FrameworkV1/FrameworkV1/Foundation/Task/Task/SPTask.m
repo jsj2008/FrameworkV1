@@ -7,8 +7,6 @@
 //
 
 #import "SPTask.h"
-#import "SPTaskQueue.h"
-#import "SPTaskBlockLoader.h"
 
 @interface SPTask ()
 
@@ -16,6 +14,12 @@
  * @brief 运行线程
  */
 @property (nonatomic) NSThread *mainThread;
+
+/*!
+ * @brief 操作
+ * @param operation 操作块
+ */
+- (void)operate:(void (^)())operation;
 
 @end
 
@@ -29,8 +33,6 @@
         self.loadSize = 0;
         
         self.runStatus = SPTaskRunStatus_Prepare;
-        
-        self.dispatcher = [[SPTaskDispatcher alloc] init];
     }
     
     return self;
@@ -43,7 +45,7 @@
 
 - (NSUInteger)totalLoadSize
 {
-    return (self.loadSize + [self.dispatcher syncTaskLoads]);
+    return self.loadSize;
 }
 
 - (void)main
@@ -62,10 +64,6 @@
 
 - (void)cancel
 {
-    [self.dispatcher cancel];
-    
-    self.dispatcher = nil;
-    
     self.runStatus = SPTaskRunStatus_Finish;
 }
 
@@ -82,9 +80,15 @@
     }
     else if ([thread isExecuting])
     {
-        SPTaskBlockLoader *blockLoader = [[SPTaskBlockLoader alloc] initWithBlock:notification];
-        
-        [blockLoader performSelector:@selector(exeBlock) onThread:thread withObject:nil waitUntilDone:NO];
+        [self performSelector:@selector(operate:) onThread:thread withObject:notification waitUntilDone:NO];
+    }
+}
+
+- (void)operate:(void (^)())operation
+{
+    if (operation)
+    {
+        operation();
     }
 }
 

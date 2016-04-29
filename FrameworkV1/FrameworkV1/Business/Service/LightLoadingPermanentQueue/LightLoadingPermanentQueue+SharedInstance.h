@@ -8,6 +8,16 @@
 
 #import "LightLoadingPermanentQueue.h"
 
+/*********************************************************
+ 
+    @category
+        LightLoadingPermanentQueue (SharedInstance)
+ 
+    @abstract
+        LightLoadingPermanentQueue的单例扩展
+ 
+ *********************************************************/
+
 @interface LightLoadingPermanentQueue (SharedInstance)
 
 /*!

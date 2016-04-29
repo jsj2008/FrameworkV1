@@ -7,37 +7,8 @@
 //
 
 #import "SPTaskBackgroundPool.h"
-#import "SPTaskConfiguration.h"
 
 @implementation SPTaskBackgroundPool
-
-- (id)init
-{
-    if (self = [super init])
-    {
-        self.poolCapacity = [SPTaskConfiguration sharedInstance].backgroundPoolCapacity;
-    }
-    
-    return self;
-}
-
-+ (SPTaskBackgroundPool *)sharedInstance
-{
-    static SPTaskBackgroundPool *instance = nil;
-    
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        
-        if (!instance)
-        {
-            instance = [[SPTaskBackgroundPool alloc] init];
-        }
-    });
-    
-    return instance;
-}
-
 
 - (void)start
 {
@@ -59,6 +30,8 @@
         if ([_taskQueues count] < self.poolCapacity)
         {
             SPTaskQueue *queue = [[SPTaskQueue alloc] init];
+            
+            queue.loadsLimit = self.taskQueueLoadsLimit;
             
             queue.owner = self;
             
@@ -109,6 +82,8 @@
             if (!success)
             {
                 SPTaskQueue *queue = [[SPTaskQueue alloc] init];
+                
+                queue.loadsLimit = self.taskQueueLoadsLimit;
                 
                 queue.owner = self;
                 

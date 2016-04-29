@@ -53,21 +53,6 @@
 }
 
 /*!
- * @brief 当前任务守护池
- */
-@property (nonatomic) SPTaskDaemonPool *currentDaemonTaskPool;
-
-/*!
- * @brief 当前任务自由池
- */
-@property (nonatomic) SPTaskFreePool *currentFreeTaskPool;
-
-/*!
- * @brief 当前任务后台池
- */
-@property (nonatomic) SPTaskBackgroundPool *currentBackgroundTaskPool;
-
-/*!
  * @brief 按指定模式添加异步任务到任务池并执行
  * @param task 异步任务
  * @param mode 指定模式
@@ -105,30 +90,9 @@
         _asyncTaskDependences = [[NSMutableArray alloc] init];
         
         self.asyncTaskCapacity = 100;
-        
-        self.currentDaemonTaskPool = [SPTaskDaemonPool sharedInstance];
-        
-        self.currentFreeTaskPool = [SPTaskFreePool sharedInstance];
-        
-        self.currentBackgroundTaskPool = [SPTaskBackgroundPool sharedInstance];
     }
     
     return self;
-}
-
-- (void)setDaemonTaskPool:(SPTaskDaemonPool *)pool
-{
-    self.currentDaemonTaskPool = pool;
-}
-
-- (void)setFreeTaskPool:(SPTaskFreePool *)pool
-{
-    self.currentFreeTaskPool = pool;
-}
-
-- (void)setBackgroundTaskPool:(SPTaskBackgroundPool *)pool
-{
-    self.currentBackgroundTaskPool = pool;
 }
 
 - (NSArray<SPTask *> *)allSyncTasks
@@ -405,21 +369,21 @@
     {
         case SPTaskAsyncRunMode_Daemon:
         {
-            success = [self.currentDaemonTaskPool addTasks:[NSArray arrayWithObject:task]];
+            success = [self.daemonPool addTasks:[NSArray arrayWithObject:task]];
             
             break;
         }
             
         case SPTaskAsyncRunMode_ExclusiveThread:
         {
-            success = [self.currentFreeTaskPool addTasks:[NSArray arrayWithObject:task]];
+            success = [self.freePool addTasks:[NSArray arrayWithObject:task]];
             
             break;
         }
             
         case SPTaskAsyncRunMode_Background:
         {
-            success = [self.currentBackgroundTaskPool addTasks:[NSArray arrayWithObject:task]];
+            success = [self.backgroundPool addTasks:[NSArray arrayWithObject:task]];
             
             break;
         }

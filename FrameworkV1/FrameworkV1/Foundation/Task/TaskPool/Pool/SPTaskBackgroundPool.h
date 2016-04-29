@@ -23,11 +23,6 @@
 
 @interface SPTaskBackgroundPool : SPTaskPool
 
-/*!
- * @brief 单例
- */
-+ (SPTaskBackgroundPool *)sharedInstance;
-
 @end
 
 

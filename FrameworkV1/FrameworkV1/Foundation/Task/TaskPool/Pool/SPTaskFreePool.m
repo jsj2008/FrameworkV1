@@ -7,36 +7,8 @@
 //
 
 #import "SPTaskFreePool.h"
-#import "SPTaskConfiguration.h"
 
 @implementation SPTaskFreePool
-
-- (id)init
-{
-    if (self = [super init])
-    {
-        self.poolCapacity = [SPTaskConfiguration sharedInstance].freePoolCapacity;
-    }
-    
-    return self;
-}
-
-+ (SPTaskFreePool *)sharedInstance
-{
-    static SPTaskFreePool *instance = nil;
-    
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        
-        if (!instance)
-        {
-            instance = [[SPTaskFreePool alloc] init];
-        }
-    });
-    
-    return instance;
-}
 
 - (void)start
 {
@@ -58,6 +30,8 @@
         if ([_taskQueues count] < self.poolCapacity)
         {
             SPTaskQueue *queue = [[SPTaskQueue alloc] init];
+            
+            queue.loadsLimit = self.taskQueueLoadsLimit;
             
             queue.owner = self;
             
@@ -108,6 +82,8 @@
             if (!success)
             {
                 SPTaskQueue *queue = [[SPTaskQueue alloc] init];
+                
+                queue.loadsLimit = self.taskQueueLoadsLimit;
                 
                 queue.owner = self;
                 

@@ -1,28 +1,28 @@
 //
-//  APPLog+SharedInstance.h
+//  SPTaskFreePool+SharedInstance.h
 //  FrameworkV1
 //
-//  Created by ww on 16/4/28.
+//  Created by ww on 16/4/29.
 //  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "APPLog.h"
+#import "SPTaskFreePool.h"
 
 /*********************************************************
  
     @category
-        APPLog (SharedInstance)
+        SPTaskFreePool (SharedInstance)
  
     @abstract
-        APPLog的单例扩展
+        SPTaskFreePool的单例扩展
  
  *********************************************************/
 
-@interface APPLog (SharedInstance)
+@interface SPTaskFreePool (SharedInstance)
 
 /*!
  * @brief 单例
  */
-+ (APPLog *)sharedInstance;
++ (SPTaskFreePool *)sharedInstance;
 
 @end

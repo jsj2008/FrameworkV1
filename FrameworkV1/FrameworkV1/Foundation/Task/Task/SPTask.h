@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SPTaskDispatcher.h"
 
 /**********************************************************
  
@@ -36,9 +35,8 @@ typedef enum
         完成特定功能的任务的对象
  
     @discussion
-        1、支持任务嵌套，即支持执行子任务，通过dispatchHandle属性管理子任务
-        2、每一个Task对象都有自己的负载量，在任务调度的时候使用
-        3、运行状态通过执行Task的方法自行调整，不建议子类手动更改。在初始化时为准备状态，执行main方法后为运行状态，执行cancel方法后为结束阶段
+        1、每一个Task对象都有自己的负载量，在任务调度的时候使用
+        2、运行状态通过执行Task的方法自行调整，不建议子类手动更改。在初始化时为准备状态，执行main方法后为运行状态，执行cancel方法后为结束阶段
  
  **********************************************************/
 
@@ -60,11 +58,6 @@ typedef enum
 @property (nonatomic) SPTaskRunStatus runStatus;
 
 /*!
- * @brief 子任务派发器，管理和调度子任务
- */
-@property (nonatomic) SPTaskDispatcher *dispatcher;
-
-/*!
  * @brief 接收消息的线程
  * @discussion 值为nil表征总是在当前线程接收消息
  */
@@ -77,7 +70,7 @@ typedef enum
 - (NSThread *)runningThread;
 
 /*!
- * @brief 总负载，自身负载和同步子任务负载的总和
+ * @brief 总负载
  * @result 总负载
  */
 - (NSUInteger)totalLoadSize;
@@ -96,7 +89,8 @@ typedef enum
 
 /*!
  * @brief 取消任务
- * @discussion 执行清理内部变量和dispatchHandle的操作，并修改运行状态为结束。在SPTask结束前必须执行本方法以彻底释放资源并调整运行状态
+ * @discussion 执行清理内部变量并修改运行状态为结束。在SPTask结束前必须执行本方法以彻底释放资源并调整运行状态
+ * @discussion 子类若重写cancel方法需先调用父类cancel方法
  */
 - (void)cancel;
 
