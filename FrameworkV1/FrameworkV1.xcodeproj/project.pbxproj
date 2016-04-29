@@ -95,6 +95,7 @@
 		D40EEAC41CD30A7A00E646C9 /* SPTaskBackgroundPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC31CD30A7900E646C9 /* SPTaskBackgroundPool+SharedInstance.m */; };
 		D40EEAC71CD330CB00E646C9 /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAC61CD330CB00E646C9 /* ImageStorage.m */; };
 		D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */; };
+		D40EEAD01CD34FB600E646C9 /* StorageUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEACF1CD34FB600E646C9 /* StorageUnit.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -284,6 +285,8 @@
 		D40EEAC61CD330CB00E646C9 /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
 		D40EEACA1CD332EE00E646C9 /* IndexingFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingFileStorage.h; sourceTree = "<group>"; };
 		D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingFileStorage.m; sourceTree = "<group>"; };
+		D40EEACE1CD34FB600E646C9 /* StorageUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageUnit.h; sourceTree = "<group>"; };
+		D40EEACF1CD34FB600E646C9 /* StorageUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageUnit.m; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -876,16 +879,8 @@
 				D401EB5F1CD20E9100599E0B /* Network */,
 				D401EB4A1CD2068E00599E0B /* Log */,
 				D401EB4F1CD206FE00599E0B /* Date */,
-				D401EB481CD2068E00599E0B /* Image */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		D401EB481CD2068E00599E0B /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		D401EB491CD2068E00599E0B /* LightLoadingPermanentQueue */ = {
@@ -918,6 +913,7 @@
 		D401EB4D1CD2068E00599E0B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				D40EEACD1CD34FA000E646C9 /* StorageUnit */,
 				D401EB4E1CD2068E00599E0B /* Image */,
 			);
 			path = Storage;
@@ -1055,6 +1051,15 @@
 				D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */,
 			);
 			path = File;
+			sourceTree = "<group>";
+		};
+		D40EEACD1CD34FA000E646C9 /* StorageUnit */ = {
+			isa = PBXGroup;
+			children = (
+				D40EEACE1CD34FB600E646C9 /* StorageUnit.h */,
+				D40EEACF1CD34FB600E646C9 /* StorageUnit.m */,
+			);
+			path = StorageUnit;
 			sourceTree = "<group>";
 		};
 		D4E3EA211CC8A52B00A7987E = {
@@ -1236,6 +1241,7 @@
 				D401EAED1CD2017F00599E0B /* DeflateDecompressor.m in Sources */,
 				D401EB111CD2017F00599E0B /* XMLSprite.m in Sources */,
 				D40EEAAF1CD2FC0A00E646C9 /* SPTaskFreePool.m in Sources */,
+				D40EEAD01CD34FB600E646C9 /* StorageUnit.m in Sources */,
 				D401EAF91CD2017F00599E0B /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */,
 				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
