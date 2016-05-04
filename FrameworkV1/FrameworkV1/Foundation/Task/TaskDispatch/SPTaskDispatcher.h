@@ -8,25 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@class SPTask, SPTaskDependence, SPTaskDaemonPool, SPTaskFreePool, SPTaskBackgroundPool;
+@class SPTask, SPTaskDependence, SPTaskPool;
 
 
 /*********************************************************
  
-    @enum
-        SPTaskAsyncRunMode
+    @const
+        kTaskDispatcherPoolIdentifier_XXX
  
     @abstract
-        Task异步运行方式
+        不同任务池的标识符
  
  *********************************************************/
 
-typedef enum
-{
-    SPTaskAsyncRunMode_Daemon          = 1,  // 在守护池中运行，接受负载调度
-    SPTaskAsyncRunMode_ExclusiveThread = 2,  // 独享线程
-    SPTaskAsyncRunMode_Background      = 3   // 后台运行
-}SPTaskAsyncRunMode;
+// 守护任务池标识符
+extern NSString * const kTaskDispatcherPoolIdentifier_Daemon;
+
+// 自由任务池标识符
+extern NSString * const kTaskDispatcherPoolIdentifier_Free;
+
+// 后台任务池标识符
+extern NSString * const kTaskDispatcherPoolIdentifier_Background;
 
 
 #pragma mark - SPTaskDispatcher
@@ -62,19 +64,11 @@ typedef enum
 @property (nonatomic) NSUInteger asyncTaskCapacity;
 
 /*!
- * @brief 任务守护池
+ * @brief 任务池
+ * @discussion key：任务池标识符，value：任务池
+ * @discussion 除kTaskDispatcherPoolIdentifier_XXX指定的类型外，可以自定义新的标识符和新的任务池类型
  */
-@property (nonatomic) SPTaskDaemonPool *daemonPool;
-
-/*!
- * @brief 任务自由池
- */
-@property (nonatomic) SPTaskFreePool *freePool;
-
-/*!
- * @brief 任务后台池
- */
-@property (nonatomic) SPTaskBackgroundPool *backgroundPool;
+@property (nonatomic) NSDictionary<NSString *, SPTaskPool *> *pools;
 
 /*!
  * @brief 所有正在执行的同步任务
@@ -109,21 +103,13 @@ typedef enum
 - (void)syncAddTask:(SPTask *)task onNextRunLoop:(BOOL)on;
 
 /*!
- * @brief 异步添加并执行任务，采用TaskAsyncRunMode_Daemon模式，接受任务调度
- * @discussion 任务将被调度到最适合的线程中执行，不排除被调度回当前线程执行的可能；若任务未指定通知线程，将使用当前线程作为通知线程
- * @param task 待执行的任务
- * @result 是否成功启动异步执行
- */
-- (BOOL)asyncAddTask:(SPTask *)task;
-
-/*!
  * @brief 异步添加并执行任务，接受任务调度
  * @discussion 任务将被调度到最适合的线程中执行，不排除被调度回当前线程执行的可能；若任务未指定通知线程，将使用当前线程作为通知线程
  * @param task 待执行的任务
- * @param mode 任务异步运行模式
+ * @param poolIdentifier 任务池标识符
  * @result 是否成功启动异步执行
  */
-- (BOOL)asyncAddTask:(SPTask *)task inMode:(SPTaskAsyncRunMode)mode;
+- (BOOL)asyncAddTask:(SPTask *)task inPool:(NSString *)poolIdentifier;
 
 /*!
  * @brief 添加任务依赖关系

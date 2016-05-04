@@ -17,11 +17,7 @@
 {
     if (self = [super init])
     {
-        self.taskDispatcher.daemonPool = [SPTaskDaemonPool sharedInstance];
-        
-        self.taskDispatcher.freePool = [SPTaskFreePool sharedInstance];
-        
-        self.taskDispatcher.backgroundPool = [SPTaskBackgroundPool sharedInstance];
+        self.taskDispatcher.pools = [[NSDictionary alloc] initWithObjectsAndKeys:[SPTaskDaemonPool sharedInstance], kTaskDispatcherPoolIdentifier_Daemon, [SPTaskFreePool sharedInstance], kTaskDispatcherPoolIdentifier_Free, [SPTaskBackgroundPool sharedInstance], kTaskDispatcherPoolIdentifier_Background, nil];
     }
     
     return self;

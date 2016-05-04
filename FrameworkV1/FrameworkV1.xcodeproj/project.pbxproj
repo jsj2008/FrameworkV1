@@ -100,6 +100,7 @@
 		D40EEAD71CD3589E00E646C9 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAD51CD3589E00E646C9 /* ImageManager.m */; };
 		D40EEADB1CD35E9100E646C9 /* HTTPSession+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEADA1CD35E9100E646C9 /* HTTPSession+SharedInstance.m */; };
 		D41FCC741CD8ABF3005D9E86 /* SPTaskDispatcher+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = D41FCC731CD8ABF3005D9E86 /* SPTaskDispatcher+Convenience.m */; };
+		D41FCC771CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D41FCC761CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -299,6 +300,8 @@
 		D40EEADA1CD35E9100E646C9 /* HTTPSession+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPSession+SharedInstance.m"; sourceTree = "<group>"; };
 		D41FCC721CD8ABF3005D9E86 /* SPTaskDispatcher+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTaskDispatcher+Convenience.h"; sourceTree = "<group>"; };
 		D41FCC731CD8ABF3005D9E86 /* SPTaskDispatcher+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskDispatcher+Convenience.m"; sourceTree = "<group>"; };
+		D41FCC751CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPConnectionResumeStorage+SharedInstance.h"; sourceTree = "<group>"; };
+		D41FCC761CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPConnectionResumeStorage+SharedInstance.m"; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -1094,6 +1097,8 @@
 			children = (
 				D40EEAD91CD35E9100E646C9 /* HTTPSession+SharedInstance.h */,
 				D40EEADA1CD35E9100E646C9 /* HTTPSession+SharedInstance.m */,
+				D41FCC751CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.h */,
+				D41FCC761CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1257,6 +1262,7 @@
 				D401EB121CD2017F00599E0B /* XMLSpriteSerialize.m in Sources */,
 				D40EEAA81CD2FC0A00E646C9 /* FoundationTask.m in Sources */,
 				D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */,
+				D41FCC771CD8B124005D9E86 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D401EAE21CD2017F00599E0B /* DBMachine.m in Sources */,
 				D401EB091CD2017F00599E0B /* IPRouteTraceHandle.m in Sources */,
 				D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */,

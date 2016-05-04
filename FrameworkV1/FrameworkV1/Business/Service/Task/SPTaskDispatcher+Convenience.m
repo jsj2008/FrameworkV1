@@ -17,11 +17,7 @@
 {
     SPTaskDispatcher *dispatcher = [[SPTaskDispatcher alloc] init];
     
-    dispatcher.daemonPool = [SPTaskDaemonPool sharedInstance];
-    
-    dispatcher.freePool = [SPTaskFreePool sharedInstance];
-    
-    dispatcher.backgroundPool = [SPTaskBackgroundPool sharedInstance];
+    dispatcher.pools = [[NSDictionary alloc] initWithObjectsAndKeys:[SPTaskDaemonPool sharedInstance], kTaskDispatcherPoolIdentifier_Daemon, [SPTaskFreePool sharedInstance], kTaskDispatcherPoolIdentifier_Free, [SPTaskBackgroundPool sharedInstance], kTaskDispatcherPoolIdentifier_Background, nil];
     
     return dispatcher;
 }

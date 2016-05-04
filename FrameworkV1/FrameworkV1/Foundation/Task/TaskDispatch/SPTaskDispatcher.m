@@ -22,9 +22,9 @@
 @property (nonatomic) SPTask *task;
 
 /*!
- * @brief 运行模式
+ * @brief 任务池标识符
  */
-@property (nonatomic) SPTaskAsyncRunMode mode;
+@property (nonatomic, copy) NSString *poolIdentifier;
 
 @end
 
@@ -51,14 +51,6 @@
     // 异步执行的Task依赖关系
     NSMutableArray *_asyncTaskDependences;
 }
-
-/*!
- * @brief 按指定模式添加异步任务到任务池并执行
- * @param task 异步任务
- * @param mode 指定模式
- * @result 添加是否成功
- */
-- (BOOL)asyncAddTask:(SPTask *)task toTaskPoolInMode:(SPTaskAsyncRunMode)mode;
 
 /*!
  * @brief 运行等候队列中的任务
@@ -93,6 +85,16 @@
     }
     
     return self;
+}
+
+- (void)setAsyncTaskCapacity:(NSUInteger)asyncTaskCapacity
+{
+    _asyncTaskCapacity = asyncTaskCapacity;
+    
+    if (_asyncTaskCapacity < 1)
+    {
+        _asyncTaskCapacity = 1;
+    }
 }
 
 - (NSArray<SPTask *> *)allSyncTasks
@@ -153,14 +155,9 @@
     }
 }
 
-- (BOOL)asyncAddTask:(SPTask *)task
+- (BOOL)asyncAddTask:(SPTask *)task inPool:(NSString *)poolIdentifier
 {
-    return [self asyncAddTask:task inMode:SPTaskAsyncRunMode_Daemon];
-}
-
-- (BOOL)asyncAddTask:(SPTask *)task inMode:(SPTaskAsyncRunMode)mode
-{
-    if (!task)
+    if (!task || !poolIdentifier)
     {
         return YES;
     }
@@ -174,7 +171,7 @@
     
     if ([_asyncTasks count] < self.asyncTaskCapacity && [self isAsyncTaskPreparedToRun:task])
     {
-        success = [self asyncAddTask:task toTaskPoolInMode:mode];
+        success = [(SPTaskPool *)[self.pools objectForKey:poolIdentifier] addTasks:[NSArray arrayWithObject:task]];
         
         if (success)
         {
@@ -187,7 +184,7 @@
         
         context.task = task;
         
-        context.mode = mode;
+        context.poolIdentifier = poolIdentifier;
         
         [_asyncQueuedTaskContexts addObject:context];
         
@@ -361,40 +358,6 @@
     [self removeTask:task];
 }
 
-- (BOOL)asyncAddTask:(SPTask *)task toTaskPoolInMode:(SPTaskAsyncRunMode)mode
-{
-    BOOL success = YES;
-    
-    switch (mode)
-    {
-        case SPTaskAsyncRunMode_Daemon:
-        {
-            success = [self.daemonPool addTasks:[NSArray arrayWithObject:task]];
-            
-            break;
-        }
-            
-        case SPTaskAsyncRunMode_ExclusiveThread:
-        {
-            success = [self.freePool addTasks:[NSArray arrayWithObject:task]];
-            
-            break;
-        }
-            
-        case SPTaskAsyncRunMode_Background:
-        {
-            success = [self.backgroundPool addTasks:[NSArray arrayWithObject:task]];
-            
-            break;
-        }
-            
-        default:
-            break;
-    }
-    
-    return success;
-}
-
 - (void)runQueuedTasks
 {
     if (([_asyncQueuedTaskContexts count] && [_asyncTasks count] < self.asyncTaskCapacity))
@@ -407,10 +370,7 @@
             
             if ([self isAsyncTaskPreparedToRun:task])
             {
-                if ([self asyncAddTask:task toTaskPoolInMode:context.mode])
-                {
-                    [_asyncTasks addObject:task];
-                }
+                [self asyncAddTask:task inPool:context.poolIdentifier];
                 
                 [toRemoveContexts addObject:context];
             }
@@ -443,3 +403,10 @@
 }
 
 @end
+
+
+NSString * const kTaskDispatcherPoolIdentifier_Daemon = @"daemon";
+
+NSString * const kTaskDispatcherPoolIdentifier_Free = @"free";
+
+NSString * const kTaskDispatcherPoolIdentifier_Background= @"background";

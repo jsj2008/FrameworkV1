@@ -125,7 +125,7 @@
                                         
                     task.delegate = self;
                     
-                    [self.taskDispatcher asyncAddTask:task];
+                    [self.taskDispatcher asyncAddTask:task inPool:kTaskDispatcherPoolIdentifier_Daemon];
                     
                     set = [[NotificationObservingSet alloc] init];
                     
