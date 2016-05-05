@@ -8,6 +8,7 @@
 
 #import "IPRouteTraceCenter.h"
 #import "IPRouteTracer.h"
+#import "SPTaskFreePool.h"
 
 /*!
  * @brief 路由追踪任务的并发量
@@ -28,6 +29,11 @@ static NSString * const IPRouteTracingContextKey_Observer = @"observer";
  * @brief 追踪上下文的键
  */
 static NSString * const IPRouteTracingContextKey_Host = @"host";
+
+/*!
+ * @brief 追踪上下文的键
+ */
+static NSString * const IPRouteTracingFreePoolIdentifer = @"free";
 
 
 @interface IPRouteTraceCenter ()
@@ -54,6 +60,8 @@ static NSString * const IPRouteTracingContextKey_Host = @"host";
         _syncQueue = dispatch_queue_create(NULL, NULL);
         
         _dispatcher = [[SPTaskDispatcher alloc] init];
+        
+        _dispatcher.pools = [NSDictionary dictionaryWithObject:[[SPTaskFreePool alloc] init] forKey:IPRouteTracingFreePoolIdentifer];
         
         _dispatcher.asyncTaskCapacity = IPRouteTracingConcurrentTaskCount;
     }
@@ -141,7 +149,7 @@ static NSString * const IPRouteTracingContextKey_Host = @"host";
         
         task.delegate = self;
                 
-        [_dispatcher asyncAddTask:task inPool:kTaskDispatcherPoolIdentifier_Free];
+        [_dispatcher asyncAddTask:task inPool:IPRouteTracingFreePoolIdentifer];
     });
     
     return YES;

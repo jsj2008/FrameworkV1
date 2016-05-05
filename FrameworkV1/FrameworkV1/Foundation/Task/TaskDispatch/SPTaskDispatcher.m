@@ -403,10 +403,3 @@
 }
 
 @end
-
-
-NSString * const kTaskDispatcherPoolIdentifier_Daemon = @"daemon";
-
-NSString * const kTaskDispatcherPoolIdentifier_Free = @"free";
-
-NSString * const kTaskDispatcherPoolIdentifier_Background= @"background";

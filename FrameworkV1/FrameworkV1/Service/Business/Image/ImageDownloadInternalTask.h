@@ -1,5 +1,5 @@
 //
-//  ImageDownloadTask.h
+//  ImageDownloadInternalTask.h
 //  DuomaiFrameWork
 //
 //  Created by Baymax on 4/14/15.
@@ -14,14 +14,14 @@
 /*********************************************************
  
     @class
-        ImageDownloadTask
+        ImageDownloadInternalTask
  
     @abstract
         图片下载任务
  
  *********************************************************/
 
-@interface ImageDownloadTask : OperationTask
+@interface ImageDownloadInternalTask : OperationTask
 
 /*!
  * @brief 图片URL
@@ -49,13 +49,13 @@
  * @param successfully 下载是否成功
  * @param data 图片数据
  */
-- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
+- (void)imageDownloadInternalTask:(ImageDownloadInternalTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
 
 /*!
  * @brief 图片下载进度
  * @param task 任务
  * @param progress 下载进度
  */
-- (void)imageDownloadTask:(ImageDownloadTask *)task didDownloadImageWithProgress:(float)progress;
+- (void)imageDownloadInternalTask:(ImageDownloadInternalTask *)task didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
 
 @end

@@ -94,6 +94,6 @@
  * @param URL 图片URL
  * @param progress 下载进度
  */
-- (void)imageManager:(ImageManager *)manager didDownloadImageByURL:(NSURL *)URL withProgress:(float)progress;
+- (void)imageManager:(ImageManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
 
 @end

@@ -17,10 +17,17 @@
 {
     if (self = [super init])
     {
-        self.taskDispatcher.pools = [[NSDictionary alloc] initWithObjectsAndKeys:[SPTaskDaemonPool sharedInstance], kTaskDispatcherPoolIdentifier_Daemon, [SPTaskFreePool sharedInstance], kTaskDispatcherPoolIdentifier_Free, [SPTaskBackgroundPool sharedInstance], kTaskDispatcherPoolIdentifier_Background, nil];
+        self.taskDispatcher.pools = [[NSDictionary alloc] initWithObjectsAndKeys:[SPTaskDaemonPool sharedInstance], kOperationTaskDispatchedPoolIdentifier_Daemon, [SPTaskFreePool sharedInstance], kOperationTaskDispatchedPoolIdentifier_Free, [SPTaskBackgroundPool sharedInstance], kOperationTaskDispatchedPoolIdentifier_Background, nil];
     }
     
     return self;
 }
 
 @end
+
+
+NSString * const kOperationTaskDispatchedPoolIdentifier_Daemon = @"daemon";
+
+NSString * const kOperationTaskDispatchedPoolIdentifier_Free = @"free";
+
+NSString * const kOperationTaskDispatchedPoolIdentifier_Background = @"background";

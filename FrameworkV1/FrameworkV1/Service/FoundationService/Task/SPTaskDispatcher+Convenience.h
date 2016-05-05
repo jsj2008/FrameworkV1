@@ -26,3 +26,26 @@
 + (SPTaskDispatcher *)taskDispatcherWithSharedPools;
 
 @end
+
+
+
+
+
+/*********************************************************
+ 
+    @const
+        kTaskDispatcherPoolIdentifier_XXX
+ 
+    @abstract
+        不同任务池的标识符
+ 
+ *********************************************************/
+
+// 守护任务池标识符
+extern NSString * const kTaskDispatcherPoolIdentifier_Daemon;
+
+// 自由任务池标识符
+extern NSString * const kTaskDispatcherPoolIdentifier_Free;
+
+// 后台任务池标识符
+extern NSString * const kTaskDispatcherPoolIdentifier_Background;

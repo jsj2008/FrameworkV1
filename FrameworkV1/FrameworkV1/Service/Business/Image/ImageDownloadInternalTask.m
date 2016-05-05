@@ -1,16 +1,16 @@
 //
-//  ImageDownloadTask.m
+//  ImageDownloadInternalTask.m
 //  DuomaiFrameWork
 //
 //  Created by Baymax on 4/14/15.
 //  Copyright (c) 2015 Baymax. All rights reserved.
 //
 
-#import "ImageDownloadTask.h"
+#import "ImageDownloadInternalTask.h"
 #import "HTTPDownloadConnection.h"
 #import "HTTPSession+SharedInstance.h"
 
-@interface ImageDownloadTask () <HTTPDownloadConnectionDelegate>
+@interface ImageDownloadInternalTask () <HTTPDownloadConnectionDelegate>
 
 @property (nonatomic) HTTPDownloadConnection *connection;
 
@@ -21,7 +21,7 @@
 @end
 
 
-@implementation ImageDownloadTask
+@implementation ImageDownloadInternalTask
 
 - (void)run
 {
@@ -47,9 +47,9 @@
 {
     [self notify:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(imageDownloadTask:didFinishWithError:imageData:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(imageDownloadInternalTask:didFinishWithError:imageData:)])
         {
-            [self.delegate imageDownloadTask:self didFinishWithError:error imageData:data];
+            [self.delegate imageDownloadInternalTask:self didFinishWithError:error imageData:data];
         }
     }];
 }
@@ -71,9 +71,9 @@
 {
     [self notify:^{
         
-        if ([self.delegate respondsToSelector:@selector(imageDownloadTask:didDownloadImageWithProgress:)])
+        if ([self.delegate respondsToSelector:@selector(imageDownloadInternalTask:didDownloadImageWithDownloadedSize:expectedSize:)])
         {
-            [self.delegate imageDownloadTask:self didDownloadImageWithProgress:(totalBytesExpectedToWrite > 0) ? MIN((totalBytesWritten / totalBytesExpectedToWrite), 1) : 0];
+            [self.delegate imageDownloadInternalTask:self didDownloadImageWithDownloadedSize:totalBytesWritten expectedSize:totalBytesExpectedToWrite];
         }
     }];
 }

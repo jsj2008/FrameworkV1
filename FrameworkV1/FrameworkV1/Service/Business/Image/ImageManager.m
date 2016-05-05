@@ -10,7 +10,7 @@
 #import "NSObject+Notify.h"
 #import "NotificationObservingSet.h"
 #import "SPTaskDispatcher+Convenience.h"
-#import "ImageDownloadTask.h"
+#import "ImageDownloadInternalTask.h"
 #import "ImageStorage.h"
 
 @interface ImageManager () <ImageDownloadTaskDelegate>
@@ -119,7 +119,7 @@
                 
                 if (!set)
                 {
-                    ImageDownloadTask *task = [[ImageDownloadTask alloc] init];
+                    ImageDownloadInternalTask *task = [[ImageDownloadInternalTask alloc] init];
                     
                     task.imageURL = URL;
                                         
@@ -194,7 +194,7 @@
     }
 }
 
-- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageDownloadInternalTask:(ImageDownloadInternalTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data
 {
     if (task.imageURL)
     {
@@ -220,7 +220,7 @@
     }
 }
 
-- (void)imageDownloadTask:(ImageDownloadTask *)task didDownloadImageWithProgress:(float)progress
+- (void)imageDownloadInternalTask:(ImageDownloadInternalTask *)task didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
 {
     if (task.imageURL)
     {
@@ -230,9 +230,9 @@
             
             [set notify:^(id observer) {
                 
-                if (observer && [observer respondsToSelector:@selector(imageManager:didDownloadImageByURL:withProgress:)])
+                if (observer && [observer respondsToSelector:@selector(imageManager:didDownloadImageByURL:withDownloadedSize:expectedSize:)])
                 {
-                    [observer imageManager:self didDownloadImageByURL:task.imageURL withProgress:progress];
+                    [observer imageManager:self didDownloadImageByURL:task.imageURL withDownloadedSize:downloadedSize expectedSize:expectedSize];
                 }
             } onThread:nil];
         });

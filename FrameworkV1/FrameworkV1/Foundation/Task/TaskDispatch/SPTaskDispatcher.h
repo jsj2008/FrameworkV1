@@ -11,26 +11,6 @@
 @class SPTask, SPTaskDependence, SPTaskPool;
 
 
-/*********************************************************
- 
-    @const
-        kTaskDispatcherPoolIdentifier_XXX
- 
-    @abstract
-        不同任务池的标识符
- 
- *********************************************************/
-
-// 守护任务池标识符
-extern NSString * const kTaskDispatcherPoolIdentifier_Daemon;
-
-// 自由任务池标识符
-extern NSString * const kTaskDispatcherPoolIdentifier_Free;
-
-// 后台任务池标识符
-extern NSString * const kTaskDispatcherPoolIdentifier_Background;
-
-
 #pragma mark - SPTaskDispatcher
 
 /**********************************************************
@@ -42,7 +22,7 @@ extern NSString * const kTaskDispatcherPoolIdentifier_Background;
         Task调度器，负责Task的派发和调度
  
     @discussion
-        1，调度器内置了默认的异步任务池（全局单例），允许调用者更改
+        1，调度器未内置任务池，需调用者自行设定
         2，调度器支持控制异步任务的并发量，当前需运行的异步任务超过并发量时，后加入的异步任务将自动进入FIFO队列等待执行，调度器会在并发量回归时自动从FIFO队列中选择异步任务并执行
         3，调度器支持任务依赖，只有在当前任务的前提任务都结束时，当前任务才能执行
  
@@ -66,7 +46,7 @@ extern NSString * const kTaskDispatcherPoolIdentifier_Background;
 /*!
  * @brief 任务池
  * @discussion key：任务池标识符，value：任务池
- * @discussion 除kTaskDispatcherPoolIdentifier_XXX指定的类型外，可以自定义新的标识符和新的任务池类型
+ * @discussion 默认提供了kTaskDispatcherPoolIdentifier_XXX的标识符类型，可以自定义新的标识符和新的任务池类型
  */
 @property (nonatomic) NSDictionary<NSString *, SPTaskPool *> *pools;
 
