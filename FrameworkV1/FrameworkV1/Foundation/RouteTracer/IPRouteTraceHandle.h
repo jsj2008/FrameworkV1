@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IPRouteTraceObserveDelegate.h"
 
 @protocol IPRouteTraceHandleDelegate;
 
@@ -25,7 +24,7 @@
  
  *********************************************************/
 
-@interface IPRouteTraceHandle : NSObject <IPRouteTraceObserveDelegate>
+@interface IPRouteTraceHandle : NSObject
 
 /*!
  * @brief 协议代理

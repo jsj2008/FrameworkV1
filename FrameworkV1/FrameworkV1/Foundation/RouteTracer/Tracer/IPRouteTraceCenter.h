@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BlockTask.h"
-#import "IPRouteTraceObserver.h"
+#import "IPRouteTraceObserveDelegate.h"
 
 /*********************************************************
  
@@ -23,7 +22,7 @@
  
  *********************************************************/
 
-@interface IPRouteTraceCenter : NSObject <BlockTaskDelegate>
+@interface IPRouteTraceCenter : NSObject
 
 /*!
  * @brief 单例
@@ -46,6 +45,6 @@
  * @param host 待追踪的主机地址，可以是ip地址或域名
  * @result 服务可用时，返回YES；服务不可用或host为空时，返回NO
  */
-- (BOOL)traceHost:(NSString *)host withObserver:(IPRouteTraceObserver *)observer;
+- (BOOL)traceHost:(NSString *)host withObserver:(id<IPRouteTraceObserveDelegate>)observer;
 
 @end

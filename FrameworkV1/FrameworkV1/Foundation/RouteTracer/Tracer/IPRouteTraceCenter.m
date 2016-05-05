@@ -11,11 +11,6 @@
 #import "SPTaskFreePool.h"
 
 /*!
- * @brief 路由追踪任务的并发量
- */
-static const NSUInteger IPRouteTracingConcurrentTaskCount = 5;
-
-/*!
  * @brief 追踪上下文的键
  */
 static NSString * const IPRouteTracingContextKey_Tracer = @"tracer";
@@ -41,12 +36,11 @@ static NSString * const IPRouteTracingFreePoolIdentifer = @"free";
     // 同步队列
     dispatch_queue_t _syncQueue;
     
-    // 队列式任务派发器
-    SPTaskDispatcher *_dispatcher;
-    
     // 停止标志
     BOOL _stop;
 }
+
+@property (nonatomic) NSMutableDictionary *tracers;
 
 @end
 
@@ -58,12 +52,6 @@ static NSString * const IPRouteTracingFreePoolIdentifer = @"free";
     if (self = [super init])
     {
         _syncQueue = dispatch_queue_create(NULL, NULL);
-        
-        _dispatcher = [[SPTaskDispatcher alloc] init];
-        
-        _dispatcher.pools = [NSDictionary dictionaryWithObject:[[SPTaskFreePool alloc] init] forKey:IPRouteTracingFreePoolIdentifer];
-        
-        _dispatcher.asyncTaskCapacity = IPRouteTracingConcurrentTaskCount;
     }
     
     return self;
@@ -100,82 +88,42 @@ static NSString * const IPRouteTracingFreePoolIdentifer = @"free";
 {
     _stop = YES;
     
-    dispatch_sync(_syncQueue, ^{
-        
-        for (BlockTask *task in [_dispatcher allAsyncTasks])
-        {
-            IPRouteTracer *tracer = [task.context objectForKey:IPRouteTracingContextKey_Tracer];
-            
-            [tracer cancel];
-        }
-        
-        [_dispatcher cancel];
-    });
+    for (IPRouteTracer *tracer in [self.tracers allValues])
+    {
+        [tracer cancel];
+    }
 }
 
-- (BOOL)traceHost:(NSString *)host withObserver:(IPRouteTraceObserver *)observer
+- (BOOL)traceHost:(NSString *)host withObserver:(id<IPRouteTraceObserveDelegate>)observer
 {
     if (_stop || !host)
     {
         return NO;
     }
     
+    __weak typeof(observer) weakObserver = observer;
+    
     dispatch_sync(_syncQueue, ^{
         
-        IPRouteTracer *tracer = [[IPRouteTracer alloc] initWithDestinationHost:host];
-        
-        NSMutableDictionary *context = [NSMutableDictionary dictionaryWithObjectsAndKeys:tracer, IPRouteTracingContextKey_Tracer, nil];
-        
-        if (observer)
+        if (![self.tracers objectForKey:host])
         {
-            [context setObject:observer forKey:IPRouteTracingContextKey_Observer];
+            IPRouteTracer *tracer = [[IPRouteTracer alloc] initWithDestinationHost:host];
             
-            [context setObject:host forKey:IPRouteTracingContextKey_Host];
-        }
-        
-        BlockTask *task = [[BlockTask alloc] init];
-        
-        task.block = ^()
-        {
-            IPRouteTracer *tracer = [context objectForKey:IPRouteTracingContextKey_Tracer];
+            [self.tracers setObject:tracer forKey:host];
             
-            if (tracer)
-            {
-                [tracer run];
-            }
-        };
-        
-        [task.context addEntriesFromDictionary:context];
-        
-        task.delegate = self;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 
-        [_dispatcher asyncAddTask:task inPool:IPRouteTracingFreePoolIdentifer];
+                [tracer run];
+                
+                if (weakObserver && [weakObserver respondsToSelector:@selector(IPRouteTrace_Host:didTraceWithRoutes:)])
+                {
+                    [weakObserver IPRouteTrace_Host:host didTraceWithRoutes:tracer.routeItems];
+                }
+            });
+        }
     });
     
     return YES;
-}
-
-- (void)blockTaskDidFinish:(BlockTask *)task
-{
-    dispatch_sync(_syncQueue, ^{
-        
-        IPRouteTraceObserver *taskObserver = [task.context objectForKey:IPRouteTracingContextKey_Observer];
-        
-        NSArray *routeItems = ((IPRouteTracer *)[task.context objectForKey:IPRouteTracingContextKey_Tracer]).routeItems;
-        
-        if (taskObserver)
-        {
-            [taskObserver notify:^(id observer) {
-                
-                if (taskObserver.observer && [taskObserver.observer respondsToSelector:@selector(IPRouteTrace_Host:didTraceWithRoutes:)])
-                {
-                    [taskObserver.observer IPRouteTrace_Host:[task.context objectForKey:IPRouteTracingContextKey_Host] didTraceWithRoutes:routeItems];
-                }
-            } onThread:nil];
-        }
-        
-        [_dispatcher removeTask:task];
-    });
 }
 
 @end

@@ -53,7 +53,6 @@
 		D401EB091CD2017F00599E0B /* IPRouteTraceHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA971CD2017F00599E0B /* IPRouteTraceHandle.m */; };
 		D401EB0A1CD2017F00599E0B /* IPRouteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA9A1CD2017F00599E0B /* IPRouteItem.m */; };
 		D401EB0B1CD2017F00599E0B /* IPRouteTraceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA9C1CD2017F00599E0B /* IPRouteTraceCenter.m */; };
-		D401EB0C1CD2017F00599E0B /* IPRouteTraceObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA9F1CD2017F00599E0B /* IPRouteTraceObserver.m */; };
 		D401EB0D1CD2017F00599E0B /* IPRouteTracer.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAA11CD2017F00599E0B /* IPRouteTracer.m */; };
 		D401EB0E1CD2017F00599E0B /* JsonSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAA51CD2017F00599E0B /* JsonSerialize.m */; };
 		D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EAA81CD2017F00599E0B /* NSCoder+DataedEncoding.m */; };
@@ -206,8 +205,6 @@
 		D401EA9B1CD2017F00599E0B /* IPRouteTraceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPRouteTraceCenter.h; sourceTree = "<group>"; };
 		D401EA9C1CD2017F00599E0B /* IPRouteTraceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPRouteTraceCenter.m; sourceTree = "<group>"; };
 		D401EA9D1CD2017F00599E0B /* IPRouteTraceObserveDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPRouteTraceObserveDelegate.h; sourceTree = "<group>"; };
-		D401EA9E1CD2017F00599E0B /* IPRouteTraceObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPRouteTraceObserver.h; sourceTree = "<group>"; };
-		D401EA9F1CD2017F00599E0B /* IPRouteTraceObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPRouteTraceObserver.m; sourceTree = "<group>"; };
 		D401EAA01CD2017F00599E0B /* IPRouteTracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPRouteTracer.h; sourceTree = "<group>"; };
 		D401EAA11CD2017F00599E0B /* IPRouteTracer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPRouteTracer.m; sourceTree = "<group>"; };
 		D401EAA41CD2017F00599E0B /* JsonSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonSerialize.h; sourceTree = "<group>"; };
@@ -700,8 +697,6 @@
 				D401EA9B1CD2017F00599E0B /* IPRouteTraceCenter.h */,
 				D401EA9C1CD2017F00599E0B /* IPRouteTraceCenter.m */,
 				D401EA9D1CD2017F00599E0B /* IPRouteTraceObserveDelegate.h */,
-				D401EA9E1CD2017F00599E0B /* IPRouteTraceObserver.h */,
-				D401EA9F1CD2017F00599E0B /* IPRouteTraceObserver.m */,
 				D401EAA01CD2017F00599E0B /* IPRouteTracer.h */,
 				D401EAA11CD2017F00599E0B /* IPRouteTracer.m */,
 			);
@@ -1282,7 +1277,6 @@
 				D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */,
 				D401EAFD1CD2017F00599E0B /* HTTPMultipartFormEntity.m in Sources */,
 				D401EB0E1CD2017F00599E0B /* JsonSerialize.m in Sources */,
-				D401EB0C1CD2017F00599E0B /* IPRouteTraceObserver.m in Sources */,
 				D408603C1CD9A79A005FC3D7 /* ImageStorage.m in Sources */,
 				D401EB0A1CD2017F00599E0B /* IPRouteItem.m in Sources */,
 				D401EAF61CD2017F00599E0B /* HTTPDownloadConnection.m in Sources */,

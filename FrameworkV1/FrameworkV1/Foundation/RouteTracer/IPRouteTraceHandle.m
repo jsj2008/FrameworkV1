@@ -8,18 +8,18 @@
 
 #import "IPRouteTraceHandle.h"
 #import "IPRouteTraceCenter.h"
+#import "IPRouteTraceObserveDelegate.h"
+
+@interface IPRouteTraceHandle () <IPRouteTraceObserveDelegate>
+
+@end
+
 
 @implementation IPRouteTraceHandle
 
 - (BOOL)traceHost:(NSString *)host
 {
-    IPRouteTraceObserver *observer = [[IPRouteTraceObserver alloc] init];
-    
-    observer.observer = self;
-    
-    observer.notifyThread = [NSThread currentThread];
-    
-    return [[IPRouteTraceCenter sharedInstance] traceHost:host withObserver:observer];
+    return [[IPRouteTraceCenter sharedInstance] traceHost:host withObserver:self];
 }
 
 - (void)IPRouteTrace_Host:(NSString *)ip didTraceWithRoutes:(NSArray *)routes
