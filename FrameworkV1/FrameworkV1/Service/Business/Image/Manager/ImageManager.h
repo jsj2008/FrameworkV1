@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol  ImageManagerDownloadObserving;
+@protocol  ImageManagerDelegate;
 
 
 /*********************************************************
@@ -47,14 +47,14 @@
  * @param observer 下载操作观察者，若为nil，将启动一个无观察者的下载任务，除非停止管理器工作，否则无法取消该下载任务
  * @discussion 下载通知将在本方法执行的线程上发送
  */
-- (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDownloadObserving>)observer;
+- (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer;
 
 /*!
  * @brief 取消下载图片
  * @param URL 图片URL
  * @param observer 下载操作观察者，nil无效
  */
-- (void)cancelDownLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDownloadObserving>)observer;
+- (void)cancelDownLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer;
 
 /*!
  * @brief 取消下载图片
@@ -68,14 +68,14 @@
 /*********************************************************
  
     @protocol
-        ImageManagerDownloadObserving
+        ImageManagerDelegate
  
     @abstract
         图片管理器图片下载协议
  
  *********************************************************/
 
-@protocol ImageManagerDownloadObserving <NSObject>
+@protocol ImageManagerDelegate <NSObject>
 
 /*!
  * @brief 图片下载完成
@@ -92,7 +92,8 @@
  * @brief 图片下载进度
  * @param manager 管理器
  * @param URL 图片URL
- * @param progress 下载进度
+ * @param downloadedSize 已下载量
+ * @param expectedSize 预期下载量
  */
 - (void)imageManager:(ImageManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
 

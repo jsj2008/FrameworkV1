@@ -1,5 +1,5 @@
 //
-//  ImageDownloadInternalTask.h
+//  ImageManagerDownloadTask.h
 //  DuomaiFrameWork
 //
 //  Created by Baymax on 4/14/15.
@@ -8,20 +8,20 @@
 
 #import "OperationTask.h"
 
-@protocol ImageDownloadTaskDelegate;
+@protocol ImageManagerDownloadTaskDelegate;
 
 
 /*********************************************************
  
     @class
-        ImageDownloadInternalTask
+        ImageManagerDownloadTask
  
     @abstract
-        图片下载任务
+        图片管理器下载任务
  
  *********************************************************/
 
-@interface ImageDownloadInternalTask : OperationTask
+@interface ImageManagerDownloadTask : OperationTask
 
 /*!
  * @brief 图片URL
@@ -37,25 +37,26 @@
         ImageDownloadTaskDelegate
  
     @abstract
-        图片下载任务代理消息
+        图片管理器下载任务代理消息
  
  *********************************************************/
 
-@protocol ImageDownloadTaskDelegate <NSObject>
+@protocol ImageManagerDownloadTaskDelegate <NSObject>
 
 /*!
  * @brief 图片下载完成
  * @param task 任务
- * @param successfully 下载是否成功
+ * @param error 错误信息
  * @param data 图片数据
  */
-- (void)imageDownloadInternalTask:(ImageDownloadInternalTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
+- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
 
 /*!
  * @brief 图片下载进度
  * @param task 任务
- * @param progress 下载进度
+ * @param downloadedSize 已下载量
+ * @param expectedSize 预期下载量
  */
-- (void)imageDownloadInternalTask:(ImageDownloadInternalTask *)task didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
+- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
 
 @end

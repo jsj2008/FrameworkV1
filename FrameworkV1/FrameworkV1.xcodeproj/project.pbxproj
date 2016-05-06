@@ -73,8 +73,6 @@
 		D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB381CD2026300599E0B /* EPub2_Package.m */; };
 		D401EB441CD2026300599E0B /* EPubXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB3B1CD2026300599E0B /* EPubXML.m */; };
 		D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB671CD214A600599E0B /* NSObject+Notify.m */; };
-		D408602E1CD9A79A005FC3D7 /* ImageDownloadInternalTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860041CD9A79A005FC3D7 /* ImageDownloadInternalTask.m */; };
-		D408602F1CD9A79A005FC3D7 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860061CD9A79A005FC3D7 /* ImageManager.m */; };
 		D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600A1CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m */; };
 		D40860311CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600D1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m */; };
 		D40860321CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600F1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m */; };
@@ -100,6 +98,8 @@
 		D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA41CD2FC0A00E646C9 /* SPTaskPool.m */; };
 		D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */; };
 		D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */; };
+		D481A1A81CDB4D8700826A73 /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D481A1A71CDB4D8700826A73 /* UIImageView+URL.m */; };
+		D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -109,6 +109,8 @@
 		D4E3EA381CC8A52B00A7987E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA361CC8A52B00A7987E /* Main.storyboard */; };
 		D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA391CC8A52B00A7987E /* Assets.xcassets */; };
 		D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA3B1CC8A52B00A7987E /* LaunchScreen.storyboard */; };
+		D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D2A1CDC488000A89A4C /* ImageManager.m */; };
+		D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D2C1CDC488000A89A4C /* ImageManagerDownloadTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,10 +247,6 @@
 		D401EB3B1CD2026300599E0B /* EPubXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubXML.m; sourceTree = "<group>"; };
 		D401EB661CD214A600599E0B /* NSObject+Notify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Notify.h"; sourceTree = "<group>"; };
 		D401EB671CD214A600599E0B /* NSObject+Notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Notify.m"; sourceTree = "<group>"; };
-		D40860031CD9A79A005FC3D7 /* ImageDownloadInternalTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadInternalTask.h; sourceTree = "<group>"; };
-		D40860041CD9A79A005FC3D7 /* ImageDownloadInternalTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadInternalTask.m; sourceTree = "<group>"; };
-		D40860051CD9A79A005FC3D7 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
-		D40860061CD9A79A005FC3D7 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		D40860091CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+SharedInstance.h"; sourceTree = "<group>"; };
 		D408600A1CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SharedInstance.m"; sourceTree = "<group>"; };
 		D408600C1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPConnectionResumeStorage+SharedInstance.h"; sourceTree = "<group>"; };
@@ -299,6 +297,10 @@
 		D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
 		D40EEACA1CD332EE00E646C9 /* IndexingFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingFileStorage.h; sourceTree = "<group>"; };
 		D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingFileStorage.m; sourceTree = "<group>"; };
+		D481A1A61CDB4D8700826A73 /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
+		D481A1A71CDB4D8700826A73 /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
+		D481A1A91CDB536000826A73 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
+		D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -312,6 +314,10 @@
 		D4E3EA391CC8A52B00A7987E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4E3EA3C1CC8A52B00A7987E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4E3EA3E1CC8A52B00A7987E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F48D291CDC488000A89A4C /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		D4F48D2A1CDC488000A89A4C /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		D4F48D2B1CDC488000A89A4C /* ImageManagerDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManagerDownloadTask.h; sourceTree = "<group>"; };
+		D4F48D2C1CDC488000A89A4C /* ImageManagerDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManagerDownloadTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -866,9 +872,9 @@
 		D40860001CD9A79A005FC3D7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D40860011CD9A79A005FC3D7 /* Business */,
 				D40860071CD9A79A005FC3D7 /* FoundationService */,
 				D40860271CD9A79A005FC3D7 /* Storage */,
+				D40860011CD9A79A005FC3D7 /* Business */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -884,10 +890,9 @@
 		D40860021CD9A79A005FC3D7 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				D40860031CD9A79A005FC3D7 /* ImageDownloadInternalTask.h */,
-				D40860041CD9A79A005FC3D7 /* ImageDownloadInternalTask.m */,
-				D40860051CD9A79A005FC3D7 /* ImageManager.h */,
-				D40860061CD9A79A005FC3D7 /* ImageManager.m */,
+				D481A1A91CDB536000826A73 /* ImageDownloadTask.h */,
+				D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */,
+				D4F48D281CDC488000A89A4C /* Manager */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1098,6 +1103,45 @@
 			path = File;
 			sourceTree = "<group>";
 		};
+		D481A19E1CDB4D1F00826A73 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		D481A19F1CDB4D1F00826A73 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		D481A1A01CDB4D1F00826A73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D481A1A11CDB4D1F00826A73 /* Image */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D481A1A11CDB4D1F00826A73 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D481A1A51CDB4D8700826A73 /* URL */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D481A1A51CDB4D8700826A73 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				D481A1A61CDB4D8700826A73 /* UIImageView+URL.h */,
+				D481A1A71CDB4D8700826A73 /* UIImageView+URL.m */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
 		D4E3EA211CC8A52B00A7987E = {
 			isa = PBXGroup;
 			children = (
@@ -1170,8 +1214,22 @@
 		D4E3EA461CC8A57A00A7987E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D481A19F1CDB4D1F00826A73 /* Foundation */,
+				D481A1A01CDB4D1F00826A73 /* Service */,
+				D481A19E1CDB4D1F00826A73 /* Business */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D4F48D281CDC488000A89A4C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D291CDC488000A89A4C /* ImageManager.h */,
+				D4F48D2A1CDC488000A89A4C /* ImageManager.m */,
+				D4F48D2B1CDC488000A89A4C /* ImageManagerDownloadTask.h */,
+				D4F48D2C1CDC488000A89A4C /* ImageManagerDownloadTask.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1254,7 +1312,6 @@
 				D401EAE71CD2017F00599E0B /* DataBaseTable.m in Sources */,
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
 				D401EB061CD2017F00599E0B /* NSObject+Delegate.m in Sources */,
-				D408602F1CD9A79A005FC3D7 /* ImageManager.m in Sources */,
 				D401EAEC1CD2017F00599E0B /* DataDecompressor.m in Sources */,
 				D401EB121CD2017F00599E0B /* XMLSpriteSerialize.m in Sources */,
 				D40EEAA81CD2FC0A00E646C9 /* FoundationTask.m in Sources */,
@@ -1263,12 +1320,14 @@
 				D401EB091CD2017F00599E0B /* IPRouteTraceHandle.m in Sources */,
 				D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */,
 				D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */,
+				D481A1A81CDB4D8700826A73 /* UIImageView+URL.m in Sources */,
 				D408603B1CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m in Sources */,
 				D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */,
 				D40860381CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.m in Sources */,
 				D401EAFA1CD2017F00599E0B /* HTTPUploadConnection.m in Sources */,
 				D40860331CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
 				D40860311CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
+				D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */,
 				D408603D1CD9A79A005FC3D7 /* StorageUnit.m in Sources */,
 				D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */,
 				D401EB011CD2017F00599E0B /* APPLog.m in Sources */,
@@ -1285,7 +1344,6 @@
 				D40EEAAF1CD2FC0A00E646C9 /* SPTaskFreePool.m in Sources */,
 				D401EAF91CD2017F00599E0B /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */,
-				D408602E1CD9A79A005FC3D7 /* ImageDownloadInternalTask.m in Sources */,
 				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
@@ -1296,6 +1354,7 @@
 				D40EEAAE1CD2FC0A00E646C9 /* SPTaskDaemonPool.m in Sources */,
 				D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */,
 				D401EAFB1CD2017F00599E0B /* HTTPSession.m in Sources */,
+				D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */,
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
@@ -1325,6 +1384,7 @@
 				D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */,
 				D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
+				D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
 				D401EAE81CD2017F00599E0B /* DataBaseUnit.m in Sources */,
 				D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */,
