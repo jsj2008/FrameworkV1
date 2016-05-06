@@ -111,6 +111,41 @@
 		D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA3B1CC8A52B00A7987E /* LaunchScreen.storyboard */; };
 		D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D2A1CDC488000A89A4C /* ImageManager.m */; };
 		D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D2C1CDC488000A89A4C /* ImageManagerDownloadTask.m */; };
+		D4F48D401CDC8A8800A89A4C /* UFImageEditMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D351CDC8A8800A89A4C /* UFImageEditMaskView.m */; };
+		D4F48D411CDC8A8800A89A4C /* UFImageEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D371CDC8A8800A89A4C /* UFImageEditView.m */; };
+		D4F48D421CDC8A8800A89A4C /* UIImage+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D3A1CDC8A8800A89A4C /* UIImage+Orientation.m */; };
+		D4F48D431CDC8A8800A89A4C /* UFImageViewGifUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D3D1CDC8A8800A89A4C /* UFImageViewGifUpdater.m */; };
+		D4F48D441CDC8A8800A89A4C /* UIImageView+Gif.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D3F1CDC8A8800A89A4C /* UIImageView+Gif.m */; };
+		D4F48D951CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D471CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.m */; };
+		D4F48D961CDC8CB000A89A4C /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D4A1CDC8CB000A89A4C /* UIColor+Hex.m */; };
+		D4F48D981CDC8CB000A89A4C /* UFSceneDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D501CDC8CB000A89A4C /* UFSceneDirector.m */; };
+		D4F48D9A1CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D551CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.m */; };
+		D4F48D9B1CDC8CB000A89A4C /* UFEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D571CDC8CB000A89A4C /* UFEmoji.m */; };
+		D4F48D9C1CDC8CB000A89A4C /* UFEmojiImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D591CDC8CB000A89A4C /* UFEmojiImage.m */; };
+		D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D5B1CDC8CB000A89A4C /* UFEmojiSet.m */; };
+		D4F48D9E1CDC8CB000A89A4C /* UFEmojiText.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D5D1CDC8CB000A89A4C /* UFEmojiText.m */; };
+		D4F48D9F1CDC8CB000A89A4C /* UFEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D5F1CDC8CB000A89A4C /* UFEmojiView.m */; };
+		D4F48DA01CDC8CB000A89A4C /* UFDataPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D641CDC8CB000A89A4C /* UFDataPicker.m */; };
+		D4F48DA11CDC8CB000A89A4C /* UFDataPickSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D661CDC8CB000A89A4C /* UFDataPickSource.m */; };
+		D4F48DA21CDC8CB000A89A4C /* UFDataPickInputer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D681CDC8CB000A89A4C /* UFDataPickInputer.m */; };
+		D4F48DA31CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D6C1CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m */; };
+		D4F48DA41CDC8CB000A89A4C /* UFInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D6F1CDC8CB000A89A4C /* UFInputToolBar.m */; };
+		D4F48DA51CDC8CB000A89A4C /* UFKeyboardAdjuster.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D731CDC8CB000A89A4C /* UFKeyboardAdjuster.m */; };
+		D4F48DA61CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D751CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m */; };
+		D4F48DA71CDC8CB000A89A4C /* UIView+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D771CDC8CB000A89A4C /* UIView+KeyboardAdjust.m */; };
+		D4F48DA81CDC8CB000A89A4C /* UITextField+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D7A1CDC8CB000A89A4C /* UITextField+KeyboardAdjust.m */; };
+		D4F48DA91CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D7D1CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m */; };
+		D4F48DAA1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D7F1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.m */; };
+		D4F48DAB1CDC8CB000A89A4C /* UFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D821CDC8CB000A89A4C /* UFLoadingView.m */; };
+		D4F48DAC1CDC8CB000A89A4C /* UFViewLoadingUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D841CDC8CB000A89A4C /* UFViewLoadingUpdater.m */; };
+		D4F48DAD1CDC8CB000A89A4C /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D861CDC8CB000A89A4C /* UIView+Loading.m */; };
+		D4F48DAE1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D8A1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m */; };
+		D4F48DAF1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D8C1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m */; };
+		D4F48DB01CDC8CB000A89A4C /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D8E1CDC8CB000A89A4C /* UITextView+PlaceHolder.m */; };
+		D4F48DB11CDC8CB000A89A4C /* UFButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D911CDC8CB000A89A4C /* UFButtonWindow.m */; };
+		D4F48DB21CDC8CB000A89A4C /* UFButtonWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D931CDC8CB000A89A4C /* UFButtonWindowViewController.m */; };
+		D4F48DB31CDC8CB000A89A4C /* UFButtonWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F48D941CDC8CB000A89A4C /* UFButtonWindowViewController.xib */; };
+		D4F48DB61CDC90ED00A89A4C /* UINavigationController+PushPopExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48DB51CDC90ED00A89A4C /* UINavigationController+PushPopExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -318,6 +353,75 @@
 		D4F48D2A1CDC488000A89A4C /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		D4F48D2B1CDC488000A89A4C /* ImageManagerDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManagerDownloadTask.h; sourceTree = "<group>"; };
 		D4F48D2C1CDC488000A89A4C /* ImageManagerDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManagerDownloadTask.m; sourceTree = "<group>"; };
+		D4F48D341CDC8A8800A89A4C /* UFImageEditMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFImageEditMaskView.h; sourceTree = "<group>"; };
+		D4F48D351CDC8A8800A89A4C /* UFImageEditMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFImageEditMaskView.m; sourceTree = "<group>"; };
+		D4F48D361CDC8A8800A89A4C /* UFImageEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFImageEditView.h; sourceTree = "<group>"; };
+		D4F48D371CDC8A8800A89A4C /* UFImageEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFImageEditView.m; sourceTree = "<group>"; };
+		D4F48D391CDC8A8800A89A4C /* UIImage+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Orientation.h"; sourceTree = "<group>"; };
+		D4F48D3A1CDC8A8800A89A4C /* UIImage+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Orientation.m"; sourceTree = "<group>"; };
+		D4F48D3C1CDC8A8800A89A4C /* UFImageViewGifUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFImageViewGifUpdater.h; sourceTree = "<group>"; };
+		D4F48D3D1CDC8A8800A89A4C /* UFImageViewGifUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFImageViewGifUpdater.m; sourceTree = "<group>"; };
+		D4F48D3E1CDC8A8800A89A4C /* UIImageView+Gif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Gif.h"; sourceTree = "<group>"; };
+		D4F48D3F1CDC8A8800A89A4C /* UIImageView+Gif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Gif.m"; sourceTree = "<group>"; };
+		D4F48D461CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFExtendedResponsiveSizeButton.h; sourceTree = "<group>"; };
+		D4F48D471CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFExtendedResponsiveSizeButton.m; sourceTree = "<group>"; };
+		D4F48D491CDC8CB000A89A4C /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		D4F48D4A1CDC8CB000A89A4C /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		D4F48D4F1CDC8CB000A89A4C /* UFSceneDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFSceneDirector.h; sourceTree = "<group>"; };
+		D4F48D501CDC8CB000A89A4C /* UFSceneDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFSceneDirector.m; sourceTree = "<group>"; };
+		D4F48D541CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFAttributedStringEmojiUpdater.h; sourceTree = "<group>"; };
+		D4F48D551CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFAttributedStringEmojiUpdater.m; sourceTree = "<group>"; };
+		D4F48D561CDC8CB000A89A4C /* UFEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmoji.h; sourceTree = "<group>"; };
+		D4F48D571CDC8CB000A89A4C /* UFEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmoji.m; sourceTree = "<group>"; };
+		D4F48D581CDC8CB000A89A4C /* UFEmojiImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiImage.h; sourceTree = "<group>"; };
+		D4F48D591CDC8CB000A89A4C /* UFEmojiImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImage.m; sourceTree = "<group>"; };
+		D4F48D5A1CDC8CB000A89A4C /* UFEmojiSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiSet.h; sourceTree = "<group>"; };
+		D4F48D5B1CDC8CB000A89A4C /* UFEmojiSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiSet.m; sourceTree = "<group>"; };
+		D4F48D5C1CDC8CB000A89A4C /* UFEmojiText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiText.h; sourceTree = "<group>"; };
+		D4F48D5D1CDC8CB000A89A4C /* UFEmojiText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiText.m; sourceTree = "<group>"; };
+		D4F48D5E1CDC8CB000A89A4C /* UFEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiView.h; sourceTree = "<group>"; };
+		D4F48D5F1CDC8CB000A89A4C /* UFEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiView.m; sourceTree = "<group>"; };
+		D4F48D631CDC8CB000A89A4C /* UFDataPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPicker.h; sourceTree = "<group>"; };
+		D4F48D641CDC8CB000A89A4C /* UFDataPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPicker.m; sourceTree = "<group>"; };
+		D4F48D651CDC8CB000A89A4C /* UFDataPickSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickSource.h; sourceTree = "<group>"; };
+		D4F48D661CDC8CB000A89A4C /* UFDataPickSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPickSource.m; sourceTree = "<group>"; };
+		D4F48D671CDC8CB000A89A4C /* UFDataPickInputer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickInputer.h; sourceTree = "<group>"; };
+		D4F48D681CDC8CB000A89A4C /* UFDataPickInputer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPickInputer.m; sourceTree = "<group>"; };
+		D4F48D6B1CDC8CB000A89A4C /* UFTextFieldDataPickInputer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextFieldDataPickInputer.h; sourceTree = "<group>"; };
+		D4F48D6C1CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextFieldDataPickInputer.m; sourceTree = "<group>"; };
+		D4F48D6E1CDC8CB000A89A4C /* UFInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputToolBar.h; sourceTree = "<group>"; };
+		D4F48D6F1CDC8CB000A89A4C /* UFInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputToolBar.m; sourceTree = "<group>"; };
+		D4F48D721CDC8CB000A89A4C /* UFKeyboardAdjuster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFKeyboardAdjuster.h; sourceTree = "<group>"; };
+		D4F48D731CDC8CB000A89A4C /* UFKeyboardAdjuster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFKeyboardAdjuster.m; sourceTree = "<group>"; };
+		D4F48D741CDC8CB000A89A4C /* UFKeyboardAdjustPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFKeyboardAdjustPoint.h; sourceTree = "<group>"; };
+		D4F48D751CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFKeyboardAdjustPoint.m; sourceTree = "<group>"; };
+		D4F48D761CDC8CB000A89A4C /* UIView+KeyboardAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KeyboardAdjust.h"; sourceTree = "<group>"; };
+		D4F48D771CDC8CB000A89A4C /* UIView+KeyboardAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KeyboardAdjust.m"; sourceTree = "<group>"; };
+		D4F48D791CDC8CB000A89A4C /* UITextField+KeyboardAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+KeyboardAdjust.h"; sourceTree = "<group>"; };
+		D4F48D7A1CDC8CB000A89A4C /* UITextField+KeyboardAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+KeyboardAdjust.m"; sourceTree = "<group>"; };
+		D4F48D7C1CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewKeyboardAdjustAssistant.h; sourceTree = "<group>"; };
+		D4F48D7D1CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewKeyboardAdjustAssistant.m; sourceTree = "<group>"; };
+		D4F48D7E1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+KeyboardAdjust.h"; sourceTree = "<group>"; };
+		D4F48D7F1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+KeyboardAdjust.m"; sourceTree = "<group>"; };
+		D4F48D811CDC8CB000A89A4C /* UFLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFLoadingView.h; sourceTree = "<group>"; };
+		D4F48D821CDC8CB000A89A4C /* UFLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFLoadingView.m; sourceTree = "<group>"; };
+		D4F48D831CDC8CB000A89A4C /* UFViewLoadingUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFViewLoadingUpdater.h; sourceTree = "<group>"; };
+		D4F48D841CDC8CB000A89A4C /* UFViewLoadingUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFViewLoadingUpdater.m; sourceTree = "<group>"; };
+		D4F48D851CDC8CB000A89A4C /* UIView+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
+		D4F48D861CDC8CB000A89A4C /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
+		D4F48D891CDC8CB000A89A4C /* UFTextViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolder.h; sourceTree = "<group>"; };
+		D4F48D8A1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolder.m; sourceTree = "<group>"; };
+		D4F48D8B1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolderUpdater.h; sourceTree = "<group>"; };
+		D4F48D8C1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolderUpdater.m; sourceTree = "<group>"; };
+		D4F48D8D1CDC8CB000A89A4C /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
+		D4F48D8E1CDC8CB000A89A4C /* UITextView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PlaceHolder.m"; sourceTree = "<group>"; };
+		D4F48D901CDC8CB000A89A4C /* UFButtonWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFButtonWindow.h; sourceTree = "<group>"; };
+		D4F48D911CDC8CB000A89A4C /* UFButtonWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFButtonWindow.m; sourceTree = "<group>"; };
+		D4F48D921CDC8CB000A89A4C /* UFButtonWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFButtonWindowViewController.h; sourceTree = "<group>"; };
+		D4F48D931CDC8CB000A89A4C /* UFButtonWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFButtonWindowViewController.m; sourceTree = "<group>"; };
+		D4F48D941CDC8CB000A89A4C /* UFButtonWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UFButtonWindowViewController.xib; sourceTree = "<group>"; };
+		D4F48DB41CDC90ED00A89A4C /* UINavigationController+PushPopExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+PushPopExtension.h"; sourceTree = "<group>"; };
+		D4F48DB51CDC90ED00A89A4C /* UINavigationController+PushPopExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+PushPopExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1113,6 +1217,17 @@
 		D481A19F1CDB4D1F00826A73 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D4F48D451CDC8CB000A89A4C /* Button */,
+				D4F48D481CDC8CB000A89A4C /* Color */,
+				D4F48D4B1CDC8CB000A89A4C /* Controller */,
+				D4F48D4E1CDC8CB000A89A4C /* Director */,
+				D4F48D531CDC8CB000A89A4C /* EmojiKit */,
+				D4F48D601CDC8CB000A89A4C /* Input */,
+				D4F48D701CDC8CB000A89A4C /* Keyboard */,
+				D4F48D801CDC8CB000A89A4C /* Loading */,
+				D4F48D871CDC8CB000A89A4C /* TextView */,
+				D4F48D8F1CDC8CB000A89A4C /* Window */,
+				D4F48D321CDC8A5C00A89A4C /* Image */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1232,6 +1347,248 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		D4F48D321CDC8A5C00A89A4C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D331CDC8A8800A89A4C /* Edit */,
+				D4F48D381CDC8A8800A89A4C /* Effect */,
+				D4F48D3B1CDC8A8800A89A4C /* Gif */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D4F48D331CDC8A8800A89A4C /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D341CDC8A8800A89A4C /* UFImageEditMaskView.h */,
+				D4F48D351CDC8A8800A89A4C /* UFImageEditMaskView.m */,
+				D4F48D361CDC8A8800A89A4C /* UFImageEditView.h */,
+				D4F48D371CDC8A8800A89A4C /* UFImageEditView.m */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		D4F48D381CDC8A8800A89A4C /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D391CDC8A8800A89A4C /* UIImage+Orientation.h */,
+				D4F48D3A1CDC8A8800A89A4C /* UIImage+Orientation.m */,
+			);
+			path = Effect;
+			sourceTree = "<group>";
+		};
+		D4F48D3B1CDC8A8800A89A4C /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D3C1CDC8A8800A89A4C /* UFImageViewGifUpdater.h */,
+				D4F48D3D1CDC8A8800A89A4C /* UFImageViewGifUpdater.m */,
+				D4F48D3E1CDC8A8800A89A4C /* UIImageView+Gif.h */,
+				D4F48D3F1CDC8A8800A89A4C /* UIImageView+Gif.m */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		D4F48D451CDC8CB000A89A4C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D461CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.h */,
+				D4F48D471CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		D4F48D481CDC8CB000A89A4C /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D491CDC8CB000A89A4C /* UIColor+Hex.h */,
+				D4F48D4A1CDC8CB000A89A4C /* UIColor+Hex.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		D4F48D4B1CDC8CB000A89A4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48DB41CDC90ED00A89A4C /* UINavigationController+PushPopExtension.h */,
+				D4F48DB51CDC90ED00A89A4C /* UINavigationController+PushPopExtension.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D4F48D4E1CDC8CB000A89A4C /* Director */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D4F1CDC8CB000A89A4C /* UFSceneDirector.h */,
+				D4F48D501CDC8CB000A89A4C /* UFSceneDirector.m */,
+			);
+			path = Director;
+			sourceTree = "<group>";
+		};
+		D4F48D531CDC8CB000A89A4C /* EmojiKit */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D541CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.h */,
+				D4F48D551CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.m */,
+				D4F48D561CDC8CB000A89A4C /* UFEmoji.h */,
+				D4F48D571CDC8CB000A89A4C /* UFEmoji.m */,
+				D4F48D581CDC8CB000A89A4C /* UFEmojiImage.h */,
+				D4F48D591CDC8CB000A89A4C /* UFEmojiImage.m */,
+				D4F48D5A1CDC8CB000A89A4C /* UFEmojiSet.h */,
+				D4F48D5B1CDC8CB000A89A4C /* UFEmojiSet.m */,
+				D4F48D5C1CDC8CB000A89A4C /* UFEmojiText.h */,
+				D4F48D5D1CDC8CB000A89A4C /* UFEmojiText.m */,
+				D4F48D5E1CDC8CB000A89A4C /* UFEmojiView.h */,
+				D4F48D5F1CDC8CB000A89A4C /* UFEmojiView.m */,
+			);
+			path = EmojiKit;
+			sourceTree = "<group>";
+		};
+		D4F48D601CDC8CB000A89A4C /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D611CDC8CB000A89A4C /* DataPickInput */,
+				D4F48D6D1CDC8CB000A89A4C /* ToolBar */,
+				D4F48D691CDC8CB000A89A4C /* Extension */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		D4F48D611CDC8CB000A89A4C /* DataPickInput */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D671CDC8CB000A89A4C /* UFDataPickInputer.h */,
+				D4F48D681CDC8CB000A89A4C /* UFDataPickInputer.m */,
+				D4F48D621CDC8CB000A89A4C /* DataPicker */,
+			);
+			path = DataPickInput;
+			sourceTree = "<group>";
+		};
+		D4F48D621CDC8CB000A89A4C /* DataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D631CDC8CB000A89A4C /* UFDataPicker.h */,
+				D4F48D641CDC8CB000A89A4C /* UFDataPicker.m */,
+				D4F48D651CDC8CB000A89A4C /* UFDataPickSource.h */,
+				D4F48D661CDC8CB000A89A4C /* UFDataPickSource.m */,
+			);
+			path = DataPicker;
+			sourceTree = "<group>";
+		};
+		D4F48D691CDC8CB000A89A4C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D6A1CDC8CB000A89A4C /* TextField */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4F48D6A1CDC8CB000A89A4C /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D6B1CDC8CB000A89A4C /* UFTextFieldDataPickInputer.h */,
+				D4F48D6C1CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		D4F48D6D1CDC8CB000A89A4C /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D6E1CDC8CB000A89A4C /* UFInputToolBar.h */,
+				D4F48D6F1CDC8CB000A89A4C /* UFInputToolBar.m */,
+			);
+			path = ToolBar;
+			sourceTree = "<group>";
+		};
+		D4F48D701CDC8CB000A89A4C /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D711CDC8CB000A89A4C /* Adjuster */,
+				D4F48D781CDC8CB000A89A4C /* TextField */,
+				D4F48D7B1CDC8CB000A89A4C /* TextView */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		D4F48D711CDC8CB000A89A4C /* Adjuster */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D721CDC8CB000A89A4C /* UFKeyboardAdjuster.h */,
+				D4F48D731CDC8CB000A89A4C /* UFKeyboardAdjuster.m */,
+				D4F48D741CDC8CB000A89A4C /* UFKeyboardAdjustPoint.h */,
+				D4F48D751CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m */,
+				D4F48D761CDC8CB000A89A4C /* UIView+KeyboardAdjust.h */,
+				D4F48D771CDC8CB000A89A4C /* UIView+KeyboardAdjust.m */,
+			);
+			path = Adjuster;
+			sourceTree = "<group>";
+		};
+		D4F48D781CDC8CB000A89A4C /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D791CDC8CB000A89A4C /* UITextField+KeyboardAdjust.h */,
+				D4F48D7A1CDC8CB000A89A4C /* UITextField+KeyboardAdjust.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		D4F48D7B1CDC8CB000A89A4C /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D7C1CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.h */,
+				D4F48D7D1CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m */,
+				D4F48D7E1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.h */,
+				D4F48D7F1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.m */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		D4F48D801CDC8CB000A89A4C /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D811CDC8CB000A89A4C /* UFLoadingView.h */,
+				D4F48D821CDC8CB000A89A4C /* UFLoadingView.m */,
+				D4F48D831CDC8CB000A89A4C /* UFViewLoadingUpdater.h */,
+				D4F48D841CDC8CB000A89A4C /* UFViewLoadingUpdater.m */,
+				D4F48D851CDC8CB000A89A4C /* UIView+Loading.h */,
+				D4F48D861CDC8CB000A89A4C /* UIView+Loading.m */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		D4F48D871CDC8CB000A89A4C /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D881CDC8CB000A89A4C /* PlaceHolder */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		D4F48D881CDC8CB000A89A4C /* PlaceHolder */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D891CDC8CB000A89A4C /* UFTextViewPlaceHolder.h */,
+				D4F48D8A1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m */,
+				D4F48D8B1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.h */,
+				D4F48D8C1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m */,
+				D4F48D8D1CDC8CB000A89A4C /* UITextView+PlaceHolder.h */,
+				D4F48D8E1CDC8CB000A89A4C /* UITextView+PlaceHolder.m */,
+			);
+			path = PlaceHolder;
+			sourceTree = "<group>";
+		};
+		D4F48D8F1CDC8CB000A89A4C /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				D4F48D901CDC8CB000A89A4C /* UFButtonWindow.h */,
+				D4F48D911CDC8CB000A89A4C /* UFButtonWindow.m */,
+				D4F48D921CDC8CB000A89A4C /* UFButtonWindowViewController.h */,
+				D4F48D931CDC8CB000A89A4C /* UFButtonWindowViewController.m */,
+				D4F48D941CDC8CB000A89A4C /* UFButtonWindowViewController.xib */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1291,6 +1648,7 @@
 			files = (
 				D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */,
 				D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */,
+				D4F48DB31CDC8CB000A89A4C /* UFButtonWindowViewController.xib in Resources */,
 				D4E3EA381CC8A52B00A7987E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1304,12 +1662,19 @@
 			files = (
 				D401EAEA1CD2017F00599E0B /* DeflateCompressor.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
+				D4F48DA11CDC8CB000A89A4C /* UFDataPickSource.m in Sources */,
 				D40860321CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m in Sources */,
 				D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */,
+				D4F48DA21CDC8CB000A89A4C /* UFDataPickInputer.m in Sources */,
 				D401EB0B1CD2017F00599E0B /* IPRouteTraceCenter.m in Sources */,
 				D401EB041CD2017F00599E0B /* NotificationObserver.m in Sources */,
+				D4F48D441CDC8A8800A89A4C /* UIImageView+Gif.m in Sources */,
 				D408603A1CD9A79A005FC3D7 /* SPTaskDispatcher+Convenience.m in Sources */,
+				D4F48DA61CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m in Sources */,
 				D401EAE71CD2017F00599E0B /* DataBaseTable.m in Sources */,
+				D4F48D9B1CDC8CB000A89A4C /* UFEmoji.m in Sources */,
+				D4F48D9C1CDC8CB000A89A4C /* UFEmojiImage.m in Sources */,
+				D4F48DB21CDC8CB000A89A4C /* UFButtonWindowViewController.m in Sources */,
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
 				D401EB061CD2017F00599E0B /* NSObject+Delegate.m in Sources */,
 				D401EAEC1CD2017F00599E0B /* DataDecompressor.m in Sources */,
@@ -1317,10 +1682,14 @@
 				D40EEAA81CD2FC0A00E646C9 /* FoundationTask.m in Sources */,
 				D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */,
 				D401EAE21CD2017F00599E0B /* DBMachine.m in Sources */,
+				D4F48D9F1CDC8CB000A89A4C /* UFEmojiView.m in Sources */,
 				D401EB091CD2017F00599E0B /* IPRouteTraceHandle.m in Sources */,
 				D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */,
+				D4F48DAA1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.m in Sources */,
 				D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */,
 				D481A1A81CDB4D8700826A73 /* UIImageView+URL.m in Sources */,
+				D4F48DA71CDC8CB000A89A4C /* UIView+KeyboardAdjust.m in Sources */,
+				D4F48DAF1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m in Sources */,
 				D408603B1CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m in Sources */,
 				D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */,
 				D40860381CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.m in Sources */,
@@ -1334,17 +1703,26 @@
 				D401EB051CD2017F00599E0B /* NotificationObservingSet.m in Sources */,
 				D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */,
 				D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */,
+				D4F48D431CDC8A8800A89A4C /* UFImageViewGifUpdater.m in Sources */,
 				D401EAFD1CD2017F00599E0B /* HTTPMultipartFormEntity.m in Sources */,
+				D4F48D9A1CDC8CB000A89A4C /* UFAttributedStringEmojiUpdater.m in Sources */,
 				D401EB0E1CD2017F00599E0B /* JsonSerialize.m in Sources */,
 				D408603C1CD9A79A005FC3D7 /* ImageStorage.m in Sources */,
 				D401EB0A1CD2017F00599E0B /* IPRouteItem.m in Sources */,
 				D401EAF61CD2017F00599E0B /* HTTPDownloadConnection.m in Sources */,
 				D401EAED1CD2017F00599E0B /* DeflateDecompressor.m in Sources */,
 				D401EB111CD2017F00599E0B /* XMLSprite.m in Sources */,
+				D4F48D411CDC8A8800A89A4C /* UFImageEditView.m in Sources */,
+				D4F48DA81CDC8CB000A89A4C /* UITextField+KeyboardAdjust.m in Sources */,
 				D40EEAAF1CD2FC0A00E646C9 /* SPTaskFreePool.m in Sources */,
+				D4F48DA41CDC8CB000A89A4C /* UFInputToolBar.m in Sources */,
 				D401EAF91CD2017F00599E0B /* HTTPConnectionInputStreamChunk.m in Sources */,
+				D4F48DB01CDC8CB000A89A4C /* UITextView+PlaceHolder.m in Sources */,
 				D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */,
+				D4F48DA91CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m in Sources */,
 				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
+				D4F48DB61CDC90ED00A89A4C /* UINavigationController+PushPopExtension.m in Sources */,
+				D4F48D961CDC8CB000A89A4C /* UIColor+Hex.m in Sources */,
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
 				D40860391CD9A79A005FC3D7 /* SPTaskDaemonPool+SharedInstance.m in Sources */,
@@ -1352,14 +1730,18 @@
 				D401EB071CD2017F00599E0B /* LightLoadingPermanentQueue.m in Sources */,
 				D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */,
 				D40EEAAE1CD2FC0A00E646C9 /* SPTaskDaemonPool.m in Sources */,
+				D4F48DA51CDC8CB000A89A4C /* UFKeyboardAdjuster.m in Sources */,
 				D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */,
 				D401EAFB1CD2017F00599E0B /* HTTPSession.m in Sources */,
+				D4F48D421CDC8A8800A89A4C /* UIImage+Orientation.m in Sources */,
 				D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */,
+				D4F48D401CDC8A8800A89A4C /* UFImageEditMaskView.m in Sources */,
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
 				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
 				D401EAFF1CD2017F00599E0B /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
+				D4F48DAD1CDC8CB000A89A4C /* UIView+Loading.m in Sources */,
 				D401EADF1CD2017F00599E0B /* DBDefine.m in Sources */,
 				D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */,
 				D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */,
@@ -1368,6 +1750,7 @@
 				D401EAE41CD2017F00599E0B /* DBTable.m in Sources */,
 				D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */,
 				D401EAF01CD2017F00599E0B /* NSData+MD5.m in Sources */,
+				D4F48D9E1CDC8CB000A89A4C /* UFEmojiText.m in Sources */,
 				D401EB0D1CD2017F00599E0B /* IPRouteTracer.m in Sources */,
 				D401EB141CD2017F00599E0B /* NSString+Character.m in Sources */,
 				D401EB001CD2017F00599E0B /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */,
@@ -1376,20 +1759,29 @@
 				D401EB3D1CD2026300599E0B /* EPubBookInfomation.m in Sources */,
 				D401EAF31CD2017F00599E0B /* FileListener.m in Sources */,
 				D401EB401CD2026300599E0B /* EPub2_NCX.m in Sources */,
+				D4F48D981CDC8CB000A89A4C /* UFSceneDirector.m in Sources */,
+				D4F48DB11CDC8CB000A89A4C /* UFButtonWindow.m in Sources */,
 				D401EAE31CD2017F00599E0B /* DBSQL.m in Sources */,
+				D4F48D951CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.m in Sources */,
 				D40860371CD9A79A005FC3D7 /* OperationTask.m in Sources */,
 				D40860341CD9A79A005FC3D7 /* APPLog+SharedInstance.m in Sources */,
 				D401EAFC1CD2017F00599E0B /* NSURLSessionTask+Delegate.m in Sources */,
 				D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */,
 				D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */,
+				D4F48DA31CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m in Sources */,
+				D4F48DAE1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m in Sources */,
 				D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
 				D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
 				D401EAE81CD2017F00599E0B /* DataBaseUnit.m in Sources */,
 				D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */,
+				D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */,
+				D4F48DA01CDC8CB000A89A4C /* UFDataPicker.m in Sources */,
 				D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */,
+				D4F48DAC1CDC8CB000A89A4C /* UFViewLoadingUpdater.m in Sources */,
 				D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */,
+				D4F48DAB1CDC8CB000A89A4C /* UFLoadingView.m in Sources */,
 				D401EAF21CD2017F00599E0B /* NSString+URLEncode.m in Sources */,
 				D401EB101CD2017F00599E0B /* XMLUtility.m in Sources */,
 				D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */,
