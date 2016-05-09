@@ -84,7 +84,11 @@
 
 - (void)URLSessionDataTask:(NSURLSessionDataTask *)dataTask willCacheResponse:(NSCachedURLResponse *)proposedResponse completionHandler:(void (^)(NSCachedURLResponse *))completionHandler
 {
-    if ([[dataTask.currentRequest.HTTPMethod lowercaseString] isEqualToString:@"get"])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(HTTPDataConnection:willCacheResponse:)])
+    {
+        completionHandler([self.delegate HTTPDataConnection:self willCacheResponse:proposedResponse]);
+    }
+    else if ([[dataTask.currentRequest.HTTPMethod lowercaseString] isEqualToString:@"get"])
     {
         completionHandler(proposedResponse);
     }

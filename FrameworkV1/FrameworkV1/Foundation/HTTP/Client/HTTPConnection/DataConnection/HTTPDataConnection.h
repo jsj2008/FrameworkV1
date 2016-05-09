@@ -75,10 +75,21 @@
 - (NSURLSessionResponseDisposition)HTTPDataConnection:(HTTPDataConnection *)dataConnection dispositionForResponse:(NSURLResponse *)response;
 
 /*!
- * @brief 以转换为下载连接
+ * @brief 已转换为下载连接
  * @param dataConnection 数据连接
  * @param downloadConnection 下载连接
  */
 - (void)HTTPDataConnection:(HTTPDataConnection *)dataConnection didBecomeDownloadConnection:(HTTPDownloadConnection *)downloadConnection;
+
+@optional
+
+/*!
+ * @brief 缓存
+ * @discussion delegate对象未实现本方法，将默认对get请求缓存
+ * @param dataConnection 数据连接
+ * @param proposedResponse 建议的缓存
+ * @result 实际保存的缓存，若为nil，将放弃缓存
+ */
+- (NSCachedURLResponse *)HTTPDataConnection:(HTTPDataConnection *)dataConnection willCacheResponse:(NSCachedURLResponse *)proposedResponse;
 
 @end

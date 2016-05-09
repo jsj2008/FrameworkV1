@@ -98,6 +98,8 @@
 		D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA41CD2FC0A00E646C9 /* SPTaskPool.m */; };
 		D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */; };
 		D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */; };
+		D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */; };
+		D427D8AC1CE03CE5003BB907 /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */; };
 		D481A1A81CDB4D8700826A73 /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D481A1A71CDB4D8700826A73 /* UIImageView+URL.m */; };
 		D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
@@ -139,9 +141,6 @@
 		D4F48DAB1CDC8CB000A89A4C /* UFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D821CDC8CB000A89A4C /* UFLoadingView.m */; };
 		D4F48DAC1CDC8CB000A89A4C /* UFViewLoadingUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D841CDC8CB000A89A4C /* UFViewLoadingUpdater.m */; };
 		D4F48DAD1CDC8CB000A89A4C /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D861CDC8CB000A89A4C /* UIView+Loading.m */; };
-		D4F48DAE1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D8A1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m */; };
-		D4F48DAF1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D8C1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m */; };
-		D4F48DB01CDC8CB000A89A4C /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D8E1CDC8CB000A89A4C /* UITextView+PlaceHolder.m */; };
 		D4F48DB11CDC8CB000A89A4C /* UFButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D911CDC8CB000A89A4C /* UFButtonWindow.m */; };
 		D4F48DB21CDC8CB000A89A4C /* UFButtonWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D931CDC8CB000A89A4C /* UFButtonWindowViewController.m */; };
 		D4F48DB31CDC8CB000A89A4C /* UFButtonWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F48D941CDC8CB000A89A4C /* UFButtonWindowViewController.xib */; };
@@ -332,6 +331,10 @@
 		D40EEAA71CD2FC0A00E646C9 /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
 		D40EEACA1CD332EE00E646C9 /* IndexingFileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingFileStorage.h; sourceTree = "<group>"; };
 		D40EEACB1CD332EE00E646C9 /* IndexingFileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingFileStorage.m; sourceTree = "<group>"; };
+		D427D8A71CE03CE5003BB907 /* UFPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFPlaceHolderTextView.h; sourceTree = "<group>"; };
+		D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFPlaceHolderTextView.m; sourceTree = "<group>"; };
+		D427D8A91CE03CE5003BB907 /* UFTextViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolder.h; sourceTree = "<group>"; };
+		D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolder.m; sourceTree = "<group>"; };
 		D481A1A61CDB4D8700826A73 /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
 		D481A1A71CDB4D8700826A73 /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
 		D481A1A91CDB536000826A73 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
@@ -409,12 +412,6 @@
 		D4F48D841CDC8CB000A89A4C /* UFViewLoadingUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFViewLoadingUpdater.m; sourceTree = "<group>"; };
 		D4F48D851CDC8CB000A89A4C /* UIView+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
 		D4F48D861CDC8CB000A89A4C /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
-		D4F48D891CDC8CB000A89A4C /* UFTextViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolder.h; sourceTree = "<group>"; };
-		D4F48D8A1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolder.m; sourceTree = "<group>"; };
-		D4F48D8B1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolderUpdater.h; sourceTree = "<group>"; };
-		D4F48D8C1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolderUpdater.m; sourceTree = "<group>"; };
-		D4F48D8D1CDC8CB000A89A4C /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
-		D4F48D8E1CDC8CB000A89A4C /* UITextView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PlaceHolder.m"; sourceTree = "<group>"; };
 		D4F48D901CDC8CB000A89A4C /* UFButtonWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFButtonWindow.h; sourceTree = "<group>"; };
 		D4F48D911CDC8CB000A89A4C /* UFButtonWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFButtonWindow.m; sourceTree = "<group>"; };
 		D4F48D921CDC8CB000A89A4C /* UFButtonWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFButtonWindowViewController.h; sourceTree = "<group>"; };
@@ -1567,12 +1564,10 @@
 		D4F48D881CDC8CB000A89A4C /* PlaceHolder */ = {
 			isa = PBXGroup;
 			children = (
-				D4F48D891CDC8CB000A89A4C /* UFTextViewPlaceHolder.h */,
-				D4F48D8A1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m */,
-				D4F48D8B1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.h */,
-				D4F48D8C1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m */,
-				D4F48D8D1CDC8CB000A89A4C /* UITextView+PlaceHolder.h */,
-				D4F48D8E1CDC8CB000A89A4C /* UITextView+PlaceHolder.m */,
+				D427D8A71CE03CE5003BB907 /* UFPlaceHolderTextView.h */,
+				D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */,
+				D427D8A91CE03CE5003BB907 /* UFTextViewPlaceHolder.h */,
+				D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */,
 			);
 			path = PlaceHolder;
 			sourceTree = "<group>";
@@ -1689,7 +1684,6 @@
 				D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */,
 				D481A1A81CDB4D8700826A73 /* UIImageView+URL.m in Sources */,
 				D4F48DA71CDC8CB000A89A4C /* UIView+KeyboardAdjust.m in Sources */,
-				D4F48DAF1CDC8CB000A89A4C /* UFTextViewPlaceHolderUpdater.m in Sources */,
 				D408603B1CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m in Sources */,
 				D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */,
 				D40860381CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.m in Sources */,
@@ -1717,7 +1711,6 @@
 				D40EEAAF1CD2FC0A00E646C9 /* SPTaskFreePool.m in Sources */,
 				D4F48DA41CDC8CB000A89A4C /* UFInputToolBar.m in Sources */,
 				D401EAF91CD2017F00599E0B /* HTTPConnectionInputStreamChunk.m in Sources */,
-				D4F48DB01CDC8CB000A89A4C /* UITextView+PlaceHolder.m in Sources */,
 				D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */,
 				D4F48DA91CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m in Sources */,
 				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
@@ -1726,6 +1719,7 @@
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
 				D40860391CD9A79A005FC3D7 /* SPTaskDaemonPool+SharedInstance.m in Sources */,
+				D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */,
 				D40860361CD9A79A005FC3D7 /* ServiceUnit.m in Sources */,
 				D401EB071CD2017F00599E0B /* LightLoadingPermanentQueue.m in Sources */,
 				D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */,
@@ -1734,6 +1728,7 @@
 				D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */,
 				D401EAFB1CD2017F00599E0B /* HTTPSession.m in Sources */,
 				D4F48D421CDC8A8800A89A4C /* UIImage+Orientation.m in Sources */,
+				D427D8AC1CE03CE5003BB907 /* UFTextViewPlaceHolder.m in Sources */,
 				D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */,
 				D4F48D401CDC8A8800A89A4C /* UFImageEditMaskView.m in Sources */,
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
@@ -1769,7 +1764,6 @@
 				D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */,
 				D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */,
 				D4F48DA31CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m in Sources */,
-				D4F48DAE1CDC8CB000A89A4C /* UFTextViewPlaceHolder.m in Sources */,
 				D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
 				D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */,
