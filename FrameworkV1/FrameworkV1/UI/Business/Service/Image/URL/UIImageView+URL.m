@@ -24,12 +24,12 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
 
 @implementation UIImageView (URL)
 
-- (void)setURLLoadingConfiguration:(USImageViewURLLoadingConfiguration *)URLLoadingConfiguration
+- (void)setURLLoadingConfiguration:(UBImageViewURLLoadingConfiguration *)URLLoadingConfiguration
 {
     objc_setAssociatedObject(self, kUIImageViewPropertyKey_URLLoadingConfiguration, URLLoadingConfiguration, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (USImageViewURLLoadingConfiguration *)URLLoadingConfiguration
+- (UBImageViewURLLoadingConfiguration *)URLLoadingConfiguration
 {
     return objc_getAssociatedObject(self, kUIImageViewPropertyKey_URLLoadingConfiguration);
 }
@@ -105,7 +105,7 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
 @end
 
 
-@implementation USImageViewURLLoadingConfiguration
+@implementation UBImageViewURLLoadingConfiguration
 
 @end
 
@@ -114,7 +114,7 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
 
 - (void)setImageWithURL:(NSURL *)URL
 {
-    USImageViewURLLoadingConfiguration *configuration = [[USImageViewURLLoadingConfiguration alloc] init];
+    UBImageViewURLLoadingConfiguration *configuration = [[UBImageViewURLLoadingConfiguration alloc] init];
     
     configuration.URL = URL;
     
@@ -123,9 +123,9 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
     [self startURLLoading];
 }
 
-- (void)setImageWithURL:(NSURL *)URL placeHolderImage:(UIImage *)placeHolderImage completion:(USImageViewURLLoadingCompletion)completion
+- (void)setImageWithURL:(NSURL *)URL placeHolderImage:(UIImage *)placeHolderImage completion:(UBImageViewURLLoadingCompletion)completion
 {
-    USImageViewURLLoadingConfiguration *configuration = [[USImageViewURLLoadingConfiguration alloc] init];
+    UBImageViewURLLoadingConfiguration *configuration = [[UBImageViewURLLoadingConfiguration alloc] init];
     
     configuration.URL = URL;
     

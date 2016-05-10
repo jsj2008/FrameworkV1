@@ -10,7 +10,7 @@
 
 #pragma mark - UIImageView (URL)
 
-@class USImageViewURLLoadingConfiguration;
+@class UBImageViewURLLoadingConfiguration;
 
 /*********************************************************
  
@@ -27,7 +27,7 @@
 /*!
  * @brief 图片URL加载配置信息
  */
-@property (nonatomic) USImageViewURLLoadingConfiguration *URLLoadingConfiguration;
+@property (nonatomic) UBImageViewURLLoadingConfiguration *URLLoadingConfiguration;
 
 /*!
  * @brief 启动图片URL加载
@@ -51,7 +51,7 @@
  * @param URL，图片URL
  * @param error，错误信息
  */
-typedef void(^USImageViewURLLoadingCompletion)(NSURL *URL, NSError *error);
+typedef void(^UBImageViewURLLoadingCompletion)(NSURL *URL, NSError *error);
 
 /*!
  * @brief 图片加载进度的回调block
@@ -59,20 +59,20 @@ typedef void(^USImageViewURLLoadingCompletion)(NSURL *URL, NSError *error);
  * @param loadedSize，已下载量
  * @param expectedSize，预期下载量
  */
-typedef void(^USImageViewURLLoadingProgressing)(NSURL *URL, long long loadedSize, long long expectedSize);
+typedef void(^UBImageViewURLLoadingProgressing)(NSURL *URL, long long loadedSize, long long expectedSize);
 
 
 /*********************************************************
  
     @class
-        USImageViewURLLoadingConfiguration
+        UBImageViewURLLoadingConfiguration
  
     @abstract
         图片URL加载配置信息
  
  *********************************************************/
 
-@interface USImageViewURLLoadingConfiguration : NSObject
+@interface UBImageViewURLLoadingConfiguration : NSObject
 
 /*!
  * @brief 图片URL
@@ -102,12 +102,12 @@ typedef void(^USImageViewURLLoadingProgressing)(NSURL *URL, long long loadedSize
 /*!
  * @brief 图片加载完成时的回调block
  */
-@property (nonatomic, copy) USImageViewURLLoadingCompletion completion;
+@property (nonatomic, copy) UBImageViewURLLoadingCompletion completion;
 
 /*!
  * @brief 图片加载进度的回调block
  */
-@property (nonatomic, copy) USImageViewURLLoadingProgressing progressing;
+@property (nonatomic, copy) UBImageViewURLLoadingProgressing progressing;
 
 @end
 
@@ -140,6 +140,6 @@ typedef void(^USImageViewURLLoadingProgressing)(NSURL *URL, long long loadedSize
  * @param placeHolderImage 占位图
  * @param completion 加载完成的回调
  */
-- (void)setImageWithURL:(NSURL *)URL placeHolderImage:(UIImage *)placeHolderImage completion:(USImageViewURLLoadingCompletion)completion;
+- (void)setImageWithURL:(NSURL *)URL placeHolderImage:(UIImage *)placeHolderImage completion:(UBImageViewURLLoadingCompletion)completion;
 
 @end

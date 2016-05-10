@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 WW. All rights reserved.
 //
 
-#import "FoundationTask.h"
+#import "SPTask.h"
 
 @protocol BlockTaskDelegate;
 
@@ -23,12 +23,11 @@
     @discussion
         1，Task只执行功能块中指定的代码，执行后自动调用协议结束消息
         2，Task扩展了context属性，用于执行块代码时处理和传递数据，可以在功能块中任意修改其值，在协议结束消息中可以从task参数中读取其值
-        3，Task关闭了派发子Task的功能
-        4，代码块开始执行后，Task的cancel操作将失去作用；欲停止代码块的运行，必须由调用者对代码块实现控制
+        3，代码块开始执行后，Task的cancel操作将失去作用；欲停止代码块的运行，必须由调用者对代码块实现控制（例如通过context来实现取消标记位的处理等）
  
  *********************************************************/
 
-@interface BlockTask : FoundationTask
+@interface BlockTask : SPTask
 
 /*!
  * @brief 功能块

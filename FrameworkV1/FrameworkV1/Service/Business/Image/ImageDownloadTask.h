@@ -6,7 +6,7 @@
 //  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "OperationTask.h"
+#import "ServiceTask.h"
 
 @protocol ImageDownloadTaskDelegate;
 
@@ -24,7 +24,7 @@
  
  *********************************************************/
 
-@interface ImageDownloadTask : OperationTask
+@interface ImageDownloadTask : ServiceTask
 
 /*!
  * @brief 初始化

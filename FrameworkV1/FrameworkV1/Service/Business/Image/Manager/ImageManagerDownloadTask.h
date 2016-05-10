@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Baymax. All rights reserved.
 //
 
-#import "OperationTask.h"
+#import "ServiceTask.h"
 
 @protocol ImageManagerDownloadTaskDelegate;
 
@@ -21,7 +21,7 @@
  
  *********************************************************/
 
-@interface ImageManagerDownloadTask : OperationTask
+@interface ImageManagerDownloadTask : ServiceTask
 
 /*!
  * @brief 图片URL

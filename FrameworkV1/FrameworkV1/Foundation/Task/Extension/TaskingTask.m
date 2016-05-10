@@ -14,11 +14,11 @@
     BOOL _isFinished;
 }
 
-- (void)innerRunTasks:(NSArray *)tasks;
+- (void)innerRunTasks:(NSArray<SPTask *> *)tasks;
 
-- (void)innerRemoveTasks:(NSArray *)tasks;
+- (void)innerRemoveTasks:(NSArray<SPTask *> *)tasks;
 
-- (void)innerCancelTasks:(NSArray *)tasks;
+- (void)innerCancelTasks:(NSArray<SPTask *> *)tasks;
 
 @end
 
@@ -43,7 +43,7 @@
     [super cancel];
 }
 
-- (void)innerRunTasks:(NSArray *)tasks
+- (void)innerRunTasks:(NSArray<SPTask *> *)tasks
 {
     [self notify:^{
         
@@ -53,15 +53,15 @@
         }
     }];
     
-    for (FoundationTask *task in tasks)
+    for (SPTask *task in tasks)
     {
         [self.taskDispatcher syncAddTask:task];
     }
 }
 
-- (void)innerRemoveTasks:(NSArray *)tasks
+- (void)innerRemoveTasks:(NSArray<SPTask *> *)tasks
 {
-    for (FoundationTask *task in tasks)
+    for (SPTask *task in tasks)
     {
         [self.taskDispatcher removeTask:task];
     }
@@ -75,9 +75,9 @@
     }];
 }
 
-- (void)innerCancelTasks:(NSArray *)tasks
+- (void)innerCancelTasks:(NSArray<SPTask *> *)tasks
 {
-    for (FoundationTask *task in tasks)
+    for (SPTask *task in tasks)
     {
         [self.taskDispatcher cancelTask:task];
     }

@@ -1,14 +1,14 @@
 //
-//  FoundationTask.m
+//  DispatchableTask.m
 //  Demo
 //
 //  Created by Baymax on 13-10-19.
 //  Copyright (c) 2013年 WW. All rights reserved.
 //
 
-#import "FoundationTask.h"
+#import "DispatchableTask.h"
 
-@interface FoundationTask ()
+@interface DispatchableTask ()
 {
     SPTaskDispatcher *_taskDispatcher;
 }
@@ -16,7 +16,7 @@
 @end
 
 
-@implementation FoundationTask
+@implementation DispatchableTask
 
 @synthesize taskDispatcher = _taskDispatcher;
 

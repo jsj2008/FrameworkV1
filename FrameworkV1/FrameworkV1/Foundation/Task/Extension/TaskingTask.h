@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 WW. All rights reserved.
 //
 
-#import "FoundationTask.h"
+#import "DispatchableTask.h"
 
 /*********************************************************
  
@@ -26,7 +26,7 @@
  
  *********************************************************/
 
-@interface TaskingTask : FoundationTask
+@interface TaskingTask : DispatchableTask
 
 /*!
  * @brief 添加子任务
