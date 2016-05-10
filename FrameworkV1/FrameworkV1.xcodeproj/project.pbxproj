@@ -111,6 +111,12 @@
 		D4E3EA381CC8A52B00A7987E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA361CC8A52B00A7987E /* Main.storyboard */; };
 		D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA391CC8A52B00A7987E /* Assets.xcassets */; };
 		D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA3B1CC8A52B00A7987E /* LaunchScreen.storyboard */; };
+		D4F452AD1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452AC1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m */; };
+		D4F452B21CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452AF1CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.m */; };
+		D4F452B31CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452B11CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.m */; };
+		D4F452B81CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452B51CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.m */; };
+		D4F452B91CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452B71CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m */; };
+		D4F452BC1CE1DB0A00AFCA08 /* UFScrollLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452BB1CE1DB0A00AFCA08 /* UFScrollLoadingView.m */; };
 		D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D2A1CDC488000A89A4C /* ImageManager.m */; };
 		D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D2C1CDC488000A89A4C /* ImageManagerDownloadTask.m */; };
 		D4F48D401CDC8A8800A89A4C /* UFImageEditMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D351CDC8A8800A89A4C /* UFImageEditMaskView.m */; };
@@ -352,6 +358,18 @@
 		D4E3EA391CC8A52B00A7987E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4E3EA3C1CC8A52B00A7987E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4E3EA3E1CC8A52B00A7987E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F452AB1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollContentOffsetUpdater.h; sourceTree = "<group>"; };
+		D4F452AC1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollContentOffsetUpdater.m; sourceTree = "<group>"; };
+		D4F452AE1CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadMoreFooterView.h; sourceTree = "<group>"; };
+		D4F452AF1CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadMoreFooterView.m; sourceTree = "<group>"; };
+		D4F452B01CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LoadMoreFooter.h"; sourceTree = "<group>"; };
+		D4F452B11CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LoadMoreFooter.m"; sourceTree = "<group>"; };
+		D4F452B41CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollRefreshHeaderView.h; sourceTree = "<group>"; };
+		D4F452B51CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollRefreshHeaderView.m; sourceTree = "<group>"; };
+		D4F452B61CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshHeader.h"; sourceTree = "<group>"; };
+		D4F452B71CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshHeader.m"; sourceTree = "<group>"; };
+		D4F452BA1CE1DB0A00AFCA08 /* UFScrollLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadingView.h; sourceTree = "<group>"; };
+		D4F452BB1CE1DB0A00AFCA08 /* UFScrollLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadingView.m; sourceTree = "<group>"; };
 		D4F48D291CDC488000A89A4C /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
 		D4F48D2A1CDC488000A89A4C /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		D4F48D2B1CDC488000A89A4C /* ImageManagerDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManagerDownloadTask.h; sourceTree = "<group>"; };
@@ -1248,6 +1266,7 @@
 		D481A19F1CDB4D1F00826A73 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D4F452A81CE1DAAD00AFCA08 /* ScrollLoading */,
 				D4F48D451CDC8CB000A89A4C /* Button */,
 				D4F48D481CDC8CB000A89A4C /* Color */,
 				D4F48D4B1CDC8CB000A89A4C /* Controller */,
@@ -1339,6 +1358,41 @@
 				D481A19E1CDB4D1F00826A73 /* Business */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D4F452A81CE1DAAD00AFCA08 /* ScrollLoading */ = {
+			isa = PBXGroup;
+			children = (
+				D4F452BA1CE1DB0A00AFCA08 /* UFScrollLoadingView.h */,
+				D4F452BB1CE1DB0A00AFCA08 /* UFScrollLoadingView.m */,
+				D4F452AB1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.h */,
+				D4F452AC1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m */,
+				D4F452A91CE1DAAD00AFCA08 /* ScrollLoadMore */,
+				D4F452AA1CE1DAAD00AFCA08 /* ScrollRefresh */,
+			);
+			path = ScrollLoading;
+			sourceTree = "<group>";
+		};
+		D4F452A91CE1DAAD00AFCA08 /* ScrollLoadMore */ = {
+			isa = PBXGroup;
+			children = (
+				D4F452AE1CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.h */,
+				D4F452AF1CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.m */,
+				D4F452B01CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.h */,
+				D4F452B11CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.m */,
+			);
+			path = ScrollLoadMore;
+			sourceTree = "<group>";
+		};
+		D4F452AA1CE1DAAD00AFCA08 /* ScrollRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D4F452B41CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.h */,
+				D4F452B51CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.m */,
+				D4F452B61CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.h */,
+				D4F452B71CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m */,
+			);
+			path = ScrollRefresh;
 			sourceTree = "<group>";
 		};
 		D4F48D281CDC488000A89A4C /* Manager */ = {
@@ -1681,6 +1735,7 @@
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
 				D401EB061CD2017F00599E0B /* NSObject+Delegate.m in Sources */,
 				D401EAEC1CD2017F00599E0B /* DataDecompressor.m in Sources */,
+				D4F452AD1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m in Sources */,
 				D401EB121CD2017F00599E0B /* XMLSpriteSerialize.m in Sources */,
 				D40EEAA81CD2FC0A00E646C9 /* DispatchableTask.m in Sources */,
 				D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */,
@@ -1711,6 +1766,8 @@
 				D408603C1CD9A79A005FC3D7 /* ImageStorage.m in Sources */,
 				D401EB0A1CD2017F00599E0B /* IPRouteItem.m in Sources */,
 				D401EAF61CD2017F00599E0B /* HTTPDownloadConnection.m in Sources */,
+				D4F452B81CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.m in Sources */,
+				D4F452B21CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.m in Sources */,
 				D401EAED1CD2017F00599E0B /* DeflateDecompressor.m in Sources */,
 				D401EB111CD2017F00599E0B /* XMLSprite.m in Sources */,
 				D4F48D411CDC8A8800A89A4C /* UFImageEditView.m in Sources */,
@@ -1740,6 +1797,7 @@
 				D4F48D2E1CDC488000A89A4C /* ImageManagerDownloadTask.m in Sources */,
 				D4F48D401CDC8A8800A89A4C /* UFImageEditMaskView.m in Sources */,
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
+				D4F452B31CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.m in Sources */,
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
 				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
@@ -1778,6 +1836,7 @@
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
 				D401EAE81CD2017F00599E0B /* DataBaseUnit.m in Sources */,
 				D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */,
+				D4F452B91CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m in Sources */,
 				D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */,
 				D4F48DA01CDC8CB000A89A4C /* UFDataPicker.m in Sources */,
 				D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */,
@@ -1793,6 +1852,7 @@
 				D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */,
 				D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */,
 				D401EB3F1CD2026300599E0B /* EPub.m in Sources */,
+				D4F452BC1CE1DB0A00AFCA08 /* UFScrollLoadingView.m in Sources */,
 				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
