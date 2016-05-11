@@ -39,6 +39,13 @@
 
 @implementation LogFileHandle
 
+@synthesize rootDirectory = _rootDirectory;
+
+- (void)dealloc
+{
+    dispatch_sync(_syncQueue, ^{});
+}
+
 - (id)initWithRootDirectory:(NSString *)rootDirectory
 {
     if (self = [super init])
@@ -51,11 +58,6 @@
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    dispatch_sync(_syncQueue, ^{});
 }
 
 - (void)writeString:(NSString *)string
