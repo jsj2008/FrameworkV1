@@ -44,8 +44,6 @@
         _stop = YES;
         
         self.defaultLevel = APPLogLevel_High;
-        
-        self.logFileDirectory = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Log"];
     }
     
     return self;

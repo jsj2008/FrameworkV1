@@ -51,7 +51,7 @@
         {
             [self.delegate imageManagerDownloadTask:self didFinishWithError:error imageData:data];
         }
-    }];
+    } onThread:self.notifyThread];
 }
 
 - (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishDownloadingToURL:(NSURL *)location
@@ -75,7 +75,7 @@
         {
             [self.delegate imageManagerDownloadTask:self didDownloadImageWithDownloadedSize:totalBytesWritten expectedSize:totalBytesExpectedToWrite];
         }
-    }];
+    } onThread:self.notifyThread];
 }
 
 @end

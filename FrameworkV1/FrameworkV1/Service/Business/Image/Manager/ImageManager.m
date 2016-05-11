@@ -7,8 +7,7 @@
 //
 
 #import "ImageManager.h"
-#import "NSObject+Notify.h"
-#import "NotificationObservingSet.h"
+#import "NotificationObserver.h"
 #import "SPTaskDispatcher+Convenience.h"
 #import "ImageManagerDownloadTask.h"
 #import "ImageStorage.h"
@@ -89,7 +88,7 @@
         {
             NSData *data = [NSData dataWithContentsOfURL:URL];
             
-            [self notify:^{
+            [self operate:^{
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                 {
@@ -104,7 +103,7 @@
             
             if (data)
             {
-                [self notify:^{
+                [self operate:^{
                     
                     if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                     {
@@ -140,7 +139,7 @@
                 
                 notificationObserver.notifyThread = [NSThread currentThread];
                 
-                [set.observers addObject:notificationObserver];
+                [set.observerArray addObject:notificationObserver];
             }
         }
     });
@@ -158,7 +157,7 @@
             {
                 NSMutableArray *toRemoveObjects = [[NSMutableArray alloc] init];
                 
-                for (NotificationObserver *notificationObserver in set.observers)
+                for (NotificationObserver *notificationObserver in set.observerArray)
                 {
                     if ([notificationObserver.observer isEqual:observer])
                     {
@@ -166,10 +165,10 @@
                     }
                 }
                 
-                [set.observers removeObjectsInArray:toRemoveObjects];
+                [set.observerArray removeObjectsInArray:toRemoveObjects];
             }
             
-            if (![set.observers count])
+            if ([set.observerArray count] == 0)
             {
                 [self.taskDispatcher cancelTask:set.object];
                 
@@ -204,7 +203,7 @@
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:task.imageURL];
             
-            [set notify:^(id observer) {
+            [set notifyObservers:^(id observer) {
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                 {
@@ -228,7 +227,7 @@
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:task.imageURL];
             
-            [set notify:^(id observer) {
+            [set notifyObservers:^(id observer) {
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didDownloadImageByURL:withDownloadedSize:expectedSize:)])
                 {

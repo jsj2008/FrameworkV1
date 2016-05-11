@@ -24,16 +24,8 @@
 
 @interface NSObject (Delegate_Internal)
 
-/*!
- * @brief delegate观察者
- * @result 观察者对象
- */
-- (NSMutableDictionary *)delegateObservers;
+- (NotificationObservingSet *)delegateNotificationObservingSet;
 
-/*!
- * @brief delegate同步队列
- * @result 同步队列
- */
 - (dispatch_queue_t)delegateSyncQueue;
 
 @end
@@ -50,15 +42,15 @@
     {
         dispatch_queue_t syncQueue = [self delegateSyncQueue];
         
-        NSString *index = [NSString stringWithFormat:@"%x", delegate];
+        NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
         
         NSThread *currentThread = [NSThread currentThread];
         
         dispatch_sync(syncQueue, ^{
             
-            NSMutableDictionary *observers = [self delegateObservers];
+            NotificationObservingSet *set = [self delegateNotificationObservingSet];
             
-            if (![[observers allKeys] containsObject:index])
+            if (![[set.observerDictionary allKeys] containsObject:index])
             {
                 NotificationObserver *observer = [[NotificationObserver alloc] init];
                 
@@ -66,7 +58,7 @@
                 
                 observer.notifyThread = currentThread;
                 
-                [observers setObject:observer forKey:index];
+                [set.observerDictionary setObject:observer forKey:index];
             }
         });
     }
@@ -78,13 +70,13 @@
     {
         dispatch_queue_t syncQueue = [self delegateSyncQueue];
         
-        NSString *index = [NSString stringWithFormat:@"%x", delegate];
+        NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
         
         dispatch_sync(syncQueue, ^{
             
-            NSMutableDictionary *observers = [self delegateObservers];
+            NotificationObservingSet *set = [self delegateNotificationObservingSet];
             
-            [observers removeObjectForKey:index];
+            [set.observerDictionary removeObjectForKey:index];
         });
     }
 }
@@ -97,14 +89,7 @@
         
         dispatch_sync(syncQueue, ^{
             
-            for (NotificationObserver *observer in [[self delegateObservers] allValues])
-            {
-                [observer notify:^(id observer) {
-                    
-                    operation(observer);
-                    
-                } onThread:nil];
-            }
+            [[self delegateNotificationObservingSet] notifyObservers:operation onThread:nil];
         });
     }
 }
@@ -115,36 +100,36 @@
 #pragma mark - NSObject (Delegate_Internal)
 
 
-static char kNSObjectDelegateKey[] = "kNSObjectDelegateKey";
+static char kNSObjectPropertyKey_DelegateNotificationObservingSet[] = "delegateNotificationObservingSet";
 
-static char kNSObjectDelegateSyncQueue[] = "kNSObjectDelegateSyncQueue";
+static char kNSObjectPropertyKey_DelegateSyncQueue[] = "delegateSyncQueue";
 
 
 @implementation NSObject (Delegate_Internal)
 
-- (NSMutableDictionary *)delegateObservers
+- (NotificationObservingSet *)delegateNotificationObservingSet
 {
-    NSMutableDictionary *observers = objc_getAssociatedObject(self, kNSObjectDelegateKey);
+    NotificationObservingSet *set = objc_getAssociatedObject(self, kNSObjectPropertyKey_DelegateNotificationObservingSet);
     
-    if (!observers)
+    if (!set)
     {
-        observers = [[NSMutableDictionary alloc] init];
+        set = [[NotificationObservingSet alloc] init];
         
-        objc_setAssociatedObject(self, kNSObjectDelegateKey, observers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kNSObjectPropertyKey_DelegateNotificationObservingSet, set, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
-    return observers;
+    return set;
 }
 
 - (dispatch_queue_t)delegateSyncQueue
 {
-    dispatch_queue_t queue = objc_getAssociatedObject(self, kNSObjectDelegateSyncQueue);
+    dispatch_queue_t queue = objc_getAssociatedObject(self, kNSObjectPropertyKey_DelegateSyncQueue);
     
     if (!queue)
     {
         queue = dispatch_queue_create(NULL, NULL);
         
-        objc_setAssociatedObject(self, kNSObjectDelegateSyncQueue, queue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kNSObjectPropertyKey_DelegateSyncQueue, queue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
     return queue;

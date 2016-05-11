@@ -7,24 +7,61 @@
 //
 
 #import "NotificationObserver.h"
-#import "NotificationBlockLoader.h"
 
 @implementation NotificationObserver
 
-- (void)notify:(void (^)(id))notification onThread:(NSThread *)thread
+@end
+
+
+@interface NotificationObservingSet ()
 {
-    NotificationBlockLoader *loader = [[NotificationBlockLoader alloc] initWithBlock:notification observer:self.observer];
+    NSMutableArray *_observerArray;
     
-    NSThread *destinationThread = thread ? thread : self.notifyThread;
-    
-    if (!destinationThread)
+    NSMutableDictionary *_observerDictionary;
+}
+
+@end
+
+
+@implementation NotificationObservingSet
+
+@synthesize observerArray = _observerArray;
+
+@synthesize observerDictionary = _observerDictionary;
+
+- (id)init
+{
+    if (self = [super init])
     {
-        destinationThread = [NSThread currentThread];
+        _observerArray = [[NSMutableArray  alloc] init];
+        
+        _observerDictionary = [[NSMutableDictionary alloc] init];
     }
     
-    if ([destinationThread isExecuting])
+    return self;
+}
+
+- (void)notifyObservers:(void (^)(id))notification onThread:(NSThread *)thread
+{
+    if (notification)
     {
-        [loader performSelector:@selector(exeBlock) onThread:destinationThread withObject:nil waitUntilDone:NO];
+        for (NotificationObserver *observer in self.observerArray)
+        {
+            [observer operate:^{
+                
+                notification(observer);
+                
+            } onThread:observer.notifyThread ? observer.notifyThread : [NSThread currentThread]];
+        }
+        
+        for (NotificationObserver *observer in [self.observerDictionary allValues])
+        {
+            [observer operate:^{
+                
+                notification(observer);
+                
+            } onThread:observer.notifyThread ? observer.notifyThread : [NSThread currentThread]];
+        }
     }
 }
 

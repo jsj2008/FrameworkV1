@@ -44,9 +44,7 @@
 		D401EB001CD2017F00599E0B /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA801CD2017F00599E0B /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m */; };
 		D401EB011CD2017F00599E0B /* APPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA831CD2017F00599E0B /* APPLog.m */; };
 		D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA851CD2017F00599E0B /* LogFileHandle.m */; };
-		D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA881CD2017F00599E0B /* NotificationBlockLoader.m */; };
 		D401EB041CD2017F00599E0B /* NotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA8A1CD2017F00599E0B /* NotificationObserver.m */; };
-		D401EB051CD2017F00599E0B /* NotificationObservingSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA8C1CD2017F00599E0B /* NotificationObservingSet.m */; };
 		D401EB061CD2017F00599E0B /* NSObject+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA8E1CD2017F00599E0B /* NSObject+Delegate.m */; };
 		D401EB071CD2017F00599E0B /* LightLoadingPermanentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA911CD2017F00599E0B /* LightLoadingPermanentQueue.m */; };
 		D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA941CD2017F00599E0B /* NetworkReachability.m */; };
@@ -72,15 +70,16 @@
 		D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB361CD2026300599E0B /* EPub2_OPF.m */; };
 		D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB381CD2026300599E0B /* EPub2_Package.m */; };
 		D401EB441CD2026300599E0B /* EPubXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB3B1CD2026300599E0B /* EPubXML.m */; };
-		D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB671CD214A600599E0B /* NSObject+Notify.m */; };
+		D401EB681CD214A600599E0B /* NSObject+ThreadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EB671CD214A600599E0B /* NSObject+ThreadOperation.m */; };
 		D40208F11CE2E1E900F00082 /* UFScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40208F01CE2E1E900F00082 /* UFScene.m */; };
+		D40208F71CE303DF00F00082 /* UBMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40208F61CE303DF00F00082 /* UBMainScene.m */; };
+		D40208FB1CE3075F00F00082 /* FoundationServiceUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = D40208FA1CE3075F00F00082 /* FoundationServiceUnit.m */; };
 		D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600A1CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m */; };
 		D40860311CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600D1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m */; };
 		D40860321CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600F1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m */; };
 		D40860331CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860121CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.m */; };
 		D40860341CD9A79A005FC3D7 /* APPLog+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860151CD9A79A005FC3D7 /* APPLog+SharedInstance.m */; };
 		D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860181CD9A79A005FC3D7 /* NetworkManager.m */; };
-		D40860361CD9A79A005FC3D7 /* FoundationServiceUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = D408601B1CD9A79A005FC3D7 /* FoundationServiceUnit.m */; };
 		D40860371CD9A79A005FC3D7 /* ServiceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D408601E1CD9A79A005FC3D7 /* ServiceTask.m */; };
 		D40860381CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860201CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.m */; };
 		D40860391CD9A79A005FC3D7 /* SPTaskDaemonPool+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860221CD9A79A005FC3D7 /* SPTaskDaemonPool+SharedInstance.m */; };
@@ -89,7 +88,6 @@
 		D408603C1CD9A79A005FC3D7 /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D408602A1CD9A79A005FC3D7 /* ImageStorage.m */; };
 		D408603D1CD9A79A005FC3D7 /* StorageUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = D408602D1CD9A79A005FC3D7 /* StorageUnit.m */; };
 		D40EEAA81CD2FC0A00E646C9 /* DispatchableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA901CD2FC0A00E646C9 /* DispatchableTask.m */; };
-		D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA921CD2FC0A00E646C9 /* TaskingTask.m */; };
 		D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA951CD2FC0A00E646C9 /* BlockTask.m */; };
 		D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA971CD2FC0A00E646C9 /* SPTask.m */; };
 		D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D40EEA9A1CD2FC0A00E646C9 /* SPTaskDispatcher.m */; };
@@ -109,7 +107,6 @@
 		D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA2E1CC8A52B00A7987E /* main.m */; };
 		D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA311CC8A52B00A7987E /* AppDelegate.m */; };
 		D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3EA341CC8A52B00A7987E /* ViewController.m */; };
-		D4E3EA381CC8A52B00A7987E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA361CC8A52B00A7987E /* Main.storyboard */; };
 		D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA391CC8A52B00A7987E /* Assets.xcassets */; };
 		D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E3EA3B1CC8A52B00A7987E /* LaunchScreen.storyboard */; };
 		D4F452AD1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F452AC1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m */; };
@@ -228,12 +225,8 @@
 		D401EA831CD2017F00599E0B /* APPLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPLog.m; sourceTree = "<group>"; };
 		D401EA841CD2017F00599E0B /* LogFileHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogFileHandle.h; sourceTree = "<group>"; };
 		D401EA851CD2017F00599E0B /* LogFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogFileHandle.m; sourceTree = "<group>"; };
-		D401EA871CD2017F00599E0B /* NotificationBlockLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationBlockLoader.h; sourceTree = "<group>"; };
-		D401EA881CD2017F00599E0B /* NotificationBlockLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBlockLoader.m; sourceTree = "<group>"; };
 		D401EA891CD2017F00599E0B /* NotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationObserver.h; sourceTree = "<group>"; };
 		D401EA8A1CD2017F00599E0B /* NotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationObserver.m; sourceTree = "<group>"; };
-		D401EA8B1CD2017F00599E0B /* NotificationObservingSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationObservingSet.h; sourceTree = "<group>"; };
-		D401EA8C1CD2017F00599E0B /* NotificationObservingSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationObservingSet.m; sourceTree = "<group>"; };
 		D401EA8D1CD2017F00599E0B /* NSObject+Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Delegate.h"; sourceTree = "<group>"; };
 		D401EA8E1CD2017F00599E0B /* NSObject+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Delegate.m"; sourceTree = "<group>"; };
 		D401EA901CD2017F00599E0B /* LightLoadingPermanentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightLoadingPermanentQueue.h; sourceTree = "<group>"; };
@@ -285,10 +278,14 @@
 		D401EB381CD2026300599E0B /* EPub2_Package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPub2_Package.m; sourceTree = "<group>"; };
 		D401EB3A1CD2026300599E0B /* EPubXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPubXML.h; sourceTree = "<group>"; };
 		D401EB3B1CD2026300599E0B /* EPubXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPubXML.m; sourceTree = "<group>"; };
-		D401EB661CD214A600599E0B /* NSObject+Notify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Notify.h"; sourceTree = "<group>"; };
-		D401EB671CD214A600599E0B /* NSObject+Notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Notify.m"; sourceTree = "<group>"; };
+		D401EB661CD214A600599E0B /* NSObject+ThreadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ThreadOperation.h"; sourceTree = "<group>"; };
+		D401EB671CD214A600599E0B /* NSObject+ThreadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ThreadOperation.m"; sourceTree = "<group>"; };
 		D40208EF1CE2E1E900F00082 /* UFScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScene.h; sourceTree = "<group>"; };
 		D40208F01CE2E1E900F00082 /* UFScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScene.m; sourceTree = "<group>"; };
+		D40208F51CE303DF00F00082 /* UBMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMainScene.h; sourceTree = "<group>"; };
+		D40208F61CE303DF00F00082 /* UBMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBMainScene.m; sourceTree = "<group>"; };
+		D40208F91CE3075F00F00082 /* FoundationServiceUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationServiceUnit.h; sourceTree = "<group>"; };
+		D40208FA1CE3075F00F00082 /* FoundationServiceUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationServiceUnit.m; sourceTree = "<group>"; };
 		D40860091CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+SharedInstance.h"; sourceTree = "<group>"; };
 		D408600A1CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SharedInstance.m"; sourceTree = "<group>"; };
 		D408600C1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPConnectionResumeStorage+SharedInstance.h"; sourceTree = "<group>"; };
@@ -301,8 +298,6 @@
 		D40860151CD9A79A005FC3D7 /* APPLog+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPLog+SharedInstance.m"; sourceTree = "<group>"; };
 		D40860171CD9A79A005FC3D7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		D40860181CD9A79A005FC3D7 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
-		D408601A1CD9A79A005FC3D7 /* FoundationServiceUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationServiceUnit.h; sourceTree = "<group>"; };
-		D408601B1CD9A79A005FC3D7 /* FoundationServiceUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationServiceUnit.m; sourceTree = "<group>"; };
 		D408601D1CD9A79A005FC3D7 /* ServiceTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTask.h; sourceTree = "<group>"; };
 		D408601E1CD9A79A005FC3D7 /* ServiceTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceTask.m; sourceTree = "<group>"; };
 		D408601F1CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTaskBackgroundPool+SharedInstance.h"; sourceTree = "<group>"; };
@@ -319,8 +314,6 @@
 		D408602D1CD9A79A005FC3D7 /* StorageUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageUnit.m; sourceTree = "<group>"; };
 		D40EEA8F1CD2FC0A00E646C9 /* DispatchableTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchableTask.h; sourceTree = "<group>"; };
 		D40EEA901CD2FC0A00E646C9 /* DispatchableTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchableTask.m; sourceTree = "<group>"; };
-		D40EEA911CD2FC0A00E646C9 /* TaskingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskingTask.h; sourceTree = "<group>"; };
-		D40EEA921CD2FC0A00E646C9 /* TaskingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskingTask.m; sourceTree = "<group>"; };
 		D40EEA941CD2FC0A00E646C9 /* BlockTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTask.h; sourceTree = "<group>"; };
 		D40EEA951CD2FC0A00E646C9 /* BlockTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTask.m; sourceTree = "<group>"; };
 		D40EEA961CD2FC0A00E646C9 /* SPTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTask.h; sourceTree = "<group>"; };
@@ -356,7 +349,6 @@
 		D4E3EA311CC8A52B00A7987E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D4E3EA331CC8A52B00A7987E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D4E3EA341CC8A52B00A7987E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D4E3EA371CC8A52B00A7987E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4E3EA391CC8A52B00A7987E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4E3EA3C1CC8A52B00A7987E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4E3EA3E1CC8A52B00A7987E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -772,16 +764,12 @@
 		D401EA861CD2017F00599E0B /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				D401EA871CD2017F00599E0B /* NotificationBlockLoader.h */,
-				D401EA881CD2017F00599E0B /* NotificationBlockLoader.m */,
 				D401EA891CD2017F00599E0B /* NotificationObserver.h */,
 				D401EA8A1CD2017F00599E0B /* NotificationObserver.m */,
-				D401EA8B1CD2017F00599E0B /* NotificationObservingSet.h */,
-				D401EA8C1CD2017F00599E0B /* NotificationObservingSet.m */,
 				D401EA8D1CD2017F00599E0B /* NSObject+Delegate.h */,
 				D401EA8E1CD2017F00599E0B /* NSObject+Delegate.m */,
-				D401EB661CD214A600599E0B /* NSObject+Notify.h */,
-				D401EB671CD214A600599E0B /* NSObject+Notify.m */,
+				D401EB661CD214A600599E0B /* NSObject+ThreadOperation.h */,
+				D401EB671CD214A600599E0B /* NSObject+ThreadOperation.m */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -997,6 +985,24 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		D40208F41CE303C900F00082 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D40208F51CE303DF00F00082 /* UBMainScene.h */,
+				D40208F61CE303DF00F00082 /* UBMainScene.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D40208F81CE3075F00F00082 /* FoundationServiceUnit */ = {
+			isa = PBXGroup;
+			children = (
+				D40208F91CE3075F00F00082 /* FoundationServiceUnit.h */,
+				D40208FA1CE3075F00F00082 /* FoundationServiceUnit.m */,
+			);
+			path = FoundationServiceUnit;
+			sourceTree = "<group>";
+		};
 		D40860001CD9A79A005FC3D7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -1028,12 +1034,12 @@
 		D40860071CD9A79A005FC3D7 /* FoundationService */ = {
 			isa = PBXGroup;
 			children = (
+				D40208F81CE3075F00F00082 /* FoundationServiceUnit */,
 				D40860081CD9A79A005FC3D7 /* Date */,
 				D408600B1CD9A79A005FC3D7 /* HTTP */,
 				D40860101CD9A79A005FC3D7 /* LightLoadingPermanentQueue */,
 				D40860131CD9A79A005FC3D7 /* Log */,
 				D40860161CD9A79A005FC3D7 /* Network */,
-				D40860191CD9A79A005FC3D7 /* ServiceUnit */,
 				D408601C1CD9A79A005FC3D7 /* Task */,
 			);
 			path = FoundationService;
@@ -1084,15 +1090,6 @@
 				D40860181CD9A79A005FC3D7 /* NetworkManager.m */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		D40860191CD9A79A005FC3D7 /* ServiceUnit */ = {
-			isa = PBXGroup;
-			children = (
-				D408601A1CD9A79A005FC3D7 /* FoundationServiceUnit.h */,
-				D408601B1CD9A79A005FC3D7 /* FoundationServiceUnit.m */,
-			);
-			path = ServiceUnit;
 			sourceTree = "<group>";
 		};
 		D408601C1CD9A79A005FC3D7 /* Task */ = {
@@ -1155,8 +1152,6 @@
 			children = (
 				D40EEA8F1CD2FC0A00E646C9 /* DispatchableTask.h */,
 				D40EEA901CD2FC0A00E646C9 /* DispatchableTask.m */,
-				D40EEA911CD2FC0A00E646C9 /* TaskingTask.h */,
-				D40EEA921CD2FC0A00E646C9 /* TaskingTask.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1259,6 +1254,7 @@
 		D427D8B31CE03F0D003BB907 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D40208F41CE303C900F00082 /* Main */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1321,7 +1317,6 @@
 				D4E3EA311CC8A52B00A7987E /* AppDelegate.m */,
 				D4E3EA331CC8A52B00A7987E /* ViewController.h */,
 				D4E3EA341CC8A52B00A7987E /* ViewController.m */,
-				D4E3EA361CC8A52B00A7987E /* Main.storyboard */,
 				D4E3EA391CC8A52B00A7987E /* Assets.xcassets */,
 				D4E3EA3B1CC8A52B00A7987E /* LaunchScreen.storyboard */,
 				D4E3EA3E1CC8A52B00A7987E /* Info.plist */,
@@ -1706,7 +1701,6 @@
 				D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */,
 				D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */,
 				D4F48DB31CDC8CB000A89A4C /* UFButtonWindowViewController.xib in Resources */,
-				D4E3EA381CC8A52B00A7987E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1721,6 +1715,7 @@
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
 				D4F48DA11CDC8CB000A89A4C /* UFDataPickSource.m in Sources */,
 				D40860321CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m in Sources */,
+				D40208F71CE303DF00F00082 /* UBMainScene.m in Sources */,
 				D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */,
 				D4F48DA21CDC8CB000A89A4C /* UFDataPickInputer.m in Sources */,
 				D401EB0B1CD2017F00599E0B /* IPRouteTraceCenter.m in Sources */,
@@ -1754,9 +1749,8 @@
 				D40860311CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */,
 				D408603D1CD9A79A005FC3D7 /* StorageUnit.m in Sources */,
-				D401EB681CD214A600599E0B /* NSObject+Notify.m in Sources */,
+				D401EB681CD214A600599E0B /* NSObject+ThreadOperation.m in Sources */,
 				D401EB011CD2017F00599E0B /* APPLog.m in Sources */,
-				D401EB051CD2017F00599E0B /* NotificationObservingSet.m in Sources */,
 				D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */,
 				D4E3EA321CC8A52B00A7987E /* AppDelegate.m in Sources */,
 				D4F48D431CDC8A8800A89A4C /* UFImageViewGifUpdater.m in Sources */,
@@ -1780,17 +1774,16 @@
 				D4F48DA91CDC8CB000A89A4C /* UFTextViewKeyboardAdjustAssistant.m in Sources */,
 				D401EB411CD2026300599E0B /* EPub2_OCF.m in Sources */,
 				D4F48DB61CDC90ED00A89A4C /* UINavigationController+PushPopExtension.m in Sources */,
+				D40208FB1CE3075F00F00082 /* FoundationServiceUnit.m in Sources */,
 				D4F48D961CDC8CB000A89A4C /* UIColor+Hex.m in Sources */,
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
 				D40860391CD9A79A005FC3D7 /* SPTaskDaemonPool+SharedInstance.m in Sources */,
 				D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */,
-				D40860361CD9A79A005FC3D7 /* FoundationServiceUnit.m in Sources */,
 				D401EB071CD2017F00599E0B /* LightLoadingPermanentQueue.m in Sources */,
 				D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */,
 				D40EEAAE1CD2FC0A00E646C9 /* SPTaskDaemonPool.m in Sources */,
 				D4F48DA51CDC8CB000A89A4C /* UFKeyboardAdjuster.m in Sources */,
-				D40EEAA91CD2FC0A00E646C9 /* TaskingTask.m in Sources */,
 				D401EAFB1CD2017F00599E0B /* HTTPSession.m in Sources */,
 				D4F48D421CDC8A8800A89A4C /* UIImage+Orientation.m in Sources */,
 				D427D8AC1CE03CE5003BB907 /* UFTextViewPlaceHolder.m in Sources */,
@@ -1799,7 +1792,6 @@
 				D401EAF71CD2017F00599E0B /* HTTPConnection.m in Sources */,
 				D4F452B31CE1DAE500AFCA08 /* UIScrollView+LoadMoreFooter.m in Sources */,
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
-				D401EB031CD2017F00599E0B /* NotificationBlockLoader.m in Sources */,
 				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
 				D401EAFF1CD2017F00599E0B /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
 				D4F48DAD1CDC8CB000A89A4C /* UIView+Loading.m in Sources */,
@@ -1860,14 +1852,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D4E3EA361CC8A52B00A7987E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4E3EA371CC8A52B00A7987E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D4E3EA3B1CC8A52B00A7987E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

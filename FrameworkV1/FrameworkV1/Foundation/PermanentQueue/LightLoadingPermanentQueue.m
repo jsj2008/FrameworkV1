@@ -9,32 +9,16 @@
 #import "LightLoadingPermanentQueue.h"
 
 @interface LightLoadingPermanentQueue ()
-{
-    // 取消标志
-    BOOL _stop;
-}
 
-/*!
- * @brief 内部运行线程
- */
-@property (nonatomic) NSThread *internalRunningThread;
+@property (nonatomic) NSMutableArray *blocks;
 
-/*!
- * @brief 取消
- */
-- (void)internalCancel;
+@property (nonatomic) dispatch_queue_t syncQueue;
 
-/*!
- * @brief 通知
- * @param notification 消息块
- */
-- (void)notify:(void (^)())notification;
+@property (nonatomic) BOOL isCancelled;
 
-/*!
- * @brief 操作
- * @param operation 操作块
- */
-- (void)operate:(void (^)())operation;
+@property (nonatomic) NSThread *runningThread;
+
+- (void)operate;
 
 @end
 
@@ -45,7 +29,9 @@
 {
     if (self = [super init])
     {
-        _stop = YES;
+        self.blocks = [[NSMutableArray alloc] init];
+        
+        self.syncQueue = dispatch_queue_create(NULL, NULL);
     }
     
     return self;
@@ -53,100 +39,69 @@
 
 - (void)dealloc
 {
-    [self internalCancel];
+    dispatch_sync(self.syncQueue, ^{});
 }
 
 - (void)start
 {
-    if (!self.notifyThread)
-    {
-        self.notifyThread = [NSThread currentThread];
-    }
-    
-    if (_stop)
-    {
-        _stop = NO;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSTimer scheduledTimerWithTimeInterval:[[NSDate distantFuture] timeIntervalSinceNow] target:self selector:@selector(stop) userInfo:nil repeats:NO];
+        
+        self.runningThread = [NSThread currentThread];
+        
+        while (!self.isCancelled)
+        {
+            NSMutableArray *blocks = [[NSMutableArray alloc] init];
             
-            [NSTimer scheduledTimerWithTimeInterval:[[NSDate distantFuture] timeIntervalSinceNow] target:self selector:@selector(stop) userInfo:nil repeats:NO];
-            
-            self.internalRunningThread = [NSThread currentThread];
-            
-            [self notify:^{
+            dispatch_sync(self.syncQueue, ^{
                 
-                if (self.delegate && [self.delegate respondsToSelector:@selector(lightLoadingPermanentQueueDidStart:)])
-                {
-                    [self.delegate lightLoadingPermanentQueueDidStart:self];
-                }
-            }];
+                [blocks addObjectsFromArray:self.blocks];
+                
+                [self.blocks removeAllObjects];
+            });
             
-            while (!_stop)
+            for (void (^block)(void) in blocks)
             {
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+                block();
             }
             
-            [self notify:^{
-                
-                if (self.delegate && [self.delegate respondsToSelector:@selector(lightLoadingPermanentQueueDidStop:)])
-                {
-                    [self.delegate lightLoadingPermanentQueueDidStop:self];
-                }
-            }];
-        });
-    }
+            [blocks removeAllObjects];
+            
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        }
+    });
 }
 
 - (void)stop
 {
-    self.notifyThread = nil;
+    self.isCancelled = YES;
     
-    _stop = YES;
-    
-    if ([self.internalRunningThread isExecuting])
+    if ([self.runningThread isExecuting])
     {
-        [self performSelector:@selector(internalCancel) onThread:self.internalRunningThread withObject:nil waitUntilDone:NO];
+        [self performSelector:@selector(operate) onThread:self.runningThread withObject:nil waitUntilDone:NO];
     }
 }
 
-- (void)internalCancel
+- (void)addBlock:(void (^)())block
 {
-    self.internalRunningThread = nil;
-}
-
-- (void)notify:(void (^)())notification
-{
-    if ([self.notifyThread isExecuting])
+    if (block)
     {
-        [self performSelector:@selector(operate:) onThread:self.notifyThread withObject:notification waitUntilDone:NO];
-    }
-}
-
-- (NSThread *)runningThread
-{
-    return _stop ? nil : self.internalRunningThread;
-}
-
-- (BOOL)addBlock:(void (^)())block
-{
-    BOOL success = NO;
-    
-    if (!_stop && [self.internalRunningThread isExecuting])
-    {
-        [self performSelector:@selector(operate:) onThread:self.internalRunningThread withObject:block waitUntilDone:NO];
+        dispatch_sync(self.syncQueue, ^{
+            
+            [self.blocks addObject:block];
+        });
         
-        success = YES;
+        if ([self.runningThread isExecuting])
+        {
+            [self performSelector:@selector(operate) onThread:self.runningThread withObject:nil waitUntilDone:NO];
+        }
     }
-    
-    return success;
 }
 
-- (void)operate:(void (^)())operation
+- (void)operate
 {
-    if (operation)
-    {
-        operation();
-    }
+    
 }
 
 @end

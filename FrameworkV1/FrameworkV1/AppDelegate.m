@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "FoundationServiceUnit.h"
 #import "StorageUnit.h"
+#import "UBMainScene.h"
 
-@interface AppDelegate () <FoundationServiceUnitDelegate, StorageUnitDelegate>
+@interface AppDelegate ()
+
+@property (nonatomic) UBMainScene *mainScene;
 
 @end
 
@@ -20,11 +23,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [FoundationServiceUnit sharedInstance].delegate = self;
-    
-    [FoundationServiceUnit sharedInstance].notifyThread = [NSThread currentThread];
-    
     [[FoundationServiceUnit sharedInstance] start];
+    
+    [[StorageUnit sharedInstance] start];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.window.rootViewController = navigationController;
+    
+    [self.window makeKeyAndVisible];
+    
+    self.mainScene = [[UBMainScene alloc] initWithNavigationController:navigationController];
+    
+    [self.mainScene start];
     
     return YES;
 }
@@ -53,30 +66,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [self.mainScene stop];
+    
     [[StorageUnit sharedInstance] stop];
-}
-
-- (void)foundationServiceUnit:(FoundationServiceUnit *)unit didStartSuccessfully:(BOOL)successfully
-{
-    [StorageUnit sharedInstance].delegate = self;
     
-    [StorageUnit sharedInstance].notifyThread = [NSThread currentThread];
-    
-    [[StorageUnit sharedInstance] start];
-}
-
-- (void)foundationServiceUnit:(FoundationServiceUnit *)unit didStopSuccessfully:(BOOL)successfully
-{
-    
-}
-
-- (void)storageUnit:(StorageUnit *)unit didStartSuccessfully:(BOOL)successfully
-{
-    
-}
-
-- (void)storageUnit:(StorageUnit *)unit didStopSuccessfully:(BOOL)successfully
-{
     [[FoundationServiceUnit sharedInstance] stop];
 }
 

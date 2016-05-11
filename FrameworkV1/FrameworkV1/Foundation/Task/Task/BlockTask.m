@@ -45,7 +45,8 @@
         {
             [self.delegate blockTaskDidFinish:self];
         }
-    }];
+        
+    } onThread:self.notifyThread];
 }
 
 - (void)cancel

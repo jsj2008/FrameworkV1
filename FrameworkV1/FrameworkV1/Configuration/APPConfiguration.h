@@ -26,6 +26,9 @@
  */
 + (APPConfiguration *)sharedInstance;
 
+/*!
+ * @brief app日志目录，默认$cache/APPLog
+ */
 @property (atomic, copy) NSString *appLogDirectory;
 
 /*!

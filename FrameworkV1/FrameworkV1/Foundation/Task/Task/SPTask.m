@@ -16,10 +16,10 @@
 @property (nonatomic) NSThread *mainThread;
 
 /*!
- * @brief 操作
- * @param operation 操作块
+ * @brief 执行消息操作
+ * @param notification 消息块
  */
-- (void)operate:(void (^)())operation;
+- (void)notify:(void (^)(void))notification;
 
 @end
 
@@ -67,28 +67,16 @@
     self.runStatus = SPTaskRunStatus_Finish;
 }
 
-- (void)notify:(void (^)(void))notification
-{
-    [self notify:notification onThread:self.notifyThread];
-}
-
 - (void)notify:(void (^)(void))notification onThread:(NSThread *)thread
 {
-    if (!thread)
-    {
-        notification();
-    }
-    else if ([thread isExecuting])
-    {
-        [self performSelector:@selector(operate:) onThread:thread withObject:notification waitUntilDone:NO];
-    }
+    [self performSelector:@selector(notify:) onThread:thread ? thread : [NSThread currentThread] withObject:notification waitUntilDone:NO];
 }
 
-- (void)operate:(void (^)())operation
+- (void)notify:(void (^)(void))notification
 {
-    if (operation)
+    if (notification)
     {
-        operation();
+        notification();
     }
 }
 
