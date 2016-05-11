@@ -50,9 +50,12 @@
     xmlInitParser();
     
     // 日志系统
-    [APPLog sharedInstance].defaultLevel = APPLogLevel_High;
     
     [APPLog sharedInstance].logFileDirectory = [APPConfiguration sharedInstance].appLogDirectory;
+    
+    [APPLog sharedInstance].enableNSLog = YES;
+    
+    [APPLog sharedInstance].enableFileLog = YES;
     
     [[APPLog sharedInstance] start];
     
@@ -62,7 +65,7 @@
     // 数据库
     [DBLog sharedInstance].customLogOperation = ^(NSString *logString){
         
-        [[APPLog sharedInstance] logString:logString onLevel:APPLogLevel_High];
+        [[APPLog sharedInstance] logString:logString];
     };
     
     [[DBLog sharedInstance] openLog];
