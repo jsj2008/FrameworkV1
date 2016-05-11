@@ -110,7 +110,7 @@
             {
                 ;
             }
-            else if (self.scrollView.contentSize.height + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom + self.contentHeight <= self.scrollView.frame.size.height)
+            else if (self.scrollView.contentSize.height + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom + self.loadingContentHeight <= self.scrollView.frame.size.height)
             {
                 if (self.scrollView.isTracking)
                 {
@@ -154,7 +154,7 @@
             {
                 if (self.scrollView.isTracking)
                 {
-                    if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.contentHeight + self.scrollView.contentInset.bottom)
+                    if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.loadingContentHeight + self.scrollView.contentInset.bottom)
                     {
                         if (self.status != UFScrollLoadingViewStatus_Prepare)
                         {
@@ -171,7 +171,7 @@
                 }
                 else
                 {
-                    if (fabs(self.scrollView.contentOffset.y + self.scrollView.frame.size.height - self.scrollView.contentSize.height - self.contentHeight - self.scrollView.contentInset.bottom) < 1)
+                    if (fabs(self.scrollView.contentOffset.y + self.scrollView.frame.size.height - self.scrollView.contentSize.height - self.loadingContentHeight - self.scrollView.contentInset.bottom) < 1)
                     {
                         if (self.status == UFScrollLoadingViewStatus_Prepare)
                         {
@@ -186,11 +186,11 @@
         {
             if (self.scrollView.panGestureRecognizer.state == UIGestureRecognizerStateEnded)
             {
-                if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.scrollView.contentInset.bottom + self.contentHeight && self.scrollView.contentSize.height + self.contentHeight + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom > self.scrollView.frame.size.height)
+                if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.scrollView.contentInset.bottom + self.loadingContentHeight && self.scrollView.contentSize.height + self.loadingContentHeight + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom > self.scrollView.frame.size.height)
                 {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
-                        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.contentHeight + self.scrollView.contentSize.height + self.scrollView.contentInset.bottom - self.scrollView.frame.size.height) animated:YES];
+                        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.loadingContentHeight + self.scrollView.contentSize.height + self.scrollView.contentInset.bottom - self.scrollView.frame.size.height) animated:YES];
                     });
                 }
             }

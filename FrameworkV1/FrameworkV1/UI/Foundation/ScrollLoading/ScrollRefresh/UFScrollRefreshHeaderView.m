@@ -39,6 +39,10 @@
     
     [self.scrollView removeObserver:self forKeyPath:@"contentInset"];
     
+    [self.scrollView removeObserver:self forKeyPath:@"frame"];
+    
+    [self.scrollView removeObserver:self forKeyPath:@"bounds"];
+    
     [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
 }
 
@@ -54,6 +58,10 @@
         
         [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
         
+        [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+        
         [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
         
         self.frame = CGRectMake(0, scrollView.contentOffset.y, scrollView.frame.size.width, - scrollView.contentOffset.y - scrollView.contentInset.top);
@@ -64,7 +72,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"contentOffset"] || [keyPath isEqualToString:@"contentSize"] || [keyPath isEqualToString:@"contentInset"])
+    if ([keyPath isEqualToString:@"contentOffset"] || [keyPath isEqualToString:@"contentSize"] || [keyPath isEqualToString:@"contentInset"] || [keyPath isEqualToString:@"frame"] || [keyPath isEqualToString:@"bounds"])
     {
         self.frame = CGRectMake(0, self.scrollView.contentOffset.y, self.scrollView.frame.size.width, - self.scrollView.contentOffset.y - self.scrollView.contentInset.top);
     }
@@ -81,7 +89,7 @@
                 }
                 else if (self.scrollView.isTracking)
                 {
-                    if (- self.scrollView.contentOffset.y - self.scrollView.contentInset.top > self.contentHeight)
+                    if (- self.scrollView.contentOffset.y - self.scrollView.contentInset.top > self.loadingContentHeight)
                     {
                         if (self.status != UFScrollLoadingViewStatus_Prepare)
                         {
@@ -96,7 +104,7 @@
                         }
                     }
                 }
-                else if (- self.scrollView.contentOffset.y - self.scrollView.contentInset.top == self.contentHeight)
+                else if (- self.scrollView.contentOffset.y - self.scrollView.contentInset.top == self.loadingContentHeight)
                 {
                     if (self.status == UFScrollLoadingViewStatus_Prepare)
                     {
@@ -109,11 +117,11 @@
             {
                 if (self.scrollView.panGestureRecognizer.state == UIGestureRecognizerStateEnded)
                 {
-                    if (self.scrollView.contentOffset.y + self.scrollView.contentInset.top < 0 && - self.scrollView.contentOffset.y - self.scrollView.contentInset.top > self.contentHeight)
+                    if (self.scrollView.contentOffset.y + self.scrollView.contentInset.top < 0 && - self.scrollView.contentOffset.y - self.scrollView.contentInset.top > self.loadingContentHeight)
                     {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             
-                            [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, - self.contentHeight - self.scrollView.contentInset.top) animated:YES];
+                            [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, - self.loadingContentHeight - self.scrollView.contentInset.top) animated:YES];
                         });
                     }
                 }
@@ -132,7 +140,7 @@
     
     self.contentOffsetUpdater.scrollView = self.scrollView;
     
-    self.contentOffsetUpdater.contentOffset = CGPointMake(self.scrollView.contentOffset.x, - self.contentHeight - self.scrollView.contentInset.top);
+    self.contentOffsetUpdater.contentOffset = CGPointMake(self.scrollView.contentOffset.x, - self.loadingContentHeight - self.scrollView.contentInset.top);
     
     self.contentOffsetUpdater.duration = 0.3;
     
