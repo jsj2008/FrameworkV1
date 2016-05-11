@@ -1,5 +1,5 @@
 //
-//  ServiceUnit.h
+//  FoundationServiceUnit.h
 //  FoundationProject
 //
 //  Created by user on 13-11-24.
@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "LightLoadingPermanentQueue.h"
 
-@protocol ServiceUnitDelegate;
+@protocol FoundationServiceUnitDelegate;
 
 
 /*********************************************************
  
     @class
-        ServiceUnit
+        FoundationServiceUnit
  
     @abstract
         应用服务单元，负责启动和关闭应用框架，基本引擎等系统服务
@@ -27,12 +27,12 @@
  
  *********************************************************/
 
-@interface ServiceUnit : NSObject <LightLoadingPermanentQueueDelegate>
+@interface FoundationServiceUnit : NSObject <LightLoadingPermanentQueueDelegate>
 
 /*!
  * @brief 协议代理
  */
-@property (nonatomic, weak) id<ServiceUnitDelegate> delegate;
+@property (nonatomic, weak) id<FoundationServiceUnitDelegate> delegate;
 
 /*!
  * @brief 消息线程，代理对象将在该线程上接收消息，不能为空
@@ -42,7 +42,7 @@
 /*!
  * @brief 单例
  */
-+ (ServiceUnit *)sharedInstance;
++ (FoundationServiceUnit *)sharedInstance;
 
 /*!
  * @brief 启动应用服务
@@ -69,7 +69,7 @@
  
  *********************************************************/
 
-@protocol ServiceUnitDelegate <NSObject>
+@protocol FoundationServiceUnitDelegate <NSObject>
 
 @optional
 
@@ -78,27 +78,27 @@
  * @param unit 应用服务单元
  * @param successfully 成功标志
  */
-- (void)serviceUnit:(ServiceUnit *)unit didStartSuccessfully:(BOOL)successfully;
+- (void)foundationServiceUnit:(FoundationServiceUnit *)unit didStartSuccessfully:(BOOL)successfully;
 
 /*!
  * @brief 应用服务启动进度消息
  * @param unit 应用服务单元
  * @param progress 执行进度
  */
-- (void)serviceUnit:(ServiceUnit *)unit isStartingWithProgress:(float)progress;
+- (void)foundationServiceUnit:(FoundationServiceUnit *)unit isStartingWithProgress:(float)progress;
 
 /*!
  * @brief 应用服务关闭成功消息
  * @param unit 应用服务单元
  * @param successfully 成功标志
  */
-- (void)serviceUnit:(ServiceUnit *)unit didStopSuccessfully:(BOOL)successfully;
+- (void)foundationServiceUnit:(FoundationServiceUnit *)unit didStopSuccessfully:(BOOL)successfully;
 
 /*!
  * @brief 应用服务关闭进度消息
  * @param unit 应用服务单元
  * @param progress 执行进度
  */
-- (void)serviceUnit:(ServiceUnit *)unit isStopingWithProgress:(float)progress;
+- (void)foundationServiceUnit:(FoundationServiceUnit *)unit isStopingWithProgress:(float)progress;
 
 @end

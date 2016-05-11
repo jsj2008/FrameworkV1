@@ -1,12 +1,12 @@
 //
-//  ServiceUnit.m
+//  FoundationServiceUnit.m
 //  FoundationProject
 //
 //  Created by user on 13-11-24.
 //  Copyright (c) 2013年 WW. All rights reserved.
 //
 
-#import "ServiceUnit.h"
+#import "FoundationServiceUnit.h"
 #import "NSObject+Notify.h"
 
 #import <libxml2/libxml/tree.h>
@@ -25,11 +25,11 @@
 #import "SPTaskFreePool+SharedInstance.h"
 #import "SPTaskBackgroundPool+SharedInstance.h"
 
-@implementation ServiceUnit
+@implementation FoundationServiceUnit
 
-+ (ServiceUnit *)sharedInstance
++ (FoundationServiceUnit *)sharedInstance
 {
-    static ServiceUnit *instance = nil;
+    static FoundationServiceUnit *instance = nil;
     
     static dispatch_once_t onceToken;
     
@@ -37,7 +37,7 @@
         
         if (!instance)
         {
-            instance = [[ServiceUnit alloc] init];
+            instance = [[FoundationServiceUnit alloc] init];
         }
     });
     
@@ -105,17 +105,17 @@
         
         [self notify:^{
             
-            if (self.delegate && [self.delegate respondsToSelector:@selector(serviceUnit:isStartingWithProgress:)])
+            if (self.delegate && [self.delegate respondsToSelector:@selector(foundationServiceUnit:isStartingWithProgress:)])
             {
-                [self.delegate serviceUnit:self isStartingWithProgress:1.0];
+                [self.delegate foundationServiceUnit:self isStartingWithProgress:1.0];
             }
         } onThread:self.notifyThread];
         
         [self notify:^{
             
-            if (self.delegate && [self.delegate respondsToSelector:@selector(serviceUnit:didStartSuccessfully:)])
+            if (self.delegate && [self.delegate respondsToSelector:@selector(foundationServiceUnit:didStartSuccessfully:)])
             {
-                [self.delegate serviceUnit:self didStartSuccessfully:YES];
+                [self.delegate foundationServiceUnit:self didStartSuccessfully:YES];
             }
         } onThread:self.notifyThread];
     }];
@@ -143,17 +143,17 @@
     
     [self notify:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(serviceUnit:isStopingWithProgress:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(foundationServiceUnit:isStopingWithProgress:)])
         {
-            [self.delegate serviceUnit:self isStopingWithProgress:1.0];
+            [self.delegate foundationServiceUnit:self isStopingWithProgress:1.0];
         }
     } onThread:self.notifyThread];
     
     [self notify:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(serviceUnit:didStopSuccessfully:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(foundationServiceUnit:didStopSuccessfully:)])
         {
-            [self.delegate serviceUnit:self didStopSuccessfully:YES];
+            [self.delegate foundationServiceUnit:self didStopSuccessfully:YES];
         }
     } onThread:self.notifyThread];
     

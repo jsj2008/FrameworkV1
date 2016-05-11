@@ -1,14 +1,14 @@
 //
-//  UFSceneDirector.m
+//  UFScene.m
 //  MarryYou
 //
 //  Created by ww on 15/11/12.
 //  Copyright © 2015年 MiaoTo. All rights reserved.
 //
 
-#import "UFSceneDirector.h"
+#import "UFScene.h"
 
-@interface UFSceneDirector ()
+@interface UFScene ()
 {
     __weak UINavigationController *_navigationController;
 }
@@ -16,7 +16,7 @@
 @end
 
 
-@implementation UFSceneDirector
+@implementation UFScene
 
 @synthesize navigationController = _navigationController;
 

@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "ServiceUnit.h"
+#import "FoundationServiceUnit.h"
 #import "StorageUnit.h"
 
-@interface AppDelegate () <ServiceUnitDelegate, StorageUnitDelegate>
+@interface AppDelegate () <FoundationServiceUnitDelegate, StorageUnitDelegate>
 
 @end
 
@@ -20,11 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [ServiceUnit sharedInstance].delegate = self;
+    [FoundationServiceUnit sharedInstance].delegate = self;
     
-    [ServiceUnit sharedInstance].notifyThread = [NSThread currentThread];
+    [FoundationServiceUnit sharedInstance].notifyThread = [NSThread currentThread];
     
-    [[ServiceUnit sharedInstance] start];
+    [[FoundationServiceUnit sharedInstance] start];
     
     return YES;
 }
@@ -56,7 +56,7 @@
     [[StorageUnit sharedInstance] stop];
 }
 
-- (void)serviceUnit:(ServiceUnit *)unit didStartSuccessfully:(BOOL)successfully
+- (void)foundationServiceUnit:(FoundationServiceUnit *)unit didStartSuccessfully:(BOOL)successfully
 {
     [StorageUnit sharedInstance].delegate = self;
     
@@ -65,7 +65,7 @@
     [[StorageUnit sharedInstance] start];
 }
 
-- (void)serviceUnit:(ServiceUnit *)unit didStopSuccessfully:(BOOL)successfully
+- (void)foundationServiceUnit:(FoundationServiceUnit *)unit didStopSuccessfully:(BOOL)successfully
 {
     
 }
@@ -77,7 +77,7 @@
 
 - (void)storageUnit:(StorageUnit *)unit didStopSuccessfully:(BOOL)successfully
 {
-    [[ServiceUnit sharedInstance] stop];
+    [[FoundationServiceUnit sharedInstance] stop];
 }
 
 @end
