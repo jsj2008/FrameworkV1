@@ -51,9 +51,9 @@ typedef void (^DBLogOperation)(NSString *);
 - (void)closeLog;
 
 /*!
- * @brief 打印日志数据，仅限于字符串
- * @param format 数据字符串，不能为nil
+ * @brief 打印日志数据
+ * @param string 数据字符串
  */
-- (void)logStringWithFormat:(NSString *)format, ...;
+- (void)logString:(NSString *)string;
 
 @end

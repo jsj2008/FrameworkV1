@@ -61,29 +61,21 @@
     _open = NO;
 }
 
-- (void)logStringWithFormat:(NSString *)format, ...
+- (void)logString:(NSString *)string
 {
     if (_open)
     {
-        va_list argList;
-        
-        va_start(argList, format);
-        
-        NSString *logStr = [[NSString alloc] initWithFormat:format arguments:argList];
-        
-        va_end(argList);
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             dispatch_sync(_syncQueue, ^{
                 
                 if (self.customLogOperation)
                 {
-                    self.customLogOperation(logStr);
+                    self.customLogOperation(string);
                 }
                 else
                 {
-                    NSLog(@"%@", logStr);
+                    NSLog(@"%@", string);
                 }
             });
         });

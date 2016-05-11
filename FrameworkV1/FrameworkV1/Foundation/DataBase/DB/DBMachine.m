@@ -37,7 +37,7 @@
     
     if (!success)
     {
-        [[DBLog sharedInstance] logStringWithFormat:@"DB open error: {Path = '%@'; SQLite3_Code = '%d'}", _filePath, code];
+        [[DBLog sharedInstance] logString:[NSString stringWithFormat:@"DB open error: {Path = '%@'; SQLite3_Code = '%d'}", _filePath, code]];
     }
     
     return success;
@@ -52,7 +52,7 @@
     
     if (!success && errorMsg)
     {
-        [[DBLog sharedInstance] logStringWithFormat:@"DB execute error: {SQL = '%@'; Message = '%s'}", sql, errorMsg];
+        [[DBLog sharedInstance] logString:[NSString stringWithFormat:@"DB execute error: {SQL = '%@'; Message = '%s'}", sql, errorMsg]];
     }
     
     sqlite3_free(errorMsg);
@@ -68,7 +68,7 @@
     
     if (code != SQLITE_OK)
     {
-        [[DBLog sharedInstance] logStringWithFormat:@"DB prepare error: {SQL = '%@'; SQLite3_Code = '%d'}", sql, code];
+        [[DBLog sharedInstance] logString:[NSString stringWithFormat:@"DB prepare error: {SQL = '%@'; SQLite3_Code = '%d'}", sql, code]];
         
         sqlite3_finalize(statement);
         statement = NULL;

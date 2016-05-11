@@ -131,7 +131,7 @@
                         {
                             success = NO;
                             
-                            [[DBLog sharedInstance] logStringWithFormat:@"DB step error: {SQL = '%@'; SQLite3_Code = %d}", unbindSQL, stepCode];
+                            [[DBLog sharedInstance] logString:[NSString stringWithFormat:@"DB step error: {SQL = '%@'; SQLite3_Code = %d}", unbindSQL, stepCode]];
                         }
                         
                         [_machine resetStatement:statement];
