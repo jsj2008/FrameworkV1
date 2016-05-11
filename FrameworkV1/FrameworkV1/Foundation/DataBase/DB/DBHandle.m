@@ -35,7 +35,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create("DB handle", NULL);
     }
     
     return self;
@@ -45,7 +45,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"DB handle: %@", path] UTF8String], NULL);
         
         _machine = [[DBMachine alloc] initWithFile:path];
     }

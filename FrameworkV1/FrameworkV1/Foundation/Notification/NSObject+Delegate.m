@@ -127,7 +127,7 @@ static char kNSObjectPropertyKey_DelegateSyncQueue[] = "delegateSyncQueue";
     
     if (!queue)
     {
-        queue = dispatch_queue_create(NULL, NULL);
+        queue = dispatch_queue_create("NSObject_delegateSyncQueue", NULL);
         
         objc_setAssociatedObject(self, kNSObjectPropertyKey_DelegateSyncQueue, queue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }

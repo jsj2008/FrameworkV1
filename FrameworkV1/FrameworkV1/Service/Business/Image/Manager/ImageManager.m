@@ -62,7 +62,7 @@
     {
         self.downloadImageObservers = [[NSMutableDictionary alloc] init];
         
-        self.syncQueue = dispatch_queue_create(nil, nil);
+        self.syncQueue = dispatch_queue_create("ImageManager", nil);
         
         self.taskDispatcher = [SPTaskDispatcher taskDispatcherWithSharedPools];
     }

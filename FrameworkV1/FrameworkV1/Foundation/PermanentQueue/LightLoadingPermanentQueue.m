@@ -31,7 +31,7 @@
     {
         self.blocks = [[NSMutableArray alloc] init];
         
-        self.syncQueue = dispatch_queue_create(NULL, NULL);
+        self.syncQueue = dispatch_queue_create("LightLoadingPermanentQueue", NULL);
     }
     
     return self;

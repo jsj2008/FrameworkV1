@@ -51,7 +51,7 @@ static NSString * const IPRouteTracingFreePoolIdentifer = @"free";
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create("IPRouteTraceCenter", NULL);
     }
     
     return self;

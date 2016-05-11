@@ -54,7 +54,7 @@
         
         _fm = [[NSFileManager alloc] init];
         
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"LogFileHandle: %@", rootDirectory] UTF8String], NULL);
     }
     
     return self;

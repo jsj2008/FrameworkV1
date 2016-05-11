@@ -55,7 +55,7 @@
         
         _fields = [[NSMutableArray alloc] initWithArray:fields];
         
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"DB Table: %@", tableName] UTF8String], NULL);
     }
     
     return self;
