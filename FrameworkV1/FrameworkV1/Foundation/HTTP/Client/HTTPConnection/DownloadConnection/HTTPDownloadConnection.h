@@ -84,12 +84,15 @@
  */
 - (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishWithError:(NSError *)error response:(NSHTTPURLResponse *)response;
 
+@optional
+
 /*!
  * @brief 结束下载
  * @param downloadConnection 下载连接
- * @param location 资源的本地文件位置
+ * @param location 资源的本地文件位置，这是一个临时文件，delgate通知后会立即删除
+ * @param error 错误信息
  */
-- (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishDownloadingToURL:(NSURL *)location;
+- (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishDownloadingToURL:(NSURL *)location error:(NSError *)error;
 
 /*!
  * @brief 下载进度通知

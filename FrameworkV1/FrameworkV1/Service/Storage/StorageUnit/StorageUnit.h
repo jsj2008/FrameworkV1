@@ -34,13 +34,11 @@
 
 /*!
  * @brief 启动存储服务
- * @discussion 启动过程中将向代理对象发送启动消息
  */
 - (void)start;
 
 /*!
  * @brief 关闭存储服务
- * @discussion 关闭过程中将向代理对象发送关闭消息
  */
 - (void)stop;
 

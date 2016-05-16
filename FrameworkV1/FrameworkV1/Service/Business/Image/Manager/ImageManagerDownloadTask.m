@@ -38,6 +38,8 @@
 {
     [super cancel];
     
+    self.connection.delegate = nil;
+    
     [self.connection cancel];
     
     self.connection = nil;
@@ -54,9 +56,13 @@
     } onThread:self.notifyThread];
 }
 
-- (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishDownloadingToURL:(NSURL *)location
+- (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishDownloadingToURL:(NSURL *)location error:(NSError *)error
 {
-    if (location)
+    if (error)
+    {
+        [self finishWithError:error imageData:nil];
+    }
+    else if (location)
     {
         self.data = [NSData dataWithContentsOfURL:location];
     }

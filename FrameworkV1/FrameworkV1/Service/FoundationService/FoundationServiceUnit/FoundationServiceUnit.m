@@ -17,8 +17,6 @@
 
 #import "NetworkManager.h"
 
-#import "DBLog.h"
-
 #import "LightLoadingPermanentQueue+SharedInstance.h"
 
 #import "SPTaskDaemonPool+SharedInstance.h"
@@ -62,28 +60,20 @@
     // 轻载常驻队列
     [[LightLoadingPermanentQueue sharedInstance] start];
     
-    // 数据库
-    [DBLog sharedInstance].customLogOperation = ^(NSString *logString){
-        
-        [[APPLog sharedInstance] logString:logString];
-    };
-    
-    [[DBLog sharedInstance] openLog];
-    
     // Task
-    [SPTaskDaemonPool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].daemonPoolCapacity;
+    [SPTaskDaemonPool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].daemonTaskPoolCapacity;
     
-    [SPTaskDaemonPool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
+    [SPTaskDaemonPool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultTaskQueueLoadingLimit;
     
-    [SPTaskFreePool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].freePoolCapacity;
+    [SPTaskFreePool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].freeTaskPoolCapacity;
     
-    [SPTaskFreePool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
+    [SPTaskFreePool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultTaskQueueLoadingLimit;
     
-    [SPTaskBackgroundPool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].backgroundPoolCapacity;
+    [SPTaskBackgroundPool sharedInstance].poolCapacity = [APPConfiguration sharedInstance].backgroundTaskPoolCapacity;
     
-    [SPTaskBackgroundPool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultQueueLoadingLimit;
+    [SPTaskBackgroundPool sharedInstance].taskQueueLoadsLimit = [APPConfiguration sharedInstance].defaultTaskQueueLoadingLimit;
     
-    [[SPTaskDaemonPool sharedInstance] startWithPersistentQueueCount:[APPConfiguration sharedInstance].daemonPoolPersistentQueueCapacity];
+    [[SPTaskDaemonPool sharedInstance] startWithPersistentQueueCount:[APPConfiguration sharedInstance].daemonTaskPoolPersistentQueueCapacity];
     
     [[SPTaskFreePool sharedInstance] start];
     
@@ -91,7 +81,6 @@
     
     // HTTP cookie
     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
-    
     
     [[LightLoadingPermanentQueue sharedInstance] addBlock:^{
         
@@ -109,8 +98,6 @@
     [[SPTaskFreePool sharedInstance] stop];
     
     [[SPTaskBackgroundPool sharedInstance] stop];
-    
-    [[DBLog sharedInstance] closeLog];
     
     [[LightLoadingPermanentQueue sharedInstance] addBlock:^{
         

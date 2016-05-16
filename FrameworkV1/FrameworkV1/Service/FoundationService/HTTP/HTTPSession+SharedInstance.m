@@ -22,6 +22,18 @@
         {
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             
+            configuration.URLCache = [NSURLCache sharedURLCache];
+            
+            configuration.requestCachePolicy = NSURLRequestUseProtocolCachePolicy;
+            
+            configuration.HTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            
+            configuration.HTTPCookieAcceptPolicy = NSHTTPCookieAcceptPolicyAlways;
+            
+            configuration.HTTPShouldSetCookies = YES;
+            
+            configuration.URLCredentialStorage = [NSURLCredentialStorage sharedCredentialStorage];
+            
             instance = [[HTTPSession alloc] initWithURLSessionConfiguration:configuration];
         }
     });

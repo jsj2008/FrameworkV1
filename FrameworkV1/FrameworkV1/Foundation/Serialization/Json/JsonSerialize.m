@@ -12,14 +12,14 @@
 
 @implementation NSData (JsonSerialize)
 
-- (id)jsonRootNode
+- (id)jsonRootNodeWithError:(NSError *__autoreleasing *)error
 {
-    return [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingAllowFragments error:nil];
+    return [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingAllowFragments error:error];
 }
 
-+ (NSData *)dataWithJsonRootNode:(id)node
++ (NSData *)dataWithJsonRootNode:(id)node error:(NSError *__autoreleasing *)error
 {
-    return node ? [NSJSONSerialization dataWithJSONObject:node options:0 error:nil] : nil;
+    return node ? [NSJSONSerialization dataWithJSONObject:node options:0 error:error] : nil;
 }
 
 @end
@@ -29,15 +29,15 @@
 
 @implementation NSString (JsonSerialize)
 
-- (id)jsonRootNode
+- (id)jsonRootNodeWithError:(NSError *__autoreleasing *)error
 {
-    return [[self dataUsingEncoding:NSUTF8StringEncoding] jsonRootNode];
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] jsonRootNodeWithError:error];
 }
 
-+ (NSString *)stringWithJsonRootNode:(id)node
++ (NSString *)stringWithJsonRootNode:(id)node error:(NSError *__autoreleasing *)error
 {
     // NSJSONSerialization会将/转义成\/，需手动将其反转
-    return node ? [[[NSString alloc] initWithData:[NSData dataWithJsonRootNode:node] encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"] : nil;
+    return node ? [[[NSString alloc] initWithData:[NSData dataWithJsonRootNode:node error:error] encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"] : nil;
 }
 
 @end

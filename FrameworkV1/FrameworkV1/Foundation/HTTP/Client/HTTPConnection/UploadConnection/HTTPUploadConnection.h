@@ -91,6 +91,8 @@
  */
 - (void)HTTPUploadConnection:(HTTPUploadConnection *)uploadConnection didFinishWithError:(NSError *)error response:(NSHTTPURLResponse *)response data:(NSData *)data;
 
+@optional
+
 /*!
  * @brief 上传进度通知
  * @param uploadConnection 上传连接

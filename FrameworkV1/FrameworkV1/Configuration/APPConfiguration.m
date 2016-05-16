@@ -16,15 +16,15 @@
     {
         self.appLogDirectory = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"APPLog"];
         
-        self.daemonPoolCapacity = 5;
+        self.daemonTaskPoolCapacity = 5;
         
-        self.daemonPoolPersistentQueueCapacity = 2;
+        self.daemonTaskPoolPersistentQueueCapacity = 2;
         
-        self.freePoolCapacity = 20;
+        self.freeTaskPoolCapacity = 20;
         
-        self.backgroundPoolCapacity = 10;
+        self.backgroundTaskPoolCapacity = 10;
         
-        self.defaultQueueLoadingLimit = 20;
+        self.defaultTaskQueueLoadingLimit = 20;
     }
     
     return self;

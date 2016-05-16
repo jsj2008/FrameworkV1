@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 /*********************************************************
  
@@ -18,12 +19,12 @@
  
  *********************************************************/
 
-typedef enum
+typedef NS_ENUM(NSInteger, NetworkReachStatus)
 {
-	NetworkReachStatus_NotReachable = 0,  // 不可达
-	NetworkReachStatus_ViaWiFi      = 1,  // WiFi连接
-	NetworkReachStatus_ViaWWAN      = 2   // 3G/2G连接
-}NetworkReachStatus;
+    NetworkReachStatus_NotReachable = 0,  // 不可达
+    NetworkReachStatus_ViaWiFi      = 1,  // WiFi连接
+    NetworkReachStatus_ViaWWAN      = 2   // 蜂窝网络连接
+};
 
 
 /*!
@@ -33,23 +34,24 @@ typedef enum
 typedef void (^NetworkReachabilityChangedNotificationBlock)(NetworkReachStatus fromStatus, NetworkReachStatus toStatus);
 
 
-#pragma mark - NetworkReachability
-
 /*********************************************************
  
     @class
         NetworkReachability
  
     @abstract
-        网络连接
- 
-    @discussion
-        1，NetworkReachability是对网络连接的封装，负责获取网络状态和状态变化的通知
-        2，内部初始化过程中将获取当前连接状态，当网络缓慢时，这可能需要至多30秒时间
+        网络连接状态检查器，负责获取网络状态和状态变化的通知
  
  *********************************************************/
 
 @interface NetworkReachability : NSObject
+
+/*!
+ * @brief 初始化
+ * @param reachabilityRef SCNetworkReachabilityRef对象
+ * @result 初始化后的对象
+ */
+- (instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef)reachabilityRef;
 
 /*!
  * @brief 连接的实时状态
@@ -71,5 +73,40 @@ typedef void (^NetworkReachabilityChangedNotificationBlock)(NetworkReachStatus f
  * @brief 关闭消息通知
  */
 - (void)stopNotifier;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        NetworkReachability (ReachabilityType)
+ 
+    @abstract
+        NetworkReachability的可达类型扩展
+ 
+ *********************************************************/
+
+@interface NetworkReachability (ReachabilityType)
+
+/*!
+ * @brief 连接到指定地址的网络连接状态检查器
+ * @param hostAddress 连接的目标地址
+ * @result 网络连接状态检查器
+ */
++ (NetworkReachability *)reachabilityWithAddress:(const struct sockaddr *)hostAddress;
+
+/*!
+ * @brief 连接到指定主机的网络连接状态检查器
+ * @param hostName 连接的目标主机名字
+ * @result 网络连接状态检查器
+ */
++ (NetworkReachability *)reachabilityWithHostName:(NSString *)hostName;
+
+/*!
+ * @brief 设备的网络连接状态检查器
+ * @result 网络连接状态检查器
+ */
++ (NetworkReachability *)reachabilityForInternetConnection;
 
 @end

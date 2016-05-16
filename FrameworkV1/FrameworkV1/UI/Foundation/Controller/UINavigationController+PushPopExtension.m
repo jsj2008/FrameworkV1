@@ -12,25 +12,32 @@
 
 - (void)pushViewController:(UIViewController *)viewController onNewTopViewController:(UIViewController *)newTopViewController animated:(BOOL)animated
 {
-    if (self.topViewController == newTopViewController)
+    if (viewController)
     {
-        [self pushViewController:viewController animated:animated];
-    }
-    else
-    {
-        NSUInteger index = [self.viewControllers indexOfObject:newTopViewController];
-        
-        if (index != NSNotFound)
+        if (!newTopViewController)
         {
-            NSMutableArray *newViewControllers = [[NSMutableArray alloc] initWithArray:[self.viewControllers subarrayWithRange:NSMakeRange(0, index + 1)]];
-            
-            [newViewControllers addObject:viewController];
-            
-            [self setViewControllers:newViewControllers animated:animated];
+            [self setViewControllers:[NSArray arrayWithObject:viewController]];
+        }
+        else if (self.topViewController == newTopViewController)
+        {
+            [self pushViewController:viewController animated:animated];
         }
         else
         {
-            [self pushViewController:viewController animated:animated];
+            NSUInteger index = [self.viewControllers indexOfObject:newTopViewController];
+            
+            if (index != NSNotFound)
+            {
+                NSMutableArray *newViewControllers = [[NSMutableArray alloc] initWithArray:[self.viewControllers subarrayWithRange:NSMakeRange(0, index + 1)]];
+                
+                [newViewControllers addObject:viewController];
+                
+                [self setViewControllers:newViewControllers animated:animated];
+            }
+            else
+            {
+                [self pushViewController:viewController animated:animated];
+            }
         }
     }
 }
