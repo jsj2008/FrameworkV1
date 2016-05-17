@@ -217,13 +217,18 @@
 {
     if (self = [super init])
     {
-        _emoji = emoji;
+        _emoji = [emoji copy];
         
         self.elapsedDuration = 0;
         
         self.sourceDurations = [[NSMutableArray alloc] init];
         
         NSTimeInterval duration = 0;
+        
+        if (!emoji.image && emoji.imagePath)
+        {
+            emoji.image = [emoji imageWithPath:emoji.imagePath];
+        }
         
         for (UFEmojiImageSource *source in emoji.image.imageSources)
         {

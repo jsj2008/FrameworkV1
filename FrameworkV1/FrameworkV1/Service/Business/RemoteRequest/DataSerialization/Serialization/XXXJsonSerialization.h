@@ -17,6 +17,9 @@
     @abstract
         XXX Json解析协议
  
+    @discussion
+        协议需提供init和object两个方法，init方法
+ 
  *********************************************************/
 
 @protocol XXXJsonParsing <NSObject>
@@ -33,10 +36,9 @@
  * @brief 生成对象
  * @param jsonNode json根节点
  * @param context 上下文，用于承载解析过程中的参数
- * @param error 错误信息，可提示json根节点类型不对等信息
  * @result 对象
  */
-+ (instancetype)objectWithXXXJsonNode:(id)jsonNode context:(NSDictionary *)context error:(NSError **)error;
++ (instancetype)objectWithXXXJsonNode:(NSDictionary *)jsonNode context:(NSDictionary *)context;
 
 @end
 

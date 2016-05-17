@@ -22,6 +22,7 @@
 
 /*!
  * @brief 默认配置的单例
+ * @discussion 使用系统默认的URLCache，CookiStorage，CredentialStorage
  */
 + (HTTPSession *)sharedDefaultConfigurationInstance;
 

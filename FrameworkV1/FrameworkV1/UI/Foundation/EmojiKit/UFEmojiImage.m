@@ -42,36 +42,41 @@
     return emojiImage;
 }
 
-+ (UFEmojiImage *)emojiImageWithPath:(NSString *)path
++ (UFEmojiImage *)emojiImageWithData:(NSData *)data
 {
-    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    UFEmojiImage *emojiImage = nil;
     
-    UFEmojiImageSource *source = [[UFEmojiImageSource alloc] init];
-    
-    source.image = image;
-    
-    source.duration = 0;
-    
-    UFEmojiImage *emojiImage = [[UFEmojiImage alloc] init];
-    
-    emojiImage.sources = [NSArray arrayWithObject:source];
-    
-    emojiImage.updatable = NO;
+    if ([data length] > 0)
+    {
+        UIImage *image = [UIImage imageWithData:data];
+        
+        UFEmojiImageSource *source = [[UFEmojiImageSource alloc] init];
+        
+        source.image = image;
+        
+        source.duration = 0;
+        
+        emojiImage = [[UFEmojiImage alloc] init];
+        
+        emojiImage.sources = [NSArray arrayWithObject:source];
+        
+        emojiImage.updatable = NO;
+    }
     
     return emojiImage;
 }
 
-+ (UFEmojiImage *)emojiImageWithGifPath:(NSString *)gifPath
++ (UFEmojiImage *)emojiImageWithGifData:(NSData *)gifData
 {
-    UFEmojiImage *emojiImage = [[UFEmojiImage alloc] init];
+    UFEmojiImage *emojiImage = nil;
     
-    NSData *data = [[NSData alloc] initWithContentsOfFile:gifPath];
-    
-    if ([data length])
+    if ([gifData length] > 0)
     {
+        emojiImage = [[UFEmojiImage alloc] init];
+        
         NSMutableArray *sources = [[NSMutableArray alloc] init];
         
-        CGImageSourceRef gifSource = CGImageSourceCreateWithData((CFDataRef)data, NULL);
+        CGImageSourceRef gifSource = CGImageSourceCreateWithData((CFDataRef)gifData, NULL);
         
         size_t sourceCount = CGImageSourceGetCount(gifSource);
         
@@ -108,6 +113,16 @@
     }
     
     return emojiImage;
+}
+
++ (UFEmojiImage *)emojiImageWithPath:(NSString *)path
+{
+    return path ? [UFEmojiImage emojiImageWithData:[NSData dataWithContentsOfFile:path]] : nil;
+}
+
++ (UFEmojiImage *)emojiImageWithGifPath:(NSString *)gifPath
+{
+    return gifPath ? [UFEmojiImage emojiImageWithGifData:[NSData dataWithContentsOfFile:gifPath]] : nil;
 }
 
 @end

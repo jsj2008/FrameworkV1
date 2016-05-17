@@ -7,6 +7,7 @@
 //
 
 #import "StorageUnit.h"
+#import "DBCenter.h"
 #import "ImageStorage.h"
 
 @implementation StorageUnit
@@ -30,12 +31,16 @@
 
 - (void)start
 {
+    [[DBCenter sharedInstance] start];
+    
     [[ImageStorage sharedInstance] start];
 }
 
 - (void)stop
 {
     [[ImageStorage sharedInstance] stop];
+    
+    [[DBCenter sharedInstance] stop];
 }
 
 @end

@@ -15,7 +15,7 @@
     
     UFDataPickSource *_dataPickSource;
     
-    UFInputToolBar *_inputToolBar;
+    UIView<UFDataPickInputAccessory> *_inputAccessoryView;
 }
 
 @property (nonatomic) UFDataPickInputer *inputer;
@@ -33,14 +33,14 @@
 
 @synthesize dataPickSource = _dataPickSource;
 
-@synthesize inputToolBar = _inputToolBar;
+@synthesize inputAccessoryView = _inputAccessoryView;
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickSource *)dataPickSouce inputToolBar:(UFInputToolBar *)inputToolBar
+- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView
 {
     if (self = [super init])
     {
@@ -48,17 +48,17 @@
         
         _dataPickSource = dataPickSouce;
         
-        _inputToolBar = inputToolBar;
+        _inputAccessoryView = inputAccessoryView;
                 
         UFDataPicker *picker = [[UFDataPicker alloc] initWithDataSource:dataPickSouce];
         
-        self.inputer = [[UFDataPickInputer alloc] initWithDataPicker:picker inputToolBar:inputToolBar];
+        self.inputer = [[UFDataPickInputer alloc] initWithDataPicker:picker accessory:inputAccessoryView];
         
         self.inputer.delegate = self;
         
         textField.inputView = picker.pickerView;
         
-        textField.inputAccessoryView = inputToolBar;
+        textField.inputAccessoryView = inputAccessoryView;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveTextFieldDidBeginEditingNotification:) name:UITextFieldTextDidBeginEditingNotification object:nil];
     }

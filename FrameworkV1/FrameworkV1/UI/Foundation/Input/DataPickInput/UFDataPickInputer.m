@@ -8,11 +8,11 @@
 
 #import "UFDataPickInputer.h"
 
-@interface UFDataPickInputer () <UFInputToolBarDelegate>
+@interface UFDataPickInputer () <UFDataPickInputAccessoryDelegate>
 {
     UFDataPicker *_dataPicker;
     
-    UFInputToolBar *_inputToolBar;
+    id<UFDataPickInputAccessory> _accessory;
 }
 
 @end
@@ -22,17 +22,17 @@
 
 @synthesize dataPicker = _dataPicker;
 
-@synthesize inputToolBar = _inputToolBar;
+@synthesize accessory = _accessory;
 
-- (instancetype)initWithDataPicker:(UFDataPicker *)dataPicker inputToolBar:(UFInputToolBar *)inputToolBar
+- (instancetype)initWithDataPicker:(UFDataPicker *)dataPicker accessory:(id<UFDataPickInputAccessory>)accessory
 {
     if (self = [super init])
     {
         _dataPicker = dataPicker;
         
-        _inputToolBar = inputToolBar;
+        _accessory = accessory;
         
-        _inputToolBar.delegate = self;
+        _accessory.dataPickInputAccessoryDelegate = self;
     }
     
     return self;
@@ -43,7 +43,7 @@
     [self.dataPicker setIndexes:indexes animated:animated];
 }
 
-- (void)inputToolBarDidConfirm:(UFInputToolBar *)toolBar
+- (void)dataPickInputAccessoryDidConfirm:(id)accessory
 {    
     if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickInputer:didSelectIndexes:)])
     {
@@ -51,7 +51,7 @@
     }
 }
 
-- (void)inputToolBarDidCancel:(UFInputToolBar *)toolBar
+- (void)dataPickInputAccessoryDidCancel:(id)accessory
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickInputerDidCancel:)])
     {

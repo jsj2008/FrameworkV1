@@ -79,8 +79,10 @@
     
     [[SPTaskBackgroundPool sharedInstance] start];
     
-    // HTTP cookie
+    // HTTP
     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    
+    [NSURLCache sharedURLCache].diskCapacity = 100 * 1024 * 1024;
     
     [[LightLoadingPermanentQueue sharedInstance] addBlock:^{
         

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UFDataPickSource.h"
-#import "UFInputToolBar.h"
+#import "UFDataPickInputAccessory.h"
 
 @protocol UFTextFieldDataPickInputerDelegate;
 
@@ -29,10 +29,10 @@
  * @brief 初始化
  * @param textField 文本输入框
  * @param dataPickSouce 数据源
- * @param inputToolBar 输入工具栏
+ * @param inputAccessoryView 附件视图
  * @result 初始化对象
  */
-- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickSource *)dataPickSouce inputToolBar:(UFInputToolBar *)inputToolBar;
+- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView;
 
 /*!
  * @brief 文本输入框
@@ -45,9 +45,9 @@
 @property (nonatomic, readonly) UFDataPickSource *dataPickSource;
 
 /*!
- * @brief 工具栏
+ * @brief 附件视图
  */
-@property (nonatomic, readonly) UFInputToolBar *inputToolBar;
+@property (nonatomic, readonly) UIView<UFDataPickInputAccessory> *inputAccessoryView;
 
 /*!
  * @brief 协议代理

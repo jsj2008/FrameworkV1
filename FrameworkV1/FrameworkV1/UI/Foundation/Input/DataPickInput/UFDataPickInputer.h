@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UFDataPicker.h"
-#import "UFInputToolBar.h"
+#import "UFDataPickInputAccessory.h"
 
 @protocol UFDataPickInputerDelegate;
 
@@ -28,10 +28,10 @@
 /*!
  * @brief 初始化
  * @param dataPicker 数据选择器
- * @param inputToolBar 输入工具栏
+ * @param accessory 附件
  * @result 初始化对象
  */
-- (instancetype)initWithDataPicker:(UFDataPicker *)dataPicker inputToolBar:(UFInputToolBar *)inputToolBar;
+- (instancetype)initWithDataPicker:(UFDataPicker *)dataPicker accessory:(id<UFDataPickInputAccessory>)accessory;
 
 /*!
  * @brief 数据选择器
@@ -39,9 +39,9 @@
 @property (nonatomic, readonly) UFDataPicker *dataPicker;
 
 /*!
- * @brief 输入工具栏
+ * @brief 附件
  */
-@property (nonatomic, readonly) UFInputToolBar *inputToolBar;
+@property (nonatomic, readonly) id<UFDataPickInputAccessory> accessory;
 
 /*!
  * @brief 协议代理
@@ -61,7 +61,7 @@
 
 /*********************************************************
  
-    @class
+    @protocol
         UFDataPickInputerDelegate
  
     @abstract
