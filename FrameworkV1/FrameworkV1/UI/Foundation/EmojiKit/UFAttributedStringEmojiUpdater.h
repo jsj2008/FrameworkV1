@@ -137,7 +137,7 @@
 /*!
  * @brief 表情对象
  */
-@property (nonatomic, readonly) UFEmoji *emoji;
+@property (nonatomic, copy, readonly) UFEmoji *emoji;
 
 /*!
  * @brief 表情对象是否可更新

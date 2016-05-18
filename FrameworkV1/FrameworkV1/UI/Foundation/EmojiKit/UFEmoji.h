@@ -17,6 +17,10 @@
     @abstract
         表情对象
  
+    @discussion
+        1，UFEmoji支持使用图片对象或图片路径来表征图片信息
+        2，使用图片路径来表征图片信息的UFEmoji对象，在实际使用时可能会生成图片对象作为缓存使用
+ 
  *********************************************************/
 
 @interface UFEmoji : NSObject <NSCopying>
