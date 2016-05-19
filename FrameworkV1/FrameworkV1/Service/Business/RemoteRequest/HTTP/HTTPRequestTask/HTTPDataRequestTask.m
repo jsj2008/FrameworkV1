@@ -25,8 +25,6 @@
 {
     if (self = [super init])
     {
-        self.HTTPMethod = kHTTPDataRequestMethod_GET;
-        
         self.cachePolicy = NSURLRequestReloadIgnoringCacheData;
         
         self.cacheStorable = YES;
@@ -39,8 +37,6 @@
 {
     if (self = [super initWithURL:URL])
     {
-        self.HTTPMethod = kHTTPDataRequestMethod_GET;
-        
         self.cachePolicy = NSURLRequestReloadIgnoringCacheData;
         
         self.cacheStorable = YES;
@@ -55,7 +51,7 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:self.cachePolicy timeoutInterval:self.timeout];
     
-    request.HTTPMethod = self.HTTPMethod;
+    request.HTTPMethod = @"GET";
     
     request.allHTTPHeaderFields = self.headerFields;
     
@@ -114,8 +110,3 @@
 }
 
 @end
-
-
-NSString * const kHTTPDataRequestMethod_GET = @"GET";
-
-NSString * const kHTTPDataRequestMethod_POST = @"POST";

@@ -7,7 +7,6 @@
 //
 
 #import "HTTPConnection.h"
-#import "NSURLSessionTask+Delegate.h"
 
 @class HTTPDownloadConnection;
 

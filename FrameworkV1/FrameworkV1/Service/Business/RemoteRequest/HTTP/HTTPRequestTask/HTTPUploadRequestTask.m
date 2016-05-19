@@ -10,58 +10,6 @@
 #import "HTTPUploadConnection.h"
 #import "HTTPSession+SharedInstance.h"
 
-#pragma mark - HTTPUploadRequestBody
-
-@interface HTTPUploadRequestBody ()
-
-- (HTTPUploadConnection *)uploadConnectionWithRequest:(NSURLRequest *)request session:(HTTPSession *)session;
-
-@end
-
-
-@implementation HTTPUploadRequestBody
-
-- (HTTPUploadConnection *)uploadConnectionWithRequest:(NSURLRequest *)request session:(HTTPSession *)session
-{
-    return [[HTTPUploadConnection alloc] initWithRequest:request session:session];
-}
-
-@end
-
-
-@implementation HTTPUploadRequestDataBody
-
-- (HTTPUploadConnection *)uploadConnectionWithRequest:(NSURLRequest *)request session:(HTTPSession *)session
-{
-    return [[HTTPUploadConnection alloc] initWithRequest:request fromData:self.data session:session];
-}
-
-@end
-
-
-@implementation HTTPUploadRequestFileBody
-
-- (HTTPUploadConnection *)uploadConnectionWithRequest:(NSURLRequest *)request session:(HTTPSession *)session
-{
-    return [[HTTPUploadConnection alloc] initWithRequest:request fromFile:self.fileURL session:session];
-}
-
-@end
-
-
-@implementation HTTPUploadRequestStreamBody
-
-- (HTTPUploadConnection *)uploadConnectionWithRequest:(NSURLRequest *)request session:(HTTPSession *)session
-{
-    return [[HTTPUploadConnection alloc] initWithRequest:request fromStream:self.stream session:session];
-}
-
-@end
-
-
-#pragma mark - HTTPUploadRequestTask
-
-
 @interface HTTPUploadRequestTask () <HTTPUploadConnectionDelegate>
 
 @property (nonatomic) HTTPUploadConnection *connection;
@@ -79,9 +27,24 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:self.timeout];
     
-    request.HTTPMethod = @"GET";
+    request.HTTPMethod = @"POST";
     
-    request.allHTTPHeaderFields = self.headerFields;
+    NSMutableDictionary *headerFields = [[NSMutableDictionary alloc] init];
+    
+    if (self.uploadBody.contentType)
+    {
+        [headerFields setObject:self.uploadBody.contentType forKey:@"Content-Type"];
+    }
+    
+    if ([self.headerFields count] > 0)
+    {
+        [headerFields addEntriesFromDictionary:self.headerFields];
+    }
+    
+    if ([headerFields count] > 0)
+    {
+        request.allHTTPHeaderFields = headerFields;
+    }
     
     HTTPConnectionInternetPassword *internetPassword = [[HTTPConnectionInternetPassword alloc] init];
     
