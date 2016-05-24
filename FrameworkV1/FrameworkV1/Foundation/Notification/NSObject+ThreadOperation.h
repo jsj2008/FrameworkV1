@@ -21,8 +21,8 @@
 @interface NSObject (ThreadOperation)
 
 /*!
- * @brief 跨线程block通知
- * @param notification 通知块
+ * @brief 跨线程block操作
+ * @param operation 操作块
  * @param thread 通知线程
  */
 - (void)operate:(void (^)(void))operation onThread:(NSThread *)thread;
