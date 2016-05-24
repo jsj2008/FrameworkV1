@@ -27,7 +27,7 @@
         
         [userInfo setObject:self.URL ? self.URL : [NSURL URLWithString:@""] forKey:NSURLErrorFailingURLErrorKey];
         
-        *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:NSURLErrorBadServerResponse userInfo:userInfo];
+        *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:HTTPResponseContentValidationErrorUnacceptableStatusCode userInfo:userInfo];
     }
     else if (!MIMEType || ![condition.acceptableMIMETypes containsObject:MIMEType])
     {
@@ -37,7 +37,7 @@
         
         [userInfo setObject:self.URL ? self.URL : [NSURL URLWithString:@""] forKey:NSURLErrorFailingURLErrorKey];
         
-        *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:NSURLErrorCannotDecodeContentData userInfo:userInfo];
+        *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:HTTPResponseContentValidationErrorUnacceptableMIMEType userInfo:userInfo];
     }
     else if (stringEncoding == kCFStringEncodingInvalidId || ![condition.acceptableStringEncodings containsObject:[NSNumber numberWithLongLong:stringEncoding]])
     {
@@ -47,7 +47,7 @@
         
         [userInfo setObject:self.URL ? self.URL : [NSURL URLWithString:@""] forKey:NSURLErrorFailingURLErrorKey];
         
-        *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:NSURLErrorCannotDecodeContentData userInfo:userInfo];
+        *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:HTTPResponseContentValidationErrorUnacceptableStringEncoding userInfo:userInfo];
     }
     
     return *error ? NO : YES;

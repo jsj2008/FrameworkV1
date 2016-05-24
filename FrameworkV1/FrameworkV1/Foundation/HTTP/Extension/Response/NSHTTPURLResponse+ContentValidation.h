@@ -69,3 +69,10 @@
  * @brief HTTP响应内容有效性检查的错误域名
  */
 extern NSString * const HTTPResponseContentValidationErrorDomain;
+
+typedef NS_ENUM(NSUInteger, HTTPResponseContentValidationErrorCode)
+{
+    HTTPResponseContentValidationErrorUnacceptableStatusCode = 1,
+    HTTPResponseContentValidationErrorUnacceptableMIMEType = 2,
+    HTTPResponseContentValidationErrorUnacceptableStringEncoding = 3
+};
