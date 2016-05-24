@@ -122,16 +122,12 @@
 
 - (BOOL)setProperty:(id)property forKey:(NSString *)key
 {
-    BOOL success = NO;
-    
     if (property && key)
     {
         [self.properties setObject:property forKey:key];
-        
-        success = YES;
     }
     
-    return success;
+    return YES;
 }
 
 - (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode
