@@ -75,3 +75,6 @@
 - (void)cleanOutput;
 
 @end
+
+
+extern NSString * const CompressErrorDomain;

@@ -82,3 +82,6 @@
 - (void)cleanOutput;
 
 @end
+
+
+extern NSString * const DecompressErrorDomain;

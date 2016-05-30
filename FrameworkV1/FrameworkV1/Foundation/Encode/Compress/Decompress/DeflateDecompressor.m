@@ -36,7 +36,7 @@
     
     if (code != Z_OK)
     {
-        self.error = [NSError errorWithDomain:@"zlib" code:code userInfo:[NSDictionary dictionaryWithObject:(_stream.msg ? [NSString stringWithUTF8String:_stream.msg] : @"") forKey:NSLocalizedDescriptionKey]];
+        self.error = [NSError errorWithDomain:DecompressErrorDomain code:code userInfo:[NSDictionary dictionaryWithObject:(_stream.msg ? [NSString stringWithUTF8String:_stream.msg] : @"") forKey:NSLocalizedDescriptionKey]];
     }
     
     return (code == Z_OK);
@@ -97,7 +97,7 @@
             
             _over = YES;
             
-            self.error = [NSError errorWithDomain:@"zlib" code:code userInfo:[NSDictionary dictionaryWithObject:(_stream.msg ? [NSString stringWithUTF8String:_stream.msg] : @"") forKey:NSLocalizedDescriptionKey]];
+            self.error = [NSError errorWithDomain:DecompressErrorDomain code:code userInfo:[NSDictionary dictionaryWithObject:(_stream.msg ? [NSString stringWithUTF8String:_stream.msg] : @"") forKey:NSLocalizedDescriptionKey]];
         }
         
     } while (_stream.avail_out == 0 && success);

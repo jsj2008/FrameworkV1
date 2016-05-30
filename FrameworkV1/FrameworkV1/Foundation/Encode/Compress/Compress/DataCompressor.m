@@ -62,3 +62,6 @@
 }
 
 @end
+
+
+NSString * const CompressErrorDomain = @"CompressError";
