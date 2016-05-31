@@ -8,7 +8,7 @@
 
 #import "HTTPDownloadRequestTask.h"
 #import "HTTPDownloadConnection.h"
-#import "HTTPSession+SharedInstance.h"
+#import "SharedHTTPSessionManager.h"
 #import "HTTPConnectionResumeStorage+SharedInstance.h"
 
 @interface HTTPDownloadRequestTask () <HTTPDownloadConnectionDelegate>
@@ -51,7 +51,7 @@
         configuration.enable = NO;
     }
     
-    self.connection = [[HTTPDownloadConnection alloc] initWithRequest:request resumeConfiguration:configuration session:[HTTPSession sharedDefaultConfigurationInstance]];
+    self.connection = [[HTTPDownloadConnection alloc] initWithRequest:request resumeConfiguration:configuration session:[SharedHTTPSessionManager sharedInstance].defaultConfigurationSession];
     
     self.connection.internetPassword = internetPassword;
     
@@ -88,9 +88,7 @@
         
         NSFileManager *fileManager = [[NSFileManager alloc] init];
         
-        [fileManager moveItemAtURL:location toURL:self.resourceURL error:&error];
-        
-        if (error)
+        if (![fileManager moveItemAtURL:location toURL:self.resourceURL error:&error])
         {
             [self finishWithError:error response:nil];
         }

@@ -8,7 +8,7 @@
 
 #import "HTTPUploadRequestTask.h"
 #import "HTTPUploadConnection.h"
-#import "HTTPSession+SharedInstance.h"
+#import "SharedHTTPSessionManager.h"
 
 @interface HTTPUploadRequestTask () <HTTPUploadConnectionDelegate>
 
@@ -52,7 +52,7 @@
     
     internetPassword.password = self.internetPassword.password;
     
-    self.connection = [self.uploadBody uploadConnectionWithRequest:request session:[HTTPSession sharedDefaultConfigurationInstance]];
+    self.connection = [self.uploadBody uploadConnectionWithRequest:request session:[SharedHTTPSessionManager sharedInstance].defaultConfigurationSession];
     
     self.connection.internetPassword = internetPassword;
     

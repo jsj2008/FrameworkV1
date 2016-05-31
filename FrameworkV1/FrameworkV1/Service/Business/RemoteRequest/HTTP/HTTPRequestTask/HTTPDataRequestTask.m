@@ -8,7 +8,7 @@
 
 #import "HTTPDataRequestTask.h"
 #import "HTTPDataConnection.h"
-#import "HTTPSession+SharedInstance.h"
+#import "SharedHTTPSessionManager.h"
 
 @interface HTTPDataRequestTask () <HTTPDataConnectionDelegate>
 
@@ -61,7 +61,7 @@
     
     internetPassword.password = self.internetPassword.password;
     
-    self.connection = [[HTTPDataConnection alloc] initWithRequest:request session:[HTTPSession sharedDefaultConfigurationInstance]];
+    self.connection = [[HTTPDataConnection alloc] initWithRequest:request session:[SharedHTTPSessionManager sharedInstance].defaultConfigurationSession];
     
     self.connection.internetPassword = internetPassword;
     

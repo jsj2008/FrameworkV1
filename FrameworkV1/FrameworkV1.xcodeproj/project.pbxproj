@@ -79,7 +79,6 @@
 		D407A5831CEC652C00BA1963 /* UFButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D407A5821CEC652C00BA1963 /* UFButtonWindow.m */; };
 		D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600A1CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m */; };
 		D40860311CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600D1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m */; };
-		D40860321CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D408600F1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m */; };
 		D40860331CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860121CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.m */; };
 		D40860341CD9A79A005FC3D7 /* APPLog+SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860151CD9A79A005FC3D7 /* APPLog+SharedInstance.m */; };
 		D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40860181CD9A79A005FC3D7 /* NetworkManager.m */; };
@@ -107,6 +106,7 @@
 		D410D8C91CED8E21004861B7 /* HTTPRequestBody.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8C81CED8E21004861B7 /* HTTPRequestBody.m */; };
 		D410D8CF1CED92F9004861B7 /* HTTPRequestBody+BodyType.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8CE1CED92F9004861B7 /* HTTPRequestBody+BodyType.m */; };
 		D410D8D21CEDA11B004861B7 /* UBToastView+ToastType.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8D11CEDA11B004861B7 /* UBToastView+ToastType.m */; };
+		D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */; };
 		D41BB98B1CEAB8810078475C /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98A1CEAB8810078475C /* ImageStorage.m */; };
 		D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98E1CEAB8DF0078475C /* DBCenter.m */; };
 		D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */; };
@@ -305,8 +305,6 @@
 		D408600A1CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+SharedInstance.m"; sourceTree = "<group>"; };
 		D408600C1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPConnectionResumeStorage+SharedInstance.h"; sourceTree = "<group>"; };
 		D408600D1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPConnectionResumeStorage+SharedInstance.m"; sourceTree = "<group>"; };
-		D408600E1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPSession+SharedInstance.h"; sourceTree = "<group>"; };
-		D408600F1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPSession+SharedInstance.m"; sourceTree = "<group>"; };
 		D40860111CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LightLoadingPermanentQueue+SharedInstance.h"; sourceTree = "<group>"; };
 		D40860121CD9A79A005FC3D7 /* LightLoadingPermanentQueue+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LightLoadingPermanentQueue+SharedInstance.m"; sourceTree = "<group>"; };
 		D40860141CD9A79A005FC3D7 /* APPLog+SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APPLog+SharedInstance.h"; sourceTree = "<group>"; };
@@ -362,6 +360,8 @@
 		D410D8CE1CED92F9004861B7 /* HTTPRequestBody+BodyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPRequestBody+BodyType.m"; sourceTree = "<group>"; };
 		D410D8D01CEDA11B004861B7 /* UBToastView+ToastType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UBToastView+ToastType.h"; sourceTree = "<group>"; };
 		D410D8D11CEDA11B004861B7 /* UBToastView+ToastType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UBToastView+ToastType.m"; sourceTree = "<group>"; };
+		D410E18C1CFD3BE10028B482 /* SharedHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedHTTPSessionManager.h; sourceTree = "<group>"; };
+		D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedHTTPSessionManager.m; sourceTree = "<group>"; };
 		D41BB9891CEAB8810078475C /* ImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStorage.h; sourceTree = "<group>"; };
 		D41BB98A1CEAB8810078475C /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
 		D41BB98D1CEAB8DF0078475C /* DBCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCenter.h; sourceTree = "<group>"; };
@@ -1135,8 +1135,8 @@
 			children = (
 				D408600C1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.h */,
 				D408600D1CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m */,
-				D408600E1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.h */,
-				D408600F1CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m */,
+				D410E18C1CFD3BE10028B482 /* SharedHTTPSessionManager.h */,
+				D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1890,7 +1890,6 @@
 				D401EAEA1CD2017F00599E0B /* DeflateCompressor.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
 				D4F48DA11CDC8CB000A89A4C /* UFDataPickSource.m in Sources */,
-				D40860321CD9A79A005FC3D7 /* HTTPSession+SharedInstance.m in Sources */,
 				D40208F71CE303DF00F00082 /* UBMainScene.m in Sources */,
 				D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */,
 				D4F48DA21CDC8CB000A89A4C /* UFDataPickInputer.m in Sources */,
@@ -2014,6 +2013,7 @@
 				D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */,
 				D410D8D21CEDA11B004861B7 /* UBToastView+ToastType.m in Sources */,
 				D4F48DA01CDC8CB000A89A4C /* UFDataPicker.m in Sources */,
+				D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */,
 				D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */,
 				D4F48DAC1CDC8CB000A89A4C /* UFViewLoadingUpdater.m in Sources */,
 				D410D8BD1CED6165004861B7 /* HTTPDownloadRequestTask.m in Sources */,

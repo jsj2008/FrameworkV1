@@ -8,7 +8,7 @@
 
 #import "ImageManagerDownloadTask.h"
 #import "HTTPDownloadConnection.h"
-#import "HTTPSession+SharedInstance.h"
+#import "SharedHTTPSessionManager.h"
 
 @interface ImageManagerDownloadTask () <HTTPDownloadConnectionDelegate>
 
@@ -16,7 +16,7 @@
 
 @property (nonatomic) NSData *data;
 
-- (void)finishWithError:(NSError *)error imageData:(NSData *)data;;
+- (void)finishWithError:(NSError *)error;
 
 @end
 
@@ -27,7 +27,7 @@
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:self.imageURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:3 * 60];
     
-    self.connection = [[HTTPDownloadConnection alloc] initWithRequest:request session:[HTTPSession sharedDefaultConfigurationInstance]];
+    self.connection = [[HTTPDownloadConnection alloc] initWithRequest:request session:[SharedHTTPSessionManager sharedInstance].defaultConfigurationSession];
     
     self.connection.delegate = self;
     
@@ -45,13 +45,15 @@
     self.connection = nil;
 }
 
-- (void)finishWithError:(NSError *)error imageData:(NSData *)data
+- (void)finishWithError:(NSError *)error
 {
+    [self cancel];
+    
     [self notify:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(imageManagerDownloadTask:didFinishWithError:imageData:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(imageManagerDownloadTask:didFinishWithError:)])
         {
-            [self.delegate imageManagerDownloadTask:self didFinishWithError:error imageData:data];
+            [self.delegate imageManagerDownloadTask:self didFinishWithError:error];
         }
     } onThread:self.notifyThread];
 }
@@ -60,17 +62,24 @@
 {
     if (error)
     {
-        [self finishWithError:error imageData:nil];
+        [self finishWithError:error];
     }
     else if (location)
     {
-        self.data = [NSData dataWithContentsOfURL:location];
+        NSError *error = nil;
+        
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        
+        if ((![fileManager moveItemAtURL:location toURL:self.resourceURL error:&error]))
+        {
+            [self finishWithError:error];
+        }
     }
 }
 
 - (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishWithError:(NSError *)error response:(NSHTTPURLResponse *)response
 {
-    [self finishWithError:error imageData:self.data];
+    [self finishWithError:error];
 }
 
 - (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite

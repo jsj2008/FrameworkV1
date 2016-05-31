@@ -121,6 +121,8 @@
                     ImageManagerDownloadTask *task = [[ImageManagerDownloadTask alloc] init];
                     
                     task.imageURL = URL;
+                    
+                    task.resourceURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[NSDate date].description]];
                                         
                     task.delegate = self;
                     
@@ -193,13 +195,15 @@
     }
 }
 
-- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error
 {
     if (task.imageURL)
     {
         dispatch_sync(self.syncQueue, ^{
             
-            [[ImageStorage sharedInstance] saveImageByURL:task.imageURL withData:data];
+            [[ImageStorage sharedInstance] saveImageByURL:task.imageURL withDataPath:[task.resourceURL path]];
+            
+            NSData *imageData = task.resourceURL ? [NSData dataWithContentsOfURL:task.resourceURL] : nil;
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:task.imageURL];
             
@@ -207,7 +211,7 @@
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                 {
-                    [observer imageManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:data];
+                    [observer imageManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:imageData];
                 }
                 
             } onThread:nil];
