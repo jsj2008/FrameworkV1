@@ -1,29 +1,29 @@
 //
-//  ImageDownloadTask.h
+//  ImageLocalLoadTask.h
 //  FrameworkV1
 //
-//  Created by ww on 16/5/5.
+//  Created by ww on 16/5/31.
 //  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "ServiceTask.h"
+#import "SPTask.h"
 
-@protocol ImageDownloadTaskDelegate;
+@protocol ImageLocalLoadTaskDelegate;
 
 /*********************************************************
  
     @class
-        ImageDownloadTask
+        ImageLocalLoadTask
  
     @abstract
-        图片下载任务
+        图片本地加载任务
  
     @discussion
         支持加载文件和HTTP图片
  
  *********************************************************/
 
-@interface ImageDownloadTask : ServiceTask
+@interface ImageLocalLoadTask : SPTask
 
 /*!
  * @brief 初始化
@@ -43,29 +43,21 @@
 /*********************************************************
  
     @protocol
-        ImageDownloadTaskDelegate
+        ImageLocalLoadTaskDelegate
  
     @abstract
-        URL图片下载消息协议
+        图片本地加载消息协议
  
  *********************************************************/
 
-@protocol ImageDownloadTaskDelegate <NSObject>
+@protocol ImageLocalLoadTaskDelegate <NSObject>
 
 /*!
- * @brief 图片下载完成
+ * @brief 图片加载完成
  * @param task 任务
  * @param error 错误信息
  * @param data 图片数据
  */
-- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
-
-/*!
- * @brief 图片下载进度
- * @param task 任务
- * @param downloadedSize 已下载量
- * @param expectedSize 预期下载量
- */
-- (void)imageDownloadTask:(ImageDownloadTask *)task didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
+- (void)imageLocalLoadTask:(ImageLocalLoadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
 
 @end

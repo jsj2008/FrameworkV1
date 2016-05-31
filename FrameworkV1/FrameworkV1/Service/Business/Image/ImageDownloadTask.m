@@ -23,11 +23,6 @@
 
 @synthesize URL = _URL;
 
-- (void)dealloc
-{
-    [self cancel];
-}
-
 - (instancetype)initWithURL:(NSURL *)URL
 {
     if (self = [super init])

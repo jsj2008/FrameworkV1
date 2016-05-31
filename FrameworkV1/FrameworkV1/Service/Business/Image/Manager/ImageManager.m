@@ -82,6 +82,11 @@
 
 - (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer
 {
+    if (!URL)
+    {
+        return;
+    }
+    
     dispatch_sync(self.syncQueue, ^{
         
         if ([URL isFileURL])
@@ -240,6 +245,28 @@
             } onThread:nil];
         });
     }
+}
+
+- (NSData *)localImageDataForURL:(NSURL *)URL
+{
+    __block NSData *data = nil;
+    
+    if (URL)
+    {
+        if ([URL isFileURL])
+        {
+            data = [NSData dataWithContentsOfURL:URL];
+        }
+        else
+        {
+            dispatch_sync(self.syncQueue, ^{
+                
+                data = [[ImageStorage sharedInstance] imageDataByURL:URL];
+            });
+        }
+    }
+    
+    return data;
 }
 
 @end

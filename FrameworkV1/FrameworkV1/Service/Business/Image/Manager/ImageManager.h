@@ -62,6 +62,13 @@
  */
 - (void)cancelDownLoadImageByURL:(NSURL *)URL;
 
+/*!
+ * @brief 本地图片数据
+ * @param URL 图片URL，支持HTTP和文件URL
+ * @result 图片数据
+ */
+- (NSData *)localImageDataForURL:(NSURL *)URL;
+
 @end
 
 

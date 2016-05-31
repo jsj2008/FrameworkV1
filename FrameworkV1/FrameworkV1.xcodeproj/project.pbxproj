@@ -107,6 +107,8 @@
 		D410D8CF1CED92F9004861B7 /* HTTPRequestBody+BodyType.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8CE1CED92F9004861B7 /* HTTPRequestBody+BodyType.m */; };
 		D410D8D21CEDA11B004861B7 /* UBToastView+ToastType.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8D11CEDA11B004861B7 /* UBToastView+ToastType.m */; };
 		D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */; };
+		D410E1911CFD661E0028B482 /* ImageLocalLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */; };
+		D410E1941CFD6E120028B482 /* UBImageViewImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */; };
 		D41BB98B1CEAB8810078475C /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98A1CEAB8810078475C /* ImageStorage.m */; };
 		D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98E1CEAB8DF0078475C /* DBCenter.m */; };
 		D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */; };
@@ -362,6 +364,10 @@
 		D410D8D11CEDA11B004861B7 /* UBToastView+ToastType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UBToastView+ToastType.m"; sourceTree = "<group>"; };
 		D410E18C1CFD3BE10028B482 /* SharedHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedHTTPSessionManager.h; sourceTree = "<group>"; };
 		D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedHTTPSessionManager.m; sourceTree = "<group>"; };
+		D410E18F1CFD661E0028B482 /* ImageLocalLoadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLocalLoadTask.h; sourceTree = "<group>"; };
+		D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLocalLoadTask.m; sourceTree = "<group>"; };
+		D410E1921CFD6E120028B482 /* UBImageViewImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageViewImageLoader.h; sourceTree = "<group>"; };
+		D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageViewImageLoader.m; sourceTree = "<group>"; };
 		D41BB9891CEAB8810078475C /* ImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStorage.h; sourceTree = "<group>"; };
 		D41BB98A1CEAB8810078475C /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
 		D41BB98D1CEAB8DF0078475C /* DBCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCenter.h; sourceTree = "<group>"; };
@@ -1102,6 +1108,8 @@
 			children = (
 				D481A1A91CDB536000826A73 /* ImageDownloadTask.h */,
 				D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */,
+				D410E18F1CFD661E0028B482 /* ImageLocalLoadTask.h */,
+				D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */,
 				D4F48D281CDC488000A89A4C /* Manager */,
 			);
 			path = Image;
@@ -1421,6 +1429,8 @@
 			children = (
 				D427D8B01CE03EA6003BB907 /* UIImageView+URL.h */,
 				D427D8B11CE03EA6003BB907 /* UIImageView+URL.m */,
+				D410E1921CFD6E120028B482 /* UBImageViewImageLoader.h */,
+				D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */,
 			);
 			path = URL;
 			sourceTree = "<group>";
@@ -1899,6 +1909,7 @@
 				D408603A1CD9A79A005FC3D7 /* SPTaskDispatcher+Convenience.m in Sources */,
 				D4F48DA61CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m in Sources */,
 				D4F48D9B1CDC8CB000A89A4C /* UFEmoji.m in Sources */,
+				D410E1941CFD6E120028B482 /* UBImageViewImageLoader.m in Sources */,
 				D4F48D9C1CDC8CB000A89A4C /* UFEmojiImage.m in Sources */,
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
 				D40236651CE9CF830051F5E5 /* XXXJsonSerialization.m in Sources */,
@@ -2009,6 +2020,7 @@
 				D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
 				D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */,
+				D410E1911CFD661E0028B482 /* ImageLocalLoadTask.m in Sources */,
 				D4F452B91CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m in Sources */,
 				D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */,
 				D410D8D21CEDA11B004861B7 /* UBToastView+ToastType.m in Sources */,
