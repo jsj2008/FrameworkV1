@@ -104,7 +104,7 @@
 		D410D8BE1CED6165004861B7 /* HTTPRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8B91CED6165004861B7 /* HTTPRequestTask.m */; };
 		D410D8BF1CED6165004861B7 /* HTTPUploadRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8BB1CED6165004861B7 /* HTTPUploadRequestTask.m */; };
 		D410D8C91CED8E21004861B7 /* HTTPRequestBody.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8C81CED8E21004861B7 /* HTTPRequestBody.m */; };
-		D410D8CF1CED92F9004861B7 /* HTTPRequestBody+BodyType.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8CE1CED92F9004861B7 /* HTTPRequestBody+BodyType.m */; };
+		D410D8CF1CED92F9004861B7 /* HTTPRequestBody+MIME.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8CE1CED92F9004861B7 /* HTTPRequestBody+MIME.m */; };
 		D410D8D21CEDA11B004861B7 /* UBToastView+ToastType.m in Sources */ = {isa = PBXBuildFile; fileRef = D410D8D11CEDA11B004861B7 /* UBToastView+ToastType.m */; };
 		D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */; };
 		D410E1911CFD661E0028B482 /* ImageLocalLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */; };
@@ -358,8 +358,8 @@
 		D410D8BB1CED6165004861B7 /* HTTPUploadRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPUploadRequestTask.m; sourceTree = "<group>"; };
 		D410D8C71CED8E21004861B7 /* HTTPRequestBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestBody.h; sourceTree = "<group>"; };
 		D410D8C81CED8E21004861B7 /* HTTPRequestBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestBody.m; sourceTree = "<group>"; };
-		D410D8CD1CED92F9004861B7 /* HTTPRequestBody+BodyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPRequestBody+BodyType.h"; sourceTree = "<group>"; };
-		D410D8CE1CED92F9004861B7 /* HTTPRequestBody+BodyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPRequestBody+BodyType.m"; sourceTree = "<group>"; };
+		D410D8CD1CED92F9004861B7 /* HTTPRequestBody+MIME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPRequestBody+MIME.h"; sourceTree = "<group>"; };
+		D410D8CE1CED92F9004861B7 /* HTTPRequestBody+MIME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPRequestBody+MIME.m"; sourceTree = "<group>"; };
 		D410D8D01CEDA11B004861B7 /* UBToastView+ToastType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UBToastView+ToastType.h"; sourceTree = "<group>"; };
 		D410D8D11CEDA11B004861B7 /* UBToastView+ToastType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UBToastView+ToastType.m"; sourceTree = "<group>"; };
 		D410E18C1CFD3BE10028B482 /* SharedHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -1367,8 +1367,8 @@
 			children = (
 				D410D8C71CED8E21004861B7 /* HTTPRequestBody.h */,
 				D410D8C81CED8E21004861B7 /* HTTPRequestBody.m */,
-				D410D8CD1CED92F9004861B7 /* HTTPRequestBody+BodyType.h */,
-				D410D8CE1CED92F9004861B7 /* HTTPRequestBody+BodyType.m */,
+				D410D8CD1CED92F9004861B7 /* HTTPRequestBody+MIME.h */,
+				D410D8CE1CED92F9004861B7 /* HTTPRequestBody+MIME.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1920,7 +1920,7 @@
 				D40EEAA81CD2FC0A00E646C9 /* DispatchableTask.m in Sources */,
 				D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */,
 				D401EAE21CD2017F00599E0B /* DBMachine.m in Sources */,
-				D410D8CF1CED92F9004861B7 /* HTTPRequestBody+BodyType.m in Sources */,
+				D410D8CF1CED92F9004861B7 /* HTTPRequestBody+MIME.m in Sources */,
 				D4F48D9F1CDC8CB000A89A4C /* UFEmojiView.m in Sources */,
 				D401EB091CD2017F00599E0B /* IPRouteTraceHandle.m in Sources */,
 				D401EB161CD2017F00599E0B /* NSString+KeyValue.m in Sources */,
