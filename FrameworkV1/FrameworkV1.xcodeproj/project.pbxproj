@@ -15,12 +15,6 @@
 		D401EAE41CD2017F00599E0B /* DBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA2E1CD2017F00599E0B /* DBTable.m */; };
 		D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA311CD2017F00599E0B /* DBFormat.m */; };
 		D401EAE61CD2017F00599E0B /* DBSQL_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA331CD2017F00599E0B /* DBSQL_Extension.m */; };
-		D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA3D1CD2017F00599E0B /* DataCompressor.m */; };
-		D401EAEA1CD2017F00599E0B /* DeflateCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA3F1CD2017F00599E0B /* DeflateCompressor.m */; };
-		D401EAEB1CD2017F00599E0B /* GzipCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA411CD2017F00599E0B /* GzipCompressor.m */; };
-		D401EAEC1CD2017F00599E0B /* DataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA441CD2017F00599E0B /* DataDecompressor.m */; };
-		D401EAED1CD2017F00599E0B /* DeflateDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA461CD2017F00599E0B /* DeflateDecompressor.m */; };
-		D401EAEE1CD2017F00599E0B /* GzipDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA481CD2017F00599E0B /* GzipDecompressor.m */; };
 		D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA4C1CD2017F00599E0B /* NSData+AES.m */; };
 		D401EAF01CD2017F00599E0B /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA4F1CD2017F00599E0B /* NSData+MD5.m */; };
 		D401EAF11CD2017F00599E0B /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D401EA511CD2017F00599E0B /* NSFileHandle+MD5.m */; };
@@ -109,6 +103,8 @@
 		D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */; };
 		D410E1911CFD661E0028B482 /* ImageLocalLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */; };
 		D410E1941CFD6E120028B482 /* UBImageViewImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */; };
+		D41652A31D0581C100FE609D /* ZlibCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D41652A01D0581C100FE609D /* ZlibCompressor.m */; };
+		D41652A41D0581C100FE609D /* ZlibDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D41652A21D0581C100FE609D /* ZlibDecompressor.m */; };
 		D41BB98B1CEAB8810078475C /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98A1CEAB8810078475C /* ImageStorage.m */; };
 		D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98E1CEAB8DF0078475C /* DBCenter.m */; };
 		D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */; };
@@ -178,18 +174,6 @@
 		D401EA311CD2017F00599E0B /* DBFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFormat.m; sourceTree = "<group>"; };
 		D401EA321CD2017F00599E0B /* DBSQL_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSQL_Extension.h; sourceTree = "<group>"; };
 		D401EA331CD2017F00599E0B /* DBSQL_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSQL_Extension.m; sourceTree = "<group>"; };
-		D401EA3C1CD2017F00599E0B /* DataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCompressor.h; sourceTree = "<group>"; };
-		D401EA3D1CD2017F00599E0B /* DataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCompressor.m; sourceTree = "<group>"; };
-		D401EA3E1CD2017F00599E0B /* DeflateCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeflateCompressor.h; sourceTree = "<group>"; };
-		D401EA3F1CD2017F00599E0B /* DeflateCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeflateCompressor.m; sourceTree = "<group>"; };
-		D401EA401CD2017F00599E0B /* GzipCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GzipCompressor.h; sourceTree = "<group>"; };
-		D401EA411CD2017F00599E0B /* GzipCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GzipCompressor.m; sourceTree = "<group>"; };
-		D401EA431CD2017F00599E0B /* DataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDecompressor.h; sourceTree = "<group>"; };
-		D401EA441CD2017F00599E0B /* DataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDecompressor.m; sourceTree = "<group>"; };
-		D401EA451CD2017F00599E0B /* DeflateDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeflateDecompressor.h; sourceTree = "<group>"; };
-		D401EA461CD2017F00599E0B /* DeflateDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeflateDecompressor.m; sourceTree = "<group>"; };
-		D401EA471CD2017F00599E0B /* GzipDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GzipDecompressor.h; sourceTree = "<group>"; };
-		D401EA481CD2017F00599E0B /* GzipDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GzipDecompressor.m; sourceTree = "<group>"; };
 		D401EA4B1CD2017F00599E0B /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		D401EA4C1CD2017F00599E0B /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		D401EA4E1CD2017F00599E0B /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
@@ -368,6 +352,10 @@
 		D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLocalLoadTask.m; sourceTree = "<group>"; };
 		D410E1921CFD6E120028B482 /* UBImageViewImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageViewImageLoader.h; sourceTree = "<group>"; };
 		D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageViewImageLoader.m; sourceTree = "<group>"; };
+		D416529F1D0581C100FE609D /* ZlibCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZlibCompressor.h; sourceTree = "<group>"; };
+		D41652A01D0581C100FE609D /* ZlibCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZlibCompressor.m; sourceTree = "<group>"; };
+		D41652A11D0581C100FE609D /* ZlibDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZlibDecompressor.h; sourceTree = "<group>"; };
+		D41652A21D0581C100FE609D /* ZlibDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZlibDecompressor.m; sourceTree = "<group>"; };
 		D41BB9891CEAB8810078475C /* ImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStorage.h; sourceTree = "<group>"; };
 		D41BB98A1CEAB8810078475C /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
 		D41BB98D1CEAB8DF0078475C /* DBCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCenter.h; sourceTree = "<group>"; };
@@ -549,36 +537,12 @@
 		D401EA3A1CD2017F00599E0B /* Compress */ = {
 			isa = PBXGroup;
 			children = (
-				D401EA3B1CD2017F00599E0B /* Compress */,
-				D401EA421CD2017F00599E0B /* Decompress */,
+				D416529F1D0581C100FE609D /* ZlibCompressor.h */,
+				D41652A01D0581C100FE609D /* ZlibCompressor.m */,
+				D41652A11D0581C100FE609D /* ZlibDecompressor.h */,
+				D41652A21D0581C100FE609D /* ZlibDecompressor.m */,
 			);
 			path = Compress;
-			sourceTree = "<group>";
-		};
-		D401EA3B1CD2017F00599E0B /* Compress */ = {
-			isa = PBXGroup;
-			children = (
-				D401EA3C1CD2017F00599E0B /* DataCompressor.h */,
-				D401EA3D1CD2017F00599E0B /* DataCompressor.m */,
-				D401EA3E1CD2017F00599E0B /* DeflateCompressor.h */,
-				D401EA3F1CD2017F00599E0B /* DeflateCompressor.m */,
-				D401EA401CD2017F00599E0B /* GzipCompressor.h */,
-				D401EA411CD2017F00599E0B /* GzipCompressor.m */,
-			);
-			path = Compress;
-			sourceTree = "<group>";
-		};
-		D401EA421CD2017F00599E0B /* Decompress */ = {
-			isa = PBXGroup;
-			children = (
-				D401EA431CD2017F00599E0B /* DataDecompressor.h */,
-				D401EA441CD2017F00599E0B /* DataDecompressor.m */,
-				D401EA451CD2017F00599E0B /* DeflateDecompressor.h */,
-				D401EA461CD2017F00599E0B /* DeflateDecompressor.m */,
-				D401EA471CD2017F00599E0B /* GzipDecompressor.h */,
-				D401EA481CD2017F00599E0B /* GzipDecompressor.m */,
-			);
-			path = Decompress;
 			sourceTree = "<group>";
 		};
 		D401EA491CD2017F00599E0B /* Crypto */ = {
@@ -1897,7 +1861,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D401EAEA1CD2017F00599E0B /* DeflateCompressor.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
 				D4F48DA11CDC8CB000A89A4C /* UFDataPickSource.m in Sources */,
 				D40208F71CE303DF00F00082 /* UBMainScene.m in Sources */,
@@ -1914,7 +1877,6 @@
 				D401EB131CD2017F00599E0B /* StateMachine.m in Sources */,
 				D40236651CE9CF830051F5E5 /* XXXJsonSerialization.m in Sources */,
 				D401EB061CD2017F00599E0B /* NSObject+Delegate.m in Sources */,
-				D401EAEC1CD2017F00599E0B /* DataDecompressor.m in Sources */,
 				D4F452AD1CE1DACC00AFCA08 /* UFScrollContentOffsetUpdater.m in Sources */,
 				D401EB121CD2017F00599E0B /* XMLSpriteSerialize.m in Sources */,
 				D40EEAA81CD2FC0A00E646C9 /* DispatchableTask.m in Sources */,
@@ -1949,7 +1911,6 @@
 				D401EAF61CD2017F00599E0B /* HTTPDownloadConnection.m in Sources */,
 				D4F452B81CE1DAF900AFCA08 /* UFScrollRefreshHeaderView.m in Sources */,
 				D4F452B21CE1DAE500AFCA08 /* UFScrollLoadMoreFooterView.m in Sources */,
-				D401EAED1CD2017F00599E0B /* DeflateDecompressor.m in Sources */,
 				D401EB111CD2017F00599E0B /* XMLSprite.m in Sources */,
 				D4F48D411CDC8A8800A89A4C /* UFImageEditView.m in Sources */,
 				D427D8B21CE03EA6003BB907 /* UIImageView+URL.m in Sources */,
@@ -1964,6 +1925,7 @@
 				D40208FB1CE3075F00F00082 /* FoundationServiceUnit.m in Sources */,
 				D4F48D961CDC8CB000A89A4C /* UIColor+Hex.m in Sources */,
 				D401EAFE1CD2017F00599E0B /* HTTPMultipartFormPartContentDisposition.m in Sources */,
+				D41652A41D0581C100FE609D /* ZlibDecompressor.m in Sources */,
 				D410D8C91CED8E21004861B7 /* HTTPRequestBody.m in Sources */,
 				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
 				D407A5831CEC652C00BA1963 /* UFButtonWindow.m in Sources */,
@@ -1988,7 +1950,6 @@
 				D401EADF1CD2017F00599E0B /* DBDefine.m in Sources */,
 				D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */,
 				D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */,
-				D401EAEB1CD2017F00599E0B /* GzipCompressor.m in Sources */,
 				D40EEAAD1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m in Sources */,
 				D401EAE41CD2017F00599E0B /* DBTable.m in Sources */,
 				D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */,
@@ -2016,6 +1977,7 @@
 				D4F48DA31CDC8CB000A89A4C /* UFTextFieldDataPickInputer.m in Sources */,
 				D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
+				D41652A31D0581C100FE609D /* ZlibCompressor.m in Sources */,
 				D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */,
 				D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
@@ -2038,9 +2000,7 @@
 				D401EB421CD2026300599E0B /* EPub2_OPF.m in Sources */,
 				D401EAE61CD2017F00599E0B /* DBSQL_Extension.m in Sources */,
 				D401EAF51CD2017F00599E0B /* HTTPConnectionResumeStorage.m in Sources */,
-				D401EAEE1CD2017F00599E0B /* GzipDecompressor.m in Sources */,
 				D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */,
-				D401EAE91CD2017F00599E0B /* DataCompressor.m in Sources */,
 				D401EB3F1CD2026300599E0B /* EPub.m in Sources */,
 				D4F452BC1CE1DB0A00AFCA08 /* UFScrollLoadingView.m in Sources */,
 				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
