@@ -47,7 +47,7 @@
 /*!
  * @brief 显示超时时间，超过时间自定执行取消操作
  */
-@property (nonatomic) NSTimeInterval duration;
+@property (nonatomic) NSTimeInterval timeout;
 
 /*!
  * @brief 在指定视图中显示

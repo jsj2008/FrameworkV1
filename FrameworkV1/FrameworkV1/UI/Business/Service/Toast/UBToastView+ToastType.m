@@ -45,7 +45,7 @@
         }
     };
     
-    toastView.duration = 3;
+    toastView.timeout = 3;
     
     return toastView;
 }

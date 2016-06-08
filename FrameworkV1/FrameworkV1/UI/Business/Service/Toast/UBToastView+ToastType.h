@@ -22,6 +22,7 @@
 
 /*!
  * @brief 提示框
+ * @discussion 默认超时时间3秒
  * @param message 消息文本
  * @param options 选项
  * @param completion 结束回调block，option为nil表征提示框被取消
