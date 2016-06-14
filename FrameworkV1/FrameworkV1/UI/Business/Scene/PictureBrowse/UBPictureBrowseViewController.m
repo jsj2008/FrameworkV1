@@ -69,6 +69,8 @@ static NSString * const kCellIdentifier = @"cell";
     self.toolBar.backgroundColor = [UIColor grayColor];
     
     self.accessoryDownloader = [[UBPictureBrowseAccessoryDownloader alloc] init];
+    
+    self.accessoryDownloader.maxConcurrentDownloadCount = 5;
 }
 
 - (void)viewDidLayoutSubviews
@@ -137,7 +139,10 @@ static NSString * const kCellIdentifier = @"cell";
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(nonnull UICollectionViewCell *)cell forItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     // 这里启动预加载机制
-    if (indexPath.row - 1 >= 0)
+    
+    NSArray *visibleItems = [collectionView indexPathsForVisibleItems];
+    
+    if (indexPath.row - 1 >= 0 && ![visibleItems containsObject:[NSIndexPath indexPathForItem:indexPath.row - 1 inSection:0]])
     {
         UBPictureBrowsePicture *picture = [self.pictures objectAtIndex:(indexPath.row - 1)];
         
@@ -147,7 +152,7 @@ static NSString * const kCellIdentifier = @"cell";
         }
     }
     
-    if (indexPath.row + 1 <= self.pictures.count - 1)
+    if (indexPath.row + 1 <= self.pictures.count - 1 && ![visibleItems containsObject:[NSIndexPath indexPathForItem:indexPath.row + 1 inSection:0]])
     {
         UBPictureBrowsePicture *picture = [self.pictures objectAtIndex:(indexPath.row + 1)];
         
