@@ -140,13 +140,15 @@
                     [self.downloadImageObservers setObject:set forKey:URL];
                 }
                 
+                NSString *index = [NSString stringWithFormat:@"%llx", (long long)observer];
+                
                 NotificationObserver *notificationObserver = [[NotificationObserver alloc] init];
                 
                 notificationObserver.observer = observer;
                 
                 notificationObserver.notifyThread = [NSThread currentThread];
                 
-                [set.observerArray addObject:notificationObserver];
+                [set.observerDictionary setObject:notificationObserver forKey:index];
             }
         }
     });
@@ -162,20 +164,12 @@
             
             if (set)
             {
-                NSMutableArray *toRemoveObjects = [[NSMutableArray alloc] init];
+                NSString *index = [NSString stringWithFormat:@"%llx", (long long)observer];
                 
-                for (NotificationObserver *notificationObserver in set.observerArray)
-                {
-                    if ([notificationObserver.observer isEqual:observer])
-                    {
-                        [toRemoveObjects addObject:notificationObserver];
-                    }
-                }
-                
-                [set.observerArray removeObjectsInArray:toRemoveObjects];
+                [set.observerDictionary removeObjectForKey:index];
             }
             
-            if ([set.observerArray count] == 0)
+            if ([[set.observerDictionary allValues] count] == 0)
             {
                 [self.taskDispatcher cancelTask:set.object];
                 

@@ -46,7 +46,7 @@
 
 /*!
  * @brief 报文主体长度
- * @param -1表证无法获取主体长度，当报文主体是流时会出现该情况
+ * @param -1表征无法获取主体长度，当报文主体是流时会出现该情况
  */
 @property (nonatomic, readonly) long long bodySize;
 

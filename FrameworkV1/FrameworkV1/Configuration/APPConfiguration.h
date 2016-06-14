@@ -33,6 +33,11 @@
  */
 @property (atomic, copy) NSString *appLogDirectory;
 
+/*!
+ * @brief 图片目录，默认$cache/Image
+ */
+@property (atomic, copy) NSString *imageDirectory;
+
 #pragma mark - Task onfiguration
 
 /*!

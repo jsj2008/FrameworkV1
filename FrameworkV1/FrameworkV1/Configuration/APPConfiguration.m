@@ -16,6 +16,8 @@
     {
         self.appLogDirectory = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"APPLog"];
         
+        self.imageDirectory = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"Image"];
+        
         self.daemonTaskPoolCapacity = 5;
         
         self.daemonTaskPoolPersistentQueueCapacity = 2;

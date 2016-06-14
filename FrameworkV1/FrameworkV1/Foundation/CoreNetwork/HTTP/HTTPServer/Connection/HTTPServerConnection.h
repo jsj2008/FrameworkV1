@@ -142,7 +142,7 @@
  * @param connection 连接
  * @param bytesWritten 距离上一下发送时间间隔内的发送量
  * @param totalBytesWritten 已发送总量
- * @param totalBytesExpectedToWrite 预期发送总量，－1表证无法获取（chunked传输情况等）
+ * @param totalBytesExpectedToWrite 预期发送总量，－1表征无法获取（chunked传输下会出现此情况）
  */
 - (void)HTTPServerConnection:(HTTPServerConnection *)connection didSendData:(unsigned long long)bytesWritten totalBytesWritten:(unsigned long long)totalBytesWritten totalBytesExpectedToWrite:(long long)totalBytesExpectedToWrite;
 

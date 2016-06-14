@@ -107,6 +107,13 @@
 		D41652A41D0581C100FE609D /* ZlibDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D41652A21D0581C100FE609D /* ZlibDecompressor.m */; };
 		D41BB98B1CEAB8810078475C /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98A1CEAB8810078475C /* ImageStorage.m */; };
 		D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98E1CEAB8DF0078475C /* DBCenter.m */; };
+		D41C84D01D10036E0086EE79 /* UBPictureBrowseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C84C21D10036E0086EE79 /* UBPictureBrowseCell.m */; };
+		D41C84D11D10036E0086EE79 /* UBPictureBrowsePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C84C41D10036E0086EE79 /* UBPictureBrowsePictureView.m */; };
+		D41C84D21D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C84C71D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.m */; };
+		D41C84D31D10036E0086EE79 /* UBPictureBrowseToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C84CA1D10036E0086EE79 /* UBPictureBrowseToolBar.m */; };
+		D41C84D41D10036E0086EE79 /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C84CC1D10036E0086EE79 /* UBPictureBrowsePicture.m */; };
+		D41C84D51D10036E0086EE79 /* UBPictureBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C84CE1D10036E0086EE79 /* UBPictureBrowseViewController.m */; };
+		D41C84D61D10036E0086EE79 /* UBPictureBrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41C84CF1D10036E0086EE79 /* UBPictureBrowseViewController.xib */; };
 		D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */; };
 		D427D8AC1CE03CE5003BB907 /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */; };
 		D427D8B21CE03EA6003BB907 /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8B11CE03EA6003BB907 /* UIImageView+URL.m */; };
@@ -133,6 +140,7 @@
 		D49B97221D0818FC0068B8E0 /* TCPServerError.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B970B1D0818FC0068B8E0 /* TCPServerError.m */; };
 		D49B97231D0818FC0068B8E0 /* TCPServerIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B970D1D0818FC0068B8E0 /* TCPServerIPAddress.m */; };
 		D49B97241D0818FC0068B8E0 /* TCPServerListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B970F1D0818FC0068B8E0 /* TCPServerListener.m */; };
+		D49B97291D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B97281D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.m */; };
 		D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */; };
 		D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */; };
 		D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */; };
@@ -381,6 +389,19 @@
 		D41BB98A1CEAB8810078475C /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
 		D41BB98D1CEAB8DF0078475C /* DBCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCenter.h; sourceTree = "<group>"; };
 		D41BB98E1CEAB8DF0078475C /* DBCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCenter.m; sourceTree = "<group>"; };
+		D41C84C11D10036E0086EE79 /* UBPictureBrowseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseCell.h; sourceTree = "<group>"; };
+		D41C84C21D10036E0086EE79 /* UBPictureBrowseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseCell.m; sourceTree = "<group>"; };
+		D41C84C31D10036E0086EE79 /* UBPictureBrowsePictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePictureView.h; sourceTree = "<group>"; };
+		D41C84C41D10036E0086EE79 /* UBPictureBrowsePictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePictureView.m; sourceTree = "<group>"; };
+		D41C84C61D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseAccessoryDownloader.h; sourceTree = "<group>"; };
+		D41C84C71D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseAccessoryDownloader.m; sourceTree = "<group>"; };
+		D41C84C91D10036E0086EE79 /* UBPictureBrowseToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseToolBar.h; sourceTree = "<group>"; };
+		D41C84CA1D10036E0086EE79 /* UBPictureBrowseToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseToolBar.m; sourceTree = "<group>"; };
+		D41C84CB1D10036E0086EE79 /* UBPictureBrowsePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePicture.h; sourceTree = "<group>"; };
+		D41C84CC1D10036E0086EE79 /* UBPictureBrowsePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePicture.m; sourceTree = "<group>"; };
+		D41C84CD1D10036E0086EE79 /* UBPictureBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseViewController.h; sourceTree = "<group>"; };
+		D41C84CE1D10036E0086EE79 /* UBPictureBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseViewController.m; sourceTree = "<group>"; };
+		D41C84CF1D10036E0086EE79 /* UBPictureBrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBPictureBrowseViewController.xib; sourceTree = "<group>"; };
 		D427D8A71CE03CE5003BB907 /* UFPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFPlaceHolderTextView.h; sourceTree = "<group>"; };
 		D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFPlaceHolderTextView.m; sourceTree = "<group>"; };
 		D427D8A91CE03CE5003BB907 /* UFTextViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolder.h; sourceTree = "<group>"; };
@@ -433,6 +454,8 @@
 		D49B970D1D0818FC0068B8E0 /* TCPServerIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServerIPAddress.m; sourceTree = "<group>"; };
 		D49B970E1D0818FC0068B8E0 /* TCPServerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPServerListener.h; sourceTree = "<group>"; };
 		D49B970F1D0818FC0068B8E0 /* TCPServerListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPServerListener.m; sourceTree = "<group>"; };
+		D49B97271D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPicturePickerActionSheetScene.h; sourceTree = "<group>"; };
+		D49B97281D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPicturePickerActionSheetScene.m; sourceTree = "<group>"; };
 		D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -1434,6 +1457,50 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
+		D41C84BF1D10036E0086EE79 /* PictureBrowse */ = {
+			isa = PBXGroup;
+			children = (
+				D41C84CB1D10036E0086EE79 /* UBPictureBrowsePicture.h */,
+				D41C84CC1D10036E0086EE79 /* UBPictureBrowsePicture.m */,
+				D41C84CD1D10036E0086EE79 /* UBPictureBrowseViewController.h */,
+				D41C84CE1D10036E0086EE79 /* UBPictureBrowseViewController.m */,
+				D41C84CF1D10036E0086EE79 /* UBPictureBrowseViewController.xib */,
+				D41C84C01D10036E0086EE79 /* Cell */,
+				D41C84C81D10036E0086EE79 /* ToolBar */,
+				D41C84C51D10036E0086EE79 /* Downloader */,
+			);
+			path = PictureBrowse;
+			sourceTree = "<group>";
+		};
+		D41C84C01D10036E0086EE79 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D41C84C11D10036E0086EE79 /* UBPictureBrowseCell.h */,
+				D41C84C21D10036E0086EE79 /* UBPictureBrowseCell.m */,
+				D41C84C31D10036E0086EE79 /* UBPictureBrowsePictureView.h */,
+				D41C84C41D10036E0086EE79 /* UBPictureBrowsePictureView.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D41C84C51D10036E0086EE79 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				D41C84C61D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.h */,
+				D41C84C71D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.m */,
+			);
+			path = Downloader;
+			sourceTree = "<group>";
+		};
+		D41C84C81D10036E0086EE79 /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				D41C84C91D10036E0086EE79 /* UBPictureBrowseToolBar.h */,
+				D41C84CA1D10036E0086EE79 /* UBPictureBrowseToolBar.m */,
+			);
+			path = ToolBar;
+			sourceTree = "<group>";
+		};
 		D427D8AD1CE03EA6003BB907 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -1466,6 +1533,8 @@
 			isa = PBXGroup;
 			children = (
 				D40208F41CE303C900F00082 /* Main */,
+				D41C84BF1D10036E0086EE79 /* PictureBrowse */,
+				D49B97261D081D360068B8E0 /* PicturePickerActionSheet */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1681,6 +1750,15 @@
 				D49B970D1D0818FC0068B8E0 /* TCPServerIPAddress.m */,
 			);
 			path = TCPServer;
+			sourceTree = "<group>";
+		};
+		D49B97261D081D360068B8E0 /* PicturePickerActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				D49B97271D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.h */,
+				D49B97281D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.m */,
+			);
+			path = PicturePickerActionSheet;
 			sourceTree = "<group>";
 		};
 		D4E3EA211CC8A52B00A7987E = {
@@ -2082,6 +2160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41C84D61D10036E0086EE79 /* UBPictureBrowseViewController.xib in Resources */,
 				D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */,
 				D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */,
 			);
@@ -2104,6 +2183,7 @@
 				D401EB041CD2017F00599E0B /* NotificationObserver.m in Sources */,
 				D4F48D441CDC8A8800A89A4C /* UIImageView+Gif.m in Sources */,
 				D408603A1CD9A79A005FC3D7 /* SPTaskDispatcher+Convenience.m in Sources */,
+				D41C84D31D10036E0086EE79 /* UBPictureBrowseToolBar.m in Sources */,
 				D49B97131D0818FC0068B8E0 /* HTTPMessageBodyParser.m in Sources */,
 				D4F48DA61CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m in Sources */,
 				D4F48D9B1CDC8CB000A89A4C /* UFEmoji.m in Sources */,
@@ -2135,6 +2215,7 @@
 				D40860311CD9A79A005FC3D7 /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */,
 				D408603D1CD9A79A005FC3D7 /* StorageUnit.m in Sources */,
+				D41C84D01D10036E0086EE79 /* UBPictureBrowseCell.m in Sources */,
 				D401EB681CD214A600599E0B /* NSObject+ThreadOperation.m in Sources */,
 				D401EB011CD2017F00599E0B /* APPLog.m in Sources */,
 				D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */,
@@ -2206,6 +2287,7 @@
 				D401EAE01CD2017F00599E0B /* DBHandle.m in Sources */,
 				D401EB3D1CD2026300599E0B /* EPubBookInfomation.m in Sources */,
 				D401EAF31CD2017F00599E0B /* FileListener.m in Sources */,
+				D49B97291D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.m in Sources */,
 				D401EB401CD2026300599E0B /* EPub2_NCX.m in Sources */,
 				D402365F1CE9AB890051F5E5 /* HTTPRequestResponseJsonContent.m in Sources */,
 				D41BB98B1CEAB8810078475C /* ImageStorage.m in Sources */,
@@ -2227,10 +2309,12 @@
 				D49B97121D0818FC0068B8E0 /* HTTPTrailer.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
 				D49B971D1D0818FC0068B8E0 /* HTTPServerConnection.m in Sources */,
+				D41C84D41D10036E0086EE79 /* UBPictureBrowsePicture.m in Sources */,
 				D41652A31D0581C100FE609D /* ZlibCompressor.m in Sources */,
 				D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */,
 				D41BB98F1CEAB8DF0078475C /* DBCenter.m in Sources */,
 				D401EAEF1CD2017F00599E0B /* NSData+AES.m in Sources */,
+				D41C84D51D10036E0086EE79 /* UBPictureBrowseViewController.m in Sources */,
 				D401EB151CD2017F00599E0B /* NSDictionary+KeyValue.m in Sources */,
 				D410E1911CFD661E0028B482 /* ImageLocalLoadTask.m in Sources */,
 				D4F452B91CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m in Sources */,
@@ -2243,6 +2327,7 @@
 				D410D8BD1CED6165004861B7 /* HTTPDownloadRequestTask.m in Sources */,
 				D40236521CE95A070051F5E5 /* NSHTTPURLResponse+ContentValidation.m in Sources */,
 				D4E3EA2F1CC8A52B00A7987E /* main.m in Sources */,
+				D41C84D21D10036E0086EE79 /* UBPictureBrowseAccessoryDownloader.m in Sources */,
 				D4F48DAB1CDC8CB000A89A4C /* UFLoadingView.m in Sources */,
 				D407A57C1CEC392000BA1963 /* UBToastView.m in Sources */,
 				D401EAF21CD2017F00599E0B /* NSString+URLEncode.m in Sources */,
@@ -2257,6 +2342,7 @@
 				D401EB3F1CD2026300599E0B /* EPub.m in Sources */,
 				D4F452BC1CE1DB0A00AFCA08 /* UFScrollLoadingView.m in Sources */,
 				D401E9FE1CD1E66A00599E0B /* APPConfiguration.m in Sources */,
+				D41C84D11D10036E0086EE79 /* UBPictureBrowsePictureView.m in Sources */,
 				D49B971F1D0818FC0068B8E0 /* HTTPServerListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

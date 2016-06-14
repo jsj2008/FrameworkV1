@@ -60,6 +60,8 @@
  */
 - (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
 
+@optional
+
 /*!
  * @brief 图片下载进度
  * @param task 任务

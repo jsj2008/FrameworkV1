@@ -49,7 +49,7 @@
         {
             [observer operate:^{
                 
-                notification(observer);
+                notification(observer.observer);
                 
             } onThread:observer.notifyThread ? observer.notifyThread : [NSThread currentThread]];
         }
@@ -58,7 +58,7 @@
         {
             [observer operate:^{
                 
-                notification(observer);
+                notification(observer.observer);
                 
             } onThread:observer.notifyThread ? observer.notifyThread : [NSThread currentThread]];
         }

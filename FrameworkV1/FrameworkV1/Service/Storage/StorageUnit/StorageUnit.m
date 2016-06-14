@@ -9,6 +9,7 @@
 #import "StorageUnit.h"
 #import "DBCenter.h"
 #import "ImageStorage.h"
+#import "APPConfiguration.h"
 
 @implementation StorageUnit
 
@@ -32,6 +33,8 @@
 - (void)start
 {
     [[DBCenter sharedInstance] start];
+    
+    [ImageStorage sharedInstance].directory = [APPConfiguration sharedInstance].imageDirectory;
     
     [[ImageStorage sharedInstance] start];
 }
