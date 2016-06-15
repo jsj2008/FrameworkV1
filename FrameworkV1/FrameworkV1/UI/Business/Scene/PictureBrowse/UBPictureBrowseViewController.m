@@ -70,7 +70,7 @@ static NSString * const kCellIdentifier = @"cell";
     
     self.accessoryDownloader = [[UBPictureBrowseAccessoryDownloader alloc] init];
     
-    self.accessoryDownloader.maxConcurrentDownloadCount = 5;
+    self.accessoryDownloader.maxConcurrentDownloadCount = 3;
 }
 
 - (void)viewDidLayoutSubviews

@@ -87,6 +87,25 @@
     }
 }
 
+- (void)updateItemWithId:(NSString *)itemId
+{
+    for (int i = 0; i < self.items.count; i ++)
+    {
+        UBPictureBrowseToolBarItem *item = [self.items objectAtIndex:i];
+        
+        if ([item.itemId isEqualToString:itemId])
+        {
+            UIButton *button = [self.itemButtons objectAtIndex:i];
+            
+            button.enabled = item.isEnabled;
+            
+            button.selected = item.selected;
+            
+            break;
+        }
+    }
+}
+
 - (void)buttonPressed:(id)sender
 {
     NSUInteger index = [self.itemButtons indexOfObject:sender];
@@ -103,3 +122,6 @@
 @implementation UBPictureBrowseToolBarItem
 
 @end
+
+
+NSString * const kPictureBrowseToolBarItemId_Share = @"share";

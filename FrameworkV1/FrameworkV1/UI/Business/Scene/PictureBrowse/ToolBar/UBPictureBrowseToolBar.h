@@ -41,6 +41,12 @@
  */
 - (void)updateItem:(UBPictureBrowseToolBarItem *)item;
 
+/*!
+ * @brief 更新指定工具项
+ * @param itemId 工具项ID
+ */
+- (void)updateItemWithId:(NSString *)itemId;
+
 @end
 
 
@@ -94,3 +100,7 @@
 @property (nonatomic) BOOL selected;
 
 @end
+
+
+// 这里定义工具项的ID
+extern NSString * const kPictureBrowseToolBarItemId_Share;
