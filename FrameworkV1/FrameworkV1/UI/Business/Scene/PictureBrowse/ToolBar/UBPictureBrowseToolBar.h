@@ -52,7 +52,7 @@
 
 /*********************************************************
  
-    @class
+    @protocol
         UBPictureBrowseToolBarDelegate
  
     @abstract

@@ -117,6 +117,7 @@
 		D427D8AB1CE03CE5003BB907 /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8A81CE03CE5003BB907 /* UFPlaceHolderTextView.m */; };
 		D427D8AC1CE03CE5003BB907 /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */; };
 		D427D8B21CE03EA6003BB907 /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8B11CE03EA6003BB907 /* UIImageView+URL.m */; };
+		D435CE201D114094001BC5A9 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D435CE1E1D114094001BC5A9 /* Photos.framework */; };
 		D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */; };
 		D48A30E71CE5B80F00AEF9B1 /* DBError.m in Sources */ = {isa = PBXBuildFile; fileRef = D48A30E61CE5B80F00AEF9B1 /* DBError.m */; };
 		D49B97101D0818FC0068B8E0 /* HTTPRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B96DA1D0818FC0068B8E0 /* HTTPRequestHeader.m */; };
@@ -408,6 +409,7 @@
 		D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolder.m; sourceTree = "<group>"; };
 		D427D8B01CE03EA6003BB907 /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
 		D427D8B11CE03EA6003BB907 /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
+		D435CE1E1D114094001BC5A9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		D481A1A91CDB536000826A73 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D48A30E51CE5B80F00AEF9B1 /* DBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBError.h; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D435CE201D114094001BC5A9 /* Photos.framework in Frameworks */,
 				D4D5CF4F1CD0C7FF00CD1860 /* libsqlite3.tbd in Frameworks */,
 				D4D5CAE51CD0B6F500CD1860 /* libxml2.2.tbd in Frameworks */,
 				D4D5CAC71CD0AE1600CD1860 /* libz.1.2.5.tbd in Frameworks */,
@@ -1767,6 +1770,7 @@
 				D4D5CF4E1CD0C7FF00CD1860 /* libsqlite3.tbd */,
 				D4D5CAE41CD0B6F500CD1860 /* libxml2.2.tbd */,
 				D4D5CAC61CD0AE1600CD1860 /* libz.1.2.5.tbd */,
+				D435CE1E1D114094001BC5A9 /* Photos.framework */,
 				D4E3EA2C1CC8A52B00A7987E /* FrameworkV1 */,
 				D4E3EA2B1CC8A52B00A7987E /* Products */,
 			);
