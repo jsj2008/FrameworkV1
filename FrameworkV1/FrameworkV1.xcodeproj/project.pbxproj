@@ -103,6 +103,10 @@
 		D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E18D1CFD3BE10028B482 /* SharedHTTPSessionManager.m */; };
 		D410E1911CFD661E0028B482 /* ImageLocalLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */; };
 		D410E1941CFD6E120028B482 /* UBImageViewImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */; };
+		D41454071D12A166004DCBA6 /* UBListingPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D41454021D12A166004DCBA6 /* UBListingPictureCell.m */; };
+		D41454081D12A166004DCBA6 /* UBListingPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41454031D12A166004DCBA6 /* UBListingPictureCell.xib */; };
+		D41454091D12A166004DCBA6 /* UBListingPicturePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41454051D12A166004DCBA6 /* UBListingPicturePickerViewController.m */; };
+		D414540A1D12A166004DCBA6 /* UBListingPicturePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41454061D12A166004DCBA6 /* UBListingPicturePickerViewController.xib */; };
 		D41652A31D0581C100FE609D /* ZlibCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D41652A01D0581C100FE609D /* ZlibCompressor.m */; };
 		D41652A41D0581C100FE609D /* ZlibDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D41652A21D0581C100FE609D /* ZlibDecompressor.m */; };
 		D41BB98B1CEAB8810078475C /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BB98A1CEAB8810078475C /* ImageStorage.m */; };
@@ -382,6 +386,12 @@
 		D410E1901CFD661E0028B482 /* ImageLocalLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLocalLoadTask.m; sourceTree = "<group>"; };
 		D410E1921CFD6E120028B482 /* UBImageViewImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageViewImageLoader.h; sourceTree = "<group>"; };
 		D410E1931CFD6E120028B482 /* UBImageViewImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageViewImageLoader.m; sourceTree = "<group>"; };
+		D41454011D12A166004DCBA6 /* UBListingPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBListingPictureCell.h; sourceTree = "<group>"; };
+		D41454021D12A166004DCBA6 /* UBListingPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBListingPictureCell.m; sourceTree = "<group>"; };
+		D41454031D12A166004DCBA6 /* UBListingPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBListingPictureCell.xib; sourceTree = "<group>"; };
+		D41454041D12A166004DCBA6 /* UBListingPicturePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBListingPicturePickerViewController.h; sourceTree = "<group>"; };
+		D41454051D12A166004DCBA6 /* UBListingPicturePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBListingPicturePickerViewController.m; sourceTree = "<group>"; };
+		D41454061D12A166004DCBA6 /* UBListingPicturePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBListingPicturePickerViewController.xib; sourceTree = "<group>"; };
 		D416529F1D0581C100FE609D /* ZlibCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZlibCompressor.h; sourceTree = "<group>"; };
 		D41652A01D0581C100FE609D /* ZlibCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZlibCompressor.m; sourceTree = "<group>"; };
 		D41652A11D0581C100FE609D /* ZlibDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZlibDecompressor.h; sourceTree = "<group>"; };
@@ -1426,6 +1436,19 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		D41453EC1D1257A2004DCBA6 /* PictureList */ = {
+			isa = PBXGroup;
+			children = (
+				D41454041D12A166004DCBA6 /* UBListingPicturePickerViewController.h */,
+				D41454051D12A166004DCBA6 /* UBListingPicturePickerViewController.m */,
+				D41454061D12A166004DCBA6 /* UBListingPicturePickerViewController.xib */,
+				D41454011D12A166004DCBA6 /* UBListingPictureCell.h */,
+				D41454021D12A166004DCBA6 /* UBListingPictureCell.m */,
+				D41454031D12A166004DCBA6 /* UBListingPictureCell.xib */,
+			);
+			path = PictureList;
+			sourceTree = "<group>";
+		};
 		D41BB9861CEAB8810078475C /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -1760,6 +1783,7 @@
 			children = (
 				D49B97271D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.h */,
 				D49B97281D081D5B0068B8E0 /* UBPicturePickerActionSheetScene.m */,
+				D41453EC1D1257A2004DCBA6 /* PictureList */,
 			);
 			path = PicturePickerActionSheet;
 			sourceTree = "<group>";
@@ -2166,6 +2190,8 @@
 			files = (
 				D41C84D61D10036E0086EE79 /* UBPictureBrowseViewController.xib in Resources */,
 				D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */,
+				D41454081D12A166004DCBA6 /* UBListingPictureCell.xib in Resources */,
+				D414540A1D12A166004DCBA6 /* UBListingPicturePickerViewController.xib in Resources */,
 				D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2212,6 +2238,7 @@
 				D4F48DA71CDC8CB000A89A4C /* UIView+KeyboardAdjust.m in Sources */,
 				D408603B1CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m in Sources */,
 				D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */,
+				D41454091D12A166004DCBA6 /* UBListingPicturePickerViewController.m in Sources */,
 				D40860381CD9A79A005FC3D7 /* SPTaskBackgroundPool+SharedInstance.m in Sources */,
 				D402365E1CE9AB890051F5E5 /* HTTPRequestResponseContent.m in Sources */,
 				D401EAFA1CD2017F00599E0B /* HTTPUploadConnection.m in Sources */,
@@ -2275,6 +2302,7 @@
 				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
 				D401EAFF1CD2017F00599E0B /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
 				D4F48DAD1CDC8CB000A89A4C /* UIView+Loading.m in Sources */,
+				D41454071D12A166004DCBA6 /* UBListingPictureCell.m in Sources */,
 				D401EADF1CD2017F00599E0B /* DBDefine.m in Sources */,
 				D401EB431CD2026300599E0B /* EPub2_Package.m in Sources */,
 				D49B97171D0818FC0068B8E0 /* HTTPMessageSerializer.m in Sources */,

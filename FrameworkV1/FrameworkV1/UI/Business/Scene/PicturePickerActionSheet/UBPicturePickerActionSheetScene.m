@@ -9,8 +9,9 @@
 #import "UBPicturePickerActionSheetScene.h"
 #import <Photos/Photos.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UBListingPicturePickerViewController.h"
 
-@interface UBPicturePickerActionSheetScene () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface UBPicturePickerActionSheetScene () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UBListingPicturePickerViewControllerDelegate>
 
 @property (nonatomic) UIAlertController *alertController;
 
@@ -18,11 +19,15 @@
 
 - (void)didSelectAction:(UBPicturePickerAction *)action;
 
-- (void)showPhotoLibraryForAction:(UBPicturePickerAction *)action;
+- (void)showPhotoLibrary;
 
-- (void)showCameraForAction:(UBPicturePickerAction *)action;
+- (void)showCamera;
 
-- (void)showSavedPhotosAlbumForAction:(UBPicturePickerAction *)action;
+- (void)showSavedPhotosAlbum;
+
+- (void)showPictureList;
+
+- (void)finishWithError:(NSError *)error pickedImages:(NSArray<UBPicturePickerPickedImage *> *)images;
 
 @end
 
@@ -68,7 +73,11 @@
 - (void)didSelectAction:(UBPicturePickerAction *)action
 {
     // 在这里需要判断权限
-    if ([action.actionId isEqualToString:kPicturePickerActionId_PhotoLibrary])
+    if ([action.actionId isEqualToString:kPicturePickerActionId_Cancel])
+    {
+        [self finishWithError:nil pickedImages:nil];
+    }
+    else if ([action.actionId isEqualToString:kPicturePickerActionId_PhotoLibrary])
     {
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         
@@ -90,7 +99,7 @@
                     
                     if (status == PHAuthorizationStatusAuthorized)
                     {
-                        [weakSelf showPhotoLibraryForAction:action];
+                        [weakSelf showPhotoLibrary];
                     }
                     else
                     {
@@ -103,7 +112,7 @@
                 
             case PHAuthorizationStatusAuthorized:
                 
-                [self showPhotoLibraryForAction:action];
+                [self showPhotoLibrary];
                 
                 break;
                 
@@ -134,14 +143,14 @@
                     
                     if (granted)
                     {
-                        [weakSelf showCameraForAction:action];
+                        [weakSelf showCamera];
                     }
                 }];
             }
                 
             case AVAuthorizationStatusAuthorized:
                 
-                [self showCameraForAction:action];
+                [self showCamera];
                 
                 break;
                 
@@ -171,7 +180,7 @@
                     
                     if (status == PHAuthorizationStatusAuthorized)
                     {
-                        [weakSelf showSavedPhotosAlbumForAction:action];
+                        [weakSelf showSavedPhotosAlbum];
                     }
                     else
                     {
@@ -184,7 +193,51 @@
                 
             case PHAuthorizationStatusAuthorized:
                 
-                [self showSavedPhotosAlbumForAction:action];
+                [self showSavedPhotosAlbum];
+                
+                break;
+                
+            default:
+                
+                break;
+        }
+    }
+    else if ([action.actionId isEqualToString:kPicturePickerActionId_PhotoLibraryList])
+    {
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        
+        switch (status)
+        {
+            case PHAuthorizationStatusRestricted:
+                
+            case PHAuthorizationStatusDenied:
+                
+                NSLog(@"");
+                
+                break;
+                
+            case PHAuthorizationStatusNotDetermined:
+            {
+                __weak typeof(self) weakSelf = self;
+                
+                [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                    
+                    if (status == PHAuthorizationStatusAuthorized)
+                    {
+                        [weakSelf showPictureList];
+                    }
+                    else
+                    {
+                        NSLog(@"");
+                    }
+                }];
+                
+                break;
+            }
+                
+            case PHAuthorizationStatusAuthorized:
+                
+                [self showPictureList];
                 
                 break;
                 
@@ -195,7 +248,15 @@
     }
 }
 
-- (void)showPhotoLibraryForAction:(UBPicturePickerAction *)action
+- (void)finishWithError:(NSError *)error pickedImages:(NSArray<UBPicturePickerPickedImage *> *)images
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(picturePickerActionSheetScene:didFinishWithError:pickedImages:)])
+    {
+        [self.delegate picturePickerActionSheetScene:self didFinishWithError:error pickedImages:images];
+    }
+}
+
+- (void)showPhotoLibrary
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
     {
@@ -203,7 +264,7 @@
         
         pickerController.delegate = self;
         
-        pickerController.allowsEditing = action.imageEditable;
+        pickerController.allowsEditing = YES;
         
         pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         
@@ -217,7 +278,7 @@
     }
 }
 
-- (void)showCameraForAction:(UBPicturePickerAction *)action
+- (void)showCamera
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
@@ -225,7 +286,7 @@
         
         pickerController.delegate = self;
         
-        pickerController.allowsEditing = action.imageEditable;
+        pickerController.allowsEditing = YES;
         
         pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         
@@ -239,7 +300,7 @@
     }
 }
 
-- (void)showSavedPhotosAlbumForAction:(UBPicturePickerAction *)action
+- (void)showSavedPhotosAlbum
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum])
     {
@@ -247,7 +308,7 @@
         
         pickerController.delegate = self;
         
-        pickerController.allowsEditing = action.imageEditable;
+        pickerController.allowsEditing = YES;
         
         pickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         
@@ -261,18 +322,34 @@
     }
 }
 
+- (void)showPictureList
+{
+    UBListingPicturePickerViewController *pickerController = [[UBListingPicturePickerViewController alloc] initWithNibName:NSStringFromClass([UBListingPicturePickerViewController class]) bundle:nil];
+    
+    pickerController.delegate = self;
+    
+    pickerController.enableRemoteImages = YES;
+    
+    pickerController.allowsMultipleSelection = YES;
+    
+    [self.navigationController.topViewController presentViewController:pickerController animated:YES completion:nil];
+    
+    self.pickerController = pickerController;
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    UBPicturePickerPickedImage *pickedImage = [[UBPicturePickerPickedImage alloc] init];
+    
+    pickedImage.image = [info objectForKey:UIImagePickerControllerEditedImage];
+    
     __weak typeof(self) weakSelf = self;
     
     [picker.presentingViewController dismissViewControllerAnimated:YES completion:^{
         
         weakSelf.pickerController = nil;
         
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(picturePickerActionSheetScene:didFinishWithSelectedImage:error:)])
-        {
-            [weakSelf.delegate picturePickerActionSheetScene:weakSelf didFinishWithSelectedImage:[info objectForKey:UIImagePickerControllerEditedImage] error:nil];
-        }
+        [weakSelf finishWithError:nil pickedImages:[NSArray arrayWithObject:pickedImage]];
     }];
 }
 
@@ -284,10 +361,30 @@
         
         weakSelf.pickerController = nil;
         
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(picturePickerActionSheetScene:didFinishWithSelectedImage:error:)])
-        {
-            [weakSelf.delegate picturePickerActionSheetScene:weakSelf didFinishWithSelectedImage:nil error:nil];
-        }
+        [weakSelf finishWithError:nil pickedImages:nil];
+    }];
+}
+
+- (void)listingPicturePickerViewController:(UBListingPicturePickerViewController *)controller didFinishWithPickedImages:(NSArray<UIImage *> *)images
+{
+    NSMutableArray<UBPicturePickerPickedImage *> *pickedImages = [[NSMutableArray alloc] init];
+    
+    for (UIImage *image in images)
+    {
+        UBPicturePickerPickedImage *pickedImage = [[UBPicturePickerPickedImage alloc] init];
+        
+        pickedImage.image = image;
+        
+        [pickedImages addObject:pickedImage];
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [controller.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        
+        weakSelf.pickerController = nil;
+        
+        [weakSelf finishWithError:nil pickedImages:pickedImages];
     }];
 }
 
@@ -296,7 +393,7 @@
 
 @implementation UBPicturePickerAction
 
-+ (UBPicturePickerAction *)actionWithId:(NSString *)actionId title:(NSString *)title imageEditable:(BOOL)imageEditable
++ (UBPicturePickerAction *)actionWithId:(NSString *)actionId title:(NSString *)title
 {
     UBPicturePickerAction *action = [[UBPicturePickerAction alloc] init];
     
@@ -304,16 +401,23 @@
     
     action.title = title ? title : @"";
     
-    action.imageEditable = imageEditable;
-    
     return action;
 }
 
 @end
 
 
+@implementation UBPicturePickerPickedImage
+
+@end
+
+
+NSString * const kPicturePickerActionId_Cancel = @"cancel";
+
 NSString * const kPicturePickerActionId_PhotoLibrary = @"photoLibrary";
 
 NSString * const kPicturePickerActionId_Camera = @"camera";
 
 NSString * const kPicturePickerActionId_SavedPhotosAlbum = @"savedPhotosAlbum";
+
+NSString * const kPicturePickerActionId_PhotoLibraryList = @"photoLibraryList";

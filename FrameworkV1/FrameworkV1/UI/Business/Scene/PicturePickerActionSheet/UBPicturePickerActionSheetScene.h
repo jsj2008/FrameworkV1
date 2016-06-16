@@ -8,7 +8,7 @@
 
 #import "UFScene.h"
 
-@class UBPicturePickerAction;
+@class UBPicturePickerAction, UBPicturePickerPickedImage;
 
 @protocol UBPicturePickerActionSheetSceneDelegate;
 
@@ -53,10 +53,10 @@
 /*!
  * @brief 场景结束
  * @param scene 场景
- * @param image 被选中的图片
  * @param error 错误
+ * @param images 被选中的图片
  */
-- (void)picturePickerActionSheetScene:(UBPicturePickerActionSheetScene *)scene didFinishWithSelectedImage:(UIImage *)image error:(NSError *)error;
+- (void)picturePickerActionSheetScene:(UBPicturePickerActionSheetScene *)scene didFinishWithError:(NSError *)error pickedImages:(NSArray<UBPicturePickerPickedImage *> *)images;
 
 @end
 
@@ -84,17 +84,31 @@
 @property (nonatomic, copy) NSString *title;
 
 /*!
- * @brief 是否允许编辑图片
- */
-@property (nonatomic) BOOL imageEditable;
-
-/*!
  * @brief 对象生成
  * @param actionId ID
  * @param title 在actionSheet中显示的标题
- * @param editable 是否允许编辑图片
  */
-+ (UBPicturePickerAction *)actionWithId:(NSString *)actionId title:(NSString *)title imageEditable:(BOOL)imageEditable;
++ (UBPicturePickerAction *)actionWithId:(NSString *)actionId title:(NSString *)title;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UBPicturePickerPickedImage
+ 
+    @abstract
+        被选中的图片
+ 
+ *********************************************************/
+
+@interface UBPicturePickerPickedImage : NSObject
+
+/*!
+ * @brief 图片数据
+ */
+@property (nonatomic) UIImage *image;
 
 @end
 
@@ -110,16 +124,26 @@
  *********************************************************/
 
 /*!
- * @brief 从本地图库选择图片
+ * @brief 取消选择
+ */
+extern NSString * const kPicturePickerActionId_Cancel;
+
+/*!
+ * @brief 从本地图库选择图片（单选）
  */
 extern NSString * const kPicturePickerActionId_PhotoLibrary;
 
 /*!
- * @brief 拍照选择图片
+ * @brief 拍照选择图片（单选）
  */
 extern NSString * const kPicturePickerActionId_Camera;
 
 /*!
- * @brief 从相册选择图片
+ * @brief 从相册选择图片（单选）
  */
 extern NSString * const kPicturePickerActionId_SavedPhotosAlbum;
+
+/*!
+ * @brief 从本地图库的所有图片列表选择图片（多选）
+ */
+extern NSString * const kPicturePickerActionId_PhotoLibraryList;
