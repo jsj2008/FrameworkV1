@@ -159,9 +159,7 @@ static NSString * kCellIdentifier = @"cell";
 {
     UBListingPictureCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
     
-    cell.enableRemoteData = self.enableRemoteImages;
-    
-    cell.picture = [self.pictures objectAtIndex:indexPath.item];
+    [cell setPicture:[self.pictures objectAtIndex:indexPath.item] enableRemoteData:self.enableRemoteImages];
     
     return cell;
 }

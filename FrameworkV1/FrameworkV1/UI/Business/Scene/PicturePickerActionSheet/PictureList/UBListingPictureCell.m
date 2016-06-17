@@ -28,9 +28,11 @@
     [[PHImageManager defaultManager] cancelImageRequest:self.requestId];
 }
 
-- (void)setPicture:(PHAsset *)picture
+- (void)setPicture:(PHAsset *)picture enableRemoteData:(BOOL)enableRemoteData
 {
     _picture = picture;
+    
+    _enableRemoteData = enableRemoteData;
     
     __weak typeof(self) weakSelf = self;
     
