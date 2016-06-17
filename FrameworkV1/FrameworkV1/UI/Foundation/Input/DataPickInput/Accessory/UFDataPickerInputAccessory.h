@@ -1,5 +1,5 @@
 //
-//  UFDataPickInputAccessory.h
+//  UFDataPickerInputAccessory.h
 //  FrameworkV1
 //
 //  Created by ww on 16/5/17.
@@ -11,26 +11,26 @@
 /*********************************************************
  
     @protocol
-        UFDataPickInputAccessoryDelegate
+        UFDataPickerInputAccessoryDelegate
  
     @abstract
         数据选择输入器附件的代理协议
  
  *********************************************************/
 
-@protocol UFDataPickInputAccessoryDelegate <NSObject>
+@protocol UFDataPickerInputAccessoryDelegate <NSObject>
 
 /*!
  * @brief 已确认
  * @param accessory 附件对象
  */
-- (void)dataPickInputAccessoryDidConfirm:(id<UFDataPickInputAccessoryDelegate>)accessory;
+- (void)dataPickerInputAccessoryDidConfirm:(id<UFDataPickerInputAccessoryDelegate>)accessory;
 
 /*!
  * @brief 已取消
  * @param accessory 附件对象
  */
-- (void)dataPickInputAccessoryDidCancel:(id<UFDataPickInputAccessoryDelegate>)accessory;
+- (void)dataPickerInputAccessoryDidCancel:(id<UFDataPickerInputAccessoryDelegate>)accessory;
 
 @end
 
@@ -38,18 +38,18 @@
 /*********************************************************
  
     @protocol
-        UFDataPickInputAccessory
+        UFDataPickerInputAccessory
  
     @abstract
         数据选择输入器附件协议
  
  *********************************************************/
 
-@protocol UFDataPickInputAccessory <NSObject>
+@protocol UFDataPickerInputAccessory <NSObject>
 
 /*!
  * @brief 附件代理对象
  */
-@property (nonatomic, weak) id<UFDataPickInputAccessoryDelegate> dataPickInputAccessoryDelegate;
+@property (nonatomic, weak) id<UFDataPickerInputAccessoryDelegate> dataPickerInputAccessoryDelegate;
 
 @end

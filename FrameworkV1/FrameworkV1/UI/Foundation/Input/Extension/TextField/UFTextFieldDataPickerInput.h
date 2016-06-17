@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UFDataPickerSource.h"
-#import "UFDataPickInputAccessory.h"
+#import "UFDataPickerInputAccessory.h"
 
 @protocol UFTextFieldDataPickerInputDelegate;
 
@@ -32,7 +32,7 @@
  * @param inputAccessoryView 附件视图，将作为textField的附件视图使用
  * @result 初始化对象
  */
-- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickerSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView;
+- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickerSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickerInputAccessory> *)inputAccessoryView;
 
 /*!
  * @brief 文本输入框
@@ -47,7 +47,7 @@
 /*!
  * @brief 附件视图
  */
-@property (nonatomic, readonly) UIView<UFDataPickInputAccessory> *inputAccessoryView;
+@property (nonatomic, readonly) UIView<UFDataPickerInputAccessory> *inputAccessoryView;
 
 /*!
  * @brief 协议代理

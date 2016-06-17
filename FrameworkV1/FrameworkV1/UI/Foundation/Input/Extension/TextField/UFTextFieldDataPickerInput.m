@@ -15,7 +15,7 @@
     
     UFDataPickerSource *_dataPickSource;
     
-    UIView<UFDataPickInputAccessory> *_inputAccessoryView;
+    UIView<UFDataPickerInputAccessory> *_inputAccessoryView;
 }
 
 @property (nonatomic) UFDataPickerInput *input;
@@ -40,7 +40,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickerSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView
+- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickerSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickerInputAccessory> *)inputAccessoryView
 {
     if (self = [super init])
     {

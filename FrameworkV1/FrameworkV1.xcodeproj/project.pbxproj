@@ -343,7 +343,7 @@
 		D40860261CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskFreePool+SharedInstance.m"; sourceTree = "<group>"; };
 		D408602C1CD9A79A005FC3D7 /* StorageUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageUnit.h; sourceTree = "<group>"; };
 		D408602D1CD9A79A005FC3D7 /* StorageUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageUnit.m; sourceTree = "<group>"; };
-		D40C3C951CEB1EBD002FF33A /* UFDataPickInputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickInputAccessory.h; sourceTree = "<group>"; };
+		D40C3C951CEB1EBD002FF33A /* UFDataPickerInputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerInputAccessory.h; sourceTree = "<group>"; };
 		D40D99E41CE42D460034F713 /* RemoteRequestURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteRequestURLManager.h; sourceTree = "<group>"; };
 		D40D99E51CE42D460034F713 /* RemoteRequestURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteRequestURLManager.m; sourceTree = "<group>"; };
 		D40EEA8F1CD2FC0A00E646C9 /* DispatchableTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchableTask.h; sourceTree = "<group>"; };
@@ -1278,7 +1278,7 @@
 		D40C3C941CEB1E8D002FF33A /* Accessory */ = {
 			isa = PBXGroup;
 			children = (
-				D40C3C951CEB1EBD002FF33A /* UFDataPickInputAccessory.h */,
+				D40C3C951CEB1EBD002FF33A /* UFDataPickerInputAccessory.h */,
 			);
 			path = Accessory;
 			sourceTree = "<group>";

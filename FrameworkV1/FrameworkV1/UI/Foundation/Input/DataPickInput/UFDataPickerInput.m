@@ -8,11 +8,11 @@
 
 #import "UFDataPickerInput.h"
 
-@interface UFDataPickerInput () <UFDataPickInputAccessoryDelegate>
+@interface UFDataPickerInput () <UFDataPickerInputAccessoryDelegate>
 {
     UFDataPicker *_dataPicker;
     
-    id<UFDataPickInputAccessory> _accessory;
+    id<UFDataPickerInputAccessory> _accessory;
 }
 
 @end
@@ -24,7 +24,7 @@
 
 @synthesize accessory = _accessory;
 
-- (instancetype)initWithDataPicker:(UFDataPicker *)dataPicker accessory:(id<UFDataPickInputAccessory>)accessory
+- (instancetype)initWithDataPicker:(UFDataPicker *)dataPicker accessory:(id<UFDataPickerInputAccessory>)accessory
 {
     if (self = [super init])
     {
@@ -32,7 +32,7 @@
         
         _accessory = accessory;
         
-        _accessory.dataPickInputAccessoryDelegate = self;
+        _accessory.dataPickerInputAccessoryDelegate = self;
     }
     
     return self;
@@ -43,7 +43,7 @@
     [self.dataPicker setIndexes:indexes animated:animated];
 }
 
-- (void)dataPickInputAccessoryDidConfirm:(id)accessory
+- (void)dataPickerInputAccessoryDidConfirm:(id)accessory
 {    
     if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickerInput:didSelectIndexes:)])
     {
@@ -51,7 +51,7 @@
     }
 }
 
-- (void)dataPickInputAccessoryDidCancel:(id)accessory
+- (void)dataPickerInputAccessoryDidCancel:(id)accessory
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickerInputDidCancel:)])
     {
