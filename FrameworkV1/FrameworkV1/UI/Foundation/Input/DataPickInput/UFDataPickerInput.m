@@ -1,14 +1,14 @@
 //
-//  UFDataPickInputer.m
+//  UFDataPickerInput.m
 //  Test
 //
 //  Created by ww on 16/3/8.
 //  Copyright © 2016年 ww. All rights reserved.
 //
 
-#import "UFDataPickInputer.h"
+#import "UFDataPickerInput.h"
 
-@interface UFDataPickInputer () <UFDataPickInputAccessoryDelegate>
+@interface UFDataPickerInput () <UFDataPickInputAccessoryDelegate>
 {
     UFDataPicker *_dataPicker;
     
@@ -18,7 +18,7 @@
 @end
 
 
-@implementation UFDataPickInputer
+@implementation UFDataPickerInput
 
 @synthesize dataPicker = _dataPicker;
 
@@ -45,17 +45,17 @@
 
 - (void)dataPickInputAccessoryDidConfirm:(id)accessory
 {    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickInputer:didSelectIndexes:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickerInput:didSelectIndexes:)])
     {
-        [self.delegate dataPickInputer:self didSelectIndexes:[self.dataPicker currentIndexes]];
+        [self.delegate dataPickerInput:self didSelectIndexes:[self.dataPicker currentIndexes]];
     }
 }
 
 - (void)dataPickInputAccessoryDidCancel:(id)accessory
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickInputerDidCancel:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickerInputDidCancel:)])
     {
-        [self.delegate dataPickInputerDidCancel:self];
+        [self.delegate dataPickerInputDidCancel:self];
     }
 }
 

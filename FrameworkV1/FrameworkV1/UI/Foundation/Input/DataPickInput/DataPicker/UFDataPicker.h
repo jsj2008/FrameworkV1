@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UFDataPickSource.h"
+#import "UFDataPickerSource.h"
 
 /*********************************************************
  
@@ -26,12 +26,12 @@
  * @param dataSource 指数据源
  * @result 初始化对象
  */
-- (instancetype)initWithDataSource:(UFDataPickSource *)dataSource;
+- (instancetype)initWithDataSource:(UFDataPickerSource *)dataSource;
 
 /*!
  * @brief 数据源
  */
-@property (nonatomic, readonly) UFDataPickSource *dataSource;
+@property (nonatomic, readonly) UFDataPickerSource *dataSource;
 
 /*!
  * @brief 选择视图

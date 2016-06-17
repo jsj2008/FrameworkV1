@@ -1,5 +1,5 @@
 //
-//  UFDataPickInputer.h
+//  UFDataPickerInput.h
 //  Test
 //
 //  Created by ww on 16/3/8.
@@ -10,20 +10,20 @@
 #import "UFDataPicker.h"
 #import "UFDataPickInputAccessory.h"
 
-@protocol UFDataPickInputerDelegate;
+@protocol UFDataPickerInputDelegate;
 
 
 /*********************************************************
  
     @class
-        UFDataPickInputer
+        UFDataPickerInput
  
     @abstract
         数据选择输入器
  
  *********************************************************/
 
-@interface UFDataPickInputer : NSObject
+@interface UFDataPickerInput : NSObject
 
 /*!
  * @brief 初始化
@@ -46,7 +46,7 @@
 /*!
  * @brief 协议代理
  */
-@property (nonatomic, weak) id<UFDataPickInputerDelegate> delegate;
+@property (nonatomic, weak) id<UFDataPickerInputDelegate> delegate;
 
 /*!
  * @brief 按行索引设置数据
@@ -62,28 +62,28 @@
 /*********************************************************
  
     @protocol
-        UFDataPickInputerDelegate
+        UFDataPickerInputDelegate
  
     @abstract
         数据选择输入器的代理协议
  
  *********************************************************/
 
-@protocol UFDataPickInputerDelegate <NSObject>
+@protocol UFDataPickerInputDelegate <NSObject>
 
 /*!
  * @brief 已选择行索引
- * @param inputer 输入器
+ * @param input 输入器
  * @param indexes 行索引
  * @discussion 当输入工具栏选择确认后发送本通知
  */
-- (void)dataPickInputer:(UFDataPickInputer *)inputer didSelectIndexes:(NSArray<NSNumber *> *)indexes;
+- (void)dataPickerInput:(UFDataPickerInput *)input didSelectIndexes:(NSArray<NSNumber *> *)indexes;
 
 /*!
  * @brief 已取消
- * @param inputer 输入器
+ * @param input 输入器
  * @discussion 当输入工具栏选择取消后发送本通知
  */
-- (void)dataPickInputerDidCancel:(UFDataPickInputer *)inputer;
+- (void)dataPickerInputDidCancel:(UFDataPickerInput *)input;
 
 @end

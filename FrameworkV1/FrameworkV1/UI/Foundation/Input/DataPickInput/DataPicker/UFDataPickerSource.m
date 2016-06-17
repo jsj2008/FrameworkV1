@@ -1,14 +1,14 @@
 //
-//  UFDataPickSource.m
+//  UFDataPickerSource.m
 //  Test
 //
 //  Created by ww on 16/3/7.
 //  Copyright © 2016年 ww. All rights reserved.
 //
 
-#import "UFDataPickSource.h"
+#import "UFDataPickerSource.h"
 
-@implementation UFDataPickSource
+@implementation UFDataPickerSource
 
 - (NSInteger)numberOfComponents
 {
@@ -33,7 +33,7 @@
 @end
 
 
-@implementation UFDataPickDictionarySource
+@implementation UFDataPickerDictionarySource
 
 - (NSInteger)numberOfComponents
 {
@@ -50,9 +50,9 @@
     {
         NSInteger index = 0;
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickSource:selectedRowInComponent:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickerSource:selectedRowInComponent:)])
         {
-            index = [self.delegate dataPickSource:self selectedRowInComponent:i];
+            index = [self.delegate dataPickerSource:self selectedRowInComponent:i];
         }
         
         NSArray *array = [[data allValues] firstObject];
@@ -89,9 +89,9 @@
     {
         NSInteger index = 0;
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickSource:selectedRowInComponent:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(dataPickerSource:selectedRowInComponent:)])
         {
-            index = [self.delegate dataPickSource:self selectedRowInComponent:i];
+            index = [self.delegate dataPickerSource:self selectedRowInComponent:i];
         }
         
         NSArray *array = [[data allValues] firstObject];

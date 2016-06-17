@@ -8,9 +8,9 @@
 
 #import "UFDataPicker.h"
 
-@interface UFDataPicker () <UFDataPickSourceDelegate>
+@interface UFDataPicker () <UFDataPickerSourceDelegate>
 {
-    UFDataPickSource *_dataSource;
+    UFDataPickerSource *_dataSource;
     
     UIPickerView *_pickerView;
 }
@@ -24,7 +24,7 @@
 
 @synthesize pickerView = _pickerView;
 
-- (instancetype)initWithDataSource:(UFDataPickSource *)dataSource
+- (instancetype)initWithDataSource:(UFDataPickerSource *)dataSource
 {
     if (self = [super init])
     {
@@ -65,7 +65,7 @@
     }
 }
 
-- (NSInteger)dataPickSource:(UFDataPickSource *)source selectedRowInComponent:(NSInteger)component
+- (NSInteger)dataPickerSource:(UFDataPickerSource *)source selectedRowInComponent:(NSInteger)component
 {
     return [self.pickerView selectedRowInComponent:component];
 }

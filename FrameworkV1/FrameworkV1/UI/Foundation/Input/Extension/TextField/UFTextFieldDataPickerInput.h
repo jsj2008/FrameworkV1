@@ -1,5 +1,5 @@
 //
-//  UFTextFieldDataPickInputer.h
+//  UFTextFieldDataPickerInput.h
 //  Test
 //
 //  Created by ww on 16/3/8.
@@ -7,32 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UFDataPickSource.h"
+#import "UFDataPickerSource.h"
 #import "UFDataPickInputAccessory.h"
 
-@protocol UFTextFieldDataPickInputerDelegate;
+@protocol UFTextFieldDataPickerInputDelegate;
 
 
 /*********************************************************
  
     @class
-        UFTextFieldDataPickInputer
+        UFTextFieldDataPickerInput
  
     @abstract
         TextField数据选择输入器
  
  *********************************************************/
 
-@interface UFTextFieldDataPickInputer : NSObject
+@interface UFTextFieldDataPickerInput : NSObject
 
 /*!
  * @brief 初始化
  * @param textField 文本输入框
- * @param dataPickSouce 数据源
- * @param inputAccessoryView 附件视图
+ * @param dataPickSouce 数据源，将根据数据源生成一个pickerView作为textField的输入器
+ * @param inputAccessoryView 附件视图，将作为textField的附件视图使用
  * @result 初始化对象
  */
-- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView;
+- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickerSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView;
 
 /*!
  * @brief 文本输入框
@@ -42,7 +42,7 @@
 /*!
  * @brief 数据源
  */
-@property (nonatomic, readonly) UFDataPickSource *dataPickSource;
+@property (nonatomic, readonly) UFDataPickerSource *dataPickSource;
 
 /*!
  * @brief 附件视图
@@ -52,7 +52,7 @@
 /*!
  * @brief 协议代理
  */
-@property (nonatomic, weak) id<UFTextFieldDataPickInputerDelegate> delegate;
+@property (nonatomic, weak) id<UFTextFieldDataPickerInputDelegate> delegate;
 
 /*!
  * @brief 按行索引设置数据
@@ -75,14 +75,14 @@
 /*********************************************************
  
     @class
-        UFTextFieldDataPickInputerDelegate
+        UFTextFieldDataPickerInputDelegate
  
     @abstract
         TextField数据选择输入器的代理协议
  
  *********************************************************/
 
-@protocol UFTextFieldDataPickInputerDelegate <NSObject>
+@protocol UFTextFieldDataPickerInputDelegate <NSObject>
 
 /*!
  * @brief 已选择行索引
@@ -90,13 +90,13 @@
  * @param indexes 行索引
  * @discussion 当输入工具栏选择确认后发送本通知
  */
-- (void)textFieldDataPickInputer:(UFTextFieldDataPickInputer *)inputer didSelectIndexes:(NSArray<NSNumber *> *)indexes;
+- (void)textFieldDataPickerInput:(UFTextFieldDataPickerInput *)input didSelectIndexes:(NSArray<NSNumber *> *)indexes;
 
 /*!
  * @brief 已取消
  * @param inputer 输入器
  * @discussion 当输入工具栏选择取消后发送本通知
  */
-- (void)textFieldDataPickInputerDidCancel:(UFTextFieldDataPickInputer *)inputer;
+- (void)textFieldDataPickerInputDidCancel:(UFTextFieldDataPickerInput *)input;
 
 @end

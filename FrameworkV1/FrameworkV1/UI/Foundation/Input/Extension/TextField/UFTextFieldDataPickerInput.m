@@ -1,24 +1,24 @@
 //
-//  UFTextFieldDataPickInputer.m
+//  UFTextFieldDataPickerInput.m
 //  Test
 //
 //  Created by ww on 16/3/8.
 //  Copyright © 2016年 ww. All rights reserved.
 //
 
-#import "UFTextFieldDataPickInputer.h"
-#import "UFDataPickInputer.h"
+#import "UFTextFieldDataPickerInput.h"
+#import "UFDataPickerInput.h"
 
-@interface UFTextFieldDataPickInputer () <UFDataPickInputerDelegate>
+@interface UFTextFieldDataPickerInput () <UFDataPickerInputDelegate>
 {
     UITextField *_textField;
     
-    UFDataPickSource *_dataPickSource;
+    UFDataPickerSource *_dataPickSource;
     
     UIView<UFDataPickInputAccessory> *_inputAccessoryView;
 }
 
-@property (nonatomic) UFDataPickInputer *inputer;
+@property (nonatomic) UFDataPickerInput *input;
 
 @property (nonatomic) NSArray *originalIndexes;
 
@@ -27,7 +27,7 @@
 @end
 
 
-@implementation UFTextFieldDataPickInputer
+@implementation UFTextFieldDataPickerInput
 
 @synthesize textField = _textField;
 
@@ -40,7 +40,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView
+- (instancetype)initWithTextField:(UITextField *)textField dataPickSouce:(UFDataPickerSource *)dataPickSouce inputAccessoryView:(UIView<UFDataPickInputAccessory> *)inputAccessoryView
 {
     if (self = [super init])
     {
@@ -52,9 +52,9 @@
                 
         UFDataPicker *picker = [[UFDataPicker alloc] initWithDataSource:dataPickSouce];
         
-        self.inputer = [[UFDataPickInputer alloc] initWithDataPicker:picker accessory:inputAccessoryView];
+        self.input = [[UFDataPickerInput alloc] initWithDataPicker:picker accessory:inputAccessoryView];
         
-        self.inputer.delegate = self;
+        self.input.delegate = self;
         
         textField.inputView = picker.pickerView;
         
@@ -68,7 +68,7 @@
 
 - (void)setIndexes:(NSArray *)indexes animated:(BOOL)animated
 {
-    [self.inputer setIndexes:indexes animated:animated];
+    [self.input setIndexes:indexes animated:animated];
 }
 
 - (NSArray *)titlesAtIndexes:(NSArray *)indexes
@@ -76,25 +76,25 @@
     return [self.dataPickSource titlesAtIndexes:indexes];
 }
 
-- (void)dataPickInputer:(UFDataPickInputer *)inputer didSelectIndexes:(NSArray *)indexes
+- (void)dataPickerInput:(UFDataPickerInput *)input didSelectIndexes:(NSArray<NSNumber *> *)indexes
 {
     [self.textField endEditing:YES];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldDataPickInputer:didSelectIndexes:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldDataPickerInput:didSelectIndexes:)])
     {
-        [self.delegate textFieldDataPickInputer:self didSelectIndexes:indexes];
+        [self.delegate textFieldDataPickerInput:self didSelectIndexes:indexes];
     }
 }
 
-- (void)dataPickInputerDidCancel:(UFDataPickInputer *)inputer
+- (void)dataPickerInputDidCancel:(UFDataPickerInput *)input
 {
     [self.textField endEditing:YES];
     
-    [self.inputer setIndexes:self.originalIndexes animated:YES];
+    [self.input setIndexes:self.originalIndexes animated:YES];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldDataPickInputerDidCancel:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldDataPickerInputDidCancel:)])
     {
-        [self.delegate textFieldDataPickInputerDidCancel:self];
+        [self.delegate textFieldDataPickerInputDidCancel:self];
     }
 }
 
@@ -102,7 +102,7 @@
 {
     if ([self.textField isFirstResponder])
     {
-        self.originalIndexes = [self.inputer.dataPicker currentIndexes];
+        self.originalIndexes = [self.input.dataPicker currentIndexes];
     }
 }
 

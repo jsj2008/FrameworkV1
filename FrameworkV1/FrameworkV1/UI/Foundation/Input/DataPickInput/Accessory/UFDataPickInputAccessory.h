@@ -24,13 +24,13 @@
  * @brief 已确认
  * @param accessory 附件对象
  */
-- (void)dataPickInputAccessoryDidConfirm:(id)accessory;
+- (void)dataPickInputAccessoryDidConfirm:(id<UFDataPickInputAccessoryDelegate>)accessory;
 
 /*!
  * @brief 已取消
  * @param accessory 附件对象
  */
-- (void)dataPickInputAccessoryDidCancel:(id)accessory;
+- (void)dataPickInputAccessoryDidCancel:(id<UFDataPickInputAccessoryDelegate>)accessory;
 
 @end
 

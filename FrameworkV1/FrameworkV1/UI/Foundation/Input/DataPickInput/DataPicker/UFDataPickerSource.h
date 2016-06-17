@@ -1,5 +1,5 @@
 //
-//  UFDataPickSource.h
+//  UFDataPickerSource.h
 //  Test
 //
 //  Created by ww on 16/3/7.
@@ -8,25 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UFDataPickSourceDelegate;
+@protocol UFDataPickerSourceDelegate;
 
 
 /*********************************************************
  
     @class
-        UFDataPickSource
+        UFDataPickerSource
  
     @abstract
         数据选择器的数据源
  
  *********************************************************/
 
-@interface UFDataPickSource : NSObject
+@interface UFDataPickerSource : NSObject
 
 /*!
  * @brief 协议代理
  */
-@property (nonatomic, weak) id<UFDataPickSourceDelegate> delegate;
+@property (nonatomic, weak) id<UFDataPickerSourceDelegate> delegate;
 
 /*!
  * @brief 列数
@@ -62,14 +62,14 @@
 /*********************************************************
  
     @class
-        UFDataPickSourceDelegate
+        UFDataPickerSourceDelegate
  
     @abstract
         数据选择器的数据源的代理协议
  
  *********************************************************/
 
-@protocol UFDataPickSourceDelegate <NSObject>
+@protocol UFDataPickerSourceDelegate <NSObject>
 
 /*!
  * @brief 指定列已被选择的行
@@ -77,7 +77,7 @@
  * @param component 指定列
  * @result 指定列已被选择的行
  */
-- (NSInteger)dataPickSource:(UFDataPickSource *)source selectedRowInComponent:(NSInteger)component;
+- (NSInteger)dataPickerSource:(UFDataPickerSource *)source selectedRowInComponent:(NSInteger)component;
 
 @end
 
@@ -85,14 +85,14 @@
 /*********************************************************
  
     @class
-        UFDataPickDictionarySource
+        UFDataPickerDictionarySource
  
     @abstract
         数据选择器的字典型数据源
  
  *********************************************************/
 
-@interface UFDataPickDictionarySource : UFDataPickSource
+@interface UFDataPickerDictionarySource : UFDataPickerSource
 
 /*!
  * @brief 数据字典
