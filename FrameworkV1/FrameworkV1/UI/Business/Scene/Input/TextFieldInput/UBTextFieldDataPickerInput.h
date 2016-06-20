@@ -49,6 +49,7 @@
  * @brief 已选择索引行
  * @param indexes 索引，nil表征没有选择（取消操作等）
  * @discussion 当输入工具栏选择确认后发送本通知，在此处理数据输入后的逻辑
+ * @discussion 此方法默认不执行任何操作，子类可重写本方法实现自定义的功能
  */
 - (void)didInputIndexes:(NSArray<NSNumber *> *)indexes;
 

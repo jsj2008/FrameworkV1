@@ -23,6 +23,7 @@
 /*!
  * @brief 已输入文本
  * @discussion 在此处理文本输入后的逻辑
+ * @discussion 此方法默认不执行任何操作，子类可重写本方法实现自定义的功能
  */
 - (void)didInputText:(NSString *)text;
 
