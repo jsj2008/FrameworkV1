@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol UFDataPickerInputAccessory;
+
+
 /*********************************************************
  
     @protocol
@@ -24,13 +27,13 @@
  * @brief 已确认
  * @param accessory 附件对象
  */
-- (void)dataPickerInputAccessoryDidConfirm:(id<UFDataPickerInputAccessoryDelegate>)accessory;
+- (void)dataPickerInputAccessoryDidConfirm:(id<UFDataPickerInputAccessory>)accessory;
 
 /*!
  * @brief 已取消
  * @param accessory 附件对象
  */
-- (void)dataPickerInputAccessoryDidCancel:(id<UFDataPickerInputAccessoryDelegate>)accessory;
+- (void)dataPickerInputAccessoryDidCancel:(id<UFDataPickerInputAccessory>)accessory;
 
 @end
 

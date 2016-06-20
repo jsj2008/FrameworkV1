@@ -96,8 +96,9 @@
 
 /*!
  * @brief 数据字典
+ * @discussion 字典的value数组由字符串或字典组成
  */
-@property (nonatomic) NSDictionary<NSString *, id> *data;
+@property (nonatomic) NSDictionary<NSString *, NSArray *> *data;
 
 /*!
  * @brief 列数

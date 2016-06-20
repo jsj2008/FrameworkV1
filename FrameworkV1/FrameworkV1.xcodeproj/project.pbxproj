@@ -122,6 +122,17 @@
 		D427D8AC1CE03CE5003BB907 /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8AA1CE03CE5003BB907 /* UFTextViewPlaceHolder.m */; };
 		D427D8B21CE03EA6003BB907 /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D427D8B11CE03EA6003BB907 /* UIImageView+URL.m */; };
 		D435CE201D114094001BC5A9 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D435CE1E1D114094001BC5A9 /* Photos.framework */; };
+		D4602CB11D17CDD80060E658 /* UFDataPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CA81D17CDD80060E658 /* UFDataPicker.m */; };
+		D4602CB21D17CDD80060E658 /* UFDataPickerSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CAA1D17CDD80060E658 /* UFDataPickerSource.m */; };
+		D4602CB31D17CDD80060E658 /* UFDataPickerInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CAC1D17CDD80060E658 /* UFDataPickerInput.m */; };
+		D4602CB41D17CDD80060E658 /* UFTextFieldDataPickerInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CB01D17CDD80060E658 /* UFTextFieldDataPickerInput.m */; };
+		D4602CC51D17CE360060E658 /* UBAgeRangeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CB91D17CE360060E658 /* UBAgeRangeInput.m */; };
+		D4602CC61D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CBB1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.m */; };
+		D4602CC71D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4602CBC1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.xib */; };
+		D4602CC81D17CE360060E658 /* UBTextFieldDataPickerInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CBE1D17CE360060E658 /* UBTextFieldDataPickerInput.m */; };
+		D4602CC91D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CC01D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.m */; };
+		D4602CCA1D17CE360060E658 /* UBTextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CC21D17CE360060E658 /* UBTextFieldInput.m */; };
+		D4602CCB1D17CE360060E658 /* UBTextFieldKeyboardInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4602CC41D17CE360060E658 /* UBTextFieldKeyboardInput.m */; };
 		D481A1AB1CDB536000826A73 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */; };
 		D48A30E71CE5B80F00AEF9B1 /* DBError.m in Sources */ = {isa = PBXBuildFile; fileRef = D48A30E61CE5B80F00AEF9B1 /* DBError.m */; };
 		D49B97101D0818FC0068B8E0 /* HTTPRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B96DA1D0818FC0068B8E0 /* HTTPRequestHeader.m */; };
@@ -175,10 +186,6 @@
 		D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D5B1CDC8CB000A89A4C /* UFEmojiSet.m */; };
 		D4F48D9E1CDC8CB000A89A4C /* UFEmojiText.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D5D1CDC8CB000A89A4C /* UFEmojiText.m */; };
 		D4F48D9F1CDC8CB000A89A4C /* UFEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D5F1CDC8CB000A89A4C /* UFEmojiView.m */; };
-		D4F48DA01CDC8CB000A89A4C /* UFDataPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D641CDC8CB000A89A4C /* UFDataPicker.m */; };
-		D4F48DA11CDC8CB000A89A4C /* UFDataPickerSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D661CDC8CB000A89A4C /* UFDataPickerSource.m */; };
-		D4F48DA21CDC8CB000A89A4C /* UFDataPickerInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D681CDC8CB000A89A4C /* UFDataPickerInput.m */; };
-		D4F48DA31CDC8CB000A89A4C /* UFTextFieldDataPickerInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D6C1CDC8CB000A89A4C /* UFTextFieldDataPickerInput.m */; };
 		D4F48DA51CDC8CB000A89A4C /* UFKeyboardAdjuster.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D731CDC8CB000A89A4C /* UFKeyboardAdjuster.m */; };
 		D4F48DA61CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D751CDC8CB000A89A4C /* UFKeyboardAdjustPoint.m */; };
 		D4F48DA71CDC8CB000A89A4C /* UIView+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F48D771CDC8CB000A89A4C /* UIView+KeyboardAdjust.m */; };
@@ -343,7 +350,6 @@
 		D40860261CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTaskFreePool+SharedInstance.m"; sourceTree = "<group>"; };
 		D408602C1CD9A79A005FC3D7 /* StorageUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageUnit.h; sourceTree = "<group>"; };
 		D408602D1CD9A79A005FC3D7 /* StorageUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageUnit.m; sourceTree = "<group>"; };
-		D40C3C951CEB1EBD002FF33A /* UFDataPickerInputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerInputAccessory.h; sourceTree = "<group>"; };
 		D40D99E41CE42D460034F713 /* RemoteRequestURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteRequestURLManager.h; sourceTree = "<group>"; };
 		D40D99E51CE42D460034F713 /* RemoteRequestURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteRequestURLManager.m; sourceTree = "<group>"; };
 		D40EEA8F1CD2FC0A00E646C9 /* DispatchableTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchableTask.h; sourceTree = "<group>"; };
@@ -420,6 +426,28 @@
 		D427D8B01CE03EA6003BB907 /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
 		D427D8B11CE03EA6003BB907 /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
 		D435CE1E1D114094001BC5A9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		D4602CA51D17CDD80060E658 /* UFDataPickerInputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerInputAccessory.h; sourceTree = "<group>"; };
+		D4602CA71D17CDD80060E658 /* UFDataPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPicker.h; sourceTree = "<group>"; };
+		D4602CA81D17CDD80060E658 /* UFDataPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPicker.m; sourceTree = "<group>"; };
+		D4602CA91D17CDD80060E658 /* UFDataPickerSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerSource.h; sourceTree = "<group>"; };
+		D4602CAA1D17CDD80060E658 /* UFDataPickerSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPickerSource.m; sourceTree = "<group>"; };
+		D4602CAB1D17CDD80060E658 /* UFDataPickerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerInput.h; sourceTree = "<group>"; };
+		D4602CAC1D17CDD80060E658 /* UFDataPickerInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPickerInput.m; sourceTree = "<group>"; };
+		D4602CAF1D17CDD80060E658 /* UFTextFieldDataPickerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextFieldDataPickerInput.h; sourceTree = "<group>"; };
+		D4602CB01D17CDD80060E658 /* UFTextFieldDataPickerInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextFieldDataPickerInput.m; sourceTree = "<group>"; };
+		D4602CB81D17CE360060E658 /* UBAgeRangeInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBAgeRangeInput.h; sourceTree = "<group>"; };
+		D4602CB91D17CE360060E658 /* UBAgeRangeInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBAgeRangeInput.m; sourceTree = "<group>"; };
+		D4602CBA1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBDefaultTextFieldDataPickerInputToolBar.h; sourceTree = "<group>"; };
+		D4602CBB1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBDefaultTextFieldDataPickerInputToolBar.m; sourceTree = "<group>"; };
+		D4602CBC1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBDefaultTextFieldDataPickerInputToolBar.xib; sourceTree = "<group>"; };
+		D4602CBD1D17CE360060E658 /* UBTextFieldDataPickerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldDataPickerInput.h; sourceTree = "<group>"; };
+		D4602CBE1D17CE360060E658 /* UBTextFieldDataPickerInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldDataPickerInput.m; sourceTree = "<group>"; };
+		D4602CBF1D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldDataPickerInputToolBar.h; sourceTree = "<group>"; };
+		D4602CC01D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldDataPickerInputToolBar.m; sourceTree = "<group>"; };
+		D4602CC11D17CE360060E658 /* UBTextFieldInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInput.h; sourceTree = "<group>"; };
+		D4602CC21D17CE360060E658 /* UBTextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInput.m; sourceTree = "<group>"; };
+		D4602CC31D17CE360060E658 /* UBTextFieldKeyboardInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldKeyboardInput.h; sourceTree = "<group>"; };
+		D4602CC41D17CE360060E658 /* UBTextFieldKeyboardInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldKeyboardInput.m; sourceTree = "<group>"; };
 		D481A1A91CDB536000826A73 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D481A1AA1CDB536000826A73 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D48A30E51CE5B80F00AEF9B1 /* DBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBError.h; sourceTree = "<group>"; };
@@ -522,14 +550,6 @@
 		D4F48D5D1CDC8CB000A89A4C /* UFEmojiText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiText.m; sourceTree = "<group>"; };
 		D4F48D5E1CDC8CB000A89A4C /* UFEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiView.h; sourceTree = "<group>"; };
 		D4F48D5F1CDC8CB000A89A4C /* UFEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiView.m; sourceTree = "<group>"; };
-		D4F48D631CDC8CB000A89A4C /* UFDataPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPicker.h; sourceTree = "<group>"; };
-		D4F48D641CDC8CB000A89A4C /* UFDataPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPicker.m; sourceTree = "<group>"; };
-		D4F48D651CDC8CB000A89A4C /* UFDataPickerSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerSource.h; sourceTree = "<group>"; };
-		D4F48D661CDC8CB000A89A4C /* UFDataPickerSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPickerSource.m; sourceTree = "<group>"; };
-		D4F48D671CDC8CB000A89A4C /* UFDataPickerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDataPickerInput.h; sourceTree = "<group>"; };
-		D4F48D681CDC8CB000A89A4C /* UFDataPickerInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDataPickerInput.m; sourceTree = "<group>"; };
-		D4F48D6B1CDC8CB000A89A4C /* UFTextFieldDataPickerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextFieldDataPickerInput.h; sourceTree = "<group>"; };
-		D4F48D6C1CDC8CB000A89A4C /* UFTextFieldDataPickerInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextFieldDataPickerInput.m; sourceTree = "<group>"; };
 		D4F48D721CDC8CB000A89A4C /* UFKeyboardAdjuster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFKeyboardAdjuster.h; sourceTree = "<group>"; };
 		D4F48D731CDC8CB000A89A4C /* UFKeyboardAdjuster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFKeyboardAdjuster.m; sourceTree = "<group>"; };
 		D4F48D741CDC8CB000A89A4C /* UFKeyboardAdjustPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFKeyboardAdjustPoint.h; sourceTree = "<group>"; };
@@ -1275,14 +1295,6 @@
 			path = StorageUnit;
 			sourceTree = "<group>";
 		};
-		D40C3C941CEB1E8D002FF33A /* Accessory */ = {
-			isa = PBXGroup;
-			children = (
-				D40C3C951CEB1EBD002FF33A /* UFDataPickerInputAccessory.h */,
-			);
-			path = Accessory;
-			sourceTree = "<group>";
-		};
 		D40D99DE1CE42D460034F713 /* RemoteRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1559,10 +1571,94 @@
 			isa = PBXGroup;
 			children = (
 				D40208F41CE303C900F00082 /* Main */,
+				D4602CB51D17CE0D0060E658 /* Input */,
 				D41C84BF1D10036E0086EE79 /* PictureBrowse */,
 				D49B97261D081D360068B8E0 /* PicturePickerActionSheet */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		D4602CA31D17CDD80060E658 /* DataPickInput */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CAB1D17CDD80060E658 /* UFDataPickerInput.h */,
+				D4602CAC1D17CDD80060E658 /* UFDataPickerInput.m */,
+				D4602CA61D17CDD80060E658 /* DataPicker */,
+				D4602CA41D17CDD80060E658 /* Accessory */,
+			);
+			path = DataPickInput;
+			sourceTree = "<group>";
+		};
+		D4602CA41D17CDD80060E658 /* Accessory */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CA51D17CDD80060E658 /* UFDataPickerInputAccessory.h */,
+			);
+			path = Accessory;
+			sourceTree = "<group>";
+		};
+		D4602CA61D17CDD80060E658 /* DataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CA71D17CDD80060E658 /* UFDataPicker.h */,
+				D4602CA81D17CDD80060E658 /* UFDataPicker.m */,
+				D4602CA91D17CDD80060E658 /* UFDataPickerSource.h */,
+				D4602CAA1D17CDD80060E658 /* UFDataPickerSource.m */,
+			);
+			path = DataPicker;
+			sourceTree = "<group>";
+		};
+		D4602CAD1D17CDD80060E658 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CAE1D17CDD80060E658 /* TextField */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4602CAE1D17CDD80060E658 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CAF1D17CDD80060E658 /* UFTextFieldDataPickerInput.h */,
+				D4602CB01D17CDD80060E658 /* UFTextFieldDataPickerInput.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		D4602CB51D17CE0D0060E658 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CB61D17CE360060E658 /* TextFieldInput */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		D4602CB61D17CE360060E658 /* TextFieldInput */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CC11D17CE360060E658 /* UBTextFieldInput.h */,
+				D4602CC21D17CE360060E658 /* UBTextFieldInput.m */,
+				D4602CC31D17CE360060E658 /* UBTextFieldKeyboardInput.h */,
+				D4602CC41D17CE360060E658 /* UBTextFieldKeyboardInput.m */,
+				D4602CBD1D17CE360060E658 /* UBTextFieldDataPickerInput.h */,
+				D4602CBE1D17CE360060E658 /* UBTextFieldDataPickerInput.m */,
+				D4602CBF1D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.h */,
+				D4602CC01D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.m */,
+				D4602CB71D17CE360060E658 /* demo */,
+			);
+			path = TextFieldInput;
+			sourceTree = "<group>";
+		};
+		D4602CB71D17CE360060E658 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				D4602CB81D17CE360060E658 /* UBAgeRangeInput.h */,
+				D4602CB91D17CE360060E658 /* UBAgeRangeInput.m */,
+				D4602CBA1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.h */,
+				D4602CBB1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.m */,
+				D4602CBC1D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.xib */,
+			);
+			path = demo;
 			sourceTree = "<group>";
 		};
 		D481A19E1CDB4D1F00826A73 /* Business */ = {
@@ -2003,49 +2099,10 @@
 		D4F48D601CDC8CB000A89A4C /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				D4F48D611CDC8CB000A89A4C /* DataPickInput */,
-				D4F48D691CDC8CB000A89A4C /* Extension */,
+				D4602CA31D17CDD80060E658 /* DataPickInput */,
+				D4602CAD1D17CDD80060E658 /* Extension */,
 			);
 			path = Input;
-			sourceTree = "<group>";
-		};
-		D4F48D611CDC8CB000A89A4C /* DataPickInput */ = {
-			isa = PBXGroup;
-			children = (
-				D4F48D671CDC8CB000A89A4C /* UFDataPickerInput.h */,
-				D4F48D681CDC8CB000A89A4C /* UFDataPickerInput.m */,
-				D4F48D621CDC8CB000A89A4C /* DataPicker */,
-				D40C3C941CEB1E8D002FF33A /* Accessory */,
-			);
-			path = DataPickInput;
-			sourceTree = "<group>";
-		};
-		D4F48D621CDC8CB000A89A4C /* DataPicker */ = {
-			isa = PBXGroup;
-			children = (
-				D4F48D631CDC8CB000A89A4C /* UFDataPicker.h */,
-				D4F48D641CDC8CB000A89A4C /* UFDataPicker.m */,
-				D4F48D651CDC8CB000A89A4C /* UFDataPickerSource.h */,
-				D4F48D661CDC8CB000A89A4C /* UFDataPickerSource.m */,
-			);
-			path = DataPicker;
-			sourceTree = "<group>";
-		};
-		D4F48D691CDC8CB000A89A4C /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D4F48D6A1CDC8CB000A89A4C /* TextField */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		D4F48D6A1CDC8CB000A89A4C /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				D4F48D6B1CDC8CB000A89A4C /* UFTextFieldDataPickerInput.h */,
-				D4F48D6C1CDC8CB000A89A4C /* UFTextFieldDataPickerInput.m */,
-			);
-			path = TextField;
 			sourceTree = "<group>";
 		};
 		D4F48D701CDC8CB000A89A4C /* Keyboard */ = {
@@ -2191,6 +2248,7 @@
 				D41C84D61D10036E0086EE79 /* UBPictureBrowseViewController.xib in Resources */,
 				D4E3EA3D1CC8A52B00A7987E /* LaunchScreen.storyboard in Resources */,
 				D41454081D12A166004DCBA6 /* UBListingPictureCell.xib in Resources */,
+				D4602CC71D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.xib in Resources */,
 				D414540A1D12A166004DCBA6 /* UBListingPicturePickerViewController.xib in Resources */,
 				D4E3EA3A1CC8A52B00A7987E /* Assets.xcassets in Resources */,
 			);
@@ -2205,10 +2263,8 @@
 			files = (
 				D49B97151D0818FC0068B8E0 /* HTTPMessageError.m in Sources */,
 				D4E3EA351CC8A52B00A7987E /* ViewController.m in Sources */,
-				D4F48DA11CDC8CB000A89A4C /* UFDataPickerSource.m in Sources */,
 				D40208F71CE303DF00F00082 /* UBMainScene.m in Sources */,
 				D40860301CD9A79A005FC3D7 /* NSDateFormatter+SharedInstance.m in Sources */,
-				D4F48DA21CDC8CB000A89A4C /* UFDataPickerInput.m in Sources */,
 				D401EB0B1CD2017F00599E0B /* IPRouteTraceCenter.m in Sources */,
 				D401EB041CD2017F00599E0B /* NotificationObserver.m in Sources */,
 				D4F48D441CDC8A8800A89A4C /* UIImageView+Gif.m in Sources */,
@@ -2227,6 +2283,7 @@
 				D401EB121CD2017F00599E0B /* XMLSpriteSerialize.m in Sources */,
 				D40EEAA81CD2FC0A00E646C9 /* DispatchableTask.m in Sources */,
 				D49B97111D0818FC0068B8E0 /* HTTPResponseHeader.m in Sources */,
+				D4602CCB1D17CE360060E658 /* UBTextFieldKeyboardInput.m in Sources */,
 				D40EEAAC1CD2FC0A00E646C9 /* SPTaskDispatcher.m in Sources */,
 				D401EAE21CD2017F00599E0B /* DBMachine.m in Sources */,
 				D410D8CF1CED92F9004861B7 /* HTTPRequestBody+MIME.m in Sources */,
@@ -2236,6 +2293,7 @@
 				D4F48DAA1CDC8CB000A89A4C /* UITextView+KeyboardAdjust.m in Sources */,
 				D401EAE51CD2017F00599E0B /* DBFormat.m in Sources */,
 				D4F48DA71CDC8CB000A89A4C /* UIView+KeyboardAdjust.m in Sources */,
+				D4602CC81D17CE360060E658 /* UBTextFieldDataPickerInput.m in Sources */,
 				D408603B1CD9A79A005FC3D7 /* SPTaskFreePool+SharedInstance.m in Sources */,
 				D40EEAB11CD2FC0A00E646C9 /* SPTaskQueue.m in Sources */,
 				D41454091D12A166004DCBA6 /* UBListingPicturePickerViewController.m in Sources */,
@@ -2247,6 +2305,7 @@
 				D4F48D2D1CDC488000A89A4C /* ImageManager.m in Sources */,
 				D408603D1CD9A79A005FC3D7 /* StorageUnit.m in Sources */,
 				D41C84D01D10036E0086EE79 /* UBPictureBrowseCell.m in Sources */,
+				D4602CB41D17CDD80060E658 /* UFTextFieldDataPickerInput.m in Sources */,
 				D401EB681CD214A600599E0B /* NSObject+ThreadOperation.m in Sources */,
 				D401EB011CD2017F00599E0B /* APPLog.m in Sources */,
 				D401EB021CD2017F00599E0B /* LogFileHandle.m in Sources */,
@@ -2278,6 +2337,7 @@
 				D49B97221D0818FC0068B8E0 /* TCPServerError.m in Sources */,
 				D41652A41D0581C100FE609D /* ZlibDecompressor.m in Sources */,
 				D410D8C91CED8E21004861B7 /* HTTPRequestBody.m in Sources */,
+				D4602CB21D17CDD80060E658 /* UFDataPickerSource.m in Sources */,
 				D40EEAAB1CD2FC0A00E646C9 /* SPTask.m in Sources */,
 				D407A5831CEC652C00BA1963 /* UFButtonWindow.m in Sources */,
 				D40860391CD9A79A005FC3D7 /* SPTaskDaemonPool+SharedInstance.m in Sources */,
@@ -2287,6 +2347,7 @@
 				D401EB0F1CD2017F00599E0B /* NSCoder+DataedEncoding.m in Sources */,
 				D40EEAAE1CD2FC0A00E646C9 /* SPTaskDaemonPool.m in Sources */,
 				D49B971A1D0818FC0068B8E0 /* HTTPResponseMessageHeaderSerializer.m in Sources */,
+				D4602CCA1D17CE360060E658 /* UBTextFieldInput.m in Sources */,
 				D4F48DA51CDC8CB000A89A4C /* UFKeyboardAdjuster.m in Sources */,
 				D401EAFB1CD2017F00599E0B /* HTTPSession.m in Sources */,
 				D410D8BF1CED6165004861B7 /* HTTPUploadRequestTask.m in Sources */,
@@ -2301,6 +2362,8 @@
 				D401EAF41CD2017F00599E0B /* HTTPDataConnection.m in Sources */,
 				D401EB441CD2026300599E0B /* EPubXML.m in Sources */,
 				D401EAFF1CD2017F00599E0B /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,
+				D4602CB31D17CDD80060E658 /* UFDataPickerInput.m in Sources */,
+				D4602CC51D17CE360060E658 /* UBAgeRangeInput.m in Sources */,
 				D4F48DAD1CDC8CB000A89A4C /* UIView+Loading.m in Sources */,
 				D41454071D12A166004DCBA6 /* UBListingPictureCell.m in Sources */,
 				D401EADF1CD2017F00599E0B /* DBDefine.m in Sources */,
@@ -2309,6 +2372,7 @@
 				D40EEAB01CD2FC0A00E646C9 /* SPTaskPool.m in Sources */,
 				D40EEAAD1CD2FC0A00E646C9 /* SPTaskBackgroundPool.m in Sources */,
 				D401EAE41CD2017F00599E0B /* DBTable.m in Sources */,
+				D4602CC91D17CE360060E658 /* UBTextFieldDataPickerInputToolBar.m in Sources */,
 				D401EB3E1CD2026300599E0B /* EpubBookLoadHandle.m in Sources */,
 				D401EAF01CD2017F00599E0B /* NSData+MD5.m in Sources */,
 				D4F48D9E1CDC8CB000A89A4C /* UFEmojiText.m in Sources */,
@@ -2331,12 +2395,12 @@
 				D401EAE31CD2017F00599E0B /* DBSQL.m in Sources */,
 				D4F48D951CDC8CB000A89A4C /* UFExtendedResponsiveSizeButton.m in Sources */,
 				D49B97231D0818FC0068B8E0 /* TCPServerIPAddress.m in Sources */,
+				D4602CB11D17CDD80060E658 /* UFDataPicker.m in Sources */,
 				D40860371CD9A79A005FC3D7 /* ServiceTask.m in Sources */,
 				D40860341CD9A79A005FC3D7 /* APPLog+SharedInstance.m in Sources */,
 				D401EAFC1CD2017F00599E0B /* NSURLSessionTask+Delegate.m in Sources */,
 				D401EB081CD2017F00599E0B /* NetworkReachability.m in Sources */,
 				D401EB3C1CD2026300599E0B /* EPubBookContainerHandle.m in Sources */,
-				D4F48DA31CDC8CB000A89A4C /* UFTextFieldDataPickerInput.m in Sources */,
 				D40860351CD9A79A005FC3D7 /* NetworkManager.m in Sources */,
 				D49B97121D0818FC0068B8E0 /* HTTPTrailer.m in Sources */,
 				D401EAF81CD2017F00599E0B /* HTTPConnectionInputStream.m in Sources */,
@@ -2352,7 +2416,6 @@
 				D4F452B91CE1DAF900AFCA08 /* UIScrollView+RefreshHeader.m in Sources */,
 				D4F48D9D1CDC8CB000A89A4C /* UFEmojiSet.m in Sources */,
 				D410D8D21CEDA11B004861B7 /* UBToastView+ToastType.m in Sources */,
-				D4F48DA01CDC8CB000A89A4C /* UFDataPicker.m in Sources */,
 				D410E18E1CFD3BE10028B482 /* SharedHTTPSessionManager.m in Sources */,
 				D40EEAAA1CD2FC0A00E646C9 /* BlockTask.m in Sources */,
 				D4F48DAC1CDC8CB000A89A4C /* UFViewLoadingUpdater.m in Sources */,
@@ -2368,6 +2431,7 @@
 				D401EAE61CD2017F00599E0B /* DBSQL_Extension.m in Sources */,
 				D49B97191D0818FC0068B8E0 /* HTTPRequestMessageParser.m in Sources */,
 				D401EAF51CD2017F00599E0B /* HTTPConnectionResumeStorage.m in Sources */,
+				D4602CC61D17CE360060E658 /* UBDefaultTextFieldDataPickerInputToolBar.m in Sources */,
 				D49B97141D0818FC0068B8E0 /* HTTPMessageBodySerializer.m in Sources */,
 				D49B97241D0818FC0068B8E0 /* TCPServerListener.m in Sources */,
 				D40EEACC1CD332EE00E646C9 /* IndexingFileStorage.m in Sources */,
