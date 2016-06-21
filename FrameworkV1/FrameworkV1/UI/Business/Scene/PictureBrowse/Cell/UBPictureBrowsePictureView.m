@@ -19,16 +19,6 @@
 
 @implementation UBPictureBrowsePictureLoadingView
 
-- (instancetype)init
-{
-    if (self = [super init])
-    {
-        [self customInit];
-    }
-    
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame])
@@ -265,16 +255,6 @@
 
 
 @implementation UBPictureBrowsePictureFailureView
-
-- (instancetype)init
-{
-    if (self = [super init])
-    {
-        [self customInit];
-    }
-    
-    return self;
-}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

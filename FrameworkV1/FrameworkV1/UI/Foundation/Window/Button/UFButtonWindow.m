@@ -31,6 +31,13 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self customInit];
+}
+
 - (void)customInit
 {
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];

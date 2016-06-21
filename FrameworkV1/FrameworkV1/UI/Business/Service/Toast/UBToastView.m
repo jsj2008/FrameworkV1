@@ -37,6 +37,13 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self customInit];
+}
+
 - (void)customInit
 {
     self.messageLabel = [[UILabel alloc] init];

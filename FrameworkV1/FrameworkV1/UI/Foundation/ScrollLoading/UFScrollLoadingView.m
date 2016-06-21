@@ -10,16 +10,6 @@
 
 @implementation UFScrollLoadingView
 
-- (instancetype)init
-{
-    if (self = [super init])
-    {
-        [self reset];
-    }
-    
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame])
