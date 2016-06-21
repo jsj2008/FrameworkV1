@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UBTextFieldInputDelegate;
+
 /*********************************************************
  
     @class
@@ -34,5 +36,31 @@
  * @brief 文本输入框
  */
 @property (nonatomic, readonly) UITextField *textField;
+
+/*!
+ * @brief 消息代理
+ */
+@property (nonatomic, weak) id<UBTextFieldInputDelegate> delegate;
+
+@end
+
+
+/*********************************************************
+ 
+    @protocol
+        UBTextFieldInputDelegate
+ 
+    @abstract
+        TextField数据输入器的消息协议
+ 
+ *********************************************************/
+
+@protocol UBTextFieldInputDelegate <NSObject>
+
+/*!
+ * @brief 输入器更新输入内容
+ * @param input 输入器
+ */
+- (void)textFieldInputDidUpdateInput:(UBTextFieldInput *)input;
 
 @end

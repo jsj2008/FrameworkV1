@@ -68,6 +68,11 @@
         _fromAge = [[indexes objectAtIndex:0] unsignedIntegerValue] + 15;
         
         _toAge = [[indexes objectAtIndex:1] unsignedIntegerValue] + _fromAge;
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldInputDidUpdateInput:)])
+        {
+            [self.delegate textFieldInputDidUpdateInput:self];
+        }
     }
     else
     {
