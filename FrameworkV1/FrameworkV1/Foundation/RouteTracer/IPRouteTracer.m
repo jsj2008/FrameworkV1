@@ -36,7 +36,7 @@
     {
         _destinationHost = [host copy];
         
-        _routeItems = [[NSMutableArray alloc] initWithCapacity:IPROUTETRACE_MAXTTLCOUNT];
+        _routeItems = [[NSMutableArray alloc] init];
     }
     
     return self;
