@@ -1310,7 +1310,6 @@
 		D409FD221D193783008C2686 /* TextFieldInput */ = {
 			isa = PBXGroup;
 			children = (
-				D409FD231D193783008C2686 /* demo */,
 				D409FD2C1D193783008C2686 /* UBTextFieldDataPickerInput.h */,
 				D409FD2D1D193783008C2686 /* UBTextFieldDataPickerInput.m */,
 				D409FD2E1D193783008C2686 /* UBTextFieldDataPickerInputToolBar.h */,
@@ -1319,6 +1318,7 @@
 				D409FD311D193783008C2686 /* UBTextFieldInput.m */,
 				D409FD321D193783008C2686 /* UBTextFieldKeyboardInput.h */,
 				D409FD331D193783008C2686 /* UBTextFieldKeyboardInput.m */,
+				D409FD231D193783008C2686 /* demo */,
 			);
 			path = TextFieldInput;
 			sourceTree = "<group>";
