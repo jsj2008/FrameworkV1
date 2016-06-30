@@ -7,7 +7,7 @@
 //
 
 #import "DBMachine.h"
-#import "DBLog.h"
+#import "DBError.h"
 
 @implementation DBMachine
 
@@ -29,30 +29,31 @@
     return self;
 }
 
-- (BOOL)start
+- (BOOL)startWithError:(NSError *__autoreleasing *)error
 {
     int code = sqlite3_open([_filePath UTF8String], &_db);
     
-    BOOL success = code == SQLITE_OK;
+    BOOL success = (code == SQLITE_OK);
     
     if (!success)
     {
-        [[DBLog sharedInstance] logStringWithFormat:@"DB open error: {Path = '%@'; SQLite3_Code = '%d'}", _filePath, code];
+        *error = [NSError DBErrorWithDB:_db];
     }
     
     return success;
 }
 
-- (BOOL)executeSQL:(NSString *)sql
+- (BOOL)executeSQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
-    BOOL success = NO;
     char *errorMsg;
     
-    success = (sqlite3_exec(_db, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK);
+    int code = sqlite3_exec(_db, [sql UTF8String], NULL, NULL, &errorMsg);
     
-    if (!success && errorMsg)
+    BOOL success = (code == SQLITE_OK);
+    
+    if (!success)
     {
-        [[DBLog sharedInstance] logStringWithFormat:@"DB execute error: {SQL = '%@'; Message = '%s'}", sql, errorMsg];
+        *error = [NSError DBErrorWithCode:code message:errorMsg ? [NSString stringWithUTF8String:errorMsg] : nil];
     }
     
     sqlite3_free(errorMsg);
@@ -60,7 +61,7 @@
     return success;
 }
 
-- (sqlite3_stmt *)preparedStatementForSQL:(NSString *)sql
+- (sqlite3_stmt *)preparedStatementForSQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
     sqlite3_stmt *statement = NULL;
     
@@ -68,38 +69,46 @@
     
     if (code != SQLITE_OK)
     {
-        [[DBLog sharedInstance] logStringWithFormat:@"DB prepare error: {SQL = '%@'; SQLite3_Code = '%d'}", sql, code];
+        *error = [NSError DBErrorWithDB:_db];
         
         sqlite3_finalize(statement);
+        
         statement = NULL;
     }
     
     return statement;
 }
 
-- (void)bindValue:(id)value byType:(DBValueType)type toPreparedStatement:(sqlite3_stmt *)statement inLocation:(int)location
+- (void)bindValue:(id)value byType:(DBValueType)type toPreparedStatement:(sqlite3_stmt *)statement inLocation:(int)location error:(NSError *__autoreleasing *)error
 {
     if (value && statement)
     {
+        int code = SQLITE_OK;
+        
         switch (type)
         {
             case DBValueType_Int:
             case DBValueType_LongLong:
-                sqlite3_bind_int64(statement, location, [(NSNumber *)value longLongValue]);
+                code = sqlite3_bind_int64(statement, location, [(NSNumber *)value longLongValue]);
                 break;
             case DBValueType_Double:
-                sqlite3_bind_double(statement, location, [(NSNumber *)value doubleValue]);
+                code = sqlite3_bind_double(statement, location, [(NSNumber *)value doubleValue]);
                 break;
             case DBValueType_Text:
-                sqlite3_bind_text(statement, location, [(NSString *)value UTF8String], -1, SQLITE_TRANSIENT);
+                code = sqlite3_bind_text(statement, location, [(NSString *)value UTF8String], -1, SQLITE_STATIC);
                 break;
             case DBValueType_Blob:
-                sqlite3_bind_blob(statement, location, [(NSData *)value bytes], (int)[(NSData *)value length], SQLITE_TRANSIENT);
+                code = sqlite3_bind_blob(statement, location, [(NSData *)value bytes], (int)[(NSData *)value length], SQLITE_STATIC);
                 break;
             case DBValueType_NULL:
-                sqlite3_bind_null(statement, location);
+                code = sqlite3_bind_null(statement, location);
             default:
                 break;
+        }
+        
+        if (code != SQLITE_OK)
+        {
+            *error = [NSError DBErrorWithDB:_db];
         }
     }
 }
@@ -148,34 +157,51 @@
     return sqlite3_data_count(statement);
 }
 
-- (int)stepStatement:(sqlite3_stmt *)statement
+- (int)stepStatement:(sqlite3_stmt *)statement error:(NSError *__autoreleasing *)error
 {
-    return sqlite3_step(statement);
+    int code = sqlite3_step(statement);
+    
+    if (code != SQLITE_OK && code != SQLITE_DONE)
+    {
+        *error = [NSError DBErrorWithDB:_db];
+    }
+    
+    return code;
 }
 
-- (void)resetStatement:(sqlite3_stmt *)statement
+- (void)resetStatement:(sqlite3_stmt *)statement error:(NSError *__autoreleasing *)error
 {
-    sqlite3_reset(statement);
+    int code = sqlite3_reset(statement);
+    
+    if (code != SQLITE_OK)
+    {
+        *error = [NSError DBErrorWithDB:_db];
+    }
 }
 
-- (void)finalizeStatement:(sqlite3_stmt *)statement
+- (void)finalizeStatement:(sqlite3_stmt *)statement error:(NSError *__autoreleasing *)error
 {
-    sqlite3_finalize(statement);
+    int code = sqlite3_finalize(statement);
+    
+    if (code != SQLITE_OK)
+    {
+        *error = [NSError DBErrorWithDB:_db];
+    }
 }
 
-- (BOOL)commitTransactionBlock:(void (^)(void))block
+- (BOOL)commitTransactionBlock:(void (^)(void))block error:(NSError *__autoreleasing *)error
 {
     BOOL success = YES;
     
-    if ([self executeSQL:@"begin transaction;"])
+    if ([self executeSQL:@"begin transaction;" error:error])
     {
         block();
         
-        if (![self executeSQL:@"commit transaction;"])
+        if (![self executeSQL:@"commit transaction;" error:error])
         {
             success = NO;
             
-            [self executeSQL:@"rollback transaction"];
+            [self executeSQL:@"rollback transaction" error:error];
         }
     }
     else

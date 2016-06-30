@@ -20,18 +20,6 @@
  */
 @property (nonatomic) LogFileHandle *fileHandle;
 
-/*!
- * @brief NSLog打印
- * @param string 打印字符串
- */
-- (void)NSLogString:(NSString *)string;
-
-/*!
- * @brief 文件打印
- * @param string 打印字符串
- */
-- (void)fileLogString:(NSString *)string;
-
 @end
 
 
@@ -43,9 +31,9 @@
     {
         _stop = YES;
         
-        self.defaultLevel = APPLogLevel_High;
+        self.enableNSLog = YES;
         
-        self.logFileDirectory = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Log"];
+        self.enableFileLog = YES;
     }
     
     return self;
@@ -85,53 +73,20 @@
     return [self.fileHandle currentAllLogPathes];
 }
 
-- (void)logString:(NSString *)string onLevel:(APPLogLevel)level
-{
-    if (_stop || ![string length])
-    {
-        return;
-    }
-    
-    switch (level)
-    {
-        case APPLogLevel_Low:
-        {
-            [self NSLogString:string];
-            
-            break;
-        }
-        case APPLogLevel_Middle:
-        {
-            [self fileLogString:string];
-            
-            break;
-        }
-        case APPLogLevel_High:
-        {
-            [self NSLogString:string];
-            
-            [self fileLogString:string];
-            
-            break;
-        }
-        default:
-            break;
-    }
-}
-
 - (void)logString:(NSString *)string
 {
-    [self logString:string onLevel:self.defaultLevel];
-}
-
-- (void)NSLogString:(NSString *)string
-{
-    NSLog(@"%@", string);
-}
-
-- (void)fileLogString:(NSString *)string
-{
-    [self.fileHandle writeString:string];
+    if (!_stop)
+    {
+        if (self.isNSLogEnabled)
+        {
+            NSLog(@"%@", string);
+        }
+        
+        if (self.isFileLogEnabled)
+        {
+            [self.fileHandle writeString:string];
+        }
+    }
 }
 
 @end

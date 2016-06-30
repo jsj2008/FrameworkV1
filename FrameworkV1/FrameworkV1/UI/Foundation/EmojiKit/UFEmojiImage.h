@@ -44,6 +44,22 @@
 + (UFEmojiImage *)emojiImageNamed:(NSString *)name;
 
 /*!
+ * @brief 根据数据块创建表情图片
+ * @discussion 创建的表情图片默认是不可更新的
+ * @param data 数据块
+ * @result 表情图片
+ */
++ (UFEmojiImage *)emojiImageWithData:(NSData *)data;
+
+/*!
+ * @brief 根据gif数据块创建表情图片
+ * @discussion 创建的表情图片默认是可更新的
+ * @param gifData gif数据块
+ * @result 表情图片
+ */
++ (UFEmojiImage *)emojiImageWithGifData:(NSData *)gifData;
+
+/*!
  * @brief 根据图片文件路径创建表情图片
  * @discussion 创建的表情图片默认是不可更新的
  * @param name 图片文件路径

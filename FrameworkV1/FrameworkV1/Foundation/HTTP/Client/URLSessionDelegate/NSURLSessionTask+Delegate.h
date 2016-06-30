@@ -137,7 +137,7 @@
 
 // downloadTask
 
-- (void)URLSessionDownloadTask:(NSURLSessionTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location;
+- (void)URLSessionDownloadTask:(NSURLSessionTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location error:(NSError *)error;
 
 - (void)URLSessionDownloadTask:(NSURLSessionTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite;
 

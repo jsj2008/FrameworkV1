@@ -16,6 +16,8 @@
 
 @property (nonatomic) UFTextViewPlaceHolder *unPlaceHolder;
 
+- (void)customInit;
+
 - (void)didReceiveTextViewTextDidBeginEditingNotification:(NSNotification *)notification;
 
 - (void)didReceiveTextViewTextDidEndEditingNotification:(NSNotification *)notification;
@@ -30,25 +32,32 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame])
+    {
+        [self customInit];
+    }
+    
+    return self;
+}
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    [self customInit];
+}
+
+- (void)customInit
+{
+    self.unPlaceHolder = [[UFTextViewPlaceHolder alloc] init];
     
     self.unPlaceHolder.text = super.text;
     
     self.unPlaceHolder.textColor = super.textColor;
     
     self.unPlaceHolder.font = super.font;
-}
-
-- (UFTextViewPlaceHolder *)unPlaceHolder
-{
-    if (!_unPlaceHolder)
-    {
-        _unPlaceHolder = [[UFTextViewPlaceHolder alloc] init];
-    }
-    
-    return _unPlaceHolder;
 }
 
 - (void)setPlaceHolder:(UFTextViewPlaceHolder *)placeHolder

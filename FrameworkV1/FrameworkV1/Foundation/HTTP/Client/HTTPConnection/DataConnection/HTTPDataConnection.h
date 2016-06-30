@@ -7,7 +7,6 @@
 //
 
 #import "HTTPConnection.h"
-#import "NSURLSessionTask+Delegate.h"
 
 @class HTTPDownloadConnection;
 
@@ -66,6 +65,8 @@
  */
 - (void)HTTPDataConnection:(HTTPDataConnection *)dataConnection didFinishWithError:(NSError *)error response:(NSHTTPURLResponse *)response data:(NSData *)data;
 
+@optional
+
 /*!
  * @brief 接收并配置响应
  * @param dataConnection 数据连接
@@ -80,8 +81,6 @@
  * @param downloadConnection 下载连接
  */
 - (void)HTTPDataConnection:(HTTPDataConnection *)dataConnection didBecomeDownloadConnection:(HTTPDownloadConnection *)downloadConnection;
-
-@optional
 
 /*!
  * @brief 缓存

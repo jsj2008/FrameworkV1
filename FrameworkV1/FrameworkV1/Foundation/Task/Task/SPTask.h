@@ -96,17 +96,9 @@ typedef enum
 
 /*!
  * @brief 消息通知
- * @discussion 内部调用notify:onThread:方法
- * @param notification 消息块
- * @see notify:onThread:
- */
-- (void)notify:(void (^)(void))notification;
-
-/*!
- * @brief 消息通知
  * @discussion 通知在指定线程发送
  * @param notification 消息块
- * @param thread 消息发送线程，若为nil，将直接执行消息块，否则将消息块放入指定线程的下一个runloop中执行
+ * @param thread 消息发送线程，将消息块放入指定线程的下一个runloop中执行，若为nil，使用当前线程
  */
 - (void)notify:(void (^)(void))notification onThread:(NSThread *)thread;
 

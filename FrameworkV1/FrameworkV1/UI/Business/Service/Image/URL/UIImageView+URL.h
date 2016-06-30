@@ -20,6 +20,9 @@
     @abstract
         UIImageView加载URL图片的扩展
  
+    @discussion
+        支持加载文件和HTTP图片
+ 
  *********************************************************/
 
 @interface UIImageView (URL)
@@ -75,7 +78,7 @@ typedef void(^UBImageViewURLLoadingProgressing)(NSURL *URL, long long loadedSize
 @interface UBImageViewURLLoadingConfiguration : NSObject
 
 /*!
- * @brief 图片URL
+ * @brief 图片URL，支持文件URL和HTTP类型URL
  */
 @property (nonatomic, copy) NSURL *URL;
 

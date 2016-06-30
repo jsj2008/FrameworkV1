@@ -8,7 +8,6 @@
 
 #import "DBHandle.h"
 #import "DBMachine.h"
-#import "DBLog.h"
 #import "DBSQL.h"
 
 /********************** DBHandle **********************/
@@ -35,7 +34,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create("DB handle", NULL);
     }
     
     return self;
@@ -45,7 +44,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"DB handle: %@", path] UTF8String], NULL);
         
         _machine = [[DBMachine alloc] initWithFile:path];
     }
@@ -53,13 +52,13 @@
     return self;
 }
 
-- (BOOL)start
+- (BOOL)startWithError:(NSError *__autoreleasing *)error
 {
     __block BOOL success = NO;
     
     dispatch_sync(_syncQueue, ^{
         
-        success = [_machine start];
+        success = [_machine startWithError:error];
         
         if (!success && _machine)
         {
@@ -70,7 +69,7 @@
     return success;
 }
 
-- (BOOL)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls
+- (BOOL)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls error:(NSError *__autoreleasing *)error
 {
     __block BOOL success = _machine ? YES : NO;
     
@@ -80,7 +79,7 @@
             
             if ([sqls count] == 1)
             {
-                success = [_machine executeSQL:[sqls objectAtIndex:0]];
+                success = [_machine executeSQL:[sqls objectAtIndex:0] error:error];
             }
             else
             {
@@ -88,9 +87,9 @@
                     
                     for (NSString *sql in sqls)
                     {
-                        success = [_machine executeSQL:sql] && success;
+                        success = [_machine executeSQL:sql error:error] && success;
                     }
-                }];
+                } error:error];
                 
                 success = success && commitSuccess;
             }
@@ -100,7 +99,7 @@
     return success;
 }
 
-- (BOOL)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records
+- (BOOL)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError *__autoreleasing *)error
 {
     __block BOOL success = _machine ? YES : NO;;
     
@@ -114,7 +113,7 @@
                 
                 sqlite3_stmt *statement = NULL;
                 
-                if ((statement = [_machine preparedStatementForSQL:unbindSQL]))
+                if ((statement = [_machine preparedStatementForSQL:unbindSQL error:error]))
                 {
                     for (NSDictionary *record in records)
                     {
@@ -122,23 +121,21 @@
                         {
                             DBTableField *field = [fields objectAtIndex:i];
                             
-                            [_machine bindValue:[record objectForKey:field.name] byType:field.type toPreparedStatement:statement inLocation:(i + 1)];
+                            [_machine bindValue:[record objectForKey:field.name] byType:field.type toPreparedStatement:statement inLocation:(i + 1) error:error];
                         }
                         
-                        int stepCode = [_machine stepStatement:statement];
+                        int stepCode = [_machine stepStatement:statement error:error];
                         
                         if (stepCode != SQLITE_DONE)
                         {
                             success = NO;
-                            
-                            [[DBLog sharedInstance] logStringWithFormat:@"DB step error: {SQL = '%@'; SQLite3_Code = %d}", unbindSQL, stepCode];
                         }
                         
-                        [_machine resetStatement:statement];
+                        [_machine resetStatement:statement error:error];
                     }
                 }
                 
-                [_machine finalizeStatement:statement];
+                [_machine finalizeStatement:statement error:error];
                 
                 return success;
             };
@@ -152,7 +149,8 @@
                 BOOL commitSuccess = [_machine commitTransactionBlock:^{
                     
                     success = exe(unbindSQL, fields, records) && success;
-                }];
+                    
+                } error:error];
                 
                 success = success && commitSuccess;
             }
@@ -162,7 +160,7 @@
     return success;
 }
 
-- (NSArray<NSDictionary<NSString *,id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql
+- (NSArray<NSDictionary<NSString *,id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
     NSMutableArray *records = [NSMutableArray array];
     
@@ -182,9 +180,9 @@
             
             sqlite3_stmt *statement = NULL;
             
-            if ((statement = [_machine preparedStatementForSQL:sql]))
+            if ((statement = [_machine preparedStatementForSQL:sql error:error]))
             {
-                while ([_machine stepStatement:statement] == SQLITE_ROW)
+                while ([_machine stepStatement:statement error:error] == SQLITE_ROW)
                 {
                     NSMutableDictionary *record = [NSMutableDictionary dictionary];
                     
@@ -211,14 +209,14 @@
                 }
             }
             
-            [_machine finalizeStatement:statement];
+            [_machine finalizeStatement:statement error:error];
         });
     }
     
     return [records count] ? records : nil;
 }
 
-- (int)selectRecordCountBySQL:(NSString *)sql
+- (int)selectRecordCountBySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
     __block int count = 0;
     
@@ -228,9 +226,9 @@
             
             sqlite3_stmt *statement = NULL;
             
-            if ((statement = [_machine preparedStatementForSQL:sql]))
+            if ((statement = [_machine preparedStatementForSQL:sql error:error]))
             {
-                while ([_machine stepStatement:statement] == SQLITE_ROW)
+                while ([_machine stepStatement:statement error:error] == SQLITE_ROW)
                 {
                     NSNumber *value = [_machine columnValueFromPreparedStatement:statement inLocation:0 inType:DBValueType_Int];
                     
@@ -240,7 +238,7 @@
                     }
                 }
                 
-                [_machine finalizeStatement:statement];
+                [_machine finalizeStatement:statement error:error];
             }
         });
     }

@@ -7,7 +7,6 @@
 //
 
 #import "NetworkReachability.h"
-#import <SystemConfiguration/SystemConfiguration.h>
 #import <netinet/in.h>
 
 #import <arpa/inet.h>
@@ -64,19 +63,11 @@ static void NetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetwo
     }
 }
 
-- (id)init
+- (instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef)reachabilityRef
 {
     if (self = [super init])
     {
-        struct sockaddr_in zeroAddress;
-        
-        bzero(&zeroAddress, sizeof(zeroAddress));
-        
-        zeroAddress.sin_len = sizeof(zeroAddress);
-        
-        zeroAddress.sin_family = AF_INET;
-        
-        _reachabilityRef = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)&zeroAddress);
+        _reachabilityRef = reachabilityRef;
         
         self.status = NetworkReachStatus_NotReachable;
         
@@ -159,6 +150,38 @@ static void NetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetwo
 	}
     
     return returnValue;
+}
+
+@end
+
+
+@implementation NetworkReachability (ReachabilityType)
+
++ (NetworkReachability *)reachabilityWithAddress:(const struct sockaddr *)hostAddress
+{
+    SCNetworkReachabilityRef ref = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, hostAddress);
+    
+    return ref ? [[NetworkReachability alloc] initWithReachabilityRef:ref] : nil;
+}
+
++ (NetworkReachability *)reachabilityWithHostName:(NSString *)hostName
+{
+    SCNetworkReachabilityRef ref = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, [hostName UTF8String]);
+    
+    return ref ? [[NetworkReachability alloc] initWithReachabilityRef:ref] : nil;
+}
+
++ (NetworkReachability *)reachabilityForInternetConnection
+{
+    struct sockaddr_in zeroAddress;
+    
+    bzero(&zeroAddress, sizeof(zeroAddress));
+    
+    zeroAddress.sin_len = sizeof(zeroAddress);
+    
+    zeroAddress.sin_family = AF_INET;
+    
+    return [NetworkReachability reachabilityWithAddress:(const struct sockaddr *)&zeroAddress];
 }
 
 @end

@@ -125,11 +125,11 @@
     }
 }
 
-- (void)URLSessionDownloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+- (void)URLSessionDownloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location error:(NSError *)error
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(HTTPDownloadConnection:didFinishDownloadingToURL:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(HTTPDownloadConnection:didFinishDownloadingToURL:error:)])
     {
-        [self.delegate HTTPDownloadConnection:self didFinishDownloadingToURL:location];
+        [self.delegate HTTPDownloadConnection:self didFinishDownloadingToURL:location error:error];
     }
 }
 

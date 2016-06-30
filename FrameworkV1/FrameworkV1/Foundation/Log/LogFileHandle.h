@@ -36,6 +36,11 @@
 - (id)initWithRootDirectory:(NSString *)rootDirectory;
 
 /*!
+ * @brief 文件根目录
+ */
+@property (nonatomic, copy, readonly) NSString *rootDirectory;
+
+/*!
  * @brief 写入日志字符串
  * @param string 日志字符串
  */

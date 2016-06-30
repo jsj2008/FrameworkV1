@@ -44,7 +44,7 @@
 {
     self.loadingView.hidden = NO;
     
-    // 为达到启动计数或替换了新的loadingView
+    // 未达到启动计数或替换了新的loadingView
     if (self.count <= 0 || !self.loadingView.isLoading)
     {
         [self.loadingView startLoading];
@@ -71,6 +71,8 @@
         [self.loadingView stopLoading];
         
         self.loadingView.hidden = YES;
+        
+        self.count = 0;
     }
 }
 

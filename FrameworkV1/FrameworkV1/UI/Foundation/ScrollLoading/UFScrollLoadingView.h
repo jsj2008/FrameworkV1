@@ -43,11 +43,10 @@ typedef NS_ENUM(NSUInteger, UFScrollLoadingViewStatus)
 @interface UFScrollLoadingView : UIView
 
 /*!
- * @brief 内容区域的大小
+ * @brief 加载时内容区域的高度
  * @discussion 内容区域是加载过程中的有效显示区域
- * @discussion 默认为frame宽，100高
  */
-@property (nonatomic) CGFloat contentHeight;
+@property (nonatomic) CGFloat loadingContentHeight;
 
 /*!
  * @brief 视图状态

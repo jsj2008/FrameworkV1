@@ -34,7 +34,7 @@
         
         self.fileManager = [[NSFileManager alloc] init];
         
-        self.syncQueue = dispatch_queue_create(NULL, NULL);
+        self.syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"IndexingFileStorage: %@", directory] UTF8String], NULL);
         
         BOOL isDirectory = NO;
         

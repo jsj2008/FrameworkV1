@@ -42,23 +42,26 @@
 
 /*!
  * @brief 启动。创建或打开数据库文件。若指定路径上的数据库文件不存在，将创建文件
+ * @param error 错误信息
  * @result 启动是否成功
  */
-- (BOOL)start;
+- (BOOL)startWithError:(NSError **)error;
 
 /*!
  * @brief 执行SQL语句
  * @param sql SQL语句
+ * @param error 错误信息
  * @result 执行是否成功
  */
-- (BOOL)executeSQL:(NSString *)sql;
+- (BOOL)executeSQL:(NSString *)sql error:(NSError **)error;
 
 /*!
  * @brief 准备statement
  * @param sql SQL语句
+ * @param error 错误信息
  * @result 准备好的statement。准备失败时返回NULL
  */
-- (sqlite3_stmt *)preparedStatementForSQL:(NSString *)sql;
+- (sqlite3_stmt *)preparedStatementForSQL:(NSString *)sql error:(NSError **)error;
 
 /*!
  * @brief 绑定数据到statement
@@ -66,8 +69,9 @@
  * @param type 类型
  * @param statement statement语句
  * @param location 绑定位置，从1开始
+ * @param error 错误信息
  */
-- (void)bindValue:(id)value byType:(DBValueType)type toPreparedStatement:(sqlite3_stmt *)statement inLocation:(int)location;
+- (void)bindValue:(id)value byType:(DBValueType)type toPreparedStatement:(sqlite3_stmt *)statement inLocation:(int)location error:(NSError **)error;
 
 /*!
  * @brief 从statement解绑数据
@@ -96,30 +100,34 @@
 /*!
  * @brief 单步执行statement
  * @param statement statement语句
+ * @param error 错误信息
  * @result 执行结果，SQLite状态码（SQLITE_OK等）
  */
-- (int)stepStatement:(sqlite3_stmt *)statement;
+- (int)stepStatement:(sqlite3_stmt *)statement error:(NSError **)error;
 
 /*!
  * @brief 重置statement
  * @param statement statement语句
+ * @param error 错误信息
  * @result 执行结果，SQLite状态码（SQLITE_OK等）
  */
-- (void)resetStatement:(sqlite3_stmt *)statement;
+- (void)resetStatement:(sqlite3_stmt *)statement error:(NSError **)error;
 
 /*!
  * @brief 清理statement
  * @param statement statement语句
+ * @param error 错误信息
  * @result 执行结果，SQLite状态码（SQLITE_OK等）
  */
-- (void)finalizeStatement:(sqlite3_stmt *)statement;
+- (void)finalizeStatement:(sqlite3_stmt *)statement error:(NSError **)error;
 
 // 手动提交事务
 /*!
  * @brief 手动提交事务
  * @param block 待执行得事务块
+ * @param error 错误信息
  * @result 执行是否成功，若失败，将自动执行回滚操作
  */
-- (BOOL)commitTransactionBlock:(void (^)(void))block;
+- (BOOL)commitTransactionBlock:(void (^)(void))block error:(NSError **)error;
 
 @end

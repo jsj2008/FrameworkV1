@@ -7,7 +7,6 @@
 //
 
 #import "HTTPConnection.h"
-#import "NSURLSessionTask+Delegate.h"
 #import "HTTPConnectionInputStream.h"
 
 @protocol HTTPUploadConnectionDelegate;
@@ -90,6 +89,8 @@
  * @param data 响应数据
  */
 - (void)HTTPUploadConnection:(HTTPUploadConnection *)uploadConnection didFinishWithError:(NSError *)error response:(NSHTTPURLResponse *)response data:(NSData *)data;
+
+@optional
 
 /*!
  * @brief 上传进度通知

@@ -40,40 +40,45 @@
 
 /*!
  * @brief 启动数据库
+ * @param error 错误信息
  * @result 启动是否成功
  */
-- (BOOL)start;
+- (BOOL)startWithError:(NSError **)error;
 
 /*!
  * @brief 更改数据库，执行SQL语句
  * @param sqls SQL语句
+ * @param error 错误信息
  * @result 执行是否成功，若失败，数据自动回滚
  */
-- (BOOL)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls;
+- (BOOL)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls error:(NSError **)error;
 
 /*!
  * @brief 更改数据库，执行SQL绑定语句
  * @param unbindSQL SQL语句
  * @param fields 绑定列
  * @param records 绑定数据
+ * @param error 错误信息
  * @result 执行是否成功，若失败，数据自动回滚
  */
-- (BOOL)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records;
+- (BOOL)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError **)error;
 
 // 查询数据库，执行SQL查询语句
 /*!
  * @brief 查询数据库，执行SQL查询语句
  * @param fields 绑定列
  * @param sql SQL语句
+ * @param error 错误信息
  * @result 查询到的数据，成员变量为字典，字典键为列名，字典值为数据
  */
-- (NSArray<NSDictionary<NSString *, id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql;
+- (NSArray<NSDictionary<NSString *, id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql error:(NSError **)error;
 
 /*!
  * @brief 查询数据库，执行数量查询语句
  * @param sql SQL语句
+ * @param error 错误信息
  * @result 查询到的数据纪录的数量
  */
-- (int)selectRecordCountBySQL:(NSString *)sql;
+- (int)selectRecordCountBySQL:(NSString *)sql error:(NSError **)error;
 
 @end

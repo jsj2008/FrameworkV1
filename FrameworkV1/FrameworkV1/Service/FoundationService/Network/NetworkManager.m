@@ -24,7 +24,7 @@
 {
     if (self = [super init])
     {
-        self.reachability = [[NetworkReachability alloc] init];
+        self.reachability = [NetworkReachability reachabilityForInternetConnection];
         
         __weak typeof(self) weakSelf = self;
         
@@ -52,6 +52,11 @@
     });
     
     return instance;
+}
+
+- (NetworkReachStatus)currentNetworkReachStatus
+{
+    return self.reachability.status;
 }
 
 - (void)addDelegate:(id<NetworkManagerDelegate>)delegate

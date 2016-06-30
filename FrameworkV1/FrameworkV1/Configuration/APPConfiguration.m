@@ -10,6 +10,28 @@
 
 @implementation APPConfiguration
 
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        self.appLogDirectory = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"APPLog"];
+        
+        self.imageDirectory = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"Image"];
+        
+        self.daemonTaskPoolCapacity = 5;
+        
+        self.daemonTaskPoolPersistentQueueCapacity = 2;
+        
+        self.freeTaskPoolCapacity = 20;
+        
+        self.backgroundTaskPoolCapacity = 10;
+        
+        self.defaultTaskQueueLoadingLimit = 20;
+    }
+    
+    return self;
+}
+
 + (APPConfiguration *)sharedInstance
 {
     static dispatch_once_t onceToken;
@@ -19,16 +41,6 @@
     dispatch_once(&onceToken, ^{
         
         instance = [[APPConfiguration alloc] init];
-        
-        instance.daemonPoolCapacity = 5;
-        
-        instance.daemonPoolPersistentQueueCapacity = 2;
-        
-        instance.freePoolCapacity = 20;
-        
-        instance.backgroundPoolCapacity = 10;
-        
-        instance.defaultQueueLoadingLimit = 20;
     });
     
     return instance;

@@ -25,6 +25,7 @@
 
 /*!
  * @brief 添加delegate
+ * @discussion 添加delegate的同时，将设置当前线程为delegate消息通知线程
  * @param delegate delegate对象
  */
 - (void)addDelegate:(id)delegate;
@@ -37,6 +38,7 @@
 
 /*!
  * @brief 操作delegate
+ * @discussion
  * @param operation delegate操作
  */
 - (void)operateDelegate:(void (^)(id delegate))operation;

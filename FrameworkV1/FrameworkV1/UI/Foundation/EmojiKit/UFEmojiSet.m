@@ -33,3 +33,28 @@
 }
 
 @end
+
+
+@implementation UFEmojiSet (Cache)
+
+- (void)cleanCache
+{
+    for (UFEmoji *emoji in [self.emojiDictionary allValues])
+    {
+        [emoji cleanCache];
+    }
+}
+
+- (NSUInteger)cacheSize
+{
+    NSUInteger size = 0;
+    
+    for (UFEmoji *emoji in [self.emojiDictionary allValues])
+    {
+        size += [emoji cacheSize];
+    }
+    
+    return size;
+}
+
+@end

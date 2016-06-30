@@ -35,16 +35,18 @@
 /*!
  * @brief 生成json根节点
  * @discussion 支持UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE编码，但除UTF－8外不保证一定能成功转换
+ * @param error 错误信息
  * @result json根节点
  */
-- (id)jsonRootNode;
+- (id)jsonRootNodeWithError:(NSError **)error;
 
 /*!
  * @brief 根据json根节点生成NSData对象
  * @param node json根节点
+ * @param error 错误信息
  * @result 生成的NSData对象，采用UTF－8编码
  */
-+ (NSData *)dataWithJsonRootNode:(id)node;
++ (NSData *)dataWithJsonRootNode:(id)node error:(NSError **)error;
 
 @end
 
@@ -68,16 +70,18 @@
 
 /*!
  * @brief 生成json根节点
+ * @param error 错误信息
  * @result json根节点
  */
-- (id)jsonRootNode;
+- (id)jsonRootNodeWithError:(NSError **)error;
 
 /*!
  * @brief 根据json根节点生成NSString对象
  * @param node json根节点
+ * @param error 错误信息
  * @result 生成的NSString对象
  */
-+ (NSString *)stringWithJsonRootNode:(id)node;
++ (NSString *)stringWithJsonRootNode:(id)node error:(NSError **)error;
 
 @end
 

@@ -28,4 +28,10 @@
  */
 - (NSString *)stringByDeletingBothPrefixAndSuffixMarks:(NSString *)mark;
 
+/*!
+ * @brief 全半角字节数，一个半角字符算一个字节，中文字符则算两个字节
+ * @result 字节数
+ */
+- (NSInteger)fullHalfWidthLengthOfBytes;
+
 @end

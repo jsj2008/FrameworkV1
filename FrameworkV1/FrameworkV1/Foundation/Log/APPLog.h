@@ -10,24 +10,6 @@
 
 /*********************************************************
  
-    @enum
-        APPLogLevel
- 
-    @abstract
-        日志等级
- 
- *********************************************************/
-
-typedef enum
-{
-    APPLogLevel_Low    = 1,  // 低级打印，NSLog打印
-    APPLogLevel_Middle = 2,  // 中级打印，文件打印
-    APPLogLevel_High   = 3   // 高级打印，同时NSLog和文件打印
-}APPLogLevel;
-
-
-/*********************************************************
- 
     @class
         APPLog
  
@@ -39,14 +21,19 @@ typedef enum
 @interface APPLog : NSObject
 
 /*!
- * @brief 默认日志等级，默认为APPLogLevel_High
- */
-@property (nonatomic) APPLogLevel defaultLevel;
-
-/*!
  * @brief log文件目录
  */
 @property (nonatomic, copy) NSString *logFileDirectory;
+
+/*!
+ * @brief 是否启用NSLog
+ */
+@property (nonatomic, getter=isNSLogEnabled) BOOL enableNSLog;
+
+/*!
+ * @brief 是否启用文件log
+ */
+@property (nonatomic, getter=isFileLogEnabled) BOOL enableFileLog;
 
 /*!
  * @brief 启动日志
@@ -81,13 +68,6 @@ typedef enum
  * @result 日志文件路径
  */
 - (NSArray *)currentAllLogPathes;
-
-/*!
- * @brief 指定日志等级打印日志
- * @param string 日志字符串
- * @param level 日志等级
- */
-- (void)logString:(NSString *)string onLevel:(APPLogLevel)level;
 
 /*!
  * @brief 按照默认日志等级打印日志

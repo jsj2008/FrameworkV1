@@ -37,20 +37,16 @@
     
     if (image)
     {
-        [self.imageView removeFromSuperview];
+        if (!self.imageView)
+        {
+            self.imageView = [[UIImageView alloc] init];
+            
+            [self addSubview:self.imageView];
+        }
         
-        self.imageView = [[UIImageView alloc] initWithImage:image];
+        self.imageView.image = image;
         
         self.imageView.bounds = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
-        
-        [self addSubview:self.imageView];
-        
-        __weak typeof(self) weakSelf = self;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            weakSelf.imageView.center = CGPointMake(weakSelf.frame.size.width / 2, weakSelf.frame.size.height / 2);
-        });
     }
     else
     {
@@ -100,6 +96,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    self.imageView.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     
     self.maskView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 }

@@ -28,6 +28,12 @@
  */
 @property (nonatomic, copy) NSURL *imageURL;
 
+/*!
+ * @brief 资源URL，下载完成后将文件转移到该URL位置
+ * @discussion 使用者需确保URL可用，路径中的目录已被正确创建
+ */
+@property (nonatomic, copy) NSURL *resourceURL;
+
 @end
 
 
@@ -49,7 +55,7 @@
  * @param error 错误信息
  * @param data 图片数据
  */
-- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
+- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error;
 
 /*!
  * @brief 图片下载进度

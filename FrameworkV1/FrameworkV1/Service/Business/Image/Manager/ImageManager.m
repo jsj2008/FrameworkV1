@@ -7,8 +7,7 @@
 //
 
 #import "ImageManager.h"
-#import "NSObject+Notify.h"
-#import "NotificationObservingSet.h"
+#import "NotificationObserver.h"
 #import "SPTaskDispatcher+Convenience.h"
 #import "ImageManagerDownloadTask.h"
 #import "ImageStorage.h"
@@ -63,7 +62,7 @@
     {
         self.downloadImageObservers = [[NSMutableDictionary alloc] init];
         
-        self.syncQueue = dispatch_queue_create(nil, nil);
+        self.syncQueue = dispatch_queue_create("ImageManager", nil);
         
         self.taskDispatcher = [SPTaskDispatcher taskDispatcherWithSharedPools];
     }
@@ -83,13 +82,18 @@
 
 - (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer
 {
+    if (!URL)
+    {
+        return;
+    }
+    
     dispatch_sync(self.syncQueue, ^{
         
         if ([URL isFileURL])
         {
             NSData *data = [NSData dataWithContentsOfURL:URL];
             
-            [self notify:^{
+            [self operate:^{
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                 {
@@ -104,7 +108,7 @@
             
             if (data)
             {
-                [self notify:^{
+                [self operate:^{
                     
                     if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                     {
@@ -122,6 +126,8 @@
                     ImageManagerDownloadTask *task = [[ImageManagerDownloadTask alloc] init];
                     
                     task.imageURL = URL;
+                    
+                    task.resourceURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[NSDate date].description]];
                                         
                     task.delegate = self;
                     
@@ -134,13 +140,15 @@
                     [self.downloadImageObservers setObject:set forKey:URL];
                 }
                 
+                NSString *index = [NSString stringWithFormat:@"%llx", (long long)observer];
+                
                 NotificationObserver *notificationObserver = [[NotificationObserver alloc] init];
                 
                 notificationObserver.observer = observer;
                 
                 notificationObserver.notifyThread = [NSThread currentThread];
                 
-                [set.observers addObject:notificationObserver];
+                [set.observerDictionary setObject:notificationObserver forKey:index];
             }
         }
     });
@@ -156,20 +164,12 @@
             
             if (set)
             {
-                NSMutableArray *toRemoveObjects = [[NSMutableArray alloc] init];
+                NSString *index = [NSString stringWithFormat:@"%llx", (long long)observer];
                 
-                for (NotificationObserver *notificationObserver in set.observers)
-                {
-                    if ([notificationObserver.observer isEqual:observer])
-                    {
-                        [toRemoveObjects addObject:notificationObserver];
-                    }
-                }
-                
-                [set.observers removeObjectsInArray:toRemoveObjects];
+                [set.observerDictionary removeObjectForKey:index];
             }
             
-            if (![set.observers count])
+            if ([[set.observerDictionary allValues] count] == 0)
             {
                 [self.taskDispatcher cancelTask:set.object];
                 
@@ -194,21 +194,23 @@
     }
 }
 
-- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageManagerDownloadTask:(ImageManagerDownloadTask *)task didFinishWithError:(NSError *)error
 {
     if (task.imageURL)
     {
         dispatch_sync(self.syncQueue, ^{
             
-            [[ImageStorage sharedInstance] saveImageByURL:task.imageURL withData:data];
+            [[ImageStorage sharedInstance] saveImageByURL:task.imageURL withDataPath:[task.resourceURL path]];
+            
+            NSData *imageData = task.resourceURL ? [NSData dataWithContentsOfURL:task.resourceURL] : nil;
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:task.imageURL];
             
-            [set notify:^(id observer) {
+            [set notifyObservers:^(id observer) {
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
                 {
-                    [observer imageManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:data];
+                    [observer imageManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:imageData];
                 }
                 
             } onThread:nil];
@@ -228,7 +230,7 @@
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:task.imageURL];
             
-            [set notify:^(id observer) {
+            [set notifyObservers:^(id observer) {
                 
                 if (observer && [observer respondsToSelector:@selector(imageManager:didDownloadImageByURL:withDownloadedSize:expectedSize:)])
                 {
@@ -237,6 +239,28 @@
             } onThread:nil];
         });
     }
+}
+
+- (NSData *)localImageDataForURL:(NSURL *)URL
+{
+    __block NSData *data = nil;
+    
+    if (URL)
+    {
+        if ([URL isFileURL])
+        {
+            data = [NSData dataWithContentsOfURL:URL];
+        }
+        else
+        {
+            dispatch_sync(self.syncQueue, ^{
+                
+                data = [[ImageStorage sharedInstance] imageDataByURL:URL];
+            });
+        }
+    }
+    
+    return data;
 }
 
 @end

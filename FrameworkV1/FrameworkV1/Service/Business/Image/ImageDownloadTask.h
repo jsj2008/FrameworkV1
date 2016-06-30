@@ -10,7 +10,6 @@
 
 @protocol ImageDownloadTaskDelegate;
 
-
 /*********************************************************
  
     @class
@@ -20,7 +19,7 @@
         图片下载任务
  
     @discussion
-        任务dealloc会自动执行cancel操作
+        支持加载文件和HTTP图片
  
  *********************************************************/
 
@@ -28,7 +27,7 @@
 
 /*!
  * @brief 初始化
- * @param URL 图片URL
+ * @param URL 图片URL，支持文件URL和HTTP类型URL
  * @result 初始化对象
  */
 - (instancetype)initWithURL:(NSURL *)URL;
@@ -43,7 +42,7 @@
 
 /*********************************************************
  
-    @class
+    @protocol
         ImageDownloadTaskDelegate
  
     @abstract
@@ -60,6 +59,8 @@
  * @param data 图片数据
  */
 - (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
+
+@optional
 
 /*!
  * @brief 图片下载进度

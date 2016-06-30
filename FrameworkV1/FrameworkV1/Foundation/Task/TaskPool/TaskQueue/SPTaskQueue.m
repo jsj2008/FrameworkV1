@@ -49,7 +49,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"SPTaskQueue: %d", SPTaskQueueRunMode_AutoClose] UTF8String], NULL);
         
         _runMode = SPTaskQueueRunMode_AutoClose;
         
@@ -69,7 +69,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"SPTaskQueue: %d", mode] UTF8String], NULL);
         
         _runMode = (mode == SPTaskQueueRunMode_Persistent) ? SPTaskQueueRunMode_Persistent : SPTaskQueueRunMode_AutoClose;
         

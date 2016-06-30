@@ -29,4 +29,32 @@
     return string;
 }
 
+- (NSInteger)fullHalfWidthLengthOfBytes
+{
+    int strLength = 0;
+    
+    char *p = (char *)[self cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    for (int i = 0 ; i < [self lengthOfBytesUsingEncoding:NSUTF8StringEncoding] ;i++)
+    {
+        if (*p)
+        {
+            if(*p == '\xe4' || *p == '\xe5' || *p == '\xe6' || *p == '\xe7' || *p == '\xe8' || *p == '\xe9')
+            {
+                strLength --;
+            }
+            
+            p++;
+            
+            strLength ++;
+        }
+        else
+        {
+            p ++;
+        }
+    }
+    
+    return strLength;
+}
+
 @end

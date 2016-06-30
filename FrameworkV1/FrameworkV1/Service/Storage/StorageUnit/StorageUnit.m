@@ -7,9 +7,9 @@
 //
 
 #import "StorageUnit.h"
-#import "LightLoadingPermanentQueue+SharedInstance.h"
-#import "NSObject+Notify.h"
+#import "DBCenter.h"
 #import "ImageStorage.h"
+#import "APPConfiguration.h"
 
 @implementation StorageUnit
 
@@ -32,55 +32,18 @@
 
 - (void)start
 {
-    if (!self.notifyThread)
-    {
-        self.notifyThread = [NSThread currentThread];
-    }
+    [[DBCenter sharedInstance] start];
     
-    [[LightLoadingPermanentQueue sharedInstance] addBlock:^{
-        
-        [[ImageStorage sharedInstance] start];
-        
-        [self notify:^{
-            
-            if (self.delegate && [self.delegate respondsToSelector:@selector(storageUnit:isStartingWithProgress:)])
-            {
-                [self.delegate storageUnit:self isStartingWithProgress:1.0];
-            }
-        } onThread:self.notifyThread];
-        
-        [self notify:^{
-            
-            if (self.delegate && [self.delegate respondsToSelector:@selector(storageUnit:didStartSuccessfully:)])
-            {
-                [self.delegate storageUnit:self didStartSuccessfully:YES];
-            }
-        } onThread:self.notifyThread];
-    }];
+    [ImageStorage sharedInstance].directory = [APPConfiguration sharedInstance].imageDirectory;
+    
+    [[ImageStorage sharedInstance] start];
 }
 
 - (void)stop
 {
-    [[LightLoadingPermanentQueue sharedInstance] addBlock:^{
-        
-        [[ImageStorage sharedInstance] stop];
-        
-        [self notify:^{
-            
-            if (self.delegate && [self.delegate respondsToSelector:@selector(storageUnit:isStopingWithProgress:)])
-            {
-                [self.delegate storageUnit:self isStopingWithProgress:1.0];
-            }
-        } onThread:self.notifyThread];
-        
-        [self notify:^{
-            
-            if (self.delegate && [self.delegate respondsToSelector:@selector(storageUnit:didStopSuccessfully:)])
-            {
-                [self.delegate storageUnit:self didStopSuccessfully:YES];
-            }
-        } onThread:self.notifyThread];
-    }];
+    [[ImageStorage sharedInstance] stop];
+    
+    [[DBCenter sharedInstance] stop];
 }
 
 @end

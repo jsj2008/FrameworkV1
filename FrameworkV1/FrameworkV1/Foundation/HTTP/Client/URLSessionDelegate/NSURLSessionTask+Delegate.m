@@ -181,19 +181,21 @@ static NSInteger flag = 0;
 {
     flag ++;
     
+    NSError *error = nil;
+    
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"%f%ld", [[NSDate date] timeIntervalSince1970], (long)flag]];
     
     NSURL *newLocation = [NSURL fileURLWithPath:path];
     
-    [fileManager moveItemAtURL:location toURL:newLocation error:nil];
+    [fileManager moveItemAtURL:location toURL:newLocation error:&error];
     
     [self operate:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(URLSessionDownloadTask:didFinishDownloadingToURL:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(URLSessionDownloadTask:didFinishDownloadingToURL:error:)])
         {
-            [self.delegate URLSessionDownloadTask:self didFinishDownloadingToURL:newLocation];
+            [self.delegate URLSessionDownloadTask:self didFinishDownloadingToURL:newLocation error:error];
         }
         
         [fileManager removeItemAtURL:newLocation error:nil];

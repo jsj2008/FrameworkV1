@@ -39,6 +39,13 @@
 
 @implementation LogFileHandle
 
+@synthesize rootDirectory = _rootDirectory;
+
+- (void)dealloc
+{
+    dispatch_sync(_syncQueue, ^{});
+}
+
 - (id)initWithRootDirectory:(NSString *)rootDirectory
 {
     if (self = [super init])
@@ -47,15 +54,10 @@
         
         _fm = [[NSFileManager alloc] init];
         
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"LogFileHandle: %@", rootDirectory] UTF8String], NULL);
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    dispatch_sync(_syncQueue, ^{});
 }
 
 - (void)writeString:(NSString *)string

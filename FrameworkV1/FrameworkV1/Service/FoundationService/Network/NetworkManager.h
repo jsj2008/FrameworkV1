@@ -20,9 +20,6 @@
     @abstract
         网络管理器，用于管理网络状态变化等
  
-    @discussion
-        1，网络状态的判断等处理可能堵塞线程，请避免在主线程使用（代理操作除外）
- 
  *********************************************************/
 
 @interface NetworkManager : NSObject
@@ -31,6 +28,11 @@
  * @brief 单例
  */
 + (NetworkManager *)sharedInstance;
+
+/*!
+ * @brief 当前网络状态
+ */
+@property (nonatomic, readonly) NetworkReachStatus currentNetworkReachStatus;
 
 /*!
  * @brief 添加代理

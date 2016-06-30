@@ -21,7 +21,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create(NULL, NULL);
+        _syncQueue = dispatch_queue_create("SPTaskPool", NULL);
         
         _taskQueues = [[NSMutableArray alloc] initWithCapacity:3];
         

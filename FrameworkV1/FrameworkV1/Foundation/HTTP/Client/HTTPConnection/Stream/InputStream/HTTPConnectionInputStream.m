@@ -122,16 +122,12 @@
 
 - (BOOL)setProperty:(id)property forKey:(NSString *)key
 {
-    BOOL success = NO;
-    
     if (property && key)
     {
         [self.properties setObject:property forKey:key];
-        
-        success = YES;
     }
     
-    return success;
+    return YES;
 }
 
 - (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode
@@ -177,30 +173,33 @@
         {
             readLength += streamReadLength;
         }
-        else if (streamReadLength == 0)
+        
+        if (stream.streamStatus == NSStreamStatusAtEnd)
         {
             [self.dataStreams removeObjectAtIndex:0];
         }
-        else
+        else if (stream.streamStatus == NSStreamStatusError)
         {
-            readLength = -1;
-            
             _streamStatus = NSStreamStatusError;
             
             _streamError = [stream.streamError copy];
             
-            [self notify:^{
-                
-                if (self.delegate && [self.delegate respondsToSelector:@selector(stream:handleEvent:)])
-                {
-                    [self.delegate stream:self handleEvent:NSStreamEventErrorOccurred];
-                }
-                
-            }];
+            break;
         }
     }
     
-    if ([self.dataStreams count] == 0)
+    if (_streamStatus == NSStreamStatusError)
+    {
+        [self notify:^{
+            
+            if (self.delegate && [self.delegate respondsToSelector:@selector(stream:handleEvent:)])
+            {
+                [self.delegate stream:self handleEvent:NSStreamEventErrorOccurred];
+            }
+            
+        }];
+    }
+    else if ([self.dataStreams count] == 0)
     {
         _streamStatus = NSStreamStatusAtEnd;
         

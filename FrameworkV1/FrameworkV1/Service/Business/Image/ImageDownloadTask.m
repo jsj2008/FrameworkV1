@@ -23,11 +23,6 @@
 
 @synthesize URL = _URL;
 
-- (void)dealloc
-{
-    [self cancel];
-}
-
 - (instancetype)initWithURL:(NSURL *)URL
 {
     if (self = [super init])
@@ -60,7 +55,7 @@
         {
             [self.delegate imageDownloadTask:self didFinishWithError:error imageData:data];
         }
-    }];
+    } onThread:self.notifyThread];
 }
 
 - (void)imageManager:(ImageManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data
@@ -76,7 +71,7 @@
         {
             [self.delegate imageDownloadTask:self didDownloadImageWithDownloadedSize:downloadedSize expectedSize:expectedSize];
         }
-    }];
+    } onThread:self.notifyThread];
 }
 
 @end

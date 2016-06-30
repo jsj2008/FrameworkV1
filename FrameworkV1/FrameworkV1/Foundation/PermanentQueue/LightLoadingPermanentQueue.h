@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol LightLoadingPermanentQueueDelegate;
-
-
 /*********************************************************
  
     @class
@@ -28,17 +25,6 @@
 @interface LightLoadingPermanentQueue : NSObject
 
 /*!
- * @brief 协议消息的代理
- */
-@property (nonatomic, weak) id<LightLoadingPermanentQueueDelegate> delegate;
-
-/*!
- * @brief 通知线程，在此线程上发送启动和停止消息
- * @discussion 此线程不能为空
- */
-@property (nonatomic) NSThread *notifyThread;
-
-/*!
  * @brief 起动内建线程和内部管理模块
  */
 - (void)start;
@@ -49,43 +35,10 @@
 - (void)stop;
 
 /*!
- * @brief 内建线程
- * @result 内建线程
- */
-- (NSThread *)runningThread;
-
-/*!
  * @brief 添加任务块到内建线程执行
  * @param block 任务块承载对象
  * @result 队列正常运行时返回YES，反之返回NO
  */
-- (BOOL)addBlock:(void (^)())block;
-
-@end
-
-
-/*********************************************************
- 
-    @protocol
-        LightLoadingPermanentQueueDelegate
- 
-    @abstract
-        LightLoadingPermanentQueue的代理消息协议
- 
- *********************************************************/
-
-@protocol LightLoadingPermanentQueueDelegate <NSObject>
-
-/*!
- * @brief 启动的消息
- * @param queue 队列
- */
-- (void)lightLoadingPermanentQueueDidStart:(LightLoadingPermanentQueue *)queue;
-
-/*!
- * @brief 结束的消息
- * @param queue 队列
- */
-- (void)lightLoadingPermanentQueueDidStop:(LightLoadingPermanentQueue *)queue;
+- (void)addBlock:(void (^)())block;
 
 @end

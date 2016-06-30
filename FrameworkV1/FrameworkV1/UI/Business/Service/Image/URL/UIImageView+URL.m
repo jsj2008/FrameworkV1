@@ -8,16 +8,16 @@
 
 #import "UIImageView+URL.h"
 #import <objc/runtime.h>
-#import "ImageDownloadTask.h"
+#import "UBImageViewImageLoader.h"
 
 static const char kUIImageViewPropertyKey_URLLoadingConfiguration[] = "URLLoadingConfiguration";
 
-static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
+static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
 
 
-@interface UIImageView (URL_Internal) <ImageDownloadTaskDelegate>
+@interface UIImageView (URL_Internal) <UBImageViewImageLoaderDelegate>
 
-@property (nonatomic) ImageDownloadTask *URLLoadingTask;
+@property (nonatomic) UBImageViewImageLoader *URLImageLoader;
 
 @end
 
@@ -36,15 +36,15 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
 
 - (void)startURLLoading
 {
-    self.URLLoadingTask.delegate = nil;
+    self.URLImageLoader.delegate = nil;
     
-    [self.URLLoadingTask cancel];
+    [self.URLImageLoader cancel];
     
-    self.URLLoadingTask = [[ImageDownloadTask alloc] initWithURL:self.URLLoadingConfiguration.URL];
+    self.URLImageLoader = [[UBImageViewImageLoader alloc] initWithURL:self.URLLoadingConfiguration.URL];
     
-    self.URLLoadingTask.delegate = self;
+    self.URLImageLoader.delegate = self;
     
-    [self.URLLoadingTask performSelector:@selector(main) onThread:[NSThread currentThread] withObject:nil waitUntilDone:NO];
+    [self.URLImageLoader start];
     
     if (self.URLLoadingConfiguration.isPlaceHolderImageEnabled)
     {
@@ -54,9 +54,9 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
 
 - (void)cancelURLLoading
 {
-    self.URLLoadingTask.delegate = nil;
+    self.URLImageLoader.delegate = nil;
     
-    [self.URLLoadingTask cancel];
+    [self.URLImageLoader cancel];
 }
 
 @end
@@ -64,17 +64,17 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
 
 @implementation UIImageView (URL_Internal)
 
-- (void)setURLLoadingTask:(ImageDownloadTask *)URLLoadingTask
+- (void)setURLImageLoader:(UBImageViewImageLoader *)URLImageLoader
 {
-    objc_setAssociatedObject(self, kUIImageViewPropertyKey_URLLoadingTask, URLLoadingTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kUIImageViewPropertyKey_URLImageLoader, URLImageLoader, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (ImageDownloadTask *)URLLoadingTask
+- (UBImageViewImageLoader *)URLImageLoader
 {
-    return objc_getAssociatedObject(self, kUIImageViewPropertyKey_URLLoadingTask);
+    return objc_getAssociatedObject(self, kUIImageViewPropertyKey_URLImageLoader);
 }
 
-- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
 {
     if (error)
     {
@@ -90,15 +90,15 @@ static const char kUIImageViewPropertyKey_URLLoadingTask[] = "URLLoadingTask";
     
     if (self.URLLoadingConfiguration.completion)
     {
-        self.URLLoadingConfiguration.completion(task.URL, error);
+        self.URLLoadingConfiguration.completion(imageLoader.URL, error);
     }
 }
 
-- (void)imageDownloadTask:(ImageDownloadTask *)task didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
+- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
 {
     if (self.URLLoadingConfiguration.progressing)
     {
-        self.URLLoadingConfiguration.progressing(task.URL, downloadedSize, expectedSize);
+        self.URLLoadingConfiguration.progressing(imageLoader.URL, downloadedSize, expectedSize);
     }
 }
 
